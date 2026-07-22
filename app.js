@@ -8,7 +8,6 @@
 
   /* ---------- crop table (from image-slot state; _applyView reproduction) ---------- */
   const CROP = {
-    'hero-0': { s: 1, x: 3.06, y: 0 }, 'hero-1': { s: 1, x: -30.93, y: 0 }, 'hero-2': { s: 1, x: -33.60, y: 0 }, 'hero-3': { s: 1.0055, x: -14.05, y: -0.28 },
     'div-elec': { s: 1, x: 23.44, y: 0 }, 'div-fmcg': { s: 1, x: 21.83, y: 0 }, 'div-cosmetics': { s: 1, x: 30.91, y: 0 }, 'div-fashion': { s: 1, x: 16.63, y: 0 }, 'div-health': { s: 1, x: 0, y: 0 }, 'div-commercial': { s: 1, x: 0, y: 0 },
     'story-storefront': { s: 1, x: 0, y: 4.99 },
     'ms-1966': { s: 1, x: 7.69, y: 0 }, 'ms-1970': { s: 1, x: 7.69, y: 0 }, 'ms-1969': { s: 1, x: 7.69, y: 0 },
@@ -71,8 +70,9 @@
 
   /* ---------- data ---------- */
   const NAV = ['About Us', 'Our Divisions', 'Our Stores', 'Service Center', 'Careers', 'Contact'];
-  const heroImgs = ['uploads/Carousal1-8f8fcda3.jpg', 'uploads/Carousal2-1250efd4.jpg', 'uploads/Carousal3-0b6c7d58.jpg', 'uploads/Carousal4-0ab1d92c.jpg'];
-  const heroPartners = ['Lee Wrangler', 'O General', 'Braun', 'GlemGas'];
+  const heroImgs = ['uploads/app.png', 'uploads/Carousal4-0ab1d92c.jpg', 'uploads/OGeneral.jpg', 'uploads/JBL.png'];
+  const heroPartners = ['Apple', 'GlemGas', 'O General', 'JBL'];
+  const heroLabelLight = [true, true, false, true];  // dark label only on the light O General image
 
   function heroPalette() {
     const light = (bg, head, sub, kick, track, muted) => ({ heroBg: bg, heroHead: head, heroSub: sub, heroKick: kick, heroTrack: track, heroFill: head, heroMuted: muted, heroCtaBg: '#0d0d0d', heroCtaTx: '#fff' });
@@ -156,9 +156,37 @@
   const NAV_HREF = { 'About Us': '#story', 'Our Divisions': '#divisions', 'Contact': '#contact' };
   el('nav').innerHTML = NAV.map(l => '<a href="' + (NAV_HREF[l] || '#') + '" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">' + l + '</a>').join('');
 
-  // brand marquee (both sets)
-  const marqHtml = brandNames.map(b => '<div class="bcell" style="width:200px;height:56px;border-right:1px solid #262421;padding:9px 24px;filter:brightness(0) invert(1);opacity:0.82;transition:opacity .35s ease"><div class="bimg" role="img" aria-label="' + b.name + '" style="width:100%;height:100%;background-image:url(&quot;' + b.src + '&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;transition:transform .35s ease"></div></div>').join('');
-  document.querySelectorAll('.marqset').forEach(m => m.innerHTML = marqHtml);
+  // brand marquee — starts with Apple, JBL (already white logos, no invert); filter on the logo only so separators stay uniform
+  const marqueeBrands = [
+    { name: 'Apple', src: 'uploads/applg_t.png', raw: true },
+    { name: 'JBL', src: 'uploads/JBLlg_t.png', raw: true },
+  ].concat(brandNames);
+  const marqHtml = marqueeBrands.map(b => {
+    const filt = b.raw ? 'none' : 'brightness(0) invert(1)';
+    return '<div class="bcell" style="width:200px;height:56px;border-right:1px solid rgba(255,255,255,0.16);padding:9px 24px;opacity:0.82;transition:opacity .35s ease">'
+      + '<div class="bimg" role="img" aria-label="' + b.name + '" style="width:100%;height:100%;filter:' + filt + ';background-image:url(&quot;' + b.src + '&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;transition:transform .35s ease"></div></div>';
+  }).join('');
+  const marqsets = document.querySelectorAll('.marqset');
+  marqsets.forEach(m => m.innerHTML = marqHtml);
+  // JS-driven marquee so the FIRST brand (Apple) starts centred, then scrolls
+  (function () {
+    const row = document.querySelector('.marqrow');
+    if (!row || !marqsets.length) return;
+    row.style.animation = 'none';
+    let W = 0, pos0 = 0, pos = 0, paused = false;
+    function measure() { W = marqsets[0].getBoundingClientRect().width; pos0 = window.innerWidth / 2 - 100 - W; pos = pos0; }
+    measure();
+    row.addEventListener('mouseenter', () => paused = true);
+    row.addEventListener('mouseleave', () => paused = false);
+    window.addEventListener('resize', measure);
+    let last = 0;
+    function frame(t) {
+      if (!last) last = t; const dt = t - last; last = t;
+      if (!paused && W) { pos -= dt * (W / 34000); if (pos <= pos0 - W) pos += W; row.style.transform = 'translateX(' + pos.toFixed(1) + 'px)'; }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
 
   // socials (2), contacts, footAbout
   const socHtml1 = socials.map(s => '<a href="#" aria-label="' + s.name + '" style="width:40px;height:40px;border-radius:50%;border:1px solid #cfcbc0;display:flex;align-items:center;justify-content:center;color:#161513">' + s.icon + '</a>').join('');
@@ -247,7 +275,7 @@
 
   // milestones panels + mobile
   el('msPanels').innerHTML = milestones.map(m =>
-    '<div data-ms-panel style="position:absolute;inset:0;overflow:hidden;border-radius:14px;background:#151515;backface-visibility:hidden;transform-origin:center center;will-change:transform,opacity;box-shadow:0 34px 90px rgba(0,0,0,.6)">'
+    '<div data-ms-panel style="position:absolute;inset:0;overflow:hidden;border-radius:14px;background:#151515;backface-visibility:hidden;transform-origin:center center;will-change:transform,opacity;box-shadow:0 28px 70px -26px rgba(0,0,0,.85)">'
     + '<div class="slot" data-slot="' + m.slot + '"><img alt="" src="img/' + m.slot + '.webp"></div>'
     + '<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.72) 30%,rgba(10,10,10,.25) 62%,rgba(10,10,10,0) 85%)"></div>'
     + '<div style="position:absolute;left:0;top:0;bottom:0;width:min(52%,420px);display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,4vw,54px)">'
@@ -256,7 +284,7 @@
     + '<div style="width:36px;height:2px;background:#7a7a7a;margin-bottom:14px"></div>'
     + '<p style="color:#b5b5b5;font-size:clamp(13px,1.05vw,15px);line-height:1.6;margin:0;max-width:300px">' + m.desc + '</p></div>'
     + '<div data-ms-dim style="position:absolute;inset:0;background:#0a0a0a;opacity:0.5;transition:opacity .45s ease;pointer-events:none"></div>'
-    + '<div data-ms-ring style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.18);border-radius:14px;opacity:0;transition:opacity .45s ease;pointer-events:none"></div></div>'
+    + '<div data-ms-ring style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.09);border-radius:14px;opacity:0;transition:opacity .45s ease;pointer-events:none"></div></div>'
   ).join('');
   el('msMobile').innerHTML = milestones.map(m =>
     '<div style="position:relative;border-radius:14px;overflow:hidden;margin-bottom:16px;min-height:200px;background:#151515">'
@@ -284,10 +312,10 @@
     el('heroFill').style.background = pal.heroFill;
     el('heroFill').style.width = Math.round((S.hero + 1) / 4 * 100) + '%';
     el('heroMuted').style.color = pal.heroMuted;
-    const pc = S.hero === 3 ? '#ffffff' : '#141311';
     el('heroPartner').textContent = heroPartners[S.hero];
-    el('heroPartner').style.color = pc;
-    el('heroPartnerKick').style.color = S.hero === 3 ? 'rgba(255,255,255,0.7)' : '#5a5750';
+    const lite = heroLabelLight[S.hero] !== false;
+    el('heroPartner').style.color = lite ? '#ffffff' : '#141311';
+    el('heroPartnerKick').style.color = lite ? 'rgba(255,255,255,0.7)' : '#5a5750';
     el('heroSlides').querySelectorAll('[data-h]').forEach(l => l.style.opacity = (+l.dataset.h === S.hero) ? 1 : 0);
     el('heroDots').querySelectorAll('button').forEach(b => b.style.background = (+b.dataset.hd === S.hero) ? '#141311' : 'rgba(255,255,255,0.55)');
   }
