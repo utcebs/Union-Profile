@@ -60,12 +60,27 @@
   function fillSlot(el, id, src, fit) {
     el.dataset.slot = id;
     if (fit) el.dataset.fit = fit;
-    el.innerHTML = '';
-    const img = document.createElement('img');
-    img.alt = ''; img.decoding = 'async';
-    img.onload = () => layoutSlot(el);
-    img.src = src;
-    el.appendChild(img);
+    const existing = el.querySelector('img');
+    if (existing && existing.getAttribute('src') === src) { layoutSlot(el); return; }
+    // Preload + decode the new image off-screen while the current one stays visible,
+    // then swap it in already sized. Without this, a fresh <img> paints at its natural
+    // (large) size for a frame before layoutSlot shrinks it — a flicker on manual switches.
+    let done = false;
+    const apply = () => {
+      if (done) return; done = true;
+      let img = el.querySelector('img');
+      if (!img) { img = document.createElement('img'); img.alt = ''; img.decoding = 'async'; el.appendChild(img); }
+      img.onload = () => layoutSlot(el);
+      img.src = src;
+      layoutSlot(el);              // src is cache-warm now → naturalWidth ready, size before paint
+      img.style.visibility = 'visible';
+    };
+    const next = new Image();
+    next.decoding = 'async';
+    next.onload = apply;
+    next.onerror = apply;
+    next.src = src;
+    if (next.complete && next.naturalWidth) apply();   // already cached & decoded
   }
 
   /* ---------- data ---------- */
