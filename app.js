@@ -129,9 +129,9 @@
   const storyExtra = ['uploads/City showroom old enhanced.jpg', 'uploads/old general photo.png'];
 
   const plist = [
-    { name: 'Milton Lloyd', since: '1978', years: '46+', src: 'uploads/Mil-trimmed.png', person: 'Peter Jackson', role: 'CEO', quote: 'Across more than four decades, our mission with UTC has — under Union Trading Company’s unique vision, foresight and leadership — always been to offer consumers exceptional fragrance within reach.' },
-    { name: 'Glemgas', since: '1970', years: '54+', src: 'uploads/Glem-trimmed.png', person: 'Marco Guerzoni', role: 'Marketing Director', quote: 'For over five decades Glemgas has trusted Union Trading Company to bring Italian craftsmanship into Kuwaiti homes — a partnership defined by reliability and shared ambition.' },
-    { name: 'Jockey', since: '2003', years: '21+', src: 'uploads/Jock-trimmed.png', person: 'Brand Team', role: 'Brand Partner', quote: 'Since 2003, Union Trading Company has carried the Jockey name across the region with the same commitment to comfort and quality that defines our brand.' },
+    { name: 'Milton Lloyd', since: '1978', years: '46+', src: 'uploads/Mil-trimmed.png', person: 'Peter Jackson', role: 'CEO', quote: 'For over four decades, under Union Trading Company’s vision and leadership, we’ve brought consumers exceptional fragrance within reach.' },
+    { name: 'Glemgas', since: '1970', years: '54+', src: 'uploads/Glem-trimmed.png', person: 'Marco Guerzoni', role: 'Marketing Director', quote: 'For over five decades Glemgas has trusted Union Trading Company to bring Italian craftsmanship into Kuwaiti homes with shared ambition.' },
+    { name: 'Jockey', since: '2003', years: '21+', src: 'uploads/Jock-trimmed.png', person: 'Brand Team', role: 'Brand Partner', quote: 'Since 2003, Union Trading Company has carried the Jockey name across the region with a shared commitment to comfort and quality.' },
     { name: 'Braun', since: '2001', years: '23+', src: 'uploads/Braun-trimmed.png', person: 'Brand Team', role: 'Brand Partner', quote: 'For more than two decades Union Trading Company has represented Braun in Kuwait, delivering German engineering to our customers with trust and care.' }
   ];
 
@@ -141,7 +141,13 @@
     { year: '1966', title: 'Partnership with Gillette', desc: 'We partnered with Gillette to bring world-class grooming products to our customers.', slot: 'ms-1966' },
     { year: '1969', title: 'Partnership with Glemgas', desc: 'We joined hands with Glemgas to bring premium Italian home appliances to our customers.', slot: 'ms-1969' },
     { year: '1970', title: 'Partnership with General', desc: 'Joined hands with General to offer advanced and reliable air conditioning solutions.', slot: 'ms-1970' },
-    { year: '1977', title: 'Foundation of UTC Perfumes', desc: 'We ventured into beauty with the foundation of UTC Perfumes — quality fragrances for every lifestyle.', slot: 'ms-1977' }
+    { year: '1977', title: 'Foundation of UTC Perfumes', desc: 'We ventured into beauty with the foundation of UTC Perfumes — quality fragrances for every lifestyle.', slot: 'ms-1977' },
+    { year: '1980', title: 'Salhiya Showroom', desc: 'We opened our Salhiya showroom, extending Union Trading Co.’s retail presence into the heart of Kuwait City.', slot: 'ms-1980' },
+    { year: '1982', title: 'Farwaniya Showroom', desc: 'Our Farwaniya showroom opened its doors, bringing our brands closer to families across the governorate.', slot: 'ms-1982' },
+    { year: '1999', title: 'New Headquarters in Dawliya Complex', desc: 'We relocated to a new headquarters in the Dawliya Complex, anchoring our operations for the decades ahead.', slot: 'ms-1999' },
+    { year: '2009', title: 'Appliance Showroom — Jahra, Farwaniya & Hawally', desc: 'We launched dedicated appliance showrooms in Jahra, Farwaniya and Hawally, widening access to home and electronic appliances.', slot: 'ms-2009' },
+    { year: '2017', title: 'Yaal Showroom', desc: 'The Yaal showroom opened, adding a modern retail destination to our growing network.', slot: 'ms-2017' },
+    { year: '2020', title: 'New Hawally Department Store', desc: 'We unveiled our new Hawally department store — a flagship retail experience for a new generation of customers.', slot: 'ms-2020' }
   ];
 
   const socials = [
