@@ -10,7 +10,9 @@
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+  #explorer{scroll-snap-align:center}
+  @media(max-width:900px){html{scroll-snap-type:none}}
   body{font-family:'Manrope',system-ui,sans-serif;color:#141311;background:#0d0d0d;-webkit-font-smoothing:antialiased}
   a{color:#141311;text-decoration:none}
   img{display:block;max-width:100%}
@@ -36,16 +38,16 @@
 </style>
 </head>
 <body>
-<div style="background:#f5f3ee;overflow-x:hidden">
+<div style="background:#f5f3ee;overflow-x:clip">
 
   <!-- ============ HEADER ============ -->
-  <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
+  <header style="position:relative;z-index:100;background:#0d0d0d;color:#fff">
     <div style="max-width:1500px;margin:0 auto;padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <a href="index.html"><img src="uploads/union-trading-logo.png" alt="Union Trading Co." style="height:42px;width:auto;filter:brightness(0) invert(1)"></a>
       <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap">
         <a href="index.html#story" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="index.html#divisions" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
-        <a href="#stores" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Stores</a>
+        <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Stores</a>
         <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Service Center</a>
         <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
@@ -103,15 +105,15 @@
   </section>
 
   <!-- ============ STORE EXPLORER ============ -->
-  <section id="stores" style="position:relative;z-index:4;margin-top:clamp(-70px,-6vw,-40px);background:transparent;color:#fff;padding:0 clamp(8px,1.4vw,20px) clamp(28px,3.4vw,48px)">
-    <div style="max-width:1500px;margin:0 auto;background:#0d0d0d;border-radius:26px;padding:clamp(20px,2.4vw,34px) clamp(22px,3.4vw,48px) clamp(22px,2.6vw,32px);box-shadow:0 50px 90px -55px rgba(0,0,0,0.55)">
+  <section id="stores" style="position:relative;z-index:4;margin-top:max(48px, calc(32vh - 188px));background:transparent;color:#fff;padding:0 clamp(8px,1.4vw,20px) clamp(28px,3.4vw,48px)">
+    <div id="explorer" style="max-width:1240px;margin:0 auto;background:#0d0d0d;border-radius:26px;padding:clamp(20px,2.4vw,32px) clamp(24px,3vw,44px) clamp(18px,2.2vw,28px);box-shadow:0 50px 90px -55px rgba(0,0,0,0.55)">
 
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:clamp(16px,2vw,26px);border-bottom:1px solid #232220">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:clamp(14px,1.8vw,22px);border-bottom:1px solid #232220">
         <span style="font-size:13px;color:#8f8c85;font-weight:600">Filter By</span>
         <div id="filterBtns" style="display:flex;gap:10px;flex-wrap:wrap"></div>
       </div>
 
-      <div class="explorer-grid" style="display:grid;grid-template-columns:minmax(0,0.78fr) minmax(0,1.85fr) minmax(0,0.68fr);gap:clamp(20px,2.4vw,40px);padding:clamp(12px,1.8vw,22px) 0;align-items:start">
+      <div class="explorer-grid" style="display:grid;grid-template-columns:minmax(0,0.78fr) minmax(0,1.85fr) minmax(0,0.68fr);gap:clamp(20px,2.4vw,40px);padding:clamp(16px,2vw,26px) 0;align-items:start">
 
         <div>
           <div style="font-family:'Archivo';font-weight:600;font-size:14px;letter-spacing:0.1em;color:#7c7972;margin-bottom:16px"><span id="storeNum">01</span> <span style="color:#4a4842">/ 04</span></div>
@@ -122,10 +124,10 @@
         </div>
 
         <div>
-          <div style="position:relative;width:100%;height:clamp(280px,44vh,460px);border-radius:16px;overflow:hidden;background:#161513">
+          <div style="position:relative;width:100%;height:clamp(240px,40vh,440px);border-radius:16px;overflow:hidden;background:#161513">
             <div id="galleryMain" style="position:absolute;inset:0"></div>
           </div>
-          <div style="display:flex;align-items:center;gap:12px;margin-top:14px">
+          <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
             <button id="imgPrev" class="arrowbtn" aria-label="Previous photo" style="width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid #33312d;background:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
             </button>
@@ -142,13 +144,13 @@
             <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:#7fd398">OPEN NOW</span>
           </div>
           <div id="storeHours" style="font-family:'Archivo';font-weight:700;font-size:clamp(18px,1.7vw,22px);color:#fff;margin-bottom:5px"></div>
-          <div id="storeDays" style="font-size:13.5px;color:#8f8c85;line-height:1.6;margin-bottom:12px"></div>
-          <div style="height:1px;background:#232220;margin-bottom:10px"></div>
-          <div style="display:flex;gap:12px;margin-bottom:10px">
+          <div id="storeDays" style="font-size:13.5px;color:#8f8c85;line-height:1.6;margin-bottom:9px"></div>
+          <div style="height:1px;background:#232220;margin-bottom:9px"></div>
+          <div style="display:flex;gap:12px;margin-bottom:9px">
             <span style="color:#7c7972;flex-shrink:0;margin-top:1px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
             <div id="storeAddr" style="font-size:13px;color:#c3bfb6;line-height:1.45"></div>
           </div>
-          <div id="storePhoneRow" style="display:flex;gap:12px;align-items:center;margin-bottom:24px">
+          <div id="storePhoneRow" style="display:flex;gap:12px;align-items:center;margin-bottom:14px">
             <span style="color:#7c7972;flex-shrink:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path></svg></span>
             <span id="storePhone" style="font-size:14.5px;color:#fff;font-weight:600"></span>
           </div>
@@ -171,7 +173,7 @@
         </div>
       </div>
 
-      <div style="display:flex;align-items:stretch;gap:14px;margin-top:clamp(10px,1.4vw,18px);padding-top:clamp(10px,1.4vw,18px);border-top:1px solid #232220">
+      <div style="display:flex;align-items:stretch;gap:14px;margin-top:clamp(8px,1vw,14px);padding-top:clamp(8px,1vw,14px);border-top:1px solid #232220">
         <button id="prevStore" class="arrowbtn" aria-label="Previous store" style="width:48px;flex-shrink:0;border-radius:12px;border:1px solid #33312d;background:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
         </button>
@@ -180,7 +182,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
         </button>
       </div>
-      <div style="text-align:center;margin-top:14px">
+      <div style="text-align:center;margin-top:10px">
         <a href="#" class="footlink" style="display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#cfcbc0;transition:color .2s">VIEW ALL STORES
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
         </a>

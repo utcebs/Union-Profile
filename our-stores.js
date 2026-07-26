@@ -12,7 +12,7 @@
       desc: 'Our founding flagship in the heart of Kuwait City, home to the full breadth of Union Trading brands and the beating heart of our operations since 1949.',
       hours: '8:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 4:00 PM – 10:00 PM',
       addr: ['Kuwait City, Block 1', 'Fahad Al-Salem Street', 'Kuwait'], phone: '+965 2242 3355', x: 64, y: 34,
-      photos: ['img/store-01-g0.webp', 'img/store-01-g1.webp'] },
+      photos: ['img/store-01-g0.webp', 'img/store-01-g1.webp', 'img/store-01-g2.webp', 'img/store-01-g3.webp', 'img/store-01-g4.webp'] },
     { num: '02', name: 'Shuwaikh Store', city: 'Shuwaikh', cats: ['Electronics', 'Service Centers'],
       tagline: 'Built for the everyday.',
       desc: 'Our Shuwaikh destination pairs a wide appliances and electronics showroom with a full service center, serving Kuwait’s busiest commercial district.',
@@ -96,18 +96,26 @@
       el('galleryMain').innerHTML = '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#4a4842">' + ICON_STORE + '<span style="font-size:12px;letter-spacing:0.12em;font-weight:700">PHOTOS COMING SOON</span></div>';
     }
 
-    /* ---- gallery thumbs ---- */
+    /* ---- gallery thumbs: fixed 5-up tile size, centered when fewer than 5 (never stretch) ---- */
     const thumbs = el('galleryThumbs');
+    thumbs.style.display = 'flex';
+    thumbs.style.justifyContent = 'center';
+    thumbs.style.gap = '10px';
+    // each tile keeps the width of one cell in a 5-up row: (strip - 4 gaps) / 5
+    const TILE = 'flex:0 0 calc((100% - 40px) / 5)';
     if (active.photos.length) {
+      thumbs.style.position = 'static';
       const activePhoto = ((state.img % active.photos.length) + active.photos.length) % active.photos.length;
-      thumbs.style.gridTemplateColumns = 'repeat(' + Math.max(active.photos.length, 1) + ',1fr)';
       thumbs.innerHTML = active.photos.map((src, i) =>
-        '<div data-thumb="' + i + '" style="aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#161513;border:2px solid ' + (i === activePhoto ? ACCENT : '#2a2825') + ';cursor:pointer;opacity:' + (i === activePhoto ? 1 : 0.55) + ';transition:opacity .2s,border-color .2s"><img src="' + src + '" alt="" class="cover"></div>'
+        '<div data-thumb="' + i + '" style="' + TILE + ';aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#161513;border:2px solid ' + (i === activePhoto ? ACCENT : '#2a2825') + ';cursor:pointer;opacity:' + (i === activePhoto ? 1 : 0.55) + ';transition:opacity .2s,border-color .2s"><img src="' + src + '" alt="" class="cover"></div>'
       ).join('');
       thumbs.querySelectorAll('[data-thumb]').forEach(d => d.onclick = () => setImg(+d.dataset.thumb));
     } else {
-      thumbs.style.gridTemplateColumns = '1fr';
-      thumbs.innerHTML = '<div style="grid-column:1/-1;padding:12px;text-align:center;color:#4a4842;font-size:11px;letter-spacing:0.1em;font-weight:700;border:1px dashed #2a2825;border-radius:8px">STORE GALLERY COMING SOON</div>';
+      // invisible tile-sized spacer keeps the strip the exact height of a tile row,
+      // so the panel size stays fixed for stores without photos
+      thumbs.style.position = 'relative';
+      thumbs.innerHTML = '<div style="' + TILE + ';aspect-ratio:4/3;visibility:hidden"></div>'
+        + '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#4a4842;font-size:11px;letter-spacing:0.1em;font-weight:700;border:1px dashed #2a2825;border-radius:8px">STORE GALLERY COMING SOON</div>';
     }
 
     /* ---- filters ---- */
@@ -169,6 +177,30 @@
   el('imgNext').onclick = () => setImg(state.img + 1);
   el('prevStore').onclick = () => step(-1);
   el('nextStore').onclick = () => step(1);
+
+  // Scroll to the store explorer via JS (no #stores stamped on the URL), and keep
+  // placeholder "#" links from dirtying the address bar. Works for the hero EXPLORE
+  // button and the map "VIEW STORE" tooltip (both regenerated), via delegation.
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (href === '#stores') {
+      e.preventDefault();
+      el('explorer').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else if (href === '#') {
+      e.preventDefault();
+    }
+  });
+
+  // Close the map tooltip when clicking anywhere outside it. Ignore clicks on a pin
+  // (those open the tooltip) and inside the tooltip itself.
+  document.addEventListener('click', e => {
+    if (!state.showTip) return;
+    if (el('mapTip').contains(e.target) || e.target.closest('[data-pin]')) return;
+    state.showTip = false;
+    el('mapTip').style.display = 'none';
+  });
 
   render();
   startAuto();
