@@ -15,7 +15,8 @@
   html{scroll-behavior:smooth;scroll-padding-top:var(--hdr,74px);scroll-snap-type:y proximity}
   section{scroll-snap-align:start;scroll-margin-top:var(--hdr,74px)}
   /* snap deeper into these sections so the main heading (not the small kicker) sits at the top; hero & milestones keep the default */
-  #divisions{scroll-margin-top:-70px}
+  #divisions{scroll-snap-align:none}
+  #divPanel{scroll-snap-align:center}
   #contact{scroll-margin-top:26px}
   #story{scroll-margin-top:-85px}
   .partners-sec{scroll-margin-top:-72px}
@@ -131,6 +132,7 @@
         <h2 style="font-family:'Archivo';font-weight:500;font-size:clamp(32px,4.4vw,50px);margin:0;color:#161513;letter-spacing:-0.01em">Our Divisions</h2>
         <p style="color:#6d6a62;font-size:16px;margin:14px 0 0">Diverse portfolio. One vision — to bring the best of tomorrow, today.</p>
       </div>
+      <div id="divPanel">
       <div style="position:relative">
         <div class="divcard" style="background:#fff;border:1px solid #ece9e2;display:flex;flex-wrap:wrap;position:relative;overflow:hidden;height:620px;border-radius:40px;box-shadow:0 30px 70px -40px rgba(0,0,0,0.25)">
           <div class="divmedia" style="position:absolute;left:0;top:0;bottom:0;width:62%;min-width:300px;clip-path:polygon(0 0, 100% 0, 86% 100%, 0 100%)">
@@ -170,6 +172,7 @@
         </button>
       </div>
       <div id="divTabs" style="display:flex;flex-wrap:wrap;background:#0d0d0d;border:1px solid #0d0d0d;border-radius:20px;padding:8px;margin-top:20px"></div>
+      </div>
     </div>
   </section>
 
