@@ -11,7 +11,7 @@
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+  html{scroll-behavior:smooth;scroll-padding-top:74px;scroll-snap-type:y proximity}
   #explorer{scroll-snap-align:center}
   @media(max-width:900px){html{scroll-snap-type:none}}
   body{font-family:'Manrope',system-ui,sans-serif;color:#141311;background:#0d0d0d;-webkit-font-smoothing:antialiased}
@@ -42,7 +42,7 @@
 <div style="background:#f5f3ee;overflow-x:clip">
 
   <!-- ============ HEADER ============ -->
-  <header style="position:relative;z-index:100;background:#0d0d0d;color:#fff">
+  <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
     <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <a href="index.html"><img src="uploads/union-trading-logo.png" alt="Union Trading Co." style="height:42px;width:auto;filter:brightness(0) invert(1)"></a>
       <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap">
@@ -107,14 +107,14 @@
 
   <!-- ============ STORE EXPLORER ============ -->
   <section id="stores" style="position:relative;z-index:4;margin-top:max(48px, calc(32vh - 188px));background:transparent;color:#fff;padding:0 clamp(8px,1.4vw,20px) clamp(28px,3.4vw,48px)">
-    <div id="explorer" style="max-width:1240px;margin:0 auto;background:#0d0d0d;border-radius:26px;padding:clamp(20px,2.4vw,32px) clamp(24px,3vw,44px) clamp(18px,2.2vw,28px);box-shadow:0 50px 90px -55px rgba(0,0,0,0.55)">
+    <div id="explorer" style="max-width:1240px;margin:0 auto;background:#0d0d0d;border-radius:26px;padding:clamp(12px,1.6vw,20px) clamp(24px,3vw,44px) clamp(12px,1.6vw,18px);box-shadow:0 50px 90px -55px rgba(0,0,0,0.55)">
 
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:clamp(14px,1.8vw,22px);border-bottom:1px solid #232220">
         <span style="font-size:13px;color:#8f8c85;font-weight:600">Filter By</span>
         <div id="filterBtns" style="display:flex;gap:10px;flex-wrap:wrap"></div>
       </div>
 
-      <div class="explorer-grid" style="display:grid;grid-template-columns:minmax(0,0.78fr) minmax(0,1.85fr) minmax(0,0.68fr);gap:clamp(20px,2.4vw,40px);padding:clamp(16px,2vw,26px) 0;align-items:start">
+      <div class="explorer-grid" style="display:grid;grid-template-columns:minmax(0,0.78fr) minmax(0,1.85fr) minmax(0,0.68fr);gap:clamp(20px,2.4vw,40px);padding:clamp(10px,1.4vw,16px) 0;align-items:start">
 
         <div>
           <div style="font-family:'Archivo';font-weight:600;font-size:14px;letter-spacing:0.1em;color:#7c7972;margin-bottom:16px"><span id="storeNum">01</span> <span style="color:#4a4842">/ 04</span></div>
@@ -125,7 +125,7 @@
         </div>
 
         <div>
-          <div style="position:relative;width:100%;height:clamp(240px,40vh,440px);border-radius:16px;overflow:hidden;background:#161513">
+          <div style="position:relative;width:100%;height:clamp(160px,27vh,390px);border-radius:16px;overflow:hidden;background:#161513">
             <div id="galleryMain" style="position:absolute;inset:0"></div>
           </div>
           <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
