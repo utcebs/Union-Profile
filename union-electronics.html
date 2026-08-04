@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electronics Division — Union Trading Co.</title>
+<link rel="icon" type="image/png" href="uploads/union-trading-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:74px}
+  body{font-family:'Manrope',system-ui,sans-serif;color:#141311;background:#f5f3ee;-webkit-font-smoothing:antialiased}
+  a{color:#141311;text-decoration:none}
+  img{display:block;max-width:100%}
+  input,button{font-family:inherit}
+  .cover{width:100%;height:100%;object-fit:cover;display:block}
+  .eyebrow{font-size:12px;letter-spacing:0.26em;color:#9297a0;font-weight:700;text-transform:uppercase}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+  .hoverline{transition:border-color .25s,color .25s}
+  .hoverline:hover{border-bottom-color:#fff!important}
+  .shopnow:hover{background:#fff !important;color:#0d0d0d !important;border-color:#0d0d0d !important}
+  .darkbtn{transition:background .3s,gap .25s}.darkbtn:hover{background:#3a3833}
+  .footlink:hover{color:#fff}.sociallink:hover{background:#fff;color:#0d0d0d}
+  .ourlogo{flex:0 0 auto;width:clamp(46px,4.9vw,68px);height:26px;background-size:contain;background-repeat:no-repeat;background-position:center;filter:brightness(0);opacity:.46;transition:opacity .35s ease,transform .35s ease}
+  .ourlogo:hover{opacity:1;transform:scale(1.18)}
+  .hbrand{background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;padding:22px 18px 18px;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .hbrand:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(0,0,0,.35);border-color:#dcd7cb}
+  .hbrand-logo{height:40px;display:flex;align-items:center;justify-content:center;font-family:'Archivo';font-weight:800;letter-spacing:.02em}
+  .hbrand-media{flex:1;position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(180px,20vw,250px);margin:4px 0 14px}
+  .hbrand-media img{width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:scale(1.32);transform-origin:center bottom;filter:drop-shadow(0 18px 20px rgba(0,0,0,.26));transition:transform .45s ease}
+  .hbrand:hover .hbrand-media img{transform:scale(1.42);transform-origin:center bottom}
+  .hbrand-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .hbrand-disc{font-size:14.5px;color:#1a1a1a;font-weight:500;transition:font-weight .2s}
+  .hbrand:hover .hbrand-disc{font-weight:600}
+  .hbrand-arrow{width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid #e8e3d8;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 5px 12px -5px rgba(0,0,0,.25);transition:transform .25s}
+  .hbrand:hover .hbrand-arrow{transform:translateX(3px)}
+  .prodtile img{object-position:center bottom;transform:scale(1.32);transform-origin:center bottom;transition:transform .45s ease;filter:drop-shadow(0 18px 20px rgba(0,0,0,.26))}
+  .hbrand:hover .prodtile img{transform:scale(1.34) translateY(-10%)}
+  .prodcard{transition:transform .3s,box-shadow .3s,border-color .3s}
+  .prodcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(0,0,0,.4);border-color:#dcd7cb}
+  .learn{transition:gap .25s,color .25s}.prodcard:hover .learn{gap:12px;color:#161513}
+  .prodcard:hover .prodtile img{transform:scale(1.42);transform-origin:center bottom}
+  .arrowbtn{transition:background .2s,color .2s,border-color .2s}
+  .arrowbtn:hover{background:#161513;color:#fff;border-color:#161513}
+  .crumb a{color:#8b8880;transition:color .2s}.crumb a:hover{color:#fff}
+  .reachbtn{transition:background .3s,gap .25s}.reachbtn:hover{background:#e9e6df;gap:14px}
+  .viewbrand{transition:gap .25s}.viewbrand:hover{gap:13px}
+  .prod-rail::-webkit-scrollbar{display:none}
+  @media(max-width:980px){
+    .ue-hero-img{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;width:100%!important;height:300px}
+    .ue-hero-img>div{background:linear-gradient(0deg,#0d0d0d,rgba(13,13,13,0) 55%)!important}
+    .ue-hero .wrap{padding-left:clamp(20px,5vw,64px)!important;padding-right:clamp(20px,5vw,64px)!important}
+    .ue-hero-left{min-height:auto!important;max-width:none!important;padding:clamp(40px,7vw,60px) 0 clamp(40px,7vw,56px)!important}
+    .ue-hero .crumb{position:static!important;margin-bottom:6px}
+    .kp-grid{grid-template-columns:1fr!important}
+    .glance-inner{grid-template-columns:1fr!important}
+    .glance-fade{background:linear-gradient(0deg,#0d0d0d 24%,rgba(13,13,13,.5))!important}
+    .connect-grid{grid-template-columns:1fr!important}
+    .stat4,.contact4{grid-template-columns:1fr 1fr!important}
+  }
+  @media(max-width:620px){.hbrandrow,.feat3{grid-template-columns:1fr!important}.stat4,.contact4{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+<div style="overflow-x:clip">
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
+    <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <a href="index.html"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
+      <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap">
+        <a href="index.html#story" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
+        <a href="index.html#divisions" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Divisions</a>
+        <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
+        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Service Center</a>
+        <a href="careers.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
+        <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
+      </nav>
+      <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="ue-hero" style="background:#0d0d0d;color:#fff;position:relative;overflow:hidden">
+    <div class="ue-hero-img" style="position:absolute;top:0;right:0;bottom:0;width:66%">
+      <img class="cover" src="img/Careers/Div/UE-Banner image.png" alt="Electronics living room">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,#0d0d0d 0%,rgba(13,13,13,.94) 15%,rgba(13,13,13,.45) 38%,rgba(13,13,13,0) 62%)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,13,13,.5),rgba(13,13,13,0) 45%)"></div>
+    </div>
+    <div class="wrap" style="position:relative;z-index:2">
+    <div class="ue-hero-left" style="position:relative;min-height:clamp(560px,52vw,720px);max-width:560px;display:flex;flex-direction:column;justify-content:center;gap:clamp(22px,2.6vw,30px);padding:clamp(90px,9vw,120px) 0 clamp(70px,8vw,100px)">
+      <div class="crumb" style="position:absolute;top:clamp(24px,3.4vw,40px);left:0;font-size:13px;color:#6f6c65;display:flex;align-items:center;gap:9px">
+        <a href="index.html">Home</a><span>&rsaquo;</span><a href="index.html#divisions">Our Divisions</a><span>&rsaquo;</span><span style="color:#cfcbc0">Electronics</span>
+      </div>
+      <img src="img/Careers/Div/UTC-logo-white-EN.png" alt="Union Electronics" style="width:clamp(280px,34vw,460px);max-width:100%;height:auto;margin:2px 0">
+      <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;padding:0;border:0">Union Electronics — Powering a Smarter World</h1>
+      <p style="color:#a8a49b;font-size:15.5px;line-height:1.8;margin:0;max-width:430px">We bring the world's most trusted electronics brands closer to you. From cutting-edge consumer electronics to advanced home appliances, we deliver innovation, quality, and reliability in every product.</p>
+      <div class="feat3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px);margin-top:6px;max-width:470px">
+        <div>
+          <div style="width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg></div>
+          <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:14px">Trusted Brands</div>
+          <div style="color:#8b8880;font-size:12.5px;line-height:1.5;margin-top:5px">Global partnerships you can rely on.</div>
+        </div>
+        <div>
+          <div style="width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:14px">Latest Technology</div>
+          <div style="color:#8b8880;font-size:12.5px;line-height:1.5;margin-top:5px">Innovative solutions for modern living.</div>
+        </div>
+        <div>
+          <div style="width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0116 0"/><rect x="2.5" y="13" width="4" height="7" rx="1.5"/><rect x="17.5" y="13" width="4" height="7" rx="1.5"/><path d="M20 20a4 4 0 01-4 3h-2"/></svg></div>
+          <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:14px">Dedicated Support</div>
+          <div style="color:#8b8880;font-size:12.5px;line-height:1.5;margin-top:5px">After-sales service you can count on.</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ OUR BRANDS strip (overlaps hero) ============ -->
+  <div class="wrap" style="position:relative;z-index:5;margin-top:clamp(-70px,-6vw,-48px)">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 30px 70px -34px rgba(0,0,0,.35);padding:clamp(22px,2.6vw,34px) clamp(24px,3vw,44px)">
+      <div style="font-family:'Archivo';font-weight:700;font-size:16px;color:#161513;margin-bottom:20px">Our Brands</div>
+      <div style="display:flex;align-items:center;gap:clamp(18px,2.6vw,40px);flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:clamp(8px,1.3vw,18px);flex-wrap:wrap;flex:1">
+          <div class="ourlogo" role="img" aria-label="Apple" style="background-image:url('uploads/applg_t.png')"></div>
+          <div class="ourlogo" role="img" aria-label="JBL" style="background-image:url('uploads/JBLlg_t.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Braun" style="background-image:url('assets/b1.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Hitachi" style="background-image:url('assets/b4.png')"></div>
+          <div class="ourlogo" role="img" aria-label="O General" style="background-image:url('assets/b10.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Glysolid" style="background-image:url('assets/b7.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Prestige" style="background-image:url('assets/b9.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Eagle Safes" style="background-image:url('assets/b8.png')"></div>
+          <div class="ourlogo" role="img" aria-label="India Gate" style="background-image:url('assets/b3.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Angel Wear" style="background-image:url('assets/b2.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Brandili" style="background-image:url('assets/b5.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Constance Carroll" style="background-image:url('assets/b6.png')"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;flex:none">
+          <div style="width:1px;height:34px;background:#e6e2d8"></div>
+          <a href="#" class="viewbrand" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#161513;white-space:nowrap">View All <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KEY PARTNERS + HERO BRANDS ============ -->
+  <div class="wrap" style="padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(24px,3vw,36px)">
+    <div class="kp-grid" style="display:grid;grid-template-columns:0.8fr 2fr;gap:clamp(30px,4vw,56px);align-items:start">
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px">Key Partners</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1.08;margin:0;color:#161513">Global brands.<br>Local commitment.</h2>
+        <p style="color:#6f6c65;font-size:14.5px;line-height:1.75;margin:20px 0 28px;max-width:280px">We partner with industry leaders to bring authentic products and world-class experiences to our customers across Kuwait.</p>
+        <a href="#" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px">VIEW ALL BRANDS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px">Hero Brands</div>
+        <div class="hbrandrow" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.4vw,18px)">
+          <div class="hbrand">
+            <div class="hbrand-logo" style="color:#1428a0;font-size:18px">SAMSUNG</div>
+            <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Samsung.png" alt="Samsung products"></div>
+            <div class="hbrand-foot"><span class="hbrand-disc">Discover Samsung</span><a href="#" class="hbrand-arrow" aria-label="Discover Samsung"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1428a0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+          <div class="hbrand">
+            <div class="hbrand-logo" style="color:#a50034;font-size:23px">LG</div>
+            <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/LG.png" alt="LG products"></div>
+            <div class="hbrand-foot"><span class="hbrand-disc">Discover LG</span><a href="#" class="hbrand-arrow" aria-label="Discover LG"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a50034" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+          <div class="hbrand">
+            <div class="hbrand-logo" style="color:#111;letter-spacing:.03em;font-size:20px">SONY</div>
+            <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Song.png" alt="Sony products"></div>
+            <div class="hbrand-foot"><span class="hbrand-disc">Discover Sony</span><a href="#" class="hbrand-arrow" aria-label="Discover Sony"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+          <div class="hbrand">
+            <div class="hbrand-logo" style="color:#e2001a;font-size:18px">BOSCH</div>
+            <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Bosch.png" alt="Bosch products"></div>
+            <div class="hbrand-foot"><span class="hbrand-disc">Discover Bosch</span><a href="#" class="hbrand-arrow" aria-label="Discover Bosch"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e2001a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+          <div class="hbrand">
+            <div class="hbrand-logo" style="color:#0b5ed7;font-size:18px">PHILIPS</div>
+            <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Philips.png" alt="Philips products"></div>
+            <div class="hbrand-foot"><span class="hbrand-disc">Discover Philips</span><a href="#" class="hbrand-arrow" aria-label="Discover Philips"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0b5ed7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ OUR DIVISION AT A GLANCE ============ -->
+  <div class="wrap" style="padding-top:clamp(30px,4vw,44px);padding-bottom:clamp(30px,4vw,44px)">
+    <div class="glance-grid" style="position:relative;background:#0d0d0d;border-radius:14px;overflow:hidden;min-height:clamp(230px,23vw,300px)">
+      <img class="cover" src="img/Careers/Div/UE - 2mini banner.png" alt="Union electronics showroom" style="position:absolute;inset:0;object-position:left center">
+      <div class="glance-fade" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,13,0) 22%,rgba(13,13,13,.4) 42%,rgba(13,13,13,.88) 60%,#0d0d0d 100%)"></div>
+      <div class="glance-inner" style="position:relative;display:grid;grid-template-columns:1fr 1.3fr;min-height:inherit">
+        <div></div>
+        <div style="padding:clamp(16px,2.2vw,28px) clamp(22px,2.8vw,38px);display:flex;flex-direction:column;justify-content:center;color:#fff">
+        <div style="font-size:11.5px;letter-spacing:0.28em;color:#8b8880;font-weight:600;margin-bottom:clamp(22px,3vw,32px)">OUR DIVISION AT A GLANCE</div>
+        <div class="stat4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,26px)">
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">120+</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">Global Brands</div>
+          </div>
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 8h6v13H4"/><path d="M7 7h4M7 11h4M7 15h4M17 12h.01M17 16h.01"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">10,000+</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">Products</div>
+          </div>
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">500K+</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">Happy Customers</div>
+          </div>
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">75+</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">Years of Trust</div>
+          </div>
+        </div>
+        <p style="color:#8b8880;font-size:13.5px;margin:clamp(22px,3vw,30px) 0 0;line-height:1.6">Delivering excellence, building trust, and powering everyday life.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HERO PRODUCTS ============ -->
+  <div class="wrap" style="padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(20px,3vw,30px)">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:clamp(24px,3vw,34px)">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Hero Products</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.05;margin:0;color:#161513">Innovation you can experience.</h2>
+      </div>
+      <div style="display:flex;gap:10px;flex:none">
+        <div class="arrowbtn" data-prod="-1" style="width:44px;height:44px;border-radius:50%;border:1px solid #d1d4d9;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#161513"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
+        <div class="arrowbtn" data-prod="1" style="width:44px;height:44px;border-radius:50%;border:1px solid #d1d4d9;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#161513"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
+      </div>
+    </div>
+    <div id="prodRail" class="prod-rail" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.5vw,18px)">
+      <div class="prodcard" style="background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;padding:22px 18px 18px;display:flex;flex-direction:column">
+        <div class="prodtile" style="position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(160px,17vw,200px);overflow:visible;margin-bottom:14px"><img src="img/Careers/Div/Hero brands sample/S24.png" alt="Samsung Galaxy S24 Ultra" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:14.5px;color:#161513">Samsung Galaxy S24 Ultra</div>
+        <div style="color:#9a968c;font-size:12.5px;margin-top:4px">Smartphone</div>
+        <a href="#" class="learn" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#57544c;margin-top:16px">Learn More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="prodcard" style="background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;padding:22px 18px 18px;display:flex;flex-direction:column">
+        <div class="prodtile" style="position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(160px,17vw,200px);overflow:visible;margin-bottom:14px"><img src="img/Careers/Div/Hero brands sample/LG Oled.png" alt="LG OLED evo C4" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:14.5px;color:#161513">LG OLED evo C4</div>
+        <div style="color:#9a968c;font-size:12.5px;margin-top:4px">4K Smart TV</div>
+        <a href="#" class="learn" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#57544c;margin-top:16px">Learn More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="prodcard" style="background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;padding:22px 18px 18px;display:flex;flex-direction:column">
+        <div class="prodtile" style="position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(160px,17vw,200px);overflow:visible;margin-bottom:14px"><img src="img/Careers/Div/Hero brands sample/Sony headphones.png" alt="Sony WH-1000XM5" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:14.5px;color:#161513">Sony WH-1000XM5</div>
+        <div style="color:#9a968c;font-size:12.5px;margin-top:4px">Wireless Headphones</div>
+        <a href="#" class="learn" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#57544c;margin-top:16px">Learn More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="prodcard" style="background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;padding:22px 18px 18px;display:flex;flex-direction:column">
+        <div class="prodtile" style="position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(160px,17vw,200px);overflow:visible;margin-bottom:14px"><img src="img/Careers/Div/Hero brands sample/philips wm.png" alt="Bosch Series 8 washer" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:14.5px;color:#161513">Bosch Series 8</div>
+        <div style="color:#9a968c;font-size:12.5px;margin-top:4px">Front Load Washer</div>
+        <a href="#" class="learn" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#57544c;margin-top:16px">Learn More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="prodcard" style="background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;padding:22px 18px 18px;display:flex;flex-direction:column">
+        <div class="prodtile" style="position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(160px,17vw,200px);overflow:visible;margin-bottom:14px"><img src="img/Careers/Div/Hero brands sample/Airfryer.png" alt="Philips Airfryer XXL" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:14.5px;color:#161513">Philips Airfryer XXL</div>
+        <div style="color:#9a968c;font-size:12.5px;margin-top:4px">Premium Airfryer</div>
+        <a href="#" class="learn" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#57544c;margin-top:16px">Learn More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LET'S CONNECT ============ -->
+  <div class="wrap" style="padding-top:clamp(40px,5vw,60px);padding-bottom:clamp(48px,6vw,80px)">
+    <div style="position:relative;background:#0d0d0d;border-radius:16px;overflow:hidden">
+      <img src="img/Careers/Div/UE - mini banner.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;pointer-events:none">
+      <div class="connect-grid" style="position:relative;display:grid;grid-template-columns:0.78fr 1.6fr;gap:clamp(24px,3.4vw,44px);align-items:center;padding:clamp(16px,2.2vw,28px) clamp(14px,1.9vw,26px)">
+        <div style="color:#fff">
+          <div style="font-size:11.5px;letter-spacing:0.28em;color:#8b8880;font-weight:600;margin-bottom:16px">LET'S CONNECT</div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(14px,1.5vw,20px);line-height:1.15;margin:0">We're here to help<br>your world work better.</h2>
+          <p style="color:#a8a49b;font-size:14.5px;line-height:1.7;margin:18px 0 26px;max-width:320px">Have a question, need support, or looking for business solutions? Reach out to our team.</p>
+          <a href="index.html#contact" class="reachbtn" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px">REACH OUT TO US <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="contact4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(5px,0.7vw,8px)">
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 005.5 5.5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 6a2 2 0 012-2z"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Call Us</div>
+            <div style="color:#8b8880;font-size:11.5px;margin-top:5px;line-height:1.4">+965 1 802 555</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Email Us</div>
+            <div style="color:#8b8880;font-size:11.5px;margin-top:5px;line-height:1.4">info@utc.com.kw</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Visit Us</div>
+            <div style="color:#8b8880;font-size:11.5px;margin-top:5px;line-height:1.4">Head Office, Shuwaikh Kuwait</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0116 0"/><rect x="2.5" y="13" width="4" height="7" rx="1.5"/><rect x="17.5" y="13" width="4" height="7" rx="1.5"/><path d="M20 20a4 4 0 01-4 3h-2"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Working Hours</div>
+            <div style="color:#8b8880;font-size:11.5px;margin-top:5px;line-height:1.4">Sun - Thu: 8:00 AM - 5:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
+    <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
+      <div>
+        <img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block;margin-bottom:22px">
+        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px">Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.</p>
+        <div style="display:flex;gap:12px">
+          <a href="#" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
+          <a href="#" class="sociallink" aria-label="X" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 4h2.6l-5.7 6.5L21 20h-5.3l-4.2-5.4L6.7 20H4.1l6.1-7L3.5 4h5.4l3.8 5z"></path></svg></a>
+          <a href="#" class="sociallink" aria-label="Instagram" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm10 3.5a1 1 0 100 2 1 1 0 000-2z"></path></svg></a>
+          <a href="#" class="sociallink" aria-label="LinkedIn" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">About</div>
+        <div style="display:flex;flex-direction:column;gap:13px">
+          <a href="index.html#story" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">About UTC</a>
+          <a href="#" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">FAQ</a>
+          <a href="careers.html" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Careers</a>
+          <a href="sitemap.html" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
+          <a href="privacy-policy.html" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Store Locations</div>
+        <div style="font-size:13px;font-weight:700;color:#cfcbc0;margin-bottom:6px">Department Stores</div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.6;margin:0 0 18px">Salmiya, Farwaniya, Hawally, Salhiya, Fahaheel</p>
+        <div style="font-size:13px;font-weight:700;color:#cfcbc0;margin-bottom:6px">Appliances Stores</div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.6;margin:0">Salhiya, Jahra, Farwaniya, Shuwaikh &amp; Hawally Showrooms</p>
+      </div>
+      <div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Subscribe</div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.6;margin:0 0 18px">Subscribe to receive the latest updates, promotions and news.</p>
+        <div style="display:flex;border:1px solid #33312d;border-radius:999px;overflow:hidden">
+          <input placeholder="Email Address" style="flex:1;min-width:0;background:none;border:none;outline:none;color:#fff;padding:13px 18px;font-size:14px">
+          <button aria-label="Subscribe" style="background:#fff;border:none;cursor:pointer;width:48px;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#6a6760;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
+  </footer>
+</div>
+
+<script>
+  // hero products rail arrows (horizontal scroll on smaller widths)
+  document.querySelectorAll('[data-prod]').forEach(function(b){
+    b.addEventListener('click',function(){ var r=document.getElementById('prodRail'); if(r) r.scrollBy({left:(+b.dataset.prod)*300,behavior:'smooth'}); });
+  });
+</script>
+</body>
+</html>

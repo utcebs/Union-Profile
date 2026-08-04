@@ -64,7 +64,7 @@
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
     <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
-      <a href="index.html"><img src="uploads/union-trading-logo.png" alt="Union Trading Co." style="height:42px;width:auto;filter:brightness(0) invert(1)"></a>
+      <a href="index.html"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
       <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap">
         <a href="index.html#story" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="index.html#divisions" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
@@ -172,30 +172,30 @@
           <div style="border-radius:6px;overflow:hidden"><img class="cover" src="img/store-04-main.webp" alt=""></div>
           <div style="border-radius:6px;overflow:hidden"><img class="cover" src="img/store-01-g1.webp" alt=""></div>
         </div>
-        <a href="#" class="lightpill" style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:11px;background:#faf8f3;color:#161513;font-size:12px;font-weight:700;letter-spacing:0.14em;padding:14px 26px;border-radius:999px;border:1px solid transparent;box-shadow:0 14px 34px -14px rgba(0,0,0,.5);transition:background .3s,color .3s,border-color .3s">VIEW MORE LIFE AT UNION
+        <a href="#" id="viewLife" class="lightpill" style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:11px;background:#faf8f3;color:#161513;font-size:12px;font-weight:700;letter-spacing:0.14em;padding:14px 26px;border-radius:999px;border:1px solid transparent;box-shadow:0 14px 34px -14px rgba(0,0,0,.5);transition:background .3s,color .3s,border-color .3s">VIEW MORE LIFE AT UNION
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </section>
 
     <!-- ============ EMPLOYEE STORY ============ -->
     <section class="emp-grid" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:clamp(24px,3vw,44px);background:#161513;border-radius:10px;padding:clamp(28px,3.4vw,44px);margin-bottom:clamp(46px,6vw,84px)">
-      <div style="display:grid;grid-template-columns:1.1fr .8fr;gap:clamp(24px,3vw,40px);align-items:center">
+      <div id="empMain" style="display:grid;grid-template-columns:1.1fr .8fr;gap:clamp(24px,3vw,40px);align-items:center;transition:opacity .3s ease">
         <div>
           <div class="eyebrow" style="margin-bottom:18px">Employee Stories</div>
           <div style="font-family:'Cormorant Garamond',serif;color:#7a756b;font-size:40px;line-height:0;height:16px">&ldquo;</div>
-          <p style="font-family:'Playfair Display',serif;color:#f3efe6;font-size:clamp(19px,2vw,25px);line-height:1.4;margin:8px 0 0">At Union, I found more than a job, I found a place where I can grow, make an impact and build a career I'm proud of.</p>
+          <p id="empQuote" style="font-family:'Playfair Display',serif;color:#f3efe6;font-size:clamp(19px,2vw,25px);line-height:1.4;margin:8px 0 0">At Union, I found more than a job, I found a place where I can grow, make an impact and build a career I'm proud of.</p>
         </div>
-        <div style="border-radius:8px;overflow:hidden;height:clamp(210px,22vw,260px)"><img class="cover" src="img/Careers/Aisha.png" alt="Aisha Al-Mutairi"></div>
+        <div style="border-radius:8px;overflow:hidden;height:clamp(210px,22vw,260px)"><img id="empImg" class="cover" src="img/Careers/Aisha.png" alt="Aisha Al-Mutairi"></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px;min-width:180px">
-        <div>
-          <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:18px">Aisha Al-Mutairi</div>
-          <div style="color:#a8a49b;font-size:13.5px;margin-top:5px">Marketing Executive</div>
-          <div style="color:#c2c6cd;font-size:13px;font-weight:700;margin-top:10px">4 Years at UTC</div>
+        <div id="empMeta" style="transition:opacity .3s ease">
+          <div id="empName" style="color:#fff;font-family:'Archivo';font-weight:700;font-size:18px">Aisha Al-Mutairi</div>
+          <div id="empRole" style="color:#a8a49b;font-size:13.5px;margin-top:5px">Marketing Executive</div>
+          <div id="empYears" style="color:#c2c6cd;font-size:13px;font-weight:700;margin-top:10px">4 Years at UTC</div>
         </div>
         <div style="display:flex;gap:10px">
-          <div class="arrowbtn" style="width:38px;height:38px;border-radius:50%;border:1px solid #4a4741;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
-          <div class="arrowbtn" style="width:38px;height:38px;border-radius:50%;border:1px solid #4a4741;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
+          <div class="arrowbtn" id="empPrev" style="width:38px;height:38px;border-radius:50%;border:1px solid #4a4741;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
+          <div class="arrowbtn" id="empNext" style="width:38px;height:38px;border-radius:50%;border:1px solid #4a4741;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
         </div>
       </div>
     </section>
@@ -381,7 +381,7 @@
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
-        <img src="uploads/union-trading-logo.png" alt="Union Trading Co." style="height:40px;width:auto;filter:brightness(0) invert(1);margin-bottom:22px">
+        <img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block;margin-bottom:22px">
         <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px">Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.</p>
         <div style="display:flex;gap:12px">
           <a href="#" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
@@ -396,8 +396,8 @@
           <a href="index.html#story" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">About UTC</a>
           <a href="#" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">FAQ</a>
           <a href="careers.html" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Careers</a>
-          <a href="#" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
-          <a href="#" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
+          <a href="sitemap.html" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
+          <a href="privacy-policy.html" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
         </div>
       </div>
       <div>
@@ -494,6 +494,145 @@
   </div>
 </div>
 
+<!-- ============ LIFE AT UNION — POP-UP MODAL ============ -->
+<style>
+  #lifeModal{position:fixed;inset:0;z-index:1001;display:none;align-items:center;justify-content:center;padding:clamp(10px,2.5vw,30px);background:rgba(18,17,15,.55);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+  #lifeModal.open{display:flex}
+  .lf-panel{position:relative;width:100%;max-width:1380px;height:min(90vh,880px);background:#eae8e3;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:minmax(300px,33%) 1fr;grid-template-rows:minmax(0,1fr);box-shadow:0 40px 120px -30px rgba(0,0,0,.55)}
+  .lf-left{position:relative;background:#f6f4ef;padding:clamp(30px,3.2vw,52px) clamp(28px,2.8vw,46px);display:flex;flex-direction:column;justify-content:center;gap:clamp(26px,4.4vh,48px);overflow:hidden}
+  .lf-wave{position:absolute;top:0;left:0;width:118%;height:100%;pointer-events:none;opacity:.5;color:#e4ded1;z-index:0}
+  .lf-eyebrow{position:relative;z-index:1;font-size:12px;letter-spacing:0.28em;font-weight:600;color:#9a968c}
+  .lf-h2{position:relative;z-index:1;font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,3.4vw,52px);color:#161513;line-height:1.02;margin:10px 0 0}
+  .lf-p{position:relative;z-index:1;color:#615e57;font-size:15px;line-height:1.7;margin:16px 0 0;max-width:340px}
+  .lf-feats{position:relative;z-index:1;display:flex;flex-direction:column;gap:13px}
+  .lf-feat{display:flex;gap:14px;align-items:center;border:1px solid #e6e0d5;border-radius:14px;padding:15px 17px;background:rgba(255,255,255,.5)}
+  .lf-feat-ic{width:38px;height:38px;flex:none;color:#161513;display:flex;align-items:center;justify-content:center}
+  .lf-feat-t{font-family:'Archivo';font-weight:700;font-size:15px;color:#161513}
+  .lf-feat-s{color:#8a867e;font-size:12.5px;margin-top:2px;line-height:1.4}
+  .lf-right{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;background:#eae8e3}
+  .lf-rtop{display:flex;align-items:center;gap:12px;padding:clamp(20px,2vw,28px) clamp(20px,2.2vw,32px) clamp(4px,0.6vw,8px)}
+  .lf-pills{display:flex;gap:9px;flex-wrap:wrap;flex:1;min-width:0}
+  .lf-pill{cursor:pointer;border:1px solid #d8d3ca;background:#fff;color:#5f5c54;border-radius:999px;padding:9px 18px;font-size:13px;white-space:nowrap;transition:.18s}
+  .lf-pill:hover{border-color:#9297a0;color:#161513}
+  .lf-pill.on{background:#161513;color:#fff;border-color:#161513}
+  .lf-x{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid #e2ddd3;color:#161513;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .25s ease}
+  .lf-x:hover{transform:rotate(90deg)}
+  .lf-gallery{flex:1;min-height:0;overflow-y:auto;padding:clamp(14px,1.6vw,22px) clamp(20px,2.2vw,32px);display:flex;flex-direction:column}
+  .lf-gallery::-webkit-scrollbar{width:8px}.lf-gallery::-webkit-scrollbar-thumb{background:#d3cec3;border-radius:8px}.lf-gallery::-webkit-scrollbar-track{background:transparent}
+  .lf-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:12px;flex:1;min-height:0}
+  .lf-grid.flow{grid-template-rows:none;grid-auto-rows:clamp(150px,20vh,215px);grid-auto-flow:dense;flex:none}
+  .lf-grid.flow .lf-tile{grid-row:span 1}
+  .lf-tile{position:relative;border-radius:12px;overflow:hidden;background:#dcd8d1}
+  .lf-tile img{width:100%;height:100%;object-fit:cover;display:block}
+  .lf-cta{margin:clamp(6px,0.8vw,10px) clamp(20px,2.2vw,32px) clamp(18px,1.8vw,26px);background:#0d0d0d;border-radius:16px;padding:clamp(18px,1.7vw,24px) clamp(20px,2.2vw,30px);display:flex;align-items:center;justify-content:space-between;gap:20px;color:#fff}
+  .lf-cta-t{font-family:'Archivo';font-weight:700;font-size:clamp(15px,1.5vw,18px)}
+  .lf-cta-s{color:#b7b4ac;font-size:13px;margin-top:3px}
+  .lf-ctabtn{background:#fff;color:#0d0d0d;border-radius:999px;padding:14px 26px;font-size:12px;font-weight:700;letter-spacing:0.12em;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:.2s;flex:none}
+  .lf-ctabtn:hover{background:#2a2a2a;color:#fff}
+  @media(max-width:920px){
+    .lf-panel{grid-template-columns:1fr;height:92vh}
+    .lf-left{display:none}
+    .lf-grid{grid-template-columns:repeat(2,1fr)!important;grid-template-rows:none!important;grid-auto-rows:clamp(120px,22vw,160px)!important;flex:none!important}
+    .lf-grid .lf-tile{grid-area:auto!important;grid-row:span 2}
+    .lf-cta{flex-direction:column;align-items:flex-start;gap:14px}
+  }
+  .lf-tile{cursor:pointer}
+  .lf-tile img{transition:transform .45s ease}
+  .lf-tile:hover img{transform:scale(1.06)}
+  .lf-lb{position:fixed;inset:0;z-index:1002;display:none;align-items:center;justify-content:center;background:rgba(8,8,8,.93);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:clamp(20px,4vw,64px)}
+  .lf-lb.open{display:flex}
+  .lf-lb img{max-width:min(1100px,90vw);max-height:84vh;border-radius:12px;object-fit:contain;box-shadow:0 30px 90px -20px rgba(0,0,0,.8)}
+  .lf-lb-btn{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .lf-lb-btn:hover{background:rgba(255,255,255,.22)}
+  .lf-lb-close{top:clamp(18px,2.4vw,30px);right:clamp(18px,2.4vw,30px);width:46px;height:46px}
+  .lf-lb-prev{left:clamp(14px,2.2vw,34px);top:50%;transform:translateY(-50%)}
+  .lf-lb-next{right:clamp(14px,2.2vw,34px);top:50%;transform:translateY(-50%)}
+  .lf-lb-counter{position:absolute;bottom:clamp(18px,2.6vw,32px);left:50%;transform:translateX(-50%);color:#fff;font-size:13px;letter-spacing:.14em;font-weight:600;background:rgba(255,255,255,.1);padding:8px 18px;border-radius:999px}
+</style>
+<div id="lifeModal" role="dialog" aria-modal="true" aria-label="Life at Union">
+  <div class="lf-panel">
+    <div class="lf-left">
+      <svg class="lf-wave" viewBox="0 0 380 620" fill="none" stroke="currentColor" stroke-width="1" preserveAspectRatio="none">
+        <path d="M20 -20 C 70 150 -30 330 40 640"/><path d="M60 -20 C 110 150 10 330 80 640"/>
+        <path d="M100 -20 C 150 150 50 330 120 640"/><path d="M140 -20 C 190 150 90 330 160 640"/>
+        <path d="M180 -20 C 230 150 130 330 200 640"/><path d="M220 -20 C 270 150 170 330 240 640"/>
+        <path d="M260 -20 C 310 150 210 330 280 640"/><path d="M300 -20 C 350 150 250 330 320 640"/>
+      </svg>
+      <div>
+        <div class="lf-eyebrow">BE PART OF MORE</div>
+        <h2 class="lf-h2">Life at Union</h2>
+        <p class="lf-p">A culture built on trust, collaboration, and growth. Here, ideas are valued, people are empowered, and every day is an opportunity to make an impact.</p>
+      </div>
+      <div class="lf-feats">
+        <div class="lf-feat"><div class="lf-feat-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16.5 5.2a3.2 3.2 0 010 5.6M21.5 20a6.5 6.5 0 00-5-6.3"/></svg></div><div><div class="lf-feat-t">Collaborative</div><div class="lf-feat-s">We grow stronger together.</div></div></div>
+        <div class="lf-feat"><div class="lf-feat-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l3.5-4 3 2.5L20 7"/><path d="M20 7v4M20 7h-4"/></svg></div><div><div class="lf-feat-t">Purpose Driven</div><div class="lf-feat-s">We create value that matters.</div></div></div>
+        <div class="lf-feat"><div class="lf-feat-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7z"/></svg></div><div><div class="lf-feat-t">Growth Focused</div><div class="lf-feat-s">Your potential, our priority.</div></div></div>
+      </div>
+    </div>
+    <div class="lf-right">
+      <div class="lf-rtop">
+        <div class="lf-pills" id="lfPills">
+          <div class="lf-pill on" data-cat="all">All</div>
+          <div class="lf-pill" data-cat="people">People</div>
+          <div class="lf-pill" data-cat="workplace">Workplace</div>
+          <div class="lf-pill" data-cat="events">Events</div>
+          <div class="lf-pill" data-cat="growth">Growth</div>
+          <div class="lf-pill" data-cat="community">Community</div>
+        </div>
+        <button class="lf-x" id="lfX" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="lf-gallery"><div class="lf-grid" id="lfGrid"></div></div>
+      <div class="lf-cta">
+        <div style="display:flex;align-items:center;gap:16px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l1.7 5L18.5 8.7l-4.8 1.7L12 15.5l-1.7-5.1L5.5 8.7 10.3 7z"/><path d="M18.6 13l.8 2.4 2.4.8-2.4.8-.8 2.4-.8-2.4-2.4-.8 2.4-.8z"/></svg>
+          <div><div class="lf-cta-t">Your story starts here.</div><div class="lf-cta-s">Explore opportunities and build a future with Union.</div></div>
+        </div>
+        <a href="#" id="lfViewJobs" class="lf-ctabtn">VIEW OPEN POSITIONS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div id="lfLightbox" class="lf-lb" aria-hidden="true">
+    <button class="lf-lb-btn lf-lb-close" id="lfLbClose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button class="lf-lb-btn lf-lb-prev" id="lfLbPrev" aria-label="Previous"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <img id="lfLbImg" alt="">
+    <button class="lf-lb-btn lf-lb-next" id="lfLbNext" aria-label="Next"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+    <div class="lf-lb-counter" id="lfLbCounter"></div>
+  </div>
+</div>
+
+<!-- ============ VIDEO PLAYER — POP-UP ============ -->
+<style>
+  .vid-modal{position:fixed;inset:0;z-index:1003;display:none;align-items:center;justify-content:center;background:rgba(6,6,6,.9);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:clamp(16px,3vw,54px)}
+  .vid-modal.open{display:flex}
+  .vid-card{position:relative;width:min(760px,92vw);max-height:90vh;background:#100f0e;border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden;box-shadow:0 40px 110px -30px rgba(0,0,0,.8)}
+  .vid-media{position:relative;aspect-ratio:1709/797;background:#000}
+  .vid-media video{width:100%;height:100%;display:block;object-fit:cover}
+  .vid-close{position:absolute;top:13px;right:13px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.22);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:.2s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .vid-close:hover{background:rgba(0,0,0,.72);transform:rotate(90deg)}
+  .vid-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 18px;background:#0c0b0b;border-top:1px solid rgba(255,255,255,.06)}
+  .vid-eyebrow{font-size:10px;letter-spacing:.22em;color:#8f8b81;font-weight:600}
+  .vid-title{font-family:'Playfair Display',serif;color:#f3efe6;font-size:16px;margin-top:3px;line-height:1}
+  .vid-fs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.12em;padding:9px 16px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
+  .vid-fs:hover{background:rgba(255,255,255,.16)}
+</style>
+<div id="vidModal" class="vid-modal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="vid-card">
+    <button class="vid-close" id="vidClose" aria-label="Close" title="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="vid-media">
+      <video id="vidModalVideo" controls playsinline preload="metadata" poster="img/Careers/Video%20Banner.png">
+        <source src="img/Careers/Video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vid-bar">
+      <div>
+        <div class="vid-eyebrow">WHY WORK WITH US</div>
+        <div class="vid-title">More than a job.</div>
+      </div>
+      <button class="vid-fs" id="vidFs" aria-label="Fullscreen" title="Fullscreen"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5a1 1 0 011-1h4M20 9V5a1 1 0 00-1-1h-4M4 15v4a1 1 0 001 1h4M20 15v4a1 1 0 01-1 1h-4"/></svg>FULLSCREEN</button>
+    </div>
+  </div>
+</div>
+
 <script>
   // size the hero to exactly the first frame (viewport minus the real header height) — no gap top/bottom
   function fitHero(){
@@ -502,15 +641,26 @@
     else if(s) s.style.minHeight='';
   }
   window.addEventListener('resize',fitHero); window.addEventListener('load',fitHero); fitHero();
-  // real video in the "More than a job" block: overlay + PLAY VIDEO button start it, native controls appear on play
+  // "More than a job" video: overlay play button plays inline; PLAY VIDEO button opens a popup player (with fullscreen)
   (function(){
     var v=document.getElementById('whyVideo'), ov=document.getElementById('whyPlayOverlay'), btn=document.getElementById('whyPlayBtn');
-    if(!v) return;
-    function play(e){ if(e) e.preventDefault(); v.setAttribute('controls',''); var p=v.play(); if(p&&p.catch) p.catch(function(){}); if(ov) ov.style.display='none'; }
-    if(ov) ov.addEventListener('click',play);
-    if(btn) btn.addEventListener('click',play);
-    v.addEventListener('play',function(){ if(ov) ov.style.display='none'; });
-    v.addEventListener('ended',function(){ v.removeAttribute('controls'); if(ov) ov.style.display='flex'; });
+    // inline playback via the overlay button on the video itself
+    function playInline(e){ if(e) e.preventDefault(); if(!v) return; v.setAttribute('controls',''); var p=v.play(); if(p&&p.catch) p.catch(function(){}); if(ov) ov.style.display='none'; }
+    if(ov) ov.addEventListener('click',playInline);
+    if(v){
+      v.addEventListener('play',function(){ if(ov) ov.style.display='none'; });
+      v.addEventListener('ended',function(){ v.removeAttribute('controls'); if(ov) ov.style.display='flex'; });
+    }
+    // popup player via the PLAY VIDEO button
+    var vm=document.getElementById('vidModal'), mv=document.getElementById('vidModalVideo'), vc=document.getElementById('vidClose'), vf=document.getElementById('vidFs');
+    function openVid(e){ if(e) e.preventDefault(); if(!vm) return; vm.classList.add('open'); document.body.style.overflow='hidden'; if(mv){ try{ mv.currentTime=0; }catch(_){} var p=mv.play(); if(p&&p.catch) p.catch(function(){}); } }
+    function closeVid(){ if(!vm) return; vm.classList.remove('open'); document.body.style.overflow=''; if(mv) mv.pause(); }
+    function fullscreen(){ if(!mv) return; var el=mv; if(el.requestFullscreen) el.requestFullscreen(); else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen(); else if(el.webkitEnterFullscreen) el.webkitEnterFullscreen(); }
+    if(btn) btn.addEventListener('click',openVid);
+    if(vc) vc.addEventListener('click',closeVid);
+    if(vf) vf.addEventListener('click',fullscreen);
+    if(vm) vm.addEventListener('click',function(e){ if(e.target===vm) closeVid(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&vm&&vm.classList.contains('open')) closeVid(); });
   })();
   // whole job card clickable -> its detail page (Apply link href is already set in HTML)
   document.querySelectorAll('#jobRail .jobcard').forEach(function(c){
@@ -622,6 +772,95 @@
         p.classList.add('on'); filter=p.dataset.cat; renderList(); renderDetail(); detail.scrollTop=0;
       });
     });
+  })();
+
+  // ============ LIFE AT UNION pop-up ============
+  (function(){
+    var modal=document.getElementById('lifeModal'), grid=document.getElementById('lfGrid');
+    if(!modal) return;
+    var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+    // area = grid-area shorthand: row-start / col-start / row-end / col-end  (4-col x 3-row mosaic for "All")
+    var LIFE=[
+      {src:'img/Careers/Hero.png',   alt:'Team collaborating',  cat:'people',    area:'1 / 1 / 3 / 3'},
+      {src:'img/store-01-g1.webp',   alt:'Strategy session',    cat:'growth',    area:'1 / 3 / 2 / 4'},
+      {src:'img/store-01-g0.webp',   alt:'Union workspace',     cat:'workplace', area:'1 / 4 / 3 / 5'},
+      {src:'img/store-04-main.webp', alt:'Colleagues on the floor', cat:'people', area:'2 / 3 / 3 / 4'},
+      {src:'img/store-01-g3.webp',   alt:'The Union team',      cat:'community', area:'3 / 1 / 4 / 2'},
+      {src:'img/store-07-main.webp', alt:'Company gathering',   cat:'events',    area:'3 / 2 / 4 / 4'},
+      {src:'img/store-01-g4.webp',   alt:'A moment together',   cat:'workplace', area:'3 / 4 / 4 / 5'}
+    ];
+    var filter='all', current=[];
+    function render(){
+      var flow = filter!=='all';
+      grid.classList.toggle('flow', flow);
+      current = LIFE.filter(function(t){ return filter==='all' || t.cat===filter; });
+      grid.innerHTML = current.map(function(t,i){
+        return '<div class="lf-tile" data-idx="'+i+'" style="'+(flow?'':'grid-area:'+t.area)+'"><img src="'+t.src+'" alt="'+esc(t.alt)+'" loading="lazy"></div>';
+      }).join('') || '<div style="grid-column:1/-1;color:#8a867e;font-size:14px;padding:34px 4px">No photos in this category yet.</div>';
+      Array.prototype.forEach.call(grid.querySelectorAll('.lf-tile'),function(el){
+        el.addEventListener('click',function(){ openLB(+el.dataset.idx); });
+      });
+    }
+    // lightbox: click a photo to enlarge, navigate through the current (filtered) set
+    var lb=document.getElementById('lfLightbox'), lbImg=document.getElementById('lfLbImg'), lbCount=document.getElementById('lfLbCounter'), lbIdx=0;
+    function showLB(){ var t=current[lbIdx]; if(!t) return; lbImg.src=t.src; lbImg.alt=t.alt||''; if(lbCount) lbCount.textContent=(lbIdx+1)+' / '+current.length; }
+    function openLB(i){ lbIdx=i; showLB(); if(lb) lb.classList.add('open'); }
+    function closeLB(){ if(lb) lb.classList.remove('open'); }
+    function navLB(d){ if(!current.length) return; lbIdx=(lbIdx+d+current.length)%current.length; showLB(); }
+    if(lb){
+      document.getElementById('lfLbClose').addEventListener('click',closeLB);
+      document.getElementById('lfLbPrev').addEventListener('click',function(e){ e.stopPropagation(); navLB(-1); });
+      document.getElementById('lfLbNext').addEventListener('click',function(e){ e.stopPropagation(); navLB(1); });
+      lb.addEventListener('click',function(e){ if(e.target===lb) closeLB(); });
+    }
+    function open(){ render(); modal.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ modal.classList.remove('open'); document.body.style.overflow=''; if(lb) lb.classList.remove('open'); }
+    var trig=document.getElementById('viewLife');
+    if(trig) trig.addEventListener('click',function(e){ e.preventDefault(); open(); });
+    document.getElementById('lfX').addEventListener('click',close);
+    modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+    document.addEventListener('keydown',function(e){
+      if(!modal.classList.contains('open')) return;
+      if(lb && lb.classList.contains('open')){
+        if(e.key==='Escape') closeLB();
+        else if(e.key==='ArrowLeft') navLB(-1);
+        else if(e.key==='ArrowRight') navLB(1);
+        return;
+      }
+      if(e.key==='Escape') close();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('#lfPills .lf-pill'),function(p){
+      p.addEventListener('click',function(){
+        Array.prototype.forEach.call(document.querySelectorAll('#lfPills .lf-pill'),function(x){x.classList.remove('on');});
+        p.classList.add('on'); filter=p.dataset.cat; render();
+      });
+    });
+    var jobs=document.getElementById('lfViewJobs');
+    if(jobs) jobs.addEventListener('click',function(e){ e.preventDefault(); close(); var v=document.getElementById('viewAllPos'); if(v) v.click(); });
+    if(/[?&]life=open/.test(location.search)){ open(); if(/[?&]lb=1/.test(location.search)) openLB(0); }
+  })();
+
+  // ============ Employee Stories carousel ============
+  (function(){
+    var EMP=[
+      {quote:"At Union, I found more than a job, I found a place where I can grow, make an impact and build a career I'm proud of.", img:'img/Careers/Aisha.png', name:'Aisha Al-Mutairi', role:'Marketing Executive', years:'4 Years at UTC'},
+      {quote:"From my very first day the team backed my ideas. Union gave me the space to lead and the support to get better every single day.", img:'img/Careers/Hero.png', name:'Yousef Al-Rashid', role:'Sales Manager', years:'6 Years at UTC'}
+    ];
+    var q=document.getElementById('empQuote'), im=document.getElementById('empImg'), nm=document.getElementById('empName'),
+        rl=document.getElementById('empRole'), yr=document.getElementById('empYears'),
+        main=document.getElementById('empMain'), meta=document.getElementById('empMeta'),
+        prev=document.getElementById('empPrev'), next=document.getElementById('empNext');
+    if(!q||!prev) return;
+    var cur=0, busy=false;
+    function apply(e){ q.textContent=e.quote; im.src=e.img; im.alt=e.name; nm.textContent=e.name; rl.textContent=e.role; yr.textContent=e.years; if(main)main.style.opacity='1'; if(meta)meta.style.opacity='1'; }
+    function go(d){
+      if(busy) return; busy=true;
+      cur=(cur+d+EMP.length)%EMP.length; var e=EMP[cur];
+      if(main)main.style.opacity='0'; if(meta)meta.style.opacity='0';
+      setTimeout(function(){ apply(e); busy=false; }, 240);
+    }
+    prev.addEventListener('click',function(){ go(-1); });
+    next.addEventListener('click',function(){ go(1); });
   })();
 </script>
 </body>
