@@ -173,8 +173,8 @@
   /* ---------- static renders ---------- */
   const el = id => document.getElementById(id);
 
-  // nav (About Us -> Our Story, Our Divisions -> divisions, Contact -> contact)
-  const NAV_HREF = { 'About Us': '#story', 'Our Divisions': '#divisions', 'Our Stores': 'our-stores.html', 'Careers': 'careers.html', 'Contact': '#contact' };
+  // nav (About Us -> About page, Our Divisions -> divisions, Contact -> contact)
+  const NAV_HREF = { 'About Us': 'about.html', 'Our Divisions': '#divisions', 'Our Stores': 'our-stores.html', 'Careers': 'careers.html', 'Contact': '#contact' };
   el('nav').innerHTML = NAV.map(l => '<a href="' + (NAV_HREF[l] || '#') + '" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">' + l + '</a>').join('');
 
   // brand marquee — starts with Apple, JBL (already white logos, no invert); filter on the logo only so separators stay uniform
@@ -214,7 +214,7 @@
   el('socials1').innerHTML = socHtml1;
   el('socials2').innerHTML = socials.map(s => '<a href="#" aria-label="' + s.name + '" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0">' + s.icon + '</a>').join('');
   el('contacts').innerHTML = contacts.map(c => '<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #d5d1c7;display:flex;align-items:center;justify-content:center;color:#161513;flex-shrink:0">' + c.icon + '</div><div><div style="font-size:15px;font-weight:600;color:#161513">' + c.main + '</div><div style="font-size:13px;color:#8a877f;margin-top:3px">' + c.sub + '</div></div></div>').join('');
-  const footHref = { 'Careers': 'careers.html', 'About UTC': '#story' };
+  const footHref = { 'Careers': 'careers.html', 'About UTC': 'about.html' };
   el('footAbout').innerHTML = footAbout.map(l => '<a href="' + (footHref[l] || '#') + '" style="color:#8f8c85;font-size:14px">' + l + '</a>').join('');
 
   // hero slides + dots
