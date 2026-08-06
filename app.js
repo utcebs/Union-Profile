@@ -174,7 +174,7 @@
   const el = id => document.getElementById(id);
 
   // nav (About Us -> About page, Our Divisions -> divisions, Contact -> contact)
-  const NAV_HREF = { 'About Us': 'about.html', 'Our Divisions': '#divisions', 'Our Stores': 'our-stores.html', 'Careers': 'careers.html', 'Contact': '#contact' };
+  const NAV_HREF = { 'About Us': 'about.html', 'Our Divisions': 'divisions.html', 'Our Stores': 'our-stores.html', 'Careers': 'careers.html', 'Contact': '#contact' };
   el('nav').innerHTML = NAV.map(l => '<a href="' + (NAV_HREF[l] || '#') + '" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">' + l + '</a>').join('');
 
   // brand marquee — starts with Apple, JBL (already white logos, no invert); filter on the logo only so separators stay uniform
