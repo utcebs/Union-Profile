@@ -19,6 +19,20 @@
   #divPanel{scroll-snap-align:center}
   #contact{scroll-margin-top:26px}
   #story{scroll-margin-top:-85px}
+  /* header nav + mobile hamburger */
+  #nav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
+  .navtog .ico-bars{display:block}
+  .navtog .ico-close{display:none}
+  @media(max-width:860px){
+    .navtog{display:inline-flex;align-items:center;justify-content:center;position:absolute;right:clamp(16px,4vw,44px);top:50%;transform:translateY(-50%)}
+    #nav{display:none}
+    header .h-shop{display:none}
+    header.nav-open #nav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    header.nav-open .h-shop{display:inline-flex;margin-top:2px}
+    header.nav-open .ico-bars{display:none}
+    header.nav-open .ico-close{display:block}
+  }
   .partners-sec{scroll-margin-top:-72px}
   @media(max-width:900px){html{scroll-snap-type:none}}
   body{font-family:'Manrope',system-ui,sans-serif;color:#141311;background:#0d0d0d;-webkit-font-smoothing:antialiased}
@@ -74,9 +88,13 @@
 
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
-    <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div style="position:relative;padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <a href="index.html" aria-label="Union Trading Co. — home" id="homeLogo"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
-      <nav id="nav" style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap"></nav>
+      <button id="navToggle" class="navtog" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg class="ico-bars" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ico-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <nav id="nav"></nav>
       <a href="#contact" class="h-shop" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;white-space:nowrap">Want to partner with us?</a>
     </div>
   </header>
@@ -201,9 +219,14 @@
           <div style="font-size:0.9cqw;letter-spacing:0.24em;color:#8f8b82;font-weight:600;margin-bottom:1.3cqw">A LEGACY OF TRUST. A FUTURE OF PURPOSE.</div>
           <p style="color:#a8a49b;font-size:0.94cqw;line-height:1.6;margin:0 0 1.1cqw">Union Trading Company W.L.L. (UTC) is a leading retailer and distributor in Kuwait. Pioneers in the field, the UTC department store and distribution network is made up of multiple retail outlets and numerous retail points, which cater to the nation at large.</p>
           <p style="color:#a8a49b;font-size:0.94cqw;line-height:1.6;margin:0">With over <strong style="color:#e9e5db;font-weight:700">75 years of service</strong> experience since 1949, UTC upholds total commitment to its clients and customers, maintaining outstanding partnerships with the global brands it represents.</p>
-          <a href="#milestones" class="h-fill-white" style="align-self:flex-start;margin-top:2cqw;display:inline-flex;align-items:center;gap:1cqw;background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:0.82cqw;font-weight:700;letter-spacing:0.16em;padding:0.95cqw 1.9cqw;border-radius:999px">EXPLORE OUR JOURNEY
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-          </a>
+          <div style="display:flex;flex-wrap:wrap;gap:0.9cqw;margin-top:2cqw">
+            <a href="#milestones" class="h-fill-white" style="display:inline-flex;align-items:center;gap:1cqw;background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:0.82cqw;font-weight:700;letter-spacing:0.16em;padding:0.95cqw 1.9cqw;border-radius:999px">EXPLORE OUR JOURNEY
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+            <a href="about.html" class="h-fill-white" style="display:inline-flex;align-items:center;gap:1cqw;background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;font-size:0.82cqw;font-weight:700;letter-spacing:0.16em;padding:0.95cqw 1.9cqw;border-radius:999px">OUR VISION
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+          </div>
         </div>
 
         <div class="story-timeline" style="position:absolute;top:2%;left:27%;width:52%;display:flex;align-items:flex-start;gap:3cqw">
@@ -224,8 +247,8 @@
           </div>
         </div>
 
-        <div class="story-dim" style="position:absolute;left:1.5%;right:1.5%;bottom:7%;height:19%;background:rgba(7,7,7,0.42);border-radius:16px;pointer-events:none"></div>
-        <div id="storyStats" class="story-stats" style="position:absolute;bottom:9%;left:2.5%;width:95%;display:flex;justify-content:space-between;align-items:center;gap:2cqw"></div>
+        <div class="story-dim" style="position:absolute;left:1.5%;right:1.5%;bottom:4%;height:16%;background:rgba(7,7,7,0.42);border-radius:16px;pointer-events:none"></div>
+        <div id="storyStats" class="story-stats" style="position:absolute;bottom:6%;left:2.5%;width:95%;display:flex;justify-content:space-between;align-items:center;gap:2cqw"></div>
       </div>
 
       <!-- mobile story fallback -->
@@ -410,5 +433,18 @@
 </div>
 
 <script src="app.js"></script>
+<script>
+  // Mobile nav: hamburger toggles the dropdown (links + partner button)
+  (function(){
+    var h=document.querySelector('header'), t=document.getElementById('navToggle');
+    if(!h||!t) return;
+    function set(o){ h.classList.toggle('nav-open',o); t.setAttribute('aria-expanded',o?'true':'false'); t.setAttribute('aria-label',o?'Close menu':'Open menu'); }
+    t.addEventListener('click',function(e){ e.stopPropagation(); set(!h.classList.contains('nav-open')); });
+    h.addEventListener('click',function(e){ if(e.target.closest('#nav a')||e.target.closest('.h-shop')) set(false); });
+    document.addEventListener('click',function(e){ if(h.classList.contains('nav-open') && !e.target.closest('header')) set(false); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+    window.addEventListener('resize',function(){ if(window.innerWidth>860) set(false); });
+  })();
+</script>
 </body>
 </html>
