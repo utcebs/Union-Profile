@@ -94,7 +94,7 @@
       <div class="crumb" style="display:flex;align-items:center;gap:9px;font-size:13px;color:#8b8880"><a href="index.html">Home</a><span>&rsaquo;</span><span style="color:#cfcbc0">About Us</span></div>
     </div>
     <div class="wrap" style="padding-top:clamp(28px,3.4vw,44px);padding-bottom:clamp(40px,5vw,64px)">
-      <div class="ceo-grid" style="display:grid;grid-template-columns:0.95fr 1.25fr;gap:clamp(30px,4vw,60px);align-items:center">
+      <div class="ceo-grid" style="display:grid;grid-template-columns:0.82fr 1.45fr;gap:clamp(24px,3vw,48px);align-items:center">
         <div>
           <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px">Our Vision</div>
           <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,4vw,54px);line-height:1.05;margin:0">A Message<br>From Our CEO</h1>
@@ -386,10 +386,13 @@
   document.querySelectorAll('[data-rail]').forEach(function(b){
     b.addEventListener('click',function(){ var r=document.getElementById(b.dataset.rail+'Rail'); if(r) r.scrollBy({left:300,behavior:'smooth'}); });
   });
-  // auto-rotating image slideshow inside each "Company We're Becoming" card
+  // auto-rotating image slideshow inside each "Company We're Becoming" card.
+  // Cards switch left-to-right in a wave: same 4s period per card, but each card
+  // starts 1 second after the one on its left (si*1000ms offset).
   document.querySelectorAll('.be-show').forEach(function(show,si){
     var slides=show.querySelectorAll('.be-slide'); if(slides.length<2) return; var i=0;
-    setInterval(function(){ slides[i].classList.remove('on'); i=(i+1)%slides.length; slides[i].classList.add('on'); }, 3200 + si*450);
+    function advance(){ slides[i].classList.remove('on'); i=(i+1)%slides.length; slides[i].classList.add('on'); }
+    setTimeout(function(){ advance(); setInterval(advance, 4000); }, 1000 + si*1000);
   });
   // Our Evolution: auto-advancing active step + filling line, hover to jump
   (function(){

@@ -14,9 +14,11 @@
   html,body{margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:var(--hdr,74px);scroll-snap-type:y proximity}
   section{scroll-snap-align:start;scroll-margin-top:var(--hdr,74px)}
-  /* snap deeper into these sections so the main heading (not the small kicker) sits at the top; hero & milestones keep the default */
+  /* snap deeper into these sections so the main heading (not the small kicker) sits at the top */
   #divisions{scroll-snap-align:none}
   #divPanel{scroll-snap-align:center}
+  /* milestones is a full-viewport pinned section: land it flush at the top (cancel the header offset so it covers the whole screen, no previous section peeking) and stop exactly on it */
+  #milestones{scroll-snap-stop:always;scroll-margin-top:calc(-1 * var(--hdr,74px))}
   #contact{scroll-margin-top:26px}
   #story{scroll-margin-top:-85px}
   /* header nav + mobile hamburger */
@@ -75,8 +77,25 @@
     .ms-viewport{perspective:none !important;height:auto !important}
     .ms-mobile{display:block !important}
     .ms-viewport .ms-desktoponly{display:none !important}
-    .contact-grid{grid-template-columns:1fr !important}
+    .contact-top{grid-template-columns:1fr !important}
+    .contact-main{grid-template-columns:1fr !important}
+    .office-col{border-left:none !important;padding-left:0 !important;border-top:1px solid #ece8de;padding-top:clamp(24px,4vw,32px);margin-top:8px}
+    .feat-grid{grid-template-columns:repeat(2,1fr) !important;gap:20px}
   }
+  @media(max-width:560px){
+    .cf-row{grid-template-columns:1fr !important}
+    .qc-grid{grid-template-columns:1fr !important}
+    .feat-grid{grid-template-columns:1fr !important}
+  }
+  .cf-input{width:100%;background:transparent;border:none;border-bottom:1px solid #e2ddd2;border-radius:0;padding:12px 2px;font-size:15px;color:#161513;outline:none;transition:border-color .25s}
+  .cf-input:focus,#cfMessage:focus,#cfIntent:focus{border-color:#161513 !important}
+  #contactForm ::placeholder{color:#a8a49a;opacity:1}
+  .qc-card:hover{border-color:#161513 !important;box-shadow:0 22px 44px -30px rgba(0,0,0,0.35);transform:translateY(-3px)}
+  .qc-card:hover .qc-arrow{transform:translateX(4px);color:#161513}
+  .viewall-btn:hover{gap:18px !important;background:#161513 !important;color:#fff !important;border-color:#fff !important}
+  #submitBtn:hover{background:#000;gap:18px}
+  .office-card:hover{background:#f6f4ee !important}
+  .office-card:hover .office-arrow{background:#161513 !important;color:#fff !important;border-color:#161513 !important}
   /* Very short desktop windows: trim the partners heading so the kicker still clears the sticky header */
   @media(min-width:901px) and (max-height:680px){
     .partners-sec h2{font-size:clamp(44px,6.6vh,58px) !important;line-height:1.04 !important}
@@ -348,53 +367,80 @@
   </section>
 
   <!-- ============ GET IN TOUCH ============ -->
-  <section id="contact" style="background:#f3f1ec;color:#161513;padding:clamp(52px,7vw,100px) clamp(20px,5vw,64px)">
-    <div class="contact-grid" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.8fr);gap:clamp(36px,6vw,88px);align-items:stretch">
-      <div>
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
-          <span style="width:34px;height:1px;background:#c8c4ba"></span>
-          <span style="font-size:12px;letter-spacing:0.32em;color:#8a867e;font-weight:600">CONTACT</span>
+  <section id="contact" style="background:#f3f1ec;color:#161513;padding:clamp(14px,1.7vw,24px) clamp(20px,5vw,64px)">
+    <div style="max-width:1300px;margin:0 auto">
+      <!-- TOP ROW: heading (left) + 3 tall cards (right) -->
+      <div class="contact-top" style="display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.18fr);gap:clamp(24px,3vw,52px);align-items:end;margin-bottom:clamp(10px,1.1vw,14px)">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.34em;color:#b39a6d;font-weight:700;margin-bottom:10px">CONTACT US</div>
+          <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(30px,3.3vw,48px);line-height:0.99;letter-spacing:-0.025em;margin:0;color:#161513">Let's Build What's Next.</h2>
+          <div style="display:flex;align-items:center;gap:10px;margin:12px 0 10px">
+            <span style="width:9px;height:9px;border-radius:50%;background:#c9b48c"></span>
+            <span style="width:84px;height:2px;background:#dcd6ca"></span>
+          </div>
+          <p style="color:#6d6a62;font-size:clamp(13px,1vw,15px);line-height:1.5;margin:0;max-width:420px">We're here to answer your questions, listen to your ideas, and explore how we can create value together.</p>
         </div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(38px,4.6vw,64px);line-height:1.02;letter-spacing:-0.01em;margin:0;color:#161513">Get in Touch</h2>
-        <p style="color:#6d6a62;font-size:clamp(14px,1.1vw,16px);line-height:1.7;margin:clamp(16px,2vw,24px) 0 clamp(28px,3.4vw,44px);max-width:360px">We'd love to hear from you. For any inquiries, feedback or support, reach out and our team will get back to you.</p>
-        <div id="contacts" style="display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)"></div>
-        <div style="height:1px;background:#d9d5ca;margin:clamp(26px,3vw,38px) 0 clamp(18px,2vw,24px)"></div>
-        <div style="font-size:11px;letter-spacing:0.2em;color:#8a867e;font-weight:600;margin-bottom:14px">FOLLOW US</div>
-        <div id="socials1" style="display:flex;gap:12px"></div>
+        <div class="qc-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.3vw,18px)">
+          <a href="tel:+96518444449" class="qc-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1px solid #e6e2d8;border-radius:16px;padding:clamp(12px,1.1vw,16px);text-decoration:none;color:inherit;min-height:clamp(92px,7.4vw,104px);transition:border-color .3s,box-shadow .3s,transform .3s">
+            <span style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f1ece2;display:flex;align-items:center;justify-content:center;color:#161513"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path></svg></span>
+            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Call Us</div><div style="font-size:12.5px;color:#8a877f;margin-top:5px">+965 18444449</div></div>
+            <span class="qc-arrow" style="margin-top:8px;color:#b3ad9f;transition:transform .3s,color .3s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </a>
+          <a href="mailto:info@utc.com.kw" class="qc-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1px solid #e6e2d8;border-radius:16px;padding:clamp(12px,1.1vw,16px);text-decoration:none;color:inherit;min-height:clamp(92px,7.4vw,104px);transition:border-color .3s,box-shadow .3s,transform .3s">
+            <span style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f1ece2;display:flex;align-items:center;justify-content:center;color:#161513"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
+            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Email Us</div><div style="font-size:12.5px;color:#8a877f;margin-top:5px">info@utc.com.kw</div></div>
+            <span class="qc-arrow" style="margin-top:8px;color:#b3ad9f;transition:transform .3s,color .3s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </a>
+          <a href="our-stores.html" class="qc-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1px solid #e6e2d8;border-radius:16px;padding:clamp(12px,1.1vw,16px);text-decoration:none;color:inherit;min-height:clamp(92px,7.4vw,104px);transition:border-color .3s,box-shadow .3s,transform .3s">
+            <span style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f1ece2;display:flex;align-items:center;justify-content:center;color:#161513"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Visit Us</div><div style="font-size:12.5px;color:#8a877f;margin-top:5px">Kuwait</div></div>
+            <span class="qc-arrow" style="margin-top:8px;color:#b3ad9f;transition:transform .3s,color .3s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </a>
+        </div>
       </div>
-      <form id="contactForm" style="background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:clamp(24px,2.4vw,40px);box-shadow:0 34px 70px -40px rgba(0,0,0,0.5);margin-bottom:clamp(70px,9vw,120px);display:flex;flex-direction:column;justify-content:center;max-width:420px;width:100%;margin-left:auto">
-        <div style="display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:18px">
-          <div style="display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,0.18)">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a766e" stroke-width="1.7" style="flex-shrink:0"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg>
-            <input placeholder="First Name" style="border:none;background:none;outline:none;padding:14px 10px;width:100%;font-size:15px;color:#fff">
+
+      <!-- MAIN CONTAINER: form (left) + offices (right) -->
+      <div class="contact-main" style="background:#fbfaf7;border:1px solid #e6e2d8;border-radius:22px;padding:clamp(16px,1.7vw,24px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,2.6vw,42px);margin-bottom:clamp(10px,1.1vw,14px)">
+        <form id="contactForm">
+          <div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.22em;color:#8a867e;margin-bottom:clamp(10px,1.2vw,14px)">SEND US A MESSAGE</div>
+
+          <label style="display:block;font-size:13px;color:#6d6a62;margin-bottom:6px">I want to</label>
+          <div style="position:relative;margin-bottom:12px">
+            <select id="cfIntent" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid #e2ddd2;border-radius:10px;color:#161513;font-size:15px;padding:11px 40px 11px 16px;outline:none;cursor:pointer">
+              <option value="general" data-mail="info@utc.com.kw">General Inquiry</option>
+              <option value="partnership" data-mail="partnerships@utc.com.kw">Partnership Opportunity</option>
+              <option value="support" data-mail="info@utc.com.kw">Product Support</option>
+            </select>
+            <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:#8a867e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
           </div>
-          <div style="display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,0.18)">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a766e" stroke-width="1.7" style="flex-shrink:0"><path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path></svg>
-            <input placeholder="Phone Number" style="border:none;background:none;outline:none;padding:14px 10px;width:100%;font-size:15px;color:#fff">
+
+          <div class="cf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,26px);margin-bottom:10px">
+            <input id="cfName" placeholder="Full Name" class="cf-input">
+            <input id="cfEmail" type="email" placeholder="Email Address" class="cf-input">
           </div>
-        </div>
-        <div style="border-bottom:1px solid rgba(255,255,255,0.18);margin-bottom:18px;display:flex">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a766e" stroke-width="1.7" style="flex-shrink:0;margin-top:14px"><path d="M4 5h16v12H7l-3 3z"></path></svg>
-          <textarea placeholder="Your Message" rows="4" style="border:none;background:none;outline:none;padding:14px 10px;width:100%;font-size:15px;color:#fff;resize:vertical"></textarea>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:28px;align-items:end">
-          <div style="border-bottom:1px solid rgba(255,255,255,0.18);display:flex;align-items:center">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a766e" stroke-width="1.7" style="flex-shrink:0"><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path></svg>
-            <input placeholder="Email Address" style="border:none;background:none;outline:none;padding:14px 10px;width:100%;font-size:15px;color:#fff">
+          <div class="cf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,26px);margin-bottom:10px">
+            <input id="cfPhone" placeholder="Phone Number" class="cf-input">
+            <input id="cfSubject" placeholder="Subject" class="cf-input">
           </div>
-          <div style="display:flex;align-items:center;gap:12px">
-            <div style="background:rgba(255,255,255,0.08);font-family:'JetBrains Mono';font-style:italic;letter-spacing:0.24em;font-size:17px;color:#cfcbc2;padding:9px 16px;user-select:none;border-radius:6px">VHZRE</div>
-            <input placeholder="Enter Captcha" style="border:none;border-bottom:1px solid rgba(255,255,255,0.18);background:none;outline:none;padding:10px 4px;flex:1;min-width:0;font-size:14px;color:#fff">
-          </div>
+          <textarea id="cfMessage" rows="2" placeholder="How can we help you?" style="width:100%;background:#fff;border:1px solid #e2ddd2;border-radius:10px;padding:11px 16px;font-size:15px;color:#161513;outline:none;resize:vertical;margin-bottom:14px"></textarea>
+
+          <button type="submit" id="submitBtn" style="background:#161513;color:#fff;border:none;cursor:pointer;font-size:13px;font-weight:700;letter-spacing:0.14em;padding:13px 30px;border-radius:999px;display:inline-flex;align-items:center;gap:14px;transition:background .3s,gap .3s">SEND MESSAGE
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </button>
+        </form>
+
+        <!-- offices -->
+        <div class="office-col" style="display:flex;flex-direction:column;border-left:1px solid #ece8de;padding-left:clamp(28px,3.4vw,56px)">
+          <div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.22em;color:#8a867e;margin-bottom:clamp(4px,0.6vw,8px)">OUR OFFICES</div>
+          <div id="offices" style="display:flex;flex-direction:column;flex:1"></div>
+          <a href="our-stores.html" class="viewall-btn" style="margin-top:10px;display:inline-flex;align-items:center;justify-content:center;gap:12px;background:transparent;color:#161513;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.16em;padding:11px;border:1px solid #d8d3c7;border-radius:999px;transition:gap .3s,background .3s,border-color .3s">VIEW ALL LOCATIONS
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
         </div>
-        <button type="submit" id="submitBtn" style="width:100%;background:#fff;color:#161513;border:none;cursor:pointer;font-size:13px;font-weight:700;letter-spacing:0.16em;padding:18px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:14px">SEND MESSAGE
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-        </button>
-        <div style="display:flex;align-items:center;gap:8px;margin-top:16px;color:#8a877f;font-size:12px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg>
-          Your information is safe with us. We respect your privacy.
-        </div>
-      </form>
+      </div>
+
+      <!-- feature strip -->
+      <div class="feat-grid" style="background:#fbfaf7;border:1px solid #ece7db;border-radius:16px;padding:clamp(12px,1.2vw,16px) clamp(10px,1vw,16px);box-shadow:0 22px 46px -36px rgba(60,48,30,0.28);display:grid;grid-template-columns:repeat(5,1fr)"></div>
     </div>
   </section>
 

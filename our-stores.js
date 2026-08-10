@@ -202,6 +202,20 @@
     el('mapTip').style.display = 'none';
   });
 
+  // Deep-link: ?store=<index> (from the homepage "Our Offices" cards) opens that
+  // store, holds on it (no auto-cycle), and scrolls to the explorer.
+  const dlRaw = new URLSearchParams(location.search).get('store');
+  const dl = dlRaw == null ? NaN : parseInt(dlRaw, 10);
+  const hasDeepLink = !isNaN(dl) && dl >= 0 && dl < stores.length;
+  if (hasDeepLink) { state.store = dl; state.img = 0; state.showTip = true; }
+
   render();
-  startAuto();
+  if (hasDeepLink) {
+    setTimeout(() => {
+      const target = el('explorer') || el('stores');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 250);
+  } else {
+    startAuto();
+  }
 })();

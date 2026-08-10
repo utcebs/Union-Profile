@@ -85,7 +85,7 @@
 
   /* ---------- data ---------- */
   const NAV = ['About Us', 'Our Divisions', 'Our Stores', 'Service Center', 'Careers', 'Contact'];
-  const heroImgs = ['uploads/app.png', 'uploads/Carousal4-0ab1d92c.jpg', 'uploads/OGeneral.jpg', 'uploads/JBL.png'];
+  const heroImgs = ['uploads/app.png', 'uploads/Carousal4.jpg', 'uploads/OGeneral.jpg', 'uploads/JBL.png'];
   const heroPartners = ['Apple', 'GlemGas', 'O General', 'JBL'];
   const heroLabelLight = [true, true, false, true];  // dark label only on the light O General image
 
@@ -112,9 +112,9 @@
   }
 
   const divData = [
-    { name: 'Union Electronics', href: 'union-electronics.html', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Braun', 'Hitachi', '+6 more'], slot: 'div-elec' },
+    { name: 'Union Electronics', href: 'union-electronics.html', logo: 'img/Div/electronics-logo.png', cardLogo: 'img/Div/Black.png', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Braun', 'Hitachi', '+6 more'], slot: 'div-elec' },
     { name: 'B2B', tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['India Gate', 'Glysolid', 'Angel Wear', '+8 more'], slot: 'div-fmcg' },
-    { name: 'Aluna', tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Constance Carroll', 'Glysolid', '+5 more'], slot: 'div-cosmetics' },
+    { name: 'Aluna', logo: 'img/Div/aluna-logo.png', cardLogo: 'img/Div/aluna-logo.png', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Constance Carroll', 'Glysolid', '+5 more'], slot: 'div-cosmetics' },
     { name: 'Labels', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion, UNION established a strong presence by introducing internationally renowned apparel, footwear, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Angel Wear', 'Brandili', '+4 more'], slot: 'div-fashion' },
     { name: 'Union Services', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'As the healthcare sector evolved, the need for advanced medical technologies and dependable healthcare solutions continued to grow. UNION answered this demand by partnering with globally recognized brands to provide innovative medical equipment and healthcare products that support hospitals, clinics, and healthcare professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Glysolid', 'Prestige', 'Eagle Safes', '+5 more'], slot: 'div-health' },
     { name: 'Commercial AC Projects', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['O General', 'Hitachi', '+3 more'], slot: 'div-commercial' }
@@ -167,6 +167,23 @@
   ];
   const footAbout = ['About UTC', 'FAQ', 'Careers', 'Sitemap', 'Privacy Statement'];
 
+  // Offices for the contact panel — each opens the Our Stores explorer; where a
+  // matching store record exists, it deep-links to it via ?store=<index>.
+  const offices = [
+    { name: 'Head Office', addr: ['Salhiya, Kuwait City', 'P.O. Box 239, Safat 13003, Kuwait'], phone: '+965 18444449', email: 'info@utc.com.kw', store: 0, img: 'img/store-01-g0.webp' },
+    { name: 'Salmiya Showroom', addr: ['Salmiya, Salem Al Mubarak Street', 'Salmiya, Kuwait'], phone: '+965 25710800', email: 'salmiya@utc.com.kw', store: null, img: 'img/store-07-main.webp' },
+    { name: 'Hawally Showroom', addr: ['Al-Othman Street, Hawally', 'Kuwait'], phone: '+965 22640200', email: 'hawally@utc.com.kw', store: null, img: 'img/store-04-main.webp' }
+  ];
+
+  // Bottom feature strip
+  const features = [
+    { icon: '<circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path>', title: 'Quick Response', sub: 'We aim to respond within 24 business hours.' },
+    { icon: '<path d="M4 14v-2a8 8 0 0116 0v2"></path><rect x="3" y="14" width="4" height="6" rx="1.5"></rect><rect x="17" y="14" width="4" height="6" rx="1.5"></rect>', title: 'Dedicated Support', sub: 'Our team is here to assist you at every step.' },
+    { icon: '<path d="M9 12l2 2 4-4"></path><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path>', title: 'Partnerships', sub: "Interested in becoming a partner? Let's connect." },
+    { icon: '<circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"></path>', title: 'Global Standards', sub: 'Delivering international quality with local commitment.' },
+    { icon: '<path d="M4 19l5-5 3 3 7-8"></path><path d="M16 9h4v4"></path>', title: 'Mutual Growth', sub: 'We grow together to create long-term value.' }
+  ];
+
   /* ---------- state ---------- */
   const S = { hero: 0, div: 0, storyImg: 0, partner: 0 };
 
@@ -209,12 +226,45 @@
     requestAnimationFrame(frame);
   })();
 
-  // socials (2), contacts, footAbout
-  const socHtml1 = socials.map(s => '<a href="#" aria-label="' + s.name + '" style="width:40px;height:40px;border-radius:50%;border:1px solid #cfcbc0;display:flex;align-items:center;justify-content:center;color:#161513">' + s.icon + '</a>').join('');
-  el('socials1').innerHTML = socHtml1;
+  // socials (footer), footAbout
   el('socials2').innerHTML = socials.map(s => '<a href="#" aria-label="' + s.name + '" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0">' + s.icon + '</a>').join('');
-  el('contacts').innerHTML = contacts.map(c => '<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #d5d1c7;display:flex;align-items:center;justify-content:center;color:#161513;flex-shrink:0">' + c.icon + '</div><div><div style="font-size:15px;font-weight:600;color:#161513">' + c.main + '</div><div style="font-size:13px;color:#8a877f;margin-top:3px">' + c.sub + '</div></div></div>').join('');
-  const footHref = { 'Careers': 'careers.html', 'About UTC': 'about.html' };
+
+  // office rows — open the Our Stores explorer (deep-linked to the store where one exists)
+  const officeIcon = (p) => '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="flex-shrink:0">' + p + '</svg>';
+  const officesEl = el('offices');
+  if (officesEl) {
+    officesEl.innerHTML = offices.map((o, i) => {
+      const href = o.store != null ? 'our-stores.html?store=' + o.store : 'our-stores.html';
+      const divider = i < offices.length - 1 ? 'border-bottom:1px solid #ece8de;' : '';
+      return '<a class="office-card" href="' + href + '" style="display:flex;gap:14px;align-items:center;padding:8px 10px;text-decoration:none;color:inherit;border-radius:12px;' + divider + 'transition:background .25s">'
+        + '<span style="width:56px;height:52px;flex-shrink:0;border-radius:10px;background:#eceae2 url(&quot;' + o.img + '&quot;) center/cover no-repeat"></span>'
+        + '<div style="min-width:0;flex:1">'
+        + '<div style="font-family:\'Archivo\';font-weight:700;font-size:15px;color:#161513;margin-bottom:3px">' + o.name + '</div>'
+        + '<div style="font-size:12px;color:#8a877f;line-height:1.4;margin-bottom:5px">' + o.addr.join('<br>') + '</div>'
+        + '<div style="display:flex;flex-wrap:wrap;gap:6px 18px">'
+        + '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5c5951">' + officeIcon('<path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path>') + o.phone + '</span>'
+        + '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5c5951">' + officeIcon('<rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path>') + o.email + '</span>'
+        + '</div>'
+        + '</div>'
+        + '<span class="office-arrow" style="width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid #ddd8cc;display:flex;align-items:center;justify-content:center;color:#161513;align-self:center;transition:background .25s,color .25s,border-color .25s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>'
+        + '</a>';
+    }).join('');
+  }
+
+  // feature strip — minimal gold-accent icon + title & description, with slim centered dividers
+  const featEl = document.querySelector('.feat-grid');
+  if (featEl) {
+    featEl.innerHTML = features.map((f, i) => {
+      const div = i > 0 ? 'background:linear-gradient(#e6e0d3,#e6e0d3) left center / 1px 54% no-repeat;' : '';
+      return '<div style="display:flex;gap:13px;align-items:center;padding:2px clamp(14px,1.5vw,22px);' + div + '">'
+        + '<div style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f4eee2;display:flex;align-items:center;justify-content:center;color:#a97f43"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + f.icon + '</svg></div>'
+        + '<div style="min-width:0"><div style="font-family:\'Archivo\';font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#161513;margin-bottom:4px">' + f.title + '</div>'
+        + '<div style="font-size:12px;color:#948f85;line-height:1.45">' + f.sub + '</div></div>'
+        + '</div>';
+    }).join('');
+  }
+
+  const footHref = { 'Careers': 'careers.html', 'About UTC': 'about.html', 'Sitemap': 'sitemap.html', 'Privacy Statement': 'privacy-policy.html' };
   el('footAbout').innerHTML = footAbout.map(l => '<a href="' + (footHref[l] || '#') + '" style="color:#8f8c85;font-size:14px">' + l + '</a>').join('');
 
   // hero slides + dots
@@ -241,7 +291,10 @@
     return divData.map((d, i) => {
       const active = i === S.div;
       const divider = (i === divData.length - 1 || i === S.div || i === S.div - 1) ? '1px solid transparent' : '1px solid #2c2a26';
-      return '<button data-dt="' + i + '" style="cursor:pointer;background:' + (active ? '#262a2e' : 'transparent') + ';border:none;border-right:' + divider + ';color:' + (active ? '#ffffff' : '#b4b8bc') + ';padding:11px 14px;display:flex;flex-direction:column;align-items:center;gap:7px;flex:1 1 0;min-width:118px;border-radius:14px;position:relative;transition:background 250ms ease"><span style="width:26px;height:26px;display:flex;align-items:center;justify-content:center">' + ic(d.icon) + '</span><span style="font-size:12px;font-weight:700;text-align:center;line-height:1.2">' + d.name + '</span></button>';
+      const inner = d.logo
+        ? '<img src="' + d.logo + '" alt="' + d.name + '" style="width:100px;height:34px;object-fit:contain;filter:brightness(0) invert(1);display:block">'
+        : '<span style="width:26px;height:26px;display:flex;align-items:center;justify-content:center">' + ic(d.icon) + '</span><span style="font-size:12px;font-weight:700;text-align:center;line-height:1.2">' + d.name + '</span>';
+      return '<button data-dt="' + i + '" style="cursor:pointer;background:' + (active ? '#262a2e' : 'transparent') + ';border:none;border-right:' + divider + ';color:' + (active ? '#ffffff' : '#b4b8bc') + ';padding:11px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;flex:1 1 0;min-width:118px;min-height:56px;border-radius:14px;position:relative;transition:background 250ms ease">' + inner + '</button>';
     }).join('');
   }
   el('divTabs').innerHTML = tabHtml();
@@ -350,7 +403,11 @@
     el('divTagline').textContent = d.tagline;
     el('divCounter').textContent = '0' + (S.div + 1);
     el('divIcon').innerHTML = ic(d.icon);
-    el('divName').textContent = d.name;
+    if (d.cardLogo) {
+      el('divName').innerHTML = '<img src="' + d.cardLogo + '" alt="' + d.name + '" style="height:' + (d.cardLogoH || 'clamp(32px,4vw,50px)') + ';width:auto;max-width:100%;object-fit:contain;object-position:left top;display:block' + (d.cardLogoDark ? ';filter:brightness(0)' : '') + '">';
+    } else {
+      el('divName').textContent = d.name;
+    }
     el('divDesc').innerHTML = d.descHtml || d.desc;
     el('divMgr').textContent = d.mgr;
     el('divContact').textContent = d.contact;
@@ -405,9 +462,31 @@
   let partnerTimer = setInterval(() => setPartner(S.partner + 1), 6000);
 
   /* ---------- contact form ---------- */
+  // Static site: route the message via mailto. The "I want to…" dropdown decides
+  // the recipient — Partnerships and General Inquiry go to two different inboxes
+  // (each <option> carries its target address in data-mail).
   el('contactForm').addEventListener('submit', e => {
     e.preventDefault();
-    el('submitBtn').childNodes[0].nodeValue = 'MESSAGE SENT ✓';
+    const sel = el('cfIntent');
+    const opt = sel.options[sel.selectedIndex];
+    const to = (opt && opt.dataset.mail) || 'info@utc.com.kw';
+    const name = (el('cfName').value || '').trim();
+    const email = (el('cfEmail').value || '').trim();
+    const phone = (el('cfPhone').value || '').trim();
+    const subjIn = (el('cfSubject').value || '').trim();
+    const msg = (el('cfMessage').value || '').trim();
+    const subject = (subjIn || (opt ? opt.text : 'Website enquiry')) + (name ? ' — ' + name : '');
+    const body = [
+      'Enquiry type: ' + (opt ? opt.text : ''),
+      'Name: ' + name,
+      'Email: ' + email,
+      'Phone: ' + phone,
+      '',
+      msg
+    ].join('\n');
+    window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    el('submitBtn').childNodes[0].nodeValue = 'OPENING EMAIL… ';
+    setTimeout(() => { el('submitBtn').childNodes[0].nodeValue = 'SEND MESSAGE'; }, 4000);
   });
 
   /* ---------- KPI count-up ---------- */
@@ -465,20 +544,22 @@
     const kick = () => { if (!running) { running = true; requestAnimationFrame(tick); } };
     const go = n => { prog = Math.max(0, Math.min(N - 1, n)); target = prog; lastWheel = Date.now(); kick(); };
     const vp = document.querySelector('[data-ms-viewport]');
+    const headerEl = document.querySelector('header');
     let engaged = false, lastWheel = 0;
     const SENS = 520;
     const onWheel = e => {
       const rect = sec.getBoundingClientRect(), vh = window.innerHeight;
-      // only take over the wheel once the section is (near) pinned to the top of the viewport;
-      // while it's only half scrolled in, `near` is false -> the page scrolls normally.
-      const cap = vh * 0.25;
-      const near = rect.top <= cap && rect.bottom >= vh - cap;
+      const hdr = headerEl ? headerEl.offsetHeight : 74;
+      // take over the wheel only once the section is snapped fully into place (its top resting at the
+      // sticky header). scroll-snap-stop:always lands it there without overshoot, so the barrel never
+      // fights the snap. Any partial/half-scrolled state -> the page scrolls (and snaps) normally.
+      const cap = Math.max(10, vh * 0.03);
+      const near = rect.top >= -cap && rect.top <= hdr + cap;
       const dir = e.deltaY > 0 ? 1 : -1;
       const atEnd = (dir > 0 && prog >= N - 1 - 0.001) || (dir < 0 && prog <= 0.001);
-      if (!near) { engaged = false; return; }
-      if (atEnd) { engaged = false; return; }
+      if (!near || atEnd) { engaged = false; return; }
       e.preventDefault();
-      if (!engaged) { engaged = true; window.scrollTo({ top: rect.top + window.scrollY, behavior: 'smooth' }); }
+      engaged = true;
       prog = Math.max(0, Math.min(N - 1, prog + e.deltaY / SENS));
       target = prog; lastWheel = Date.now(); kick();
     };
