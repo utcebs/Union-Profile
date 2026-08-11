@@ -38,6 +38,19 @@
     .pp-icon{width:64px!important;height:64px!important}
     .cta-grid{grid-template-columns:1fr!important}
   }
+  .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
+  .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
+  @media(max-width:900px){
+    header>div{position:relative}
+    .navtog{display:inline-flex;align-items:center;justify-content:center;position:absolute;right:clamp(16px,4vw,44px);top:50%;transform:translateY(-50%);z-index:3}
+    .mainnav{display:none}
+    header .shopnow{display:none}
+    header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    header.nav-open .shopnow{display:inline-flex}
+    header.nav-open .ico-bars{display:none}
+    header.nav-open .ico-close{display:block}
+  }
 </style>
 </head>
 <body>
@@ -47,12 +60,16 @@
   <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
     <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <a href="index.html" style="display:inline-flex;align-items:center"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
-      <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap">
+      <button id="navToggle" class="navtog" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg class="ico-bars" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ico-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <nav class="mainnav">
         <a href="about.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="divisions.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
         <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
-        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Service Center</a>
-        <a href="careers.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
+        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
+        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
       <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
@@ -183,5 +200,6 @@
     <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#6a6760;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
   </footer>
 </div>
+<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 </body>
 </html>

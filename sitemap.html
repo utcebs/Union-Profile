@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sitemap â€” Union Trading Co.</title>
+<title>Sitemap — Union Trading Co.</title>
 <link rel="icon" type="image/png" href="uploads/union-trading-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,8 @@
   .smap-cat{background:#fff;border:1px solid #e3ded3;border-radius:12px;padding:14px 13px;display:flex;align-items:center;gap:9px;font-family:'Archivo';font-weight:700;font-size:13.5px;color:#161513;box-shadow:0 10px 22px -16px rgba(0,0,0,.25);transition:.25s}
   .smap-cat:hover{border-color:#c7c2b6;transform:translateY(-2px)}
   .smap-cat svg{flex:none;color:#57544c}
+  .smap-cat.soon{color:#a8a49b;background:#f3f1ec;border-color:#e8e3d8;box-shadow:none;pointer-events:none;cursor:not-allowed}
+  .smap-cat.soon svg{color:#b6b1a5}
   .smap-sub{position:relative;margin-top:16px;padding-left:18px;display:flex;flex-direction:column;gap:9px}
   .smap-sub::before{content:'';position:absolute;left:6px;top:-8px;bottom:18px;width:1px;background:#d9d5cc}
   .smap-item{position:relative;background:#fff;border:1px solid #eae5da;border-radius:8px;padding:10px 12px;font-size:12.5px;color:#4c4a44;font-weight:500;transition:.2s}
@@ -55,6 +57,19 @@
     .cta-grid{grid-template-columns:1fr!important;text-align:left}
   }
   @media(max-width:560px){.smap-cols{grid-template-columns:1fr!important}}
+  .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
+  .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
+  @media(max-width:900px){
+    header>div{position:relative}
+    .navtog{display:inline-flex;align-items:center;justify-content:center;position:absolute;right:clamp(16px,4vw,44px);top:50%;transform:translateY(-50%);z-index:3}
+    .mainnav{display:none}
+    header .shopnow{display:none}
+    header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    header.nav-open .shopnow{display:inline-flex}
+    header.nav-open .ico-bars{display:none}
+    header.nav-open .ico-close{display:block}
+  }
 </style>
 </head>
 <body>
@@ -64,12 +79,16 @@
   <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
     <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <a href="index.html"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
-      <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap">
+      <button id="navToggle" class="navtog" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg class="ico-bars" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ico-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <nav class="mainnav">
         <a href="about.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="divisions.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
         <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
-        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Service Center</a>
-        <a href="careers.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
+        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
+        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
       <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
@@ -159,7 +178,7 @@
 
         <!-- Service Center -->
         <div class="smap-col">
-          <a href="#" class="smap-cat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2-2 2.6-2.6z"/></svg>Service Center</a>
+          <a href="#" class="smap-cat soon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2-2 2.6-2.6z"/></svg>Service Center</a>
           <div class="smap-sub">
             <span class="smap-soon">Page coming soon</span>
           </div>
@@ -167,14 +186,9 @@
 
         <!-- Careers -->
         <div class="smap-col">
-          <a href="careers.html" class="smap-cat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a3 3 0 016 0v2"/></svg>Careers</a>
+          <a href="#" class="smap-cat soon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a3 3 0 016 0v2"/></svg>Careers</a>
           <div class="smap-sub">
-            <a href="careers.html" class="smap-item">Why Work With Us</a>
-            <a href="careers.html" class="smap-item">Life at Union</a>
-            <a href="careers.html#openings" class="smap-item">Open Positions</a>
-            <a href="careers.html" class="smap-item">Employee Stories</a>
-            <a href="careers.html" class="smap-item">Hiring Process</a>
-            <a href="careers.html" class="smap-item">Benefits</a>
+            <span class="smap-soon">Page coming soon</span>
           </div>
         </div>
 
@@ -263,6 +277,7 @@
     <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#6a6760;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
   </footer>
 </div>
+<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 </body>
 </html>
 

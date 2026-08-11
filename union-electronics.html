@@ -50,6 +50,31 @@
   .uesoc:hover{background:#fff;color:#0d0d0d;border-color:#fff}
   .viewbrand{transition:gap .25s}.viewbrand:hover{gap:13px}
   .prod-rail::-webkit-scrollbar{display:none}
+  /* ===== Categories hover-expand accordion ===== */
+  .cat-wrap{display:grid;grid-template-columns:0.82fr 1.5fr;gap:clamp(28px,4vw,60px);align-items:center}
+  .cat-acc{display:flex;gap:clamp(8px,0.9vw,13px);height:clamp(360px,42vw,540px)}
+  .cat-panel{position:relative;flex:1 1 0;min-width:0;border-radius:16px;overflow:hidden;cursor:pointer;background:#0d0d0d;transition:flex .55s cubic-bezier(.4,0,.2,1)}
+  .cat-panel.active{flex:2.8 1 0}
+  .cat-media{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
+  .cat-panel:hover .cat-media,.cat-panel.active .cat-media{transform:scale(1.05)}
+  .cat-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 28%,rgba(0,0,0,.8))}
+  .cat-icon{position:absolute;top:clamp(14px,1.6vw,22px);left:14px;color:rgba(255,255,255,.55);z-index:2}
+  .cat-body{position:absolute;left:0;right:0;bottom:0;padding:14px 12px;color:#fff;z-index:2;overflow:hidden}
+  .cat-panel.active .cat-body{padding:clamp(18px,2vw,28px)}
+  .cat-num{font-family:'Archivo';font-weight:700;font-size:12.5px;color:rgba(255,255,255,.72);letter-spacing:.05em;margin-bottom:9px}
+  .cat-line{width:28px;height:2px;background:rgba(255,255,255,.45);margin-bottom:12px}
+  .cat-title{font-family:'Archivo';font-weight:800;font-size:11px;letter-spacing:.01em;line-height:1.2;text-transform:uppercase}
+  .cat-panel.active .cat-title{font-size:clamp(18px,1.7vw,23px);line-height:1.08}
+  .cat-title .ct-f{display:none}
+  .cat-panel.active .cat-title .ct-s{display:none}
+  .cat-panel.active .cat-title .ct-f{display:inline}
+  .cat-extra{max-height:0;opacity:0;margin-top:0;transition:max-height .5s ease,opacity .35s ease,margin-top .5s ease}
+  .cat-panel.active .cat-extra{max-height:150px;opacity:1;margin-top:12px}
+  .cat-sub{color:#cbc8c2;font-size:clamp(13px,1vw,14.5px);line-height:1.5}
+  .cat-explore{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.14em;color:#fff;white-space:nowrap;transition:gap .25s}
+  .cat-explore:hover{gap:13px}
+  .catnav{width:44px;height:44px;border-radius:50%;border:1px solid #d1d4d9;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#161513;transition:background .2s,color .2s,border-color .2s}
+  .catnav:hover{background:#161513;color:#fff;border-color:#161513}
   @media(max-width:980px){
     .ue-hero-img{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;width:100%!important;height:300px}
     .ue-hero-img>div{background:linear-gradient(0deg,#0d0d0d,rgba(13,13,13,0) 55%)!important}
@@ -61,8 +86,29 @@
     .glance-fade{background:linear-gradient(0deg,#0d0d0d 24%,rgba(13,13,13,.5))!important}
     .connect-grid{grid-template-columns:1fr!important}
     .stat4,.contact4{grid-template-columns:1fr 1fr!important}
+    .cat-wrap{grid-template-columns:1fr!important}
+    .cat-acc{flex-direction:column;height:auto!important;gap:12px}
+    .cat-panel{flex:none!important}
+    .cat-panel .cat-body{position:relative!important;padding:52px 20px 20px!important}
+    .cat-panel .cat-title{font-size:17px!important}
+    .cat-panel .cat-title .ct-s{display:none!important}
+    .cat-panel .cat-title .ct-f{display:inline!important}
+    .cat-panel .cat-extra{max-height:150px!important;opacity:1!important;margin-top:12px!important}
   }
   @media(max-width:620px){.hbrandrow,.feat3{grid-template-columns:1fr!important}.stat4,.contact4{grid-template-columns:1fr!important}}
+  .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
+  .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
+  @media(max-width:900px){
+    header>div{position:relative}
+    .navtog{display:inline-flex;align-items:center;justify-content:center;position:absolute;right:clamp(16px,4vw,44px);top:50%;transform:translateY(-50%);z-index:3}
+    .mainnav{display:none}
+    header .shopnow{display:none}
+    header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    header.nav-open .shopnow{display:inline-flex}
+    header.nav-open .ico-bars{display:none}
+    header.nav-open .ico-close{display:block}
+  }
 </style>
 </head>
 <body>
@@ -72,12 +118,16 @@
   <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
     <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <a href="index.html"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
-      <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap">
+      <button id="navToggle" class="navtog" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg class="ico-bars" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ico-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <nav class="mainnav">
         <a href="about.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="divisions.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Divisions</a>
         <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
-        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Service Center</a>
-        <a href="careers.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
+        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
+        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
       <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
@@ -136,18 +186,30 @@
       <div style="display:flex;align-items:center;gap:clamp(18px,2.6vw,40px)">
         <div class="ue-marq-wrap" style="flex:1;min-width:0;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)">
           <div class="ue-marq" id="ueMarq" style="display:flex;align-items:center;gap:clamp(30px,3.4vw,52px);width:max-content;will-change:transform">
-          <div class="ourlogo" role="img" aria-label="Apple" style="background-image:url('uploads/applg_t.png')"></div>
-          <div class="ourlogo" role="img" aria-label="JBL" style="background-image:url('uploads/JBLlg_t.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Braun" style="background-image:url('assets/b1.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Hitachi" style="background-image:url('assets/b4.png')"></div>
-          <div class="ourlogo" role="img" aria-label="O General" style="background-image:url('assets/b10.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Glysolid" style="background-image:url('assets/b7.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Prestige" style="background-image:url('assets/b9.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Eagle Safes" style="background-image:url('assets/b8.png')"></div>
-          <div class="ourlogo" role="img" aria-label="India Gate" style="background-image:url('assets/b3.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Angel Wear" style="background-image:url('assets/b2.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Brandili" style="background-image:url('assets/b5.png')"></div>
-          <div class="ourlogo" role="img" aria-label="Constance Carroll" style="background-image:url('assets/b6.png')"></div>
+          <div class="ourlogo" role="img" aria-label="B&amp;D" style="background-image:url('img/brands-elec/b-d.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Belkin" style="background-image:url('img/brands-elec/belkin.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Canton" style="background-image:url('img/brands-elec/canton.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Cecotec" style="background-image:url('img/brands-elec/cecotec.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Changhong" style="background-image:url('img/brands-elec/changhong.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Chigo" style="background-image:url('img/brands-elec/chigo.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Daikin" style="background-image:url('img/brands-elec/daikin.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Fakir" style="background-image:url('img/brands-elec/fakir.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Galanz" style="background-image:url('img/brands-elec/galanz.png')"></div>
+          <div class="ourlogo" role="img" aria-label="General" style="background-image:url('img/brands-elec/general.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Glemgas" style="background-image:url('img/brands-elec/glemgas.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Havic" style="background-image:url('img/brands-elec/havic.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Hifuture" style="background-image:url('img/brands-elec/hifuture.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Hitachi" style="background-image:url('img/brands-elec/hitachi.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Konka" style="background-image:url('img/brands-elec/konka.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Morphy" style="background-image:url('img/brands-elec/morphy.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Naim &amp; Focal" style="background-image:url('img/brands-elec/naim-focal.png');width:64px;height:46px"></div>
+          <div class="ourlogo" role="img" aria-label="Proove" style="background-image:url('img/brands-elec/proove.png')"></div>
+          <div class="ourlogo" role="img" aria-label="ROWA" style="background-image:url('img/brands-elec/rowa.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Startec" style="background-image:url('img/brands-elec/startec.png')"></div>
+          <div class="ourlogo" role="img" aria-label="TCL" style="background-image:url('img/brands-elec/tcl.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Vestel" style="background-image:url('img/brands-elec/vestel.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Westpoint" style="background-image:url('img/brands-elec/westpoint.png')"></div>
+          <div class="ourlogo" role="img" aria-label="Yuwell" style="background-image:url('img/brands-elec/yuwell.png')"></div>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:16px;flex:none">
@@ -158,13 +220,21 @@
     </div>
   </div>
 
-  <!-- ============ KEY PARTNERS + HERO BRANDS ============ -->
-  <div class="wrap" style="padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(24px,3vw,36px)">
-    <div style="max-width:600px">
-      <div class="eyebrow" style="margin-bottom:18px">Key Partners</div>
-      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1.08;margin:0;color:#161513">Global brands.<br>Local commitment.</h2>
-      <p style="color:#6f6c65;font-size:14.5px;line-height:1.75;margin:20px 0 28px;max-width:480px">We partner with industry leaders to bring authentic products and world-class experiences to our customers across Kuwait.</p>
-      <a href="#" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px">VIEW ALL BRANDS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <!-- ============ OUR CATEGORIES (hover-expand accordion) ============ -->
+  <div class="wrap" style="padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(40px,5vw,64px)">
+    <div class="cat-wrap">
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px">Our Categories</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513">Everything for<br>modern living.</h2>
+        <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 30px;max-width:340px">Explore our categories across home, entertainment, mobility and technology.</p>
+        <a href="#" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 28px;border-radius:999px">EXPLORE ALL CATEGORIES <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div style="display:flex;align-items:center;gap:22px;margin-top:clamp(34px,4vw,50px)">
+          <div class="catnav" id="catPrev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
+          <div style="font-family:'Archivo';font-weight:700;font-size:15px;color:#161513;letter-spacing:0.05em"><span id="catNum">01</span> <span style="color:#b6b1a5">/ 07</span></div>
+          <div class="catnav" id="catNext" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="cat-acc" id="catAcc"></div>
     </div>
   </div>
 
@@ -352,6 +422,41 @@
     function step(){ if(!paused && period>0){ pos+=0.5; if(pos>=period) pos-=period; track.style.transform='translateX('+(-pos)+'px)'; } requestAnimationFrame(step); }
     requestAnimationFrame(step);
   })();
+
+  // ===== Our Categories hover-expand accordion =====
+  (function(){
+    var acc=document.getElementById('catAcc'); if(!acc) return;
+    // Placeholder gradients — drop a real photo per category into `img` to replace them.
+    var cats=[
+      {n:'01',t:'RAC',sub:'Cool comfort, all year round.',grad:'linear-gradient(160deg,#2a333c,#0c0f13)',img:'img/cat/rac.jpg',icon:'<rect x="3" y="5" width="18" height="8" rx="2"/><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"/>'},
+      {n:'02',t:'Home Appliance',short:'HA',sub:'The heart of every home.',grad:'linear-gradient(160deg,#342c25,#100d0b)',img:'img/cat/ha.jpg',icon:'<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.2"/><circle cx="8" cy="6.5" r="1"/>'},
+      {n:'03',t:'SDA',sub:'Everyday essentials, elevated.',grad:'linear-gradient(160deg,#2c3033,#0d0e10)',img:'img/cat/sda.jpg',icon:'<path d="M7 3h10l-1.4 8.5H8.4z"/><path d="M10 11.5v4.5M14 11.5v4.5"/><rect x="8" y="16" width="8" height="4.5" rx="1"/>'},
+      {n:'04',t:'TV',sub:'Entertainment, redefined.',grad:'linear-gradient(160deg,#1b2532,#090c11)',img:'img/cat/tv.jpg',icon:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>'},
+      {n:'05',t:'Mobile',sub:'Stay connected, everywhere.',grad:'linear-gradient(160deg,#26282c,#0c0d0e)',img:'img/cat/mobiles.jpg',icon:'<rect x="7" y="2" width="10" height="20" rx="2.4"/><path d="M11 18.2h2"/>'},
+      {n:'06',t:'Gaming',sub:'Play without limits.',grad:'linear-gradient(160deg,#2a2334,#0d0b11)',img:'img/cat/gaming.jpg',icon:'<path d="M8 12H5m1.5-1.5v3"/><circle cx="15.5" cy="11.5" r="1"/><circle cx="18" cy="13.5" r="1"/><path d="M17 7H7a5 5 0 00-5 5v.4A3.4 3.4 0 008.6 14l.7-1.1h5.4l.7 1.1A3.4 3.4 0 0022 12.4V12a5 5 0 00-5-5z"/>'},
+      {n:'07',t:'IT',sub:'Work smarter, create more.',grad:'linear-gradient(160deg,#1e2c2b,#0a0f0e)',img:'img/cat/it.jpg',icon:'<rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20l-1-2H3z"/>'}
+    ];
+    var DEF=0, active=DEF;
+    acc.innerHTML=cats.map(function(c,i){
+      var media=c.img ? 'background-image:url('+c.img+')' : 'background:'+c.grad;
+      return '<div class="cat-panel'+(i===DEF?' active':'')+'" data-i="'+i+'">'
+        +'<div class="cat-media" style="'+media+'"></div>'
+        +'<span class="cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+c.icon+'</svg></span>'
+        +'<div class="cat-body"><div class="cat-num">'+c.n+'</div><div class="cat-line"></div><div class="cat-title"><span class="ct-s">'+(c.short||c.t)+'</span><span class="ct-f">'+c.t+'</span></div>'
+        +'<div class="cat-extra"><div class="cat-sub">'+c.sub+'</div><a class="cat-explore" href="#">EXPLORE '+(c.short||c.t).toUpperCase()+' <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>'
+        +'</div></div>';
+    }).join('');
+    var panels=Array.prototype.slice.call(acc.querySelectorAll('.cat-panel'));
+    var numEl=document.getElementById('catNum');
+    function setActive(i){ active=i; panels.forEach(function(p,j){ p.classList.toggle('active',j===i); }); if(numEl) numEl.textContent=cats[i].n; }
+    panels.forEach(function(p,i){ p.addEventListener('mouseenter',function(){ setActive(i); }); });
+    acc.addEventListener('mouseleave',function(){ setActive(DEF); });
+    var pv=document.getElementById('catPrev'), nx=document.getElementById('catNext');
+    if(pv) pv.onclick=function(){ setActive((active-1+cats.length)%cats.length); };
+    if(nx) nx.onclick=function(){ setActive((active+1)%cats.length); };
+    setActive(DEF);
+  })();
 </script>
+<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 </body>
 </html>

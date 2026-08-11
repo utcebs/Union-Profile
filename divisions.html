@@ -43,6 +43,7 @@
   .ddesc{color:rgba(255,255,255,.82);font-size:clamp(15px,1.15vw,18px);line-height:1.65;max-width:440px;margin:22px 0 32px}
   .dcta{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#0d0d0d;font-weight:700;font-size:14px;letter-spacing:.06em;padding:16px 30px;border-radius:999px;border:1px solid #fff;transition:background .25s ease,color .25s ease}
   .dcta:hover{background:transparent;color:#fff}
+  .dcta.soon{background:rgba(255,255,255,.1);color:#b9b5ac;border-color:rgba(255,255,255,.22);pointer-events:none}
   .dcarousel{position:relative;display:flex;align-items:center;justify-content:center;min-height:440px}
   .dstage{position:relative;width:100%;height:420px;display:flex;align-items:center;justify-content:center}
   .dcard{position:absolute;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .5s,background .5s;padding:26px;text-align:center}
@@ -112,8 +113,8 @@
         <a href="about.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="divisions.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Divisions</a>
         <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
-        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Service Center</a>
-        <a href="careers.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
+        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
+        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
       <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
@@ -197,12 +198,12 @@
 
 <script>
   var DIV=[
-    {name:'Union Electronics', short:'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href:'union-electronics.html', logo:'img/Div/electronics-logo.png', banner:'img/Div/electronics-banner.jpg', img:'img/div-elec.webp'},
-    {name:'B2B', short:'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href:'', logo:'img/Div/b2b-logo.png', banner:'img/Div/b2b-banner.jpg', img:'img/div-fmcg.webp'},
-    {name:'Aluna', short:'Internationally acclaimed cosmetics and fragrances. Luxury, elegance, and confidence in every detail.', href:'', logo:'img/Div/aluna-logo.png', banner:'img/Div/aluna-banner.jpg', img:'img/div-cosmetics.webp'},
-    {name:'Labels', short:'Premium apparel, footwear, and lifestyle brands with timeless, everyday style.', href:'', logo:'img/Div/labels-logo.png', banner:'img/Div/labels-banner.jpg', img:'img/div-fashion.webp'},
-    {name:'Union Services', short:'Advanced medical technologies and dependable healthcare solutions for professionals across Kuwait.', href:'', logo:'img/Div/services-logo.png', banner:'img/Div/services-banner.jpg', img:'img/div-health.webp'},
-    {name:'Commercial AC Projects', short:'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href:'', logo:'img/Div/commercial-logo.png', banner:'img/Div/commercial-banner.jpg', img:'img/div-commercial.webp'}
+    {name:'Union Electronics Retail & Wholesale', short:'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href:'union-electronics.html', logo:'img/Div/electronics-logo.png', banner:'img/Div/electronics-banner.jpg', img:'img/div-elec.webp'},
+    {name:'Aluna', short:'Internationally acclaimed cosmetics and fragrances. Luxury, elegance, and confidence in every detail.', href:'', logo:'img/Div/aluna-logo.png', banner:'img/Div/aluna-banner.png', img:'img/div-cosmetics.webp'},
+    {name:'FMCG', short:'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href:'', soon:true, logo:'img/Div/fmcg-logo.png', banner:'img/Div/b2b-banner.jpg', img:'img/div-fmcg.webp'},
+    {name:'Labels', short:'Premium apparel, footwear, and lifestyle brands with timeless, everyday style.', href:'', soon:true, logo:'img/Div/labels-logo.png', banner:'img/Div/labels-banner.jpg', img:'img/div-fashion.webp'},
+    {name:'Union Services', short:'Advanced medical technologies and dependable healthcare solutions for professionals across Kuwait.', href:'', soon:true, logo:'img/Div/services-logo.png', logoBig:true, banner:'img/Div/services-banner.jpg', img:'img/div-health.webp'},
+    {name:'Commercial AC and Home Appliance Projects', logoName:'Commercial Projects', short:'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href:'', soon:true, logo:'img/Div/commercial-logo.png', banner:'img/Div/commercial-banner.jpg', img:'img/div-commercial.webp'}
   ];
   var stage=document.getElementById('divStage'), nameEl=document.getElementById('divName'),
       descEl=document.getElementById('divDesc'), cta=document.getElementById('divCta'), dots=document.getElementById('divDots');
@@ -220,7 +221,7 @@
   var nameLogo=document.getElementById('divNameLogo');
   // card content: division logo + UTC monogram (each falls back to text if the file is missing)
   function logo(d){
-    return '<img class="dlogo-img" src="'+d.logo+'" alt="'+d.name+'" data-name="'+d.name+'">'+
+    return '<img class="dlogo-img" src="'+d.logo+'" alt="'+d.name+'" data-name="'+(d.logoName||d.name)+'"'+(d.logoBig?' style="max-width:82%;max-height:60px"':'')+'>'+
            '<img class="dutc-img" src="'+UTC_LOGO+'" alt="UTC">';
   }
   function logoFallback(scope){
@@ -247,7 +248,8 @@
     nameEl.textContent=d.name.toUpperCase();
     setNameLogo(d);
     descEl.textContent=d.short;
-    cta.setAttribute('href', d.href || '#');
+    if(d.soon){ cta.classList.add('soon'); cta.removeAttribute('href'); cta.querySelector('span').textContent='Coming soon'; }
+    else{ cta.classList.remove('soon'); cta.setAttribute('href', d.href || '#'); cta.querySelector('span').textContent='Discover'; }
     stage.innerHTML=
       '<div class="dcard side prev" data-go="'+prev+'">'+logo(DIV[prev])+'</div>'+
       '<div class="dcard active">'+logo(d)+'</div>'+
@@ -265,9 +267,9 @@
 
   // all-divisions grid
   document.getElementById('dGrid').innerHTML = DIV.map(function(d){
-    var cta = d.href ? '<a class="dg-cta" href="'+d.href+'">Discover <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>'
-                     : '<span class="dg-cta soon">Coming soon</span>';
-    return '<div class="dg-card"><div class="dg-logo"><img class="dlogo-img" src="'+d.logo+'" alt="'+d.name+'" data-name="'+d.name+'"></div><h3 class="dg-name">'+d.name+'</h3><p class="dg-desc">'+d.short+'</p>'+cta+'</div>';
+    var cta = d.soon ? '<span class="dg-cta soon">Coming soon</span>'
+                     : '<a class="dg-cta" href="'+(d.href||'#')+'">Discover <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>';
+    return '<div class="dg-card"><div class="dg-logo"'+(d.logoBg?' style="background:'+d.logoBg+'"':'')+'><img class="dlogo-img" src="'+d.logo+'" alt="'+d.name+'" data-name="'+(d.logoName||d.name)+'"'+(d.logoBig?' style="max-width:78%;max-height:66px"':'')+'></div><h3 class="dg-name">'+d.name+'</h3><p class="dg-desc">'+d.short+'</p>'+cta+'</div>';
   }).join('');
   logoFallback(document.getElementById('dGrid'));
 
