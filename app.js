@@ -11,7 +11,8 @@
     'div-elec': { s: 1, x: 23.44, y: 0 }, 'div-fmcg': { s: 1, x: 21.83, y: 0 }, 'div-cosmetics': { s: 1, x: 30.91, y: 0 }, 'div-fashion': { s: 1, x: 16.63, y: 0 }, 'div-health': { s: 1, x: 0, y: 0 }, 'div-commercial': { s: 1, x: 0, y: 0 },
     'story-storefront': { s: 1, x: 0, y: 4.99 },
     'ms-1966': { s: 1, x: 7.69, y: 0 }, 'ms-1970': { s: 1, x: 7.69, y: 0 }, 'ms-1969': { s: 1, x: 7.69, y: 0 },
-    'pimg-0': { s: 1, x: -41.94, y: 0 }, 'pimg-1': { s: 1, x: -34.51, y: 0 }, 'pimg-2': { s: 1, x: -26.52, y: 0 }, 'pimg-3': { s: 1, x: 0, y: 0 }
+    'pimg-0': { s: 1, x: -41.94, y: 0 }, 'pimg-1': { s: 1, x: -34.51, y: 0 }, 'pimg-2': { s: 1, x: -26.52, y: 0 }, 'pimg-3': { s: 1, x: 0, y: 0 },
+    'hero-4': { s: 1, x: -23, y: 0 }  // Havit (slide 5) — pan right so the subject's face stays in frame
   };
 
   function layoutSlot(el) {
@@ -86,18 +87,19 @@
   /* ---------- data ---------- */
   const NAV = ['About Us', 'Our Divisions', 'Our Stores', 'Our Channels', 'Careers', 'Contact'];
   const NAV_SOON = ['Careers'];
-  const heroImgs = ['uploads/app.png', 'uploads/Carousal4.jpg', 'uploads/OGeneral.jpg', 'uploads/JBL.png'];
-  const heroPartners = ['Apple', 'GlemGas', 'O General', 'JBL'];
-  const heroLabelLight = [true, true, false, true];  // dark label only on the light O General image
+  const heroImgs = ['uploads/Carousal4.jpg', 'uploads/OGeneral.jpg', 'uploads/cecotec.webp', 'uploads/changhong.webp', 'uploads/havit.webp'];
+  const heroPartners = ['GlemGas', 'General', 'Cecotec', 'CHiQ Changhong', 'Havit'];
+  const heroLabelLight = [true, false, false, true, true];  // dark label on the light General & Cecotec images; white on Changhong & Havit (dark scenes)
 
   function heroPalette() {
     const light = (bg, head, sub, kick, track, muted) => ({ heroBg: bg, heroHead: head, heroSub: sub, heroKick: kick, heroTrack: track, heroFill: head, heroMuted: muted, heroCtaBg: '#0d0d0d', heroCtaTx: '#fff' });
     const dark = (bg, head, sub, kick, track, muted) => ({ heroBg: bg, heroHead: head, heroSub: sub, heroKick: kick, heroTrack: track, heroFill: head, heroMuted: muted, heroCtaBg: head, heroCtaTx: bg });
     return [
-      light('#ece9e1', '#161513', '#4a473f', '#8f8b81', '#c4c0b5', '#a5a196'),
-      dark('#182430', '#f2efe8', '#b6c0c8', '#7d909c', '#37485580', '#6f818d'),
-      light('#e6ddc9', '#2a2417', '#57503d', '#978f76', '#c9c0a6', '#a99f83'),
-      dark('#262322', '#f2efe9', '#b6b1a8', '#8a857b', '#47433d80', '#7d786f'),
+      dark('#182430', '#f2efe8', '#b6c0c8', '#7d909c', '#37485580', '#6f818d'),   // GlemGas
+      light('#e6ddc9', '#2a2417', '#57503d', '#978f76', '#c9c0a6', '#a99f83'),    // O General
+      light('#e8e3d9', '#2a2620', '#57524a', '#948d7e', '#cbc4b4', '#a49b88'),    // Cecotec (warm bedroom)
+      dark('#101d33', '#eef2f6', '#aab6c6', '#748399', '#2c3c5680', '#6b7a90'),    // CHiQ Changhong (starry navy)
+      light('#dcdedd', '#20262a', '#4e565a', '#8a9296', '#c1c7c6', '#98a0a1'),    // Havit (cool misty forest)
     ];
   }
 
@@ -114,16 +116,16 @@
 
   const divData = [
     { name: 'Union Electronics', href: 'union-electronics.html', logo: 'img/Div/electronics-logo.png', cardLogo: 'img/Div/Black.png', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Braun', 'Hitachi', '+6 more'], slot: 'div-elec' },
-    { name: 'Aluna', logo: 'img/Div/aluna-logo.png', cardLogo: 'img/Div/aluna-logo.png', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Constance Carroll', 'Glysolid', '+5 more'], slot: 'div-cosmetics' },
+    { name: 'Aluna', href: 'aluna.html', logo: 'img/Div/aluna-logo.png', cardLogo: 'img/Div/aluna-logo.png', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Constance Carroll', 'Glysolid', '+5 more'], slot: 'div-cosmetics' },
     { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.png', cardLogo: 'img/Div/fmcg-logo.png', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['India Gate', 'Glysolid', 'Angel Wear', '+8 more'], slot: 'div-fmcg' },
-    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.png', cardLogo: 'img/Div/labels-logo.png', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion, UNION established a strong presence by introducing internationally renowned apparel, footwear, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Angel Wear', 'Brandili', '+4 more'], slot: 'div-fashion' },
-    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.png', cardLogo: 'img/Div/services-logo.png', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'As the healthcare sector evolved, the need for advanced medical technologies and dependable healthcare solutions continued to grow. UNION answered this demand by partnering with globally recognized brands to provide innovative medical equipment and healthcare products that support hospitals, clinics, and healthcare professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Glysolid', 'Prestige', 'Eagle Safes', '+5 more'], slot: 'div-health' },
+    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.png', cardLogo: 'img/Div/labels-logo.png', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Angel Wear', 'Brandili', '+4 more'], slot: 'div-fashion' },
+    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.png', cardLogo: 'img/Div/services-logo.png', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Glysolid', 'Prestige', 'Eagle Safes', '+5 more'], slot: 'div-health' },
     { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.png', cardLogo: 'img/Div/commercial-logo.png', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['O General', 'Hitachi', '+3 more'], slot: 'div-commercial' }
   ];
 
   const storyStats = [
-    { n: '75', l: 'YEARS IN BUSINESS', sub: 'Built on trust. Driven by excellence.', icon: ic('<rect x="3" y="7" width="18" height="13" rx="1"></rect><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"></path>') },
-    { n: '70+', l: 'GLOBAL BRANDS', sub: 'Partnerships with world leaders.', icon: ic('<circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"></path>') },
+    { n: '75+', l: 'YEARS IN BUSINESS', sub: 'Built on trust. Driven by excellence.', icon: ic('<rect x="3" y="7" width="18" height="13" rx="1"></rect><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"></path>') },
+    { n: '80+', l: 'GLOBAL BRANDS', sub: 'Partnerships with world leaders.', icon: ic('<circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"></path>') },
     { n: '500+', l: 'EMPLOYEES', sub: 'A team powering our promise.', icon: ic('<circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3 3-5 6-5s6 2 6 5"></path><path d="M16 6a3 3 0 010 6M21 20c0-2.5-2-4-4-4.5"></path>') },
     { n: '10+', l: 'RETAIL OUTLETS', sub: 'Across Kuwait and beyond.', icon: ic('<path d="M3 9l1.5-5h15L21 9"></path><path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9"></path><path d="M3 9h18"></path><path d="M9 20v-6h6v6"></path>') }
   ];
@@ -148,7 +150,9 @@
     { year: '1999', title: 'New Headquarters in Dawliya Complex', desc: 'We relocated to a new headquarters in the Dawliya Complex, anchoring our operations for the decades ahead.', slot: 'ms-1999' },
     { year: '2009', title: 'Appliance Showroom — Jahra, Farwaniya & Hawally', desc: 'We launched dedicated appliance showrooms in Jahra, Farwaniya and Hawally, widening access to home and electronic appliances.', slot: 'ms-2009' },
     { year: '2017', title: 'Yaal Showroom', desc: 'The Yaal showroom opened, adding a modern retail destination to our growing network.', slot: 'ms-2017' },
-    { year: '2020', title: 'New Hawally Department Store', desc: 'We unveiled our new Hawally department store — a flagship retail experience for a new generation of customers.', slot: 'ms-2020' }
+    { year: '2020', title: 'New Hawally Department Store', desc: 'We unveiled our new Hawally department store — a flagship retail experience for a new generation of customers.', slot: 'ms-2020' },
+    { year: '2024', title: 'Launch of Aluna', desc: 'We introduced Aluna, our dedicated beauty and fragrance destination, bringing internationally acclaimed cosmetics and perfumes to customers across Kuwait.', slot: 'ms-2024' },
+    { year: '2026', title: 'Union Electronics', desc: 'We brought Union Electronics to life across Physical and Digital Stores, delivering a seamless omni-channel experience for the latest technology and home appliances.', slot: 'ms-2026' }
   ];
 
   const socials = [
@@ -192,44 +196,55 @@
   const el = id => document.getElementById(id);
 
   // nav (About Us -> About page, Our Divisions -> divisions, Contact -> contact)
-  const NAV_HREF = { 'About Us': 'about.html', 'Our Divisions': 'divisions.html', 'Our Stores': 'our-stores.html', 'Our Channels': '#', 'Contact': '#contact' };
+  const NAV_HREF = { 'About Us': 'about.html', 'Our Divisions': 'divisions.html', 'Our Stores': 'our-stores.html', 'Our Channels': 'our-channels.html', 'Contact': '#contact' };
   el('nav').innerHTML = NAV.map(l => NAV_SOON.indexOf(l) !== -1
     ? '<span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">' + l + '</span>'
     : '<a href="' + (NAV_HREF[l] || '#') + '" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">' + l + '</a>').join('');
 
-  // brand marquee — Apple + JBL (raw white), then the full Electronics brand set,
-  // rendered as white silhouettes via the invert filter. Kept separate from
-  // brandNames so the division brand-chip lookup (logoFor) is unaffected.
+  // brand marquee — the full Electronics brand set, rendered as white silhouettes
+  // via the invert filter. Kept separate from brandNames so the division brand-chip
+  // lookup (logoFor) is unaffected.
   const marqBrands = [
     { name: 'B&D', src: 'img/brands-elec/b-d.png' },
+    { name: 'Triumph', src: 'img/brands-aluna/triumph.webp' },
     { name: 'Belkin', src: 'img/brands-elec/belkin.png' },
     { name: 'Canton', src: 'img/brands-elec/canton.png' },
+    { name: 'Sloggi', src: 'img/brands-aluna/sloggi.webp' },
     { name: 'Cecotec', src: 'img/brands-elec/cecotec.png' },
     { name: 'Changhong', src: 'img/brands-elec/changhong.png' },
+    { name: 'Maidenform', src: 'img/brands-aluna/maidenform.webp' },
     { name: 'Chigo', src: 'img/brands-elec/chigo.png' },
     { name: 'Daikin', src: 'img/brands-elec/daikin.png' },
+    { name: 'Hanes', src: 'img/brands-aluna/hanes.webp' },
     { name: 'Fakir', src: 'img/brands-elec/fakir.png' },
     { name: 'Galanz', src: 'img/brands-elec/galanz.png' },
+    { name: 'Bali', src: 'img/brands-aluna/bali.webp' },
     { name: 'General', src: 'img/brands-elec/general.png' },
     { name: 'Glemgas', src: 'img/brands-elec/glemgas.png' },
+    { name: 'Naomi & Nicole', src: 'img/brands-aluna/naomi-nicole.webp' },
     { name: 'Havic', src: 'img/brands-elec/havic.png' },
     { name: 'Hifuture', src: 'img/brands-elec/hifuture.png' },
+    { name: 'Carole Hochman', src: 'img/brands-aluna/carole-hochman.webp' },
     { name: 'Hitachi', src: 'img/brands-elec/hitachi.png' },
     { name: 'Konka', src: 'img/brands-elec/konka.png' },
+    { name: 'Leg Avenue', src: 'img/brands-aluna/leg-avenue.webp' },
     { name: 'Morphy', src: 'img/brands-elec/morphy.png' },
     { name: 'Naim & Focal', src: 'img/brands-elec/naim-focal.png', big: true },
+    { name: 'Eileen West', src: 'img/brands-aluna/eileen-west.webp' },
     { name: 'Proove', src: 'img/brands-elec/proove.png' },
     { name: 'ROWA', src: 'img/brands-elec/rowa.png' },
+    { name: 'Cupid', src: 'img/brands-aluna/cupid.webp' },
     { name: 'Startec', src: 'img/brands-elec/startec.png' },
     { name: 'TCL', src: 'img/brands-elec/tcl.png' },
+    { name: 'Mapale', src: 'img/brands-aluna/mapale.webp' },
     { name: 'Vestel', src: 'img/brands-elec/vestel.png' },
+    { name: 'Ivory', src: 'img/brands-aluna/ivory.webp' },
     { name: 'Westpoint', src: 'img/brands-elec/westpoint.png' },
-    { name: 'Yuwell', src: 'img/brands-elec/yuwell.png' }
+    { name: 'C.Lengerie', src: 'img/brands-aluna/c-lengerie.webp' },
+    { name: 'Yuwell', src: 'img/brands-elec/yuwell.png' },
+    { name: 'G World', src: 'img/brands-aluna/g-world.webp' }
   ];
-  const marqueeBrands = [
-    { name: 'Apple', src: 'uploads/applg_t.png', raw: true },
-    { name: 'JBL', src: 'uploads/JBLlg_t.png', raw: true },
-  ].concat(marqBrands);
+  const marqueeBrands = marqBrands;
   const marqHtml = marqueeBrands.map(b => {
     const filt = b.raw ? 'none' : 'brightness(0) invert(1)';
     return '<div class="bcell" style="width:200px;height:56px;border-right:1px solid rgba(255,255,255,0.16);padding:' + (b.big ? '5px 24px' : '13px 24px') + ';opacity:0.82;transition:opacity .35s ease">'
@@ -237,7 +252,7 @@
   }).join('');
   const marqsets = document.querySelectorAll('.marqset');
   marqsets.forEach(m => m.innerHTML = marqHtml);
-  // JS-driven marquee so the FIRST brand (Apple) starts centred, then scrolls
+  // JS-driven marquee so the first brand starts centred, then scrolls
   (function () {
     const row = document.querySelector('.marqrow');
     if (!row || !marqsets.length) return;
@@ -309,6 +324,7 @@
   });
   el('heroDots').innerHTML = heroImgs.map((_, i) => '<button data-hd="' + i + '" aria-label="slide" style="width:9px;height:9px;border-radius:50%;border:none;cursor:pointer;padding:0;background:' + (i === 0 ? '#141311' : 'rgba(255,255,255,0.55)') + '"></button>').join('');
   el('heroDots').querySelectorAll('button').forEach(b => b.onclick = () => setHero(+b.dataset.hd));
+  el('heroMuted').textContent = ('0' + heroImgs.length).slice(-2);  // total-slides counter, auto-matches heroImgs
 
   // division image layers + tabs
   el('divLayers').innerHTML = '';
@@ -445,7 +461,7 @@
 
   /* ---------- hero controller ---------- */
   function setHero(i) {
-    S.hero = ((i % 4) + 4) % 4;
+    S.hero = ((i % heroImgs.length) + heroImgs.length) % heroImgs.length;
     const pal = heroPalette()[S.hero];
     el('heroText').style.background = pal.heroBg;
     el('heroKick').style.color = pal.heroKick;
@@ -457,7 +473,7 @@
     el('heroLabel').style.color = pal.heroHead;
     el('heroTrack').style.background = pal.heroTrack;
     el('heroFill').style.background = pal.heroFill;
-    el('heroFill').style.width = Math.round((S.hero + 1) / 4 * 100) + '%';
+    el('heroFill').style.width = Math.round((S.hero + 1) / heroImgs.length * 100) + '%';
     el('heroMuted').style.color = pal.heroMuted;
     el('heroPartner').textContent = heroPartners[S.hero];
     const lite = heroLabelLight[S.hero] !== false;
@@ -583,6 +599,42 @@
   }
   if (cfIntent) { cfIntent.addEventListener('change', syncPartnership); syncPartnership(); }
 
+  // Preselect "Partnership Opportunity" (and optionally a division) — used by the
+  // inner-page "Partner with us" CTAs and the homepage partner button.
+  function preselectPartnership(division) {
+    if (cfIntent) { cfIntent.value = 'partnership'; syncPartnership(); }
+    const dv = el('cfDivision');
+    if (dv && division) dv.value = division;
+  }
+  // Deep-link from other pages: index.html?intent=partnership&division=<slug>#contact
+  (function () {
+    const p = new URLSearchParams(location.search || '');
+    const intent = p.get('intent'), division = p.get('division');
+    if (intent === 'partnership' || division) {
+      preselectPartnership(division || '');
+      // scroll to the form itself (not the section top) so the preselected dropdowns are visible.
+      // Recompute the absolute position each time — images above load late and shift the layout.
+      const target = el('contactForm') || el('contact');
+      if (target) {
+        const doScroll = function () {
+          const y = target.getBoundingClientRect().top + window.pageYOffset - 90; // clear sticky header
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        };
+        setTimeout(doScroll, 200);
+        window.addEventListener('load', function () { setTimeout(doScroll, 200); });
+      }
+    }
+  })();
+  // Homepage's own "Want to partner with us?" button — preselect without a reload
+  const homePartnerBtn = document.querySelector('a.h-shop[href="#contact"]');
+  if (homePartnerBtn) homePartnerBtn.addEventListener('click', function () { preselectPartnership(''); });
+
+  // Paste your free Web3Forms access key here to have the WEBSITE send submissions
+  // straight to your inbox (get one in 30s at https://web3forms.com — enter your email,
+  // they mail you a key). While this is empty, the form falls back to opening the
+  // visitor's email app (mailto) so nothing breaks.
+  const WEB3FORMS_KEY = '';
+
   el('contactForm').addEventListener('submit', e => {
     e.preventDefault();
     const sel = el('cfIntent');
@@ -595,6 +647,7 @@
     const msg = (el('cfMessage').value || '').trim();
     const isPartner = sel.value === 'partnership';
     const subject = (subjIn || (opt ? opt.text : 'Website enquiry')) + (name ? ' — ' + name : '');
+    let division = '', partType = '', org = '', other = '';
     const lines = [
       'Enquiry type: ' + (opt ? opt.text : ''),
       'Name: ' + name,
@@ -602,14 +655,57 @@
       'Phone: ' + phone
     ];
     if (isPartner) {
-      lines.push('Partnership type: ' + (el('cfPartType') ? el('cfPartType').value : ''));
-      lines.push('Organisation: ' + (el('cfOrg') ? (el('cfOrg').value || '').trim() : ''));
-      lines.push('Other information: ' + (el('cfOther') ? (el('cfOther').value || '').trim() : ''));
+      const dvSel = el('cfDivision');
+      division = dvSel && dvSel.value ? ((dvSel.options[dvSel.selectedIndex] || {}).text || '') : '';
+      partType = el('cfPartType') ? el('cfPartType').value : '';
+      org = el('cfOrg') ? (el('cfOrg').value || '').trim() : '';
+      other = el('cfOther') ? (el('cfOther').value || '').trim() : '';
+      if (division) lines.push('Division: ' + division);
+      lines.push('Partnership type: ' + partType);
+      lines.push('Organisation: ' + org);
+      lines.push('Other information: ' + other);
     }
     lines.push('', msg);
-    window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-    el('submitBtn').childNodes[0].nodeValue = 'OPENING EMAIL… ';
-    setTimeout(() => { el('submitBtn').childNodes[0].nodeValue = 'SEND MESSAGE'; }, 4000);
+
+    const btn = el('submitBtn');
+    const setBtn = t => { btn.childNodes[0].nodeValue = t; };
+    const openMail = label => {
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+      setBtn(label || 'OPENING EMAIL… ');
+      setTimeout(() => setBtn('SEND MESSAGE'), 4000);
+    };
+
+    // No form service configured yet → open the visitor's email app.
+    if (!WEB3FORMS_KEY) { openMail(); return; }
+
+    // Basic validation before a real send.
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setBtn('CHECK YOUR EMAIL '); setTimeout(() => setBtn('SEND MESSAGE'), 3000); return; }
+
+    // Send through the website (no page reload; lands in the inbox tied to the key).
+    btn.disabled = true; setBtn('SENDING… ');
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: subject,
+        from_name: name || 'Website visitor',
+        name: name, email: email, phone: phone,
+        enquiry_type: opt ? opt.text : '',
+        division: division, partnership_type: partType, organisation: org, other_information: other,
+        message: lines.join('\n'),
+        botcheck: ''
+      })
+    })
+      .then(r => r.json())
+      .then(d => {
+        if (d && d.success) {
+          setBtn('MESSAGE SENT ✓ ');
+          el('contactForm').reset(); syncPartnership();
+          setTimeout(() => { setBtn('SEND MESSAGE'); btn.disabled = false; }, 5000);
+        } else { throw new Error('service'); }
+      })
+      .catch(() => { btn.disabled = false; openMail('OPENING EMAIL… '); }); // fallback so the enquiry isn't lost
   });
 
   /* ---------- KPI count-up ---------- */

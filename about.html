@@ -44,9 +44,11 @@
   .brandmark:hover{opacity:1;color:#fff}
   .p-logo{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;height:clamp(76px,7.8vw,100px);color:#8f8c85;font-weight:800;font-size:clamp(19px,2.1vw,29px);letter-spacing:.02em;transition:color .25s;white-space:nowrap}
   .p-logo::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:52%;background:rgba(255,255,255,.2)}
-  .p-logo:nth-child(5n)::after{display:none}
+  .p-logo:nth-child(6n)::after,.p-logo:last-child::after{display:none}
   .p-logo:hover{color:#fff}
   .p-logo svg{flex:none}
+  .pl-img{max-width:clamp(78px,9vw,120px);max-height:34px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.56;transition:opacity .25s}
+  .p-logo:hover .pl-img{opacity:1}
   .evo-step{cursor:pointer}
   .evo-ic{transition:transform .4s ease,background .4s ease,border-color .4s ease,color .4s ease,box-shadow .4s ease}
   .evo-step.on .evo-ic{background:#0d0d0d!important;border-color:#0d0d0d!important;color:#fff!important;transform:scale(1.14);box-shadow:0 16px 32px -14px rgba(0,0,0,.5)}
@@ -97,16 +99,16 @@
         <a href="about.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">About Us</a>
         <a href="divisions.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
         <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
-        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
+        <a href="our-channels.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
         <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <a href="index.html?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
     </div>
   </header>
 
   <!-- ============ CEO MESSAGE HERO ============ -->
-  <section style="background:#0d0d0d;color:#fff">
+  <section id="ceo" style="background:#0d0d0d;color:#fff">
     <div class="wrap" style="padding:clamp(22px,2.6vw,30px) clamp(20px,5vw,64px) 0">
       <div class="crumb" style="display:flex;align-items:center;gap:9px;font-size:13px;color:#8b8880"><a href="index.html">Home</a><span>&rsaquo;</span><span style="color:#cfcbc0">About Us</span></div>
     </div>
@@ -116,7 +118,7 @@
           <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px">Our Vision</div>
           <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,4vw,54px);line-height:1.05;margin:0">A Message<br>From Our CEO</h1>
           <div style="font-family:'Cormorant Garamond',serif;color:#8f8b81;font-size:44px;line-height:0;height:20px;margin-top:26px">&ldquo;</div>
-          <p style="color:#c8c4bb;font-size:16px;line-height:1.7;margin:10px 0 0;max-width:400px">We are not simply distributing products. We are building the future of retail in Kuwait &mdash; with our partners, our people, and our purpose.</p>
+          <p style="color:#c8c4bb;font-size:16px;line-height:1.7;margin:10px 0 0;max-width:400px">The best way to predict the future, is to create it.</p>
           <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:#c2c5cc;margin-top:26px">John Knight</div>
           <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:15px;margin-top:10px">Mr. John Knight</div>
           <div style="color:#8b8880;font-size:13px;margin-top:3px">Chief Executive Officer</div>
@@ -137,11 +139,11 @@
   </section>
 
   <!-- ============ THE COMPANY WE'RE BECOMING ============ -->
-  <div class="wrap" style="padding-top:clamp(46px,6vw,80px);padding-bottom:clamp(46px,6vw,80px)">
+  <div id="evolution" class="wrap" style="padding-top:clamp(46px,6vw,80px);padding-bottom:clamp(46px,6vw,80px)">
     <div class="becoming-grid" style="display:grid;grid-template-columns:0.85fr 2fr;gap:clamp(28px,3.4vw,54px);align-items:center">
       <div>
         <div class="eyebrow" style="margin-bottom:16px">Who We Are Today</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.08;margin:0;color:#161513">The Company<br>We're Becoming</h2>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.08;margin:0;color:#161513">Our<br>Evolution</h2>
         <p style="color:#6f6c65;font-size:14.5px;line-height:1.75;margin:20px 0 26px;max-width:300px">We are evolving to meet the demands of tomorrow while staying true to the values that have defined us for generations.</p>
         <a href="index.html#story" class="btn-dark">EXPLORE OUR JOURNEY <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
@@ -150,8 +152,8 @@
           <div class="be-show"><img class="be-slide on" src="img/store-01-g0.webp" alt=""><img class="be-slide" src="img/store-04-main.webp" alt=""><img class="be-slide" src="img/story-storefront.webp" alt=""></div>
           <div class="be-body">
             <div style="color:#57544c;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m3 17 5-4 4 3 3-2 6 4"/></svg></div>
-            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">Traditional Distributor</div>
-            <p style="color:#8a867e;font-size:12.5px;line-height:1.55;margin:11px 0 0">A trusted name in electronics retail for decades.</p>
+            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">First Showroom</div>
+            <p style="color:#8a867e;font-size:12.5px;line-height:1.55;margin:11px 0 0">It began with a single showroom, bringing world-class brands to Kuwait.</p>
           </div>
         </div>
         <div class="be-arrow" style="display:flex;align-items:center;color:#c2beb2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
@@ -159,8 +161,8 @@
           <div class="be-show"><img class="be-slide on" src="img/Careers/Hero.png" alt=""><img class="be-slide" src="img/Careers/Video Banner.png" alt=""><img class="be-slide" src="img/store-01-g2.webp" alt=""></div>
           <div class="be-body">
             <div style="color:#57544c;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11l2.5 2.5a2 2 0 002.8 0l4-4a2 2 0 000-2.8l-2-2M8 11l-4 4M8 11l3-3 4 4M2 14l4 4"/></svg></div>
-            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">Technology Partner</div>
-            <p style="color:#8a867e;font-size:12.5px;line-height:1.55;margin:11px 0 0">Empowering brands with deeper market insights and solutions.</p>
+            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">Multiple Department Stores</div>
+            <p style="color:#8a867e;font-size:12.5px;line-height:1.55;margin:11px 0 0">Growth into full-scale department stores serving the nation at large.</p>
           </div>
         </div>
         <div class="be-arrow" style="display:flex;align-items:center;color:#c2beb2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
@@ -168,8 +170,8 @@
           <div class="be-show"><img class="be-slide on" src="img/store-01-g1.webp" alt=""><img class="be-slide" src="img/store-07-main.webp" alt=""><img class="be-slide" src="img/store-01-g3.webp" alt=""></div>
           <div class="be-body">
             <div style="color:#57544c;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7z"/></svg></div>
-            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">Experience Creator</div>
-            <p style="color:#8a867e;font-size:12.5px;line-height:1.55;margin:11px 0 0">Delivering world-class customer experiences across every touchpoint.</p>
+            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">Multiple Category-Specific Stores</div>
+            <p style="color:#8a867e;font-size:12.5px;line-height:1.55;margin:11px 0 0">Specialised stores built around distinct product categories and expertise.</p>
           </div>
         </div>
         <div class="be-arrow" style="display:flex;align-items:center;color:#c2beb2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
@@ -177,8 +179,8 @@
           <div class="be-show" style="background:#000"><img class="be-slide on" src="img/Careers/Video Banner.png" alt=""><img class="be-slide" src="img/store-01-g4.webp" alt=""><img class="be-slide" src="img/store-07-main.webp" alt=""></div>
           <div class="be-body">
             <div style="color:#c2c5cc;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
-            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#fff;line-height:1.2">Future Retail Ecosystem</div>
-            <p style="color:#a8a49b;font-size:12.5px;line-height:1.55;margin:11px 0 0">Building an integrated ecosystem of products, services and innovation.</p>
+            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#fff;line-height:1.2">Omni-Channel</div>
+            <p style="color:#a8a49b;font-size:12.5px;line-height:1.55;margin:11px 0 0">One seamless experience connecting every store, screen and touchpoint.</p>
           </div>
         </div>
       </div>
@@ -186,17 +188,17 @@
   </div>
 
   <!-- ============ WHY GLOBAL BRANDS CHOOSE UTC (stats) ============ -->
-  <section style="position:relative;background:#0d0d0d;color:#fff;overflow:hidden">
-    <img src="img/Careers/Div/UE - mini banner.png" alt="" style="position:absolute;top:0;right:0;height:100%;width:52%;object-fit:cover;opacity:.5;pointer-events:none">
+  <section style="position:relative;background:#050505;color:#fff;overflow:hidden">
+    <img src="img/Careers/Div/UE - mini banner.png" alt="" style="position:absolute;top:0;right:0;height:100%;width:52%;object-fit:cover;opacity:.5;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%);mask-image:linear-gradient(90deg,transparent,#000 22%)">
     <div class="wrap" style="position:relative;padding:clamp(34px,4vw,54px) clamp(20px,5vw,64px)">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,3vw,50px);align-items:center">
         <div style="font-size:11px;letter-spacing:0.26em;color:#8b8880;font-weight:700;line-height:1.6;max-width:130px">WHY GLOBAL BRANDS CHOOSE UTC</div>
         <div class="stat-row" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2vw,30px)">
           <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">75+</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Years<br>of Excellence</div></div>
           <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">500+</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Employees<br>&amp; Growing</div></div>
-          <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11s-8-6-8-11a8 8 0 0116 0z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">120+</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Stores &amp;<br>Touchpoints</div></div>
-          <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">50+</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Global<br>Brands</div></div>
-          <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">Millions</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Customers<br>Served</div></div>
+          <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9"/><path d="M3 9h18"/><path d="M9 20v-6h6v6"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">15+</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Stores and <b style="color:#cfcbc0;font-weight:700">3,700</b><br>Point of Sales</div></div>
+          <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">80+</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Global<br>Brands</div></div>
+          <div><div style="color:#c2c5cc;margin-bottom:10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg></div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1">37 Million</div><div style="color:#8b8880;font-size:12px;margin-top:5px;line-height:1.4">Customers<br>Served</div></div>
         </div>
       </div>
     </div>
@@ -231,7 +233,7 @@
   </div>
 
   <!-- ============ OUR LEGACY ============ -->
-  <section style="background:#0d0d0d;color:#fff">
+  <section id="story" style="background:#0d0d0d;color:#fff">
     <div class="wrap" style="padding:clamp(44px,5.5vw,72px) clamp(20px,5vw,64px)">
       <div class="legacy-grid" style="display:grid;grid-template-columns:0.7fr 2.1fr;gap:clamp(28px,3.4vw,50px);align-items:center">
         <div>
@@ -295,7 +297,7 @@
   </div>
 
   <!-- ============ OUR GLOBAL PARTNERS ============ -->
-  <section style="background:#0d0d0d;color:#fff">
+  <section id="brands" style="background:#0d0d0d;color:#fff">
     <div class="wrap" style="padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
       <div class="partners-grid" style="display:grid;grid-template-columns:0.85fr 2fr;gap:clamp(28px,3.4vw,54px);align-items:center">
         <div>
@@ -303,24 +305,26 @@
           <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.6vw,34px);line-height:1.15;margin:0 0 24px">Proud to partner<br>with the world's<br>leading brands.</h2>
           <a href="union-electronics.html" class="btn-light">VIEW ALL BRANDS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <div class="partner-logos" style="display:grid;grid-template-columns:repeat(5,1fr)">
-          <div class="p-logo" style="font-family:'Archivo';font-weight:800">SAMSUNG</div>
-          <div class="p-logo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="8.6" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M8 13.4a4.5 4.5 0 007.6 0"/></svg><span style="font-family:'Archivo';font-weight:800">LG</span></div>
-          <div class="p-logo" style="font-family:'Archivo';font-weight:800;letter-spacing:.1em">SONY</div>
-          <div class="p-logo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M6.8 9l5.2 3M17.2 9l-5.2 3M9 18.5l3-6.5 3 6.5"/></svg><span style="font-family:'Archivo';font-weight:800">BOSCH</span></div>
-          <div class="p-logo" style="font-family:'Archivo';font-weight:800">PHILIPS</div>
-          <div class="p-logo" style="font-family:'Playfair Display',serif;font-weight:600;font-size:1.08em">Canon</div>
-          <div class="p-logo" style="font-family:'Archivo';font-weight:900;font-style:italic;letter-spacing:.05em">DJI</div>
-          <div class="p-logo" style="font-family:'Archivo';font-weight:900">JBL</div>
-          <div class="p-logo"><span style="border:1.6px solid currentColor;border-radius:7px;padding:3px 9px;font-family:'Archivo';font-weight:800;text-transform:lowercase;font-size:.82em">mi</span></div>
-          <div class="p-logo"><span style="font-family:'Manrope';text-transform:lowercase;font-weight:700">acer</span><span style="color:#5a5751;font-size:11px;font-weight:600;margin-left:7px">…and more</span></div>
+        <div class="partner-logos" style="display:grid;grid-template-columns:repeat(6,1fr)">
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/daikin.png" alt="Daikin"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/general.png" alt="General"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/tcl.png" alt="TCL"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/b-d.png" alt="Black &amp; Decker"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/vestel.png" alt="Vestel"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/cecotec.png" alt="Cecotec"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/glemgas.png" alt="Glemgas"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/belkin.png" alt="Belkin"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/palladio.png" alt="Palladio"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/vero-moda.png" alt="Vero Moda"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/cans.png" alt="Cans"></div>
+          <div class="p-logo"><img class="pl-img" src="img/brands-elec/vileda.png" alt="Vileda"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ OUR PEOPLE & CULTURE ============ -->
-  <div class="wrap" style="padding-top:clamp(44px,5.5vw,72px);padding-bottom:clamp(44px,5.5vw,72px)">
+  <div id="people" class="wrap" style="padding-top:clamp(44px,5.5vw,72px);padding-bottom:clamp(44px,5.5vw,72px)">
     <div class="people-grid" style="display:grid;grid-template-columns:0.7fr 2.1fr;gap:clamp(28px,3.4vw,50px);align-items:center">
       <div>
         <div class="eyebrow" style="margin-bottom:16px">Our People &amp; Culture</div>
@@ -341,14 +345,16 @@
   </div>
 
   <!-- ============ CEO QUOTE BANNER ============ -->
-  <section style="position:relative;background:#0d0d0d;color:#fff;overflow:hidden">
+  <section style="position:relative;background:#000000;color:#fff;overflow:hidden">
     <img src="img/Careers/Div/about-quote-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none">
+    <!-- even out the left-side warm glow so it matches the bg image's pure-black base -->
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#000 0%,#000 40%,rgba(0,0,0,0.4) 56%,rgba(0,0,0,0) 70%)"></div>
     <div class="wrap" style="position:relative;padding:clamp(30px,3.6vw,52px) clamp(20px,5vw,64px)">
       <div class="quote-grid" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,3vw,50px);align-items:center">
-        <div class="ceo-quote-photo" style="width:clamp(120px,14vw,180px);height:clamp(150px,17vw,210px);border-radius:12px;overflow:hidden;flex:none"><img class="cover" src="img/Careers/Hero.png" alt="Mr. John Knight" style="object-position:center top"></div>
+        <div class="ceo-quote-photo" style="width:clamp(120px,14vw,180px);height:clamp(150px,17vw,210px);border-radius:12px;overflow:hidden;flex:none"><img class="cover" src="img/daikin-partnership.webp" alt="UTC &amp; Daikin partnership" style="object-position:center"></div>
         <div>
           <div style="font-family:'Cormorant Garamond',serif;color:#8f8b81;font-size:44px;line-height:0;height:22px">&ldquo;</div>
-          <p style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(20px,2.4vw,30px);line-height:1.35;margin:10px 0 0;max-width:640px">We don't build businesses for the next quarter. We build institutions for the next generation.</p>
+          <p style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(20px,2.4vw,30px);line-height:1.35;margin:10px 0 0;max-width:640px">We create win-win partnerships, built on Trust, Innovation and Shared Values.</p>
           <div style="margin-top:22px;color:#c2c5cc;font-family:'Archivo';font-weight:700;font-size:14px">&mdash; Mr. John Knight</div>
           <div style="color:#8b8880;font-size:12.5px;margin-top:3px">Chief Executive Officer</div>
         </div>
@@ -472,5 +478,6 @@
   })();
 </script>
 <script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
+<script src="nav-menu.js"></script>
 </body>
 </html>

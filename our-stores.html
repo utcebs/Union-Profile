@@ -23,7 +23,10 @@
   .hoverline:hover{border-bottom-color:#fff!important}
   .shopnow:hover{background:#fff !important;color:#0d0d0d !important;border-color:#0d0d0d !important}
   .exploreBtn:hover{background:#3a3833}
+  .crumb a{color:#8b8880;transition:color .2s}.crumb a:hover{color:#161513}
   .arrowbtn:hover{background:#fff;color:#0d0d0d}
+  #storeCards{scrollbar-width:none}#storeCards::-webkit-scrollbar{display:none}
+  #galleryThumbs{scrollbar-width:none}#galleryThumbs::-webkit-scrollbar{display:none}
   .actionrow:hover{color:#fff}
   .sociallink:hover{background:#fff;color:#0d0d0d}
   .footlink:hover{color:#fff}
@@ -66,25 +69,23 @@
         <a href="about.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="divisions.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
         <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Stores</a>
-        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
+        <a href="our-channels.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
         <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <a href="index.html?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
     </div>
   </header>
 
   <!-- ============ HERO + MAP ============ -->
   <section style="position:relative;background:#efece4">
+    <div class="crumb" style="position:absolute;top:clamp(22px,2.8vw,34px);left:clamp(24px,4vw,64px);z-index:4;display:flex;align-items:center;gap:9px;font-size:13px;color:#8b8880"><a href="index.html">Home</a><span>&rsaquo;</span><span style="color:#161513">Our Stores</span></div>
     <div class="hero-grid" style="display:grid;grid-template-columns:minmax(0,0.86fr) minmax(0,1.14fr);min-height:clamp(560px,80vh,860px)">
 
       <div style="position:relative;z-index:3;padding:clamp(28px,4vw,56px) clamp(24px,4vw,64px) clamp(110px,10vw,150px);display:flex;flex-direction:column;justify-content:center">
-        <div style="display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.22em;color:#8f8b81;font-weight:600;margin-bottom:clamp(22px,4vw,46px)">
-          <span style="width:24px;height:1px;background:#c4c0b5"></span>HOME <span style="color:#c4c0b5">/</span> <span style="color:#141311">OUR STORES</span>
-        </div>
         <div style="font-size:13px;letter-spacing:0.3em;color:#8f8b81;font-weight:600;margin-bottom:16px">OUR STORES</div>
         <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(40px,5.4vw,74px);line-height:1.0;letter-spacing:-0.01em;margin:0;color:#161513">Our Presence.<br>Across Kuwait.</h1>
-        <div style="font-size:clamp(13px,1.05vw,15px);letter-spacing:0.12em;color:#a07d43;font-weight:700;margin:clamp(18px,2.4vw,26px) 0 14px">75 YEARS. 4 DESTINATIONS. ONE PROMISE.</div>
+        <div style="font-size:clamp(13px,1.05vw,15px);letter-spacing:0.12em;color:#a07d43;font-weight:700;margin:clamp(18px,2.4vw,26px) 0 14px">75 YEARS. 13 DESTINATIONS. ONE PROMISE.</div>
         <p style="color:#5b584f;font-size:clamp(14px,1.15vw,16px);line-height:1.7;margin:0;max-width:360px">From our first store in 1949 to every destination we've built since, we remain close to what matters most — you.</p>
 
         <a href="#stores" class="exploreBtn" style="align-self:flex-start;display:inline-flex;align-items:center;gap:14px;margin-top:clamp(24px,3vw,38px);background:#161513;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.16em;padding:16px 32px;border-radius:999px;transition:background .3s">EXPLORE OUR STORES
@@ -94,7 +95,7 @@
         <div style="display:flex;margin-top:clamp(28px,4vw,52px);border:1px solid #dcd8cd;border-radius:12px;background:rgba(255,255,255,0.45);backdrop-filter:blur(2px);overflow:hidden;max-width:400px">
           <div style="flex:1;padding:clamp(16px,1.8vw,22px) clamp(12px,1.4vw,20px);border-right:1px solid #dcd8cd">
             <div style="color:#a07d43;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="8" width="18" height="12" rx="1"></rect><path d="M3 8l2-4h14l2 4M8 20v-6h8v6"></path></svg></div>
-            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,2.6vw,34px);line-height:1;color:#161513">4</div>
+            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,2.6vw,34px);line-height:1;color:#161513">13</div>
             <div style="font-size:10px;letter-spacing:0.12em;color:#8a867e;font-weight:700;margin-top:8px;line-height:1.5">RETAIL DESTINATIONS</div>
           </div>
           <div style="flex:1;padding:clamp(16px,1.8vw,22px) clamp(12px,1.4vw,20px);border-right:1px solid #dcd8cd">
@@ -134,7 +135,7 @@
       <div class="explorer-grid" style="display:grid;grid-template-columns:minmax(0,0.78fr) minmax(0,1.85fr) minmax(0,0.68fr);gap:clamp(20px,2.4vw,40px);padding:clamp(10px,1.4vw,16px) 0;align-items:start">
 
         <div>
-          <div style="font-family:'Archivo';font-weight:600;font-size:14px;letter-spacing:0.1em;color:#7c7972;margin-bottom:16px"><span id="storeNum">01</span> <span style="color:#4a4842">/ 04</span></div>
+          <div style="font-family:'Archivo';font-weight:600;font-size:14px;letter-spacing:0.1em;color:#7c7972;margin-bottom:16px"><span id="storeNum">01</span> <span style="color:#4a4842">/ <span id="storeTotal">12</span></span></div>
           <h2 id="storeName" style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,2.9vw,40px);line-height:1.02;margin:0;color:#fff">Head Office &amp; Main Store</h2>
           <div style="width:44px;height:2px;background:#a07d43;margin:10px 0 10px"></div>
           <div id="storeTagline" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(17px,1.6vw,21px);color:#d8d4cb;margin-bottom:12px">Where it all began.</div>
@@ -173,17 +174,17 @@
             <span id="storePhone" style="font-size:14.5px;color:#fff;font-weight:600"></span>
           </div>
           <div style="height:1px;background:#232220;margin-bottom:4px"></div>
-          <a href="#" class="actionrow" style="display:flex;align-items:center;gap:14px;padding:5px 2px;border-bottom:1px solid #1c1b19;color:#cfcbc0;transition:color .2s">
+          <a id="actDirections" href="#" target="_blank" rel="noopener" class="actionrow" style="display:flex;align-items:center;gap:14px;padding:5px 2px;border-bottom:1px solid #1c1b19;color:#cfcbc0;transition:color .2s">
             <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
             <span style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;flex:1">DIRECTIONS</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
           </a>
-          <a href="#" class="actionrow" style="display:flex;align-items:center;gap:14px;padding:5px 2px;border-bottom:1px solid #1c1b19;color:#cfcbc0;transition:color .2s">
+          <a id="actCall" href="#" class="actionrow" style="display:flex;align-items:center;gap:14px;padding:5px 2px;border-bottom:1px solid #1c1b19;color:#cfcbc0;transition:color .2s">
             <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path></svg></span>
             <span style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;flex:1">CALL STORE</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
           </a>
-          <a href="#" class="actionrow" style="display:flex;align-items:center;gap:14px;padding:5px 2px;border-bottom:1px solid #1c1b19;color:#cfcbc0;transition:color .2s">
+          <a id="actWhatsapp" href="#" target="_blank" rel="noopener" class="actionrow" style="display:flex;align-items:center;gap:14px;padding:5px 2px;border-bottom:1px solid #1c1b19;color:#cfcbc0;transition:color .2s">
             <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.6-1.3A9 9 0 1012 3z"></path><path d="M8.5 8.5c0 4 3 7 6.5 6.5"></path></svg></span>
             <span style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;flex:1">WHATSAPP</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
@@ -195,21 +196,16 @@
         <button id="prevStore" class="arrowbtn" aria-label="Previous store" style="width:48px;flex-shrink:0;border-radius:12px;border:1px solid #33312d;background:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
         </button>
-        <div id="storeCards" class="cards-rail" style="flex:1;min-width:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:12px;overflow:hidden"></div>
+        <div id="storeCards" class="cards-rail" style="flex:1;min-width:0;display:grid;grid-auto-flow:column;grid-auto-columns:clamp(132px,12.5vw,158px);gap:12px;overflow-x:auto;scroll-behavior:smooth"></div>
         <button id="nextStore" class="arrowbtn" aria-label="Next store" style="width:48px;flex-shrink:0;border-radius:12px;border:1px solid #33312d;background:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
         </button>
-      </div>
-      <div style="text-align:center;margin-top:10px">
-        <a href="#" class="footlink" style="display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#cfcbc0;transition:color .2s">VIEW ALL STORES
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-        </a>
       </div>
     </div>
   </section>
 
   <!-- ============ TIMELINE ============ -->
-  <section style="background:#f2f0ea;padding:clamp(40px,4.6vw,68px) clamp(16px,4vw,56px)">
+  <section id="journey" style="background:#f2f0ea;padding:clamp(40px,4.6vw,68px) clamp(16px,4vw,56px)">
     <div class="timeline-grid" style="max-width:1500px;margin:0 auto;display:grid;grid-template-columns:minmax(180px,1.15fr) minmax(0,2.7fr) minmax(180px,1.15fr);gap:clamp(6px,1.5vw,26px);align-items:center">
 
       <div style="text-align:center">
@@ -329,5 +325,6 @@
 </div>
 <script src="our-stores.js"></script>
 <script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
+<script src="nav-menu.js"></script>
 </body>
 </html>

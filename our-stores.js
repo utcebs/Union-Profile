@@ -5,35 +5,120 @@
   const ACCENT = '#a07d43';
   const ic = (p, s) => '<svg width="' + (s || 20) + '" height="' + (s || 20) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">' + p + '</svg>';
   const ICON_STORE = ic('<rect x="3" y="8" width="18" height="12" rx="1"></rect><path d="M3 8l2-4h14l2 4M8 20v-6h8v6"></path>', 30);
+  // tel: uses the first listed number; wa.me wants digits only (no + or spaces)
+  const telHref = p => 'tel:' + (p || '').split(/[·,]/)[0].replace(/[^0-9+]/g, '');
+  const waHref = w => 'https://wa.me/' + (w || '').replace(/[^0-9]/g, '');
 
+  const PH_DESC = 'Full details for this location are being added and will appear here soon.';
+  const D = 'Saturday – Thursday', F = 'Friday: 4:00 PM – 10:00 PM', HRS = '9:00 AM – 10:00 PM';
+  const ALLWEEK = 'Sunday – Saturday';
+  // gallery photo paths for a store: P('salmiya', 8) -> ['img/stores/salmiya-1.webp', ...]
+  const P = (slug, n) => Array.from({ length: n }, (_, i) => 'img/stores/' + slug + '-' + (i + 1) + '.webp');
   const stores = [
-    { num: '01', name: 'Head Office & Main Store', city: 'Kuwait City', cats: ['Flagship Stores', 'Electronics', 'Fashion'],
+    { num: '01', name: 'Head Office & Main Store', city: 'Kuwait City', cats: [], head: true,
       tagline: 'Where it all began.',
       desc: 'Our founding flagship in the heart of Kuwait City, home to the full breadth of Union Trading brands and the beating heart of our operations since 1949.',
       hours: '8:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 4:00 PM – 10:00 PM',
-      addr: ['Kuwait City, Block 1', 'Fahad Al-Salem Street', 'Kuwait'], phone: '+965 2242 3355', x: 64, y: 34,
-      photos: ['img/store-01-g0.webp', 'img/store-01-g1.webp', 'img/store-01-g2.webp', 'img/store-01-g3.webp', 'img/store-01-g4.webp'] },
-    { num: '02', name: 'Shuwaikh Store', city: 'Shuwaikh', cats: ['Electronics', 'Service Centers'],
-      tagline: 'Built for the everyday.',
-      desc: 'Our Shuwaikh destination pairs a wide appliances and electronics showroom with a full service center, serving Kuwait’s busiest commercial district.',
-      hours: '9:00 AM – 9:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 4:00 PM – 9:00 PM',
-      addr: ['Shuwaikh Industrial', 'Canada Dry Street', 'Kuwait'], phone: '+965 2461 2200', x: 68, y: 27,
-      photos: [] },
-    { num: '03', name: 'Jahra Store', city: 'Jahra', cats: ['Electronics', 'Fashion'],
-      tagline: 'Close to home.',
-      desc: 'Bringing trusted brands and personal service to the west of Kuwait, the Jahra store keeps every family within reach of what they need.',
-      hours: '9:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 4:00 PM – 10:00 PM',
-      addr: ['Jahra, Block 3', 'Governorate Avenue', 'Kuwait'], phone: '', x: 48, y: 30,
-      photos: [] },
-    { num: '04', name: 'Farwaniya Store', city: 'Farwaniya', cats: ['Fashion', 'Perfumes & Cosmetics'],
-      tagline: 'Style within reach.',
-      desc: 'A vibrant fashion and cosmetics destination in one of Kuwait’s most densely populated governorates, curated for everyday elegance.',
-      hours: '9:00 AM – 11:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 2:00 PM – 11:00 PM',
-      addr: ['Farwaniya, Block 1', 'Habib Munawer Street', 'Kuwait'], phone: '+965 2473 1150', x: 53, y: 50,
-      photos: ['img/store-04-main.webp'] },
+      addr: ['Kuwait City, Block 1', 'Fahad Al-Salem Street', 'Kuwait'], phone: '+965 2242 3355',
+      maps: 'https://www.google.com/maps/search/?api=1&query=Union%20Trading%20Company%20Fahad%20Al-Salem%20Street%20Kuwait%20City',
+      x: 64, y: 34,
+      photos: ['img/store-01-g0.webp', 'img/store-01-g1.webp'] },
+
+    { num: '02', name: 'Salmiya Store', city: 'Salmiya', cats: [],
+      tagline: 'At the heart of Salmiya.',
+      desc: 'Our Salmiya destination on Salem Al Mubarak Street, bringing the full Union Trading range and trusted service close to home.',
+      hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
+      addr: ['Salem Al Mubarak Street', 'Salmiya, Kuwait'], phone: '+965 9550 1717', whatsapp: '+965 9550 1717',
+      maps: 'https://www.google.com/maps/place/%D8%B9%D9%85%D8%A7%D8%B1%D8%A9+%D8%A7%D9%84%D8%B3%D8%A7%D9%84%D9%85%D9%8A%D8%A9+%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D8%A9%D8%8C+83M6%2BXG5+Union+Trading+Company,+22+Salem+Al+Mubarak+St,+Salmiya/@29.3339,48.0753,17z/',
+      x: 72, y: 41, photos: P('salmiya', 8) },
+
+    { num: '03', name: 'Farwaniya Store', city: 'Farwaniya', cats: [],
+      tagline: 'Serving the Farwaniya community.',
+      desc: 'Your Union Trading destination in Farwaniya, with our full range of brands and dependable everyday service.',
+      hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
+      addr: ['Farwaniya, Kuwait'], phone: '+965 2473 3820', whatsapp: '+965 9550 1738',
+      maps: 'https://goo.gl/maps/XCckvVJFSS92qqNA6', x: 56, y: 50, photos: [] },
+
+    { num: '04', name: 'Hawally Store', city: 'Hawally', cats: [],
+      tagline: 'Close to Hawally.',
+      desc: 'The Union Trading experience in Hawally — trusted brands and expert support, right where you need them.',
+      hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
+      addr: ['Hawally, Kuwait'], phone: '+965 9407 4000', whatsapp: '+965 9407 4000',
+      maps: 'https://maps.app.goo.gl/emGnAaX6nwLfUri26', x: 68, y: 44, photos: [] },
+
+    { num: '05', name: 'Fahaheel Store', city: 'Fahaheel', cats: [],
+      tagline: 'Inside Fahaheel Yaal Mall.',
+      desc: 'Visit us at Yaal Mall in Fahaheel for the complete Union Trading range and the service you know.',
+      hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
+      addr: ['Yaal Mall', 'Fahaheel, Kuwait'], phone: '+965 9550 1707', whatsapp: '+965 9550 1707',
+      maps: 'https://www.google.com.kw/maps/place/Yaal+Mall/@29.0790652,48.1357316,17z/data=!3m1!4b1!4m5!3m4!1s0x3fcf065d2fa19795:0xc7f948d44e14d60c!8m2!3d29.0790652!4d48.1379203',
+      x: 65, y: 84, photos: P('fahaheel', 8) },
+
+    { num: '06', name: 'Al Jawhara Al Khaleej Store', city: 'Al Jawhara', cats: [],
+      tagline: 'The Al Jawhara Al Khaleej building.',
+      desc: 'A look inside our Al Jawhara Al Khaleej building showroom. Full visiting details for this location are coming soon.',
+      hours: HRS, days: D, friday: F, addr: ['Al Jawhara Al Khaleej, Kuwait'], phone: '', x: 58, y: 64, photos: P('al-jawhara', 6) },
+
+    { num: '07', name: 'Al-Qurain Store', city: 'Al-Qurain', cats: [],
+      tagline: 'Serving Al-Qurain.',
+      desc: 'A look inside our Al-Qurain showroom. Full visiting details for this location are coming soon.',
+      hours: HRS, days: D, friday: F, addr: ['Al-Qurain, Kuwait'], phone: '', x: 61, y: 70, photos: P('al-qurain', 8) },
+
+    { num: '08', name: 'Jahra Store', city: 'Jahra', cats: [],
+      tagline: 'Serving Jahra.',
+      desc: 'Our Jahra destination brings Union Trading trusted brands and service to the west of Kuwait.',
+      hours: '10:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 5:00 PM – 10:00 PM',
+      addr: ['Jahra, Kuwait'], phone: '+965 2457 2747', whatsapp: '+965 9550 1808',
+      maps: 'https://maps.app.goo.gl/xjbgbsW6j7vBFirQA', x: 44, y: 30, photos: [] },
+
+    { num: '09', name: 'Shuwaikh Store', city: 'Shuwaikh', cats: [],
+      tagline: 'The Shuwaikh showroom.',
+      desc: 'Our Shuwaikh location for the full range of Union Trading appliances and expert guidance.',
+      hours: '9:00 AM – 9:00 PM', days: 'Saturday – Thursday', friday: 'Friday: Closed',
+      addr: ['Shuwaikh, Kuwait'], phone: '+965 2491 8804 · +965 2494 8805', whatsapp: '+965 9550 1725',
+      maps: 'https://maps.app.goo.gl/UXwYZT7qvXPXuiFA8', x: 60, y: 29, photos: P('shuwaikh', 3) },
+
+    { num: '10', name: 'Hawalli (Built-in Appliances) Store', city: 'Hawalli · Built-in', cats: [],
+      tagline: 'Built-in appliance specialists.',
+      desc: 'Our Hawalli showroom dedicated to built-in kitchen and home appliances, with specialist advice.',
+      hours: '9:30 AM – 1:00 PM  ·  5:00 PM – 9:30 PM', days: 'Saturday – Thursday', friday: '',
+      addr: ['Hawalli, Kuwait'], phone: '+965 2264 3788', whatsapp: '+965 9550 1801',
+      maps: 'https://maps.app.goo.gl/sCPyKSSZyjkuczv56', x: 71, y: 48, photos: [] },
+
+    { num: '11', name: 'Sabah Al-Salem Store', city: 'Sabah Al-Salem', cats: [],
+      tagline: 'Serving Sabah Al-Salem.',
+      desc: 'Your neighbourhood Union Trading destination in Sabah Al-Salem, close and always ready to help.',
+      hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
+      addr: ['Sabah Al-Salem, Kuwait'], phone: '+965 9407 4004', whatsapp: '+965 9407 4004',
+      maps: 'https://maps.app.goo.gl/drCcGEDE7VKsUcHq6', x: 66, y: 74, photos: P('sabah-al-salem', 11) },
+
+    { num: '12', name: 'Al-Rai Store', city: 'Al-Rai', cats: [],
+      tagline: 'Serving Al-Rai.',
+      desc: 'A look inside our Al-Rai showroom. Full visiting details for this location are coming soon.',
+      hours: HRS, days: D, friday: F, addr: ['Al-Rai, Kuwait'], phone: '', x: 54, y: 42, photos: P('al-rai', 7) },
+
+    { num: '13', name: 'Farwaniya Store 2', city: 'Farwaniya', cats: [],
+      tagline: 'A second home in Farwaniya.',
+      desc: 'Our second Farwaniya destination, extending the full Union Trading range across the governorate.',
+      hours: '10:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 5:00 PM – 10:00 PM',
+      addr: ['Farwaniya, Kuwait'], phone: '+965 2474 2791', whatsapp: '+965 9550 1806',
+      maps: 'https://maps.app.goo.gl/sKnpdwsrxFUwvfup8', x: 52, y: 53, photos: [] },
   ];
 
-  const FILTERS = ['All Stores', 'Flagship Stores', 'Electronics', 'Fashion', 'Service Centers', 'Perfumes & Cosmetics'];
+  const FILTERS = ['All Stores'];
+
+  /* ===== TEMPORARY: manual pin-placement editor =====
+     Set PIN_EDIT to false (or delete this block + the editor functions below) to turn it off.
+     Positions are saved to localStorage so they persist on this browser across reloads.
+     Use "Copy coords" to hand the final x/y values back so they can be baked into this file. */
+  const PIN_EDIT = true;
+  const PIN_KEY = 'utcStorePins';
+  (function loadPins() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(PIN_KEY) || 'null');
+      if (saved) stores.forEach(s => { if (saved[s.name]) { s.x = saved[s.name].x; s.y = saved[s.name].y; } });
+    } catch (e) { /* ignore */ }
+  })();
 
   const state = { store: 0, filter: 'All Stores', img: 0, showTip: false };
   let auto = null;
@@ -77,16 +162,23 @@
 
     /* ---- store info ---- */
     el('storeNum').textContent = active.num;
+    if (el('storeTotal')) el('storeTotal').textContent = ('0' + stores.length).slice(-2);
     el('storeName').innerHTML = active.name.replace('&', '&amp;');
     el('storeTagline').textContent = active.tagline;
     el('storeDesc').textContent = active.desc;
 
     /* ---- details ---- */
     el('storeHours').textContent = active.hours;
-    el('storeDays').innerHTML = active.days + '<br>' + active.friday;
+    el('storeDays').innerHTML = active.days + (active.friday ? '<br>' + active.friday : '');
     el('storeAddr').innerHTML = active.addr.join('<br>');
     if (active.phone) { el('storePhoneRow').style.display = 'flex'; el('storePhone').textContent = active.phone; }
     else { el('storePhoneRow').style.display = 'none'; }
+
+    /* ---- action links (only shown when the store has the data) ---- */
+    const aDir = el('actDirections'), aCall = el('actCall'), aWa = el('actWhatsapp');
+    if (active.maps) { aDir.style.display = 'flex'; aDir.href = active.maps; } else { aDir.style.display = 'none'; }
+    if (active.phone) { aCall.style.display = 'flex'; aCall.href = telHref(active.phone); } else { aCall.style.display = 'none'; }
+    if (active.whatsapp) { aWa.style.display = 'flex'; aWa.href = waHref(active.whatsapp); } else { aWa.style.display = 'none'; }
 
     /* ---- gallery main ---- */
     const cur = photoAt(active, state.img);
@@ -96,10 +188,12 @@
       el('galleryMain').innerHTML = '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#4a4842">' + ICON_STORE + '<span style="font-size:12px;letter-spacing:0.12em;font-weight:700">PHOTOS COMING SOON</span></div>';
     }
 
-    /* ---- gallery thumbs: fixed 5-up tile size, centered when fewer than 5 (never stretch) ---- */
+    /* ---- gallery thumbs: fixed 5-up tile size; centered when <=5, horizontally scrollable when more ---- */
     const thumbs = el('galleryThumbs');
+    const many = active.photos.length > 5;
     thumbs.style.display = 'flex';
-    thumbs.style.justifyContent = 'center';
+    thumbs.style.justifyContent = many ? 'flex-start' : 'center';
+    thumbs.style.overflowX = many ? 'auto' : 'hidden';
     thumbs.style.gap = '10px';
     // each tile keeps the width of one cell in a 5-up row: (strip - 4 gaps) / 5
     const TILE = 'flex:0 0 calc((100% - 40px) / 5)';
@@ -107,9 +201,14 @@
       thumbs.style.position = 'static';
       const activePhoto = ((state.img % active.photos.length) + active.photos.length) % active.photos.length;
       thumbs.innerHTML = active.photos.map((src, i) =>
-        '<div data-thumb="' + i + '" style="' + TILE + ';aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#161513;border:2px solid ' + (i === activePhoto ? ACCENT : '#2a2825') + ';cursor:pointer;opacity:' + (i === activePhoto ? 1 : 0.55) + ';transition:opacity .2s,border-color .2s"><img src="' + src + '" alt="" class="cover"></div>'
+        '<div data-thumb="' + i + '" style="' + TILE + ';aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#161513;border:2px solid ' + (i === activePhoto ? ACCENT : '#2a2825') + ';cursor:pointer;opacity:' + (i === activePhoto ? 1 : 0.55) + ';transition:opacity .2s,border-color .2s"><img src="' + src + '" alt="" class="cover" loading="lazy"></div>'
       ).join('');
       thumbs.querySelectorAll('[data-thumb]').forEach(d => d.onclick = () => setImg(+d.dataset.thumb));
+      // keep the active thumb in view when the strip scrolls
+      if (many) {
+        const at = thumbs.querySelector('[data-thumb="' + activePhoto + '"]');
+        if (at) thumbs.scrollTo({ left: at.offsetLeft - (thumbs.clientWidth - at.offsetWidth) / 2, behavior: 'smooth' });
+      }
     } else {
       // invisible tile-sized spacer keeps the strip the exact height of a tile row,
       // so the panel size stays fixed for stores without photos
@@ -137,22 +236,37 @@
         + '</button>';
     }).join('');
     el('storeCards').querySelectorAll('[data-card]').forEach(b => b.onclick = () => goStore(+b.dataset.card));
+    // keep the active card centered in the (now scrollable) rail
+    const rail = el('storeCards'), ac = rail.querySelector('[data-card="' + idx + '"]');
+    if (ac) rail.scrollTo({ left: ac.offsetLeft - (rail.clientWidth - ac.offsetWidth) / 2, behavior: 'smooth' });
 
     /* ---- map pins ---- */
     el('mapPins').innerHTML = stores.map((s, i) => {
       const on = i === idx;
       const dimmed = !fi.includes(i);
-      const size = on ? 26 : 14, dot = on ? 0 : 5;
-      return '<div data-pin="' + i + '" style="position:absolute;left:' + s.x + '%;top:' + s.y + '%;transform:translate(-50%,-100%);cursor:pointer;z-index:' + (on ? 15 : 5) + '">'
+      let marker;
+      if (s.head) {
+        // Head Office — distinct larger dark pin with a building icon and a standing gold ring
+        const hs = on ? 40 : 34;
+        marker = '<div style="position:relative;width:' + hs + 'px;height:' + hs + 'px;border-radius:50%;background:#161513;border:2px solid ' + ACCENT + ';display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(0,0,0,0.42)">'
+          + '<span style="color:' + ACCENT + ';line-height:0">' + ic('<path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path>', 17) + '</span>'
+          + '<span style="position:absolute;inset:-5px;border-radius:50%;border:2px solid ' + ACCENT + ';opacity:0.55;animation:pinPulse 2.6s ease-out infinite"></span>'
+          + '</div>';
+      } else {
+        const size = on ? 26 : 14, dot = on ? 0 : 5;
+        marker = '<div style="position:relative;width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + (on ? ACCENT : '#fff') + ';border:2px solid ' + (on ? '#fff' : ACCENT) + ';display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,0.28)">'
+          + '<span style="width:' + dot + 'px;height:' + dot + 'px;border-radius:50%;background:' + (on ? '#fff' : ACCENT) + '"></span>'
+          + (on ? '<span style="position:absolute;inset:-2px;border-radius:50%;border:2px solid #fff;animation:pinPulse 2.2s ease-out infinite"></span>' : '')
+          + '</div>';
+      }
+      return '<div data-pin="' + i + '" style="position:absolute;left:' + s.x + '%;top:' + s.y + '%;transform:translate(-50%,-100%);cursor:pointer;z-index:' + (s.head ? 20 : (on ? 15 : 5)) + '">'
         + '<div style="display:flex;flex-direction:column;align-items:center;gap:6px">'
-        + '<div style="position:relative;width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + (on ? ACCENT : '#fff') + ';border:2px solid ' + (on ? '#fff' : ACCENT) + ';display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,0.28)">'
-        + '<span style="width:' + dot + 'px;height:' + dot + 'px;border-radius:50%;background:' + (on ? '#fff' : ACCENT) + '"></span>'
-        + (on ? '<span style="position:absolute;inset:-2px;border-radius:50%;border:2px solid #fff;animation:pinPulse 2.2s ease-out infinite"></span>' : '')
-        + '</div>'
-        + '<span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:' + (dimmed ? '#b6b1a5' : '#3a3833') + ';text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 3px rgba(239,236,228,0.9)">' + s.city + '</span>'
+        + marker
+        + '<span style="font-size:' + (s.head ? 10.5 : 10) + 'px;font-weight:' + (s.head ? 800 : 700) + ';letter-spacing:0.1em;color:' + (dimmed ? '#b6b1a5' : (s.head ? '#161513' : '#3a3833')) + ';text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 3px rgba(239,236,228,0.9)">' + (s.head ? 'Head Office' : s.city) + '</span>'
         + '</div></div>';
     }).join('');
-    el('mapPins').querySelectorAll('[data-pin]').forEach(d => d.onclick = () => goStore(+d.dataset.pin));
+    el('mapPins').querySelectorAll('[data-pin]').forEach(d => d.onclick = () => { if (d.dataset.dragged) return; goStore(+d.dataset.pin); });
+    if (PIN_EDIT) attachPinDrag();
 
     /* ---- tooltip ---- */
     const tip = el('mapTip');
@@ -170,6 +284,79 @@
     } else {
       tip.style.display = 'none';
     }
+  }
+
+  /* ===== TEMPORARY pin editor: drag pins, save to localStorage, copy final coords ===== */
+  function pinData() { const o = {}; stores.forEach(s => { o[s.name] = { x: s.x, y: s.y }; }); return o; }
+  function pinReadout(i) {
+    const st = document.getElementById('pinStatus');
+    if (st) st.innerHTML = '<b>' + stores[i].name + '</b> &rarr; x:' + stores[i].x + ' &nbsp;y:' + stores[i].y;
+  }
+  function savePins() {
+    try { localStorage.setItem(PIN_KEY, JSON.stringify(pinData())); } catch (e) {}
+    const st = document.getElementById('pinStatus');
+    if (st) st.innerHTML = '<span style="color:#7fd398">Saved &check; — will persist on reload</span>';
+    console.log('[pins] saved:', JSON.stringify(pinData()));
+  }
+  function copyCoords() {
+    const json = JSON.stringify(pinData(), null, 0);
+    const pretty = stores.map(s => s.num + '  ' + s.name + '  →  x:' + s.x + '  y:' + s.y).join('\n');
+    if (navigator.clipboard) navigator.clipboard.writeText(json).catch(() => {});
+    console.log('[pins] coordinates:\n' + pretty + '\n\nJSON:\n' + json);
+    const st = document.getElementById('pinStatus');
+    if (st) st.innerHTML = '<span style="color:#7fd398">Coords copied &check; (also in console)</span>';
+  }
+  function attachPinDrag() {
+    const pins = el('mapPins');
+    // Measure against the sized map layer — #mapPins itself has height:0 (all its
+    // children are absolutely positioned), which would divide-by-zero the y math.
+    const ref = document.getElementById('mapInner') || pins;
+    pins.querySelectorAll('[data-pin]').forEach(d => {
+      d.style.cursor = 'grab';
+      d.addEventListener('pointerdown', e => {
+        e.preventDefault(); e.stopPropagation();
+        const i = +d.dataset.pin;
+        try { d.setPointerCapture(e.pointerId); } catch (_) {}
+        d.style.cursor = 'grabbing';
+        const rect = ref.getBoundingClientRect();
+        const startX = e.clientX, startY = e.clientY, origX = stores[i].x, origY = stores[i].y;
+        let moved = false;
+        const move = ev => {
+          if (Math.abs(ev.clientX - startX) > 2 || Math.abs(ev.clientY - startY) > 2) moved = true;
+          const dx = rect.width ? ((ev.clientX - startX) / rect.width) * 100 : 0;
+          const dy = rect.height ? ((ev.clientY - startY) / rect.height) * 100 : 0;
+          const x = Math.max(0, Math.min(100, Math.round((origX + dx) * 10) / 10));
+          const y = Math.max(0, Math.min(100, Math.round((origY + dy) * 10) / 10));
+          stores[i].x = x; stores[i].y = y;
+          d.style.left = x + '%'; d.style.top = y + '%';
+          pinReadout(i);
+        };
+        const up = () => {
+          d.removeEventListener('pointermove', move);
+          d.removeEventListener('pointerup', up);
+          d.style.cursor = 'grab';
+          try { d.releasePointerCapture(e.pointerId); } catch (_) {}
+          if (moved) { d.dataset.dragged = '1'; setTimeout(() => { delete d.dataset.dragged; }, 60); }
+        };
+        d.addEventListener('pointermove', move);
+        d.addEventListener('pointerup', up);
+      });
+    });
+  }
+  function buildPinBar() {
+    if (document.getElementById('pinEditBar')) return;
+    const bar = document.createElement('div');
+    bar.id = 'pinEditBar';
+    bar.style.cssText = 'position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:99999;background:#0d0d0d;color:#fff;border:1px solid #33312d;border-radius:14px;padding:11px 15px;display:flex;align-items:center;gap:13px;flex-wrap:wrap;max-width:94vw;box-shadow:0 24px 60px -20px rgba(0,0,0,.7);font-family:Manrope,system-ui,sans-serif;font-size:13px';
+    const btn = 'cursor:pointer;border:1px solid #4a4842;background:#161513;color:#fff;font-weight:700;font-size:12px;letter-spacing:.04em;padding:9px 16px;border-radius:999px';
+    bar.innerHTML = '<span style="font-weight:800;letter-spacing:.12em;color:#a07d43">PIN EDIT</span>'
+      + '<span style="color:#8f8c85">Drag any pin onto its exact spot</span>'
+      + '<button id="pinSave" style="' + btn + ';background:#a07d43;border-color:#a07d43;color:#161513">Save</button>'
+      + '<button id="pinCopy" style="' + btn + '">Copy coords</button>'
+      + '<span id="pinStatus" style="color:#8f8c85;min-width:120px"></span>';
+    document.body.appendChild(bar);
+    document.getElementById('pinSave').onclick = savePins;
+    document.getElementById('pinCopy').onclick = copyCoords;
   }
 
   /* ---- static wiring ---- */
@@ -210,12 +397,14 @@
   if (hasDeepLink) { state.store = dl; state.img = 0; state.showTip = true; }
 
   render();
+  if (PIN_EDIT) buildPinBar();
   if (hasDeepLink) {
     setTimeout(() => {
       const target = el('explorer') || el('stores');
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 250);
-  } else {
+  } else if (!PIN_EDIT) {
+    // auto-cycle is paused while the pin editor is on, so pins don't shift underfoot
     startAuto();
   }
 })();

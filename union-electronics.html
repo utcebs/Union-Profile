@@ -26,11 +26,14 @@
   .footlink:hover{color:#fff}.sociallink:hover{background:#fff;color:#0d0d0d}
   .ourlogo{flex:0 0 auto;width:clamp(46px,4.9vw,68px);height:26px;background-size:contain;background-repeat:no-repeat;background-position:center;filter:brightness(0);opacity:.46;transition:opacity .35s ease,transform .35s ease}
   .ourlogo:hover{opacity:1;transform:scale(1.18)}
-  .hbrand{background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;padding:22px 20px 20px;transition:transform .3s,box-shadow .3s,border-color .3s}
-  .hbrand:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(0,0,0,.35);border-color:#dcd7cb}
-  .hbrand-media{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:clamp(150px,13.5vw,178px);margin-bottom:16px}
-  .hbrand-media img{width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:scale(1.12);transform-origin:center bottom;filter:drop-shadow(0 16px 18px rgba(0,0,0,.24));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-  .hbrand:hover .hbrand-media img{transform:scale(1.26)}
+  .hbrand{background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;overflow:visible;position:relative;z-index:1;display:flex;flex-direction:column;padding:22px 20px 20px;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .hbrand:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(0,0,0,.35);border-color:#dcd7cb;z-index:3}
+  .hbrand-media{position:relative;display:flex;align-items:flex-end;justify-content:center;height:clamp(150px,14vw,188px);margin-bottom:16px}
+  .hbrand-media img{width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:scale(1.12);transform-origin:center bottom;filter:drop-shadow(0 16px 18px rgba(0,0,0,.24));transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .5s ease}
+  .hbrand:hover .hbrand-media img{transform:scale(1.42) translateY(-7%);filter:drop-shadow(0 30px 28px rgba(0,0,0,.34))}
+  /* Samsung product image sits taller in its frame — shrink + drop it so it lines up, and ease the zoom */
+  .hbrand-media img.hb-samsung{transform:scale(1.0) translateY(4%)}
+  .hbrand:hover .hbrand-media img.hb-samsung{transform:scale(1.28) translateY(-2%)}
   .hbrand-logo{font-family:'Archivo';font-weight:800;letter-spacing:.02em;line-height:1}
   .hbrand-sub{color:#9a968c;font-size:12.5px;margin-top:6px}
   .hbrand-learn{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#57544c;margin-top:16px;transition:gap .25s,color .25s}
@@ -73,6 +76,8 @@
   .cat-sub{color:#cbc8c2;font-size:clamp(13px,1vw,14.5px);line-height:1.5}
   .cat-explore{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.14em;color:#fff;white-space:nowrap;transition:gap .25s}
   .cat-explore:hover{gap:13px}
+  .cat-soon{color:#9a968d;cursor:default;letter-spacing:.14em}
+  .cat-soon:hover{gap:8px}
   .catnav{width:44px;height:44px;border-radius:50%;border:1px solid #d1d4d9;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#161513;transition:background .2s,color .2s,border-color .2s}
   .catnav:hover{background:#161513;color:#fff;border-color:#161513}
   @media(max-width:980px){
@@ -126,11 +131,11 @@
         <a href="about.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
         <a href="divisions.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Divisions</a>
         <a href="our-stores.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
-        <a href="#" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
+        <a href="our-channels.html" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
         <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
         <a href="index.html#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="index.html#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <a href="index.html?intent=partnership&division=union-electronics#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
     </div>
   </header>
 
@@ -150,7 +155,7 @@
       <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;padding:0;border:0">Union Electronics — Powering a Smarter World</h1>
       <p style="color:#a8a49b;font-size:15.5px;line-height:1.8;margin:0;max-width:430px">We bring the world's most trusted electronics brands closer to you. From cutting-edge consumer electronics to advanced home appliances, we deliver innovation, quality, and reliability in every product.</p>
       <div style="display:flex;align-items:center;gap:clamp(16px,2vw,24px);flex-wrap:wrap">
-        <a href="#" class="shopcta" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 30px;border-radius:999px;border:1px solid #fff">SHOP NOW <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://www.unionelectronics.store/" target="_blank" rel="noopener" class="shopcta" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 30px;border-radius:999px;border:1px solid #fff">SHOP NOW <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div style="display:flex;align-items:center;gap:10px">
           <a href="#" class="uesoc" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
           <a href="#" class="uesoc" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg></a>
@@ -227,7 +232,7 @@
         <div class="eyebrow" style="margin-bottom:18px">Our Categories</div>
         <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513">Everything for<br>modern living.</h2>
         <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 30px;max-width:340px">Explore our categories across home, entertainment, mobility and technology.</p>
-        <a href="#" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 28px;border-radius:999px">EXPLORE ALL CATEGORIES <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://www.unionelectronics.store/" target="_blank" rel="noopener" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 28px;border-radius:999px">EXPLORE ALL CATEGORIES <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div style="display:flex;align-items:center;gap:22px;margin-top:clamp(34px,4vw,50px)">
           <div class="catnav" id="catPrev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
           <div style="font-family:'Archivo';font-weight:700;font-size:15px;color:#161513;letter-spacing:0.05em"><span id="catNum">01</span> <span style="color:#b6b1a5">/ 07</span></div>
@@ -289,34 +294,34 @@
     </div>
     <div id="prodRail" class="prod-rail" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.5vw,18px)">
       <div class="hbrand">
-        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Samsung.png" alt="Samsung products"></div>
+        <div class="hbrand-media"><img class="hb-samsung" src="img/Careers/Div/Hero brands sample/Samsung.png" alt="Samsung products"></div>
         <div class="hbrand-logo" style="color:#1428a0;font-size:19px">SAMSUNG</div>
         <div class="hbrand-sub">Consumer Electronics</div>
-        <a href="#" class="hbrand-learn">Discover Samsung <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://www.unionelectronics.store/kw/en/search?q=SAMSUNG" target="_blank" rel="noopener" class="hbrand-learn">Discover Samsung <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="hbrand">
-        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/LG.png" alt="LG products"></div>
-        <div class="hbrand-logo" style="color:#a50034;font-size:24px">LG</div>
-        <div class="hbrand-sub">TVs &amp; Home Appliances</div>
-        <a href="#" class="hbrand-learn">Discover LG <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Panasonic.png" alt="Panasonic products"></div>
+        <div class="hbrand-logo" style="color:#0033a0;font-size:16px">PANASONIC</div>
+        <div class="hbrand-sub">Appliances &amp; Electronics</div>
+        <a href="https://www.unionelectronics.store/kw/en/search?q=PANASONIC" target="_blank" rel="noopener" class="hbrand-learn">Discover Panasonic <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="hbrand">
-        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Song.png" alt="Sony products"></div>
-        <div class="hbrand-logo" style="color:#111;letter-spacing:.03em;font-size:21px">SONY</div>
-        <div class="hbrand-sub">Audio &amp; Entertainment</div>
-        <a href="#" class="hbrand-learn">Discover Sony <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Honor.png" alt="HONOR products"></div>
+        <div class="hbrand-logo" style="color:#111;letter-spacing:.03em;font-size:21px">HONOR</div>
+        <div class="hbrand-sub">Smartphones &amp; Wearables</div>
+        <a href="https://www.unionelectronics.store/kw/en/search?q=HONOR" target="_blank" rel="noopener" class="hbrand-learn">Discover HONOR <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="hbrand">
-        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Bosch.png" alt="Bosch products"></div>
-        <div class="hbrand-logo" style="color:#e2001a;font-size:19px">BOSCH</div>
-        <div class="hbrand-sub">Home Appliances</div>
-        <a href="#" class="hbrand-learn">Discover Bosch <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Galanz.png" alt="Galanz products"></div>
+        <div class="hbrand-logo" style="color:#e60012;font-size:19px">GALANZ</div>
+        <div class="hbrand-sub">Kitchen &amp; Home Appliances</div>
+        <a href="https://www.unionelectronics.store/kw/en/search?q=GALANZ" target="_blank" rel="noopener" class="hbrand-learn">Discover Galanz <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="hbrand">
-        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Philips.png" alt="Philips products"></div>
-        <div class="hbrand-logo" style="color:#0b5ed7;font-size:19px">PHILIPS</div>
-        <div class="hbrand-sub">Personal Care &amp; Kitchen</div>
-        <a href="#" class="hbrand-learn">Discover Philips <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="hbrand-media"><img src="img/Careers/Div/Hero brands sample/Glemgas.png" alt="Glem Gas products"></div>
+        <div class="hbrand-logo" style="color:#c8102e;font-size:17px">GLEM GAS</div>
+        <div class="hbrand-sub">Cooking Appliances</div>
+        <a href="https://www.unionelectronics.store/kw/en/search?q=GLEM%20GAS" target="_blank" rel="noopener" class="hbrand-learn">Discover Glem Gas <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
@@ -330,7 +335,7 @@
           <div style="font-size:11.5px;letter-spacing:0.28em;color:#8b8880;font-weight:600;margin-bottom:16px">LET'S CONNECT</div>
           <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(14px,1.5vw,20px);line-height:1.15;margin:0">We're here to help<br>your world work better.</h2>
           <p style="color:#a8a49b;font-size:14.5px;line-height:1.7;margin:18px 0 26px;max-width:320px">Have a question, need support, or looking for business solutions? Reach out to our team.</p>
-          <a href="index.html#contact" class="reachbtn" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px;border:1px solid transparent">Partner with us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="index.html?intent=partnership&division=union-electronics#contact" class="reachbtn" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px;border:1px solid transparent">Partner with us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="contact4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(5px,0.7vw,8px)">
           <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
@@ -428,29 +433,31 @@
     var acc=document.getElementById('catAcc'); if(!acc) return;
     // Placeholder gradients — drop a real photo per category into `img` to replace them.
     var cats=[
-      {n:'01',t:'RAC',sub:'Cool comfort, all year round.',grad:'linear-gradient(160deg,#2a333c,#0c0f13)',img:'img/cat/rac.jpg',icon:'<rect x="3" y="5" width="18" height="8" rx="2"/><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"/>'},
-      {n:'02',t:'Home Appliance',short:'HA',sub:'The heart of every home.',grad:'linear-gradient(160deg,#342c25,#100d0b)',img:'img/cat/ha.jpg',icon:'<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.2"/><circle cx="8" cy="6.5" r="1"/>'},
-      {n:'03',t:'SDA',sub:'Everyday essentials, elevated.',grad:'linear-gradient(160deg,#2c3033,#0d0e10)',img:'img/cat/sda.jpg',icon:'<path d="M7 3h10l-1.4 8.5H8.4z"/><path d="M10 11.5v4.5M14 11.5v4.5"/><rect x="8" y="16" width="8" height="4.5" rx="1"/>'},
-      {n:'04',t:'TV',sub:'Entertainment, redefined.',grad:'linear-gradient(160deg,#1b2532,#090c11)',img:'img/cat/tv.jpg',icon:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>'},
-      {n:'05',t:'Mobile',sub:'Stay connected, everywhere.',grad:'linear-gradient(160deg,#26282c,#0c0d0e)',img:'img/cat/mobiles.jpg',icon:'<rect x="7" y="2" width="10" height="20" rx="2.4"/><path d="M11 18.2h2"/>'},
-      {n:'06',t:'Gaming',sub:'Play without limits.',grad:'linear-gradient(160deg,#2a2334,#0d0b11)',img:'img/cat/gaming.jpg',icon:'<path d="M8 12H5m1.5-1.5v3"/><circle cx="15.5" cy="11.5" r="1"/><circle cx="18" cy="13.5" r="1"/><path d="M17 7H7a5 5 0 00-5 5v.4A3.4 3.4 0 008.6 14l.7-1.1h5.4l.7 1.1A3.4 3.4 0 0022 12.4V12a5 5 0 00-5-5z"/>'},
-      {n:'07',t:'IT',sub:'Work smarter, create more.',grad:'linear-gradient(160deg,#1e2c2b,#0a0f0e)',img:'img/cat/it.jpg',icon:'<rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20l-1-2H3z"/>'}
+      {n:'01',t:'RAC',sub:'Cool comfort, all year round.',grad:'linear-gradient(160deg,#2a333c,#0c0f13)',img:'img/cat/rac.jpg',url:'https://www.unionelectronics.store/kw/en/category/air-conditioner',icon:'<rect x="3" y="5" width="18" height="8" rx="2"/><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"/>'},
+      {n:'02',t:'Home Appliance',short:'HA',sub:'The heart of every home.',grad:'linear-gradient(160deg,#342c25,#100d0b)',img:'img/cat/ha.jpg',url:'https://www.unionelectronics.store/kw/en/category/home-appliance',icon:'<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.2"/><circle cx="8" cy="6.5" r="1"/>'},
+      {n:'03',t:'SDA',sub:'Everyday essentials, elevated.',grad:'linear-gradient(160deg,#2c3033,#0d0e10)',img:'img/cat/sda.jpg',url:'https://www.unionelectronics.store/kw/en/category/cooking_appliances',icon:'<path d="M7 3h10l-1.4 8.5H8.4z"/><path d="M10 11.5v4.5M14 11.5v4.5"/><rect x="8" y="16" width="8" height="4.5" rx="1"/>'},
+      {n:'04',t:'TV',sub:'Entertainment, redefined.',grad:'linear-gradient(160deg,#1b2532,#090c11)',img:'img/cat/tv.jpg',url:'https://www.unionelectronics.store/kw/en/category/electronics-televisions-flat-screen',icon:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>'},
+      {n:'05',t:'Mobile',sub:'Stay connected, everywhere.',grad:'linear-gradient(160deg,#26282c,#0c0d0e)',img:'img/cat/mobiles.jpg',url:'https://www.unionelectronics.store/kw/en/category/mobile-accessories',icon:'<rect x="7" y="2" width="10" height="20" rx="2.4"/><path d="M11 18.2h2"/>'},
+      {n:'06',t:'Gaming',sub:'Play without limits.',grad:'linear-gradient(160deg,#2a2334,#0d0b11)',img:'img/cat/gaming.jpg',url:'https://www.unionelectronics.store/kw/en/category/gamin-tv',icon:'<path d="M8 12H5m1.5-1.5v3"/><circle cx="15.5" cy="11.5" r="1"/><circle cx="18" cy="13.5" r="1"/><path d="M17 7H7a5 5 0 00-5 5v.4A3.4 3.4 0 008.6 14l.7-1.1h5.4l.7 1.1A3.4 3.4 0 0022 12.4V12a5 5 0 00-5-5z"/>'},
+      {n:'07',t:'IT',sub:'Work smarter, create more.',grad:'linear-gradient(160deg,#1e2c2b,#0a0f0e)',img:'img/cat/it.jpg',soon:true,icon:'<rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20l-1-2H3z"/>'}
     ];
-    var DEF=0, active=DEF;
+    var DEF=3, active=DEF;
     acc.innerHTML=cats.map(function(c,i){
       var media=c.img ? 'background-image:url('+c.img+')' : 'background:'+c.grad;
       return '<div class="cat-panel'+(i===DEF?' active':'')+'" data-i="'+i+'">'
         +'<div class="cat-media" style="'+media+'"></div>'
         +'<span class="cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+c.icon+'</svg></span>'
         +'<div class="cat-body"><div class="cat-num">'+c.n+'</div><div class="cat-line"></div><div class="cat-title"><span class="ct-s">'+(c.short||c.t)+'</span><span class="ct-f">'+c.t+'</span></div>'
-        +'<div class="cat-extra"><div class="cat-sub">'+c.sub+'</div><a class="cat-explore" href="#">EXPLORE '+(c.short||c.t).toUpperCase()+' <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>'
+        +'<div class="cat-extra"><div class="cat-sub">'+c.sub+'</div>'+(c.soon
+          ? '<span class="cat-explore cat-soon">COMING SOON</span>'
+          : '<a class="cat-explore" href="'+c.url+'" target="_blank" rel="noopener">EXPLORE '+(c.short||c.t).toUpperCase()+' <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>')+'</div>'
         +'</div></div>';
     }).join('');
     var panels=Array.prototype.slice.call(acc.querySelectorAll('.cat-panel'));
     var numEl=document.getElementById('catNum');
     function setActive(i){ active=i; panels.forEach(function(p,j){ p.classList.toggle('active',j===i); }); if(numEl) numEl.textContent=cats[i].n; }
     panels.forEach(function(p,i){ p.addEventListener('mouseenter',function(){ setActive(i); }); });
-    acc.addEventListener('mouseleave',function(){ setActive(DEF); });
+    // no mouseleave reset — the last hovered panel stays expanded (initial default = DEF)
     var pv=document.getElementById('catPrev'), nx=document.getElementById('catNext');
     if(pv) pv.onclick=function(){ setActive((active-1+cats.length)%cats.length); };
     if(nx) nx.onclick=function(){ setActive((active+1)%cats.length); };
@@ -458,5 +465,6 @@
   })();
 </script>
 <script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
+<script src="nav-menu.js"></script>
 </body>
 </html>
