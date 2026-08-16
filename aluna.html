@@ -44,7 +44,7 @@
   .cat-wrap{display:grid;grid-template-columns:0.82fr 1.5fr;gap:clamp(28px,4vw,60px);align-items:center}
   .cat-acc{display:flex;gap:clamp(8px,0.9vw,13px);height:clamp(360px,42vw,540px)}
   .cat-panel{position:relative;flex:1 1 0;min-width:0;border-radius:16px;overflow:hidden;cursor:pointer;background:#0d0d0d;transition:flex .55s cubic-bezier(.4,0,.2,1)}
-  .cat-panel.active{flex:2.8 1 0}
+  .cat-panel.active{flex:3.8 1 0}
   .cat-media{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
   .cat-panel:hover .cat-media,.cat-panel.active .cat-media{transform:scale(1.05)}
   .cat-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 28%,rgba(0,0,0,.8))}
@@ -54,7 +54,7 @@
   .cat-num{font-family:'Archivo';font-weight:700;font-size:12.5px;color:rgba(255,255,255,.72);letter-spacing:.05em;margin-bottom:9px}
   .cat-line{width:28px;height:2px;background:rgba(255,255,255,.45);margin-bottom:12px}
   .cat-title{font-family:'Archivo';font-weight:800;font-size:11px;letter-spacing:.01em;line-height:1.2;text-transform:uppercase}
-  .cat-panel.active .cat-title{font-size:clamp(18px,1.7vw,23px);line-height:1.08}
+  .cat-panel.active .cat-title{font-size:clamp(16px,1.55vw,21px);line-height:1.08}
   .cat-title .ct-f{display:none}
   .cat-panel.active .cat-title .ct-s{display:none}
   .cat-panel.active .cat-title .ct-f{display:inline}
@@ -138,13 +138,7 @@
       <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2vw,26px);color:#d8cfc6">Beauty in Every Detail.</div>
       <p style="color:#a8a49b;font-size:15.5px;line-height:1.8;margin:0;max-width:430px">We bring the world's most loved beauty and fragrance names closer to you. From premium cosmetics and skincare to fine perfumes, we deliver authenticity, elegance, and confidence in every product.</p>
       <div style="display:flex;align-items:center;gap:clamp(16px,2vw,24px);flex-wrap:wrap">
-        <a href="index.html?intent=partnership&division=aluna#contact" class="shopcta" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 30px;border-radius:999px;border:1px solid #fff">PARTNER WITH US <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <div style="display:flex;align-items:center;gap:10px">
-          <a href="#" class="uesoc" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
-          <a href="#" class="uesoc" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg></a>
-          <a href="#" class="uesoc" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 4h2.6l-5.7 6.5L21 20h-5.3l-4.2-5.4L6.7 20H4.1l6.1-7L3.5 4h5.4l3.8 5z"/></svg></a>
-          <a href="#" class="uesoc" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"/></svg></a>
-        </div>
+        <a href="https://alunakw.com/collections" target="_blank" rel="noopener" class="shopcta" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 30px;border-radius:999px;border:1px solid #fff">SHOP NOW <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="feat3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px);margin-top:6px;max-width:470px">
         <div>
@@ -197,12 +191,12 @@
     <div class="cat-wrap">
       <div>
         <div class="eyebrow" style="margin-bottom:18px">Our Categories</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513">Everything for<br>modern beauty.</h2>
-        <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 30px;max-width:340px">Explore our beauty world across fragrance, skincare, cosmetics, and everyday personal care.</p>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513">Everything for<br>modern intimates.</h2>
+        <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 30px;max-width:340px">Explore our world of intimates &mdash; from everyday essentials to elegant statement pieces.</p>
         <a href="index.html?intent=partnership&division=aluna#contact" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 28px;border-radius:999px">GET IN TOUCH <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div style="display:flex;align-items:center;gap:22px;margin-top:clamp(34px,4vw,50px)">
           <div class="catnav" id="catPrev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
-          <div style="font-family:'Archivo';font-weight:700;font-size:15px;color:#161513;letter-spacing:0.05em"><span id="catNum">01</span> <span style="color:#b6b1a5">/ 07</span></div>
+          <div style="font-family:'Archivo';font-weight:700;font-size:15px;color:#161513;letter-spacing:0.05em"><span id="catNum">01</span> <span style="color:#b6b1a5">/ 09</span></div>
           <div class="catnav" id="catNext" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
         </div>
       </div>
@@ -278,7 +272,7 @@
           <div style="font-size:11.5px;letter-spacing:0.28em;color:#8b8880;font-weight:600;margin-bottom:16px">LET'S CONNECT</div>
           <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(14px,1.5vw,20px);line-height:1.15;margin:0">We're here to help you<br>look and feel your best.</h2>
           <p style="color:#a8a49b;font-size:14.5px;line-height:1.7;margin:18px 0 26px;max-width:320px">Have a question, need beauty advice, or looking for business solutions? Reach out to our team.</p>
-          <a href="index.html?intent=partnership&division=aluna#contact" class="reachbtn" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px;border:1px solid transparent">Partner with us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="https://alunakw.com/collections" target="_blank" rel="noopener" class="reachbtn" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px;border:1px solid transparent">Shop now <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="contact4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(5px,0.7vw,8px)">
           <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
@@ -359,10 +353,10 @@
     originals.forEach(function(k){ track.appendChild(k.cloneNode(true)); });
     originals.forEach(function(k){ track.appendChild(k.cloneNode(true)); });
     measure(); window.addEventListener('resize',measure);
-    var paused=false, pos=0, wrap=track.parentElement;
+    var paused=false, pos=0, wrap=track.parentElement, last=0, PXPS=30; // px/sec — framerate-independent
     wrap.addEventListener('mouseenter',function(){paused=true;});
     wrap.addEventListener('mouseleave',function(){paused=false;});
-    function step(){ if(!paused && period>0){ pos+=0.5; if(pos>=period) pos-=period; track.style.transform='translateX('+(-pos)+'px)'; } requestAnimationFrame(step); }
+    function step(ts){ if(!last)last=ts; var dt=ts-last; last=ts; if(!paused && period>0){ pos+=dt*PXPS/1000; if(pos>=period) pos-=period; track.style.transform='translateX('+(-pos)+'px)'; } requestAnimationFrame(step); }
     requestAnimationFrame(step);
   })();
 
@@ -370,15 +364,17 @@
   (function(){
     var acc=document.getElementById('catAcc'); if(!acc) return;
     var cats=[
-      {n:'01',t:'Fragrances',sub:'Signature scents for every mood.',grad:'linear-gradient(160deg,#3a2b33,#140d11)',icon:'<rect x="8.5" y="9" width="7" height="11" rx="2"/><path d="M10.5 9V6h3v3M11 4h2"/>'},
-      {n:'02',t:'Skincare',sub:'Nourish, protect, and glow.',grad:'linear-gradient(160deg,#2c3436,#0d1011)',icon:'<path d="M12 3s6 5.5 6 10a6 6 0 01-12 0c0-4.5 6-10 6-10z"/>'},
-      {n:'03',t:'Colour Cosmetics',short:'Cosmetics',sub:'Express every look you love.',grad:'linear-gradient(160deg,#3a2730,#150c10)',icon:'<path d="M9.6 10.5l1-6h2.8l1 6"/><rect x="9" y="10.5" width="6" height="10" rx="1"/>'},
-      {n:'04',t:'Hair Care',sub:'Healthy hair, beautifully styled.',grad:'linear-gradient(160deg,#33302a,#12100c)',icon:'<path d="M7 4c2.5 2 2.5 8 0 16M12 4c2.5 2 2.5 8 0 16M17 4c2.5 2 2.5 8 0 16"/>'},
-      {n:'05',t:'Body Care',sub:'Everyday indulgence for your skin.',grad:'linear-gradient(160deg,#2f333a,#0e0f12)',icon:'<rect x="8" y="9" width="8" height="12" rx="2"/><path d="M9.6 9l.8-3.5h3.2L15 9M11 3h2"/>'},
-      {n:'06',t:'Personal Care',sub:'Daily essentials, elevated.',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'<circle cx="12" cy="9" r="5"/><path d="M12 14v6M9 20h6"/>'},
-      {n:'07',t:'Gifting',sub:'Beautifully wrapped, ready to give.',grad:'linear-gradient(160deg,#382a2a,#140d0d)',icon:'<rect x="3.5" y="8.5" width="17" height="12" rx="1"/><path d="M3.5 12.5h17M12 8.5v12M12 8.5C10.5 6 8.5 5.5 7.5 6.5s.5 2 4.5 2zM12 8.5C13.5 6 15.5 5.5 16.5 6.5s-.5 2-4.5 2z"/>'}
+      {n:'01',t:'Lingerie',sub:'Delicate pieces, beautifully crafted.',grad:'linear-gradient(160deg,#3a2b33,#140d11)',icon:'<path d="M12 20s-7-4.3-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.7-7 9-7 9z"/>'},
+      {n:'02',t:'Activewear & Nightwear',short:'Activewear',sub:'Easy comfort for rest and movement.',grad:'linear-gradient(160deg,#2f333a,#0e0f12)',icon:'<path d="M12 4a1.7 1.7 0 0 0-1.2 2.9c.4.4.7.6.7 1.1M12 8l7.3 5.6a1 1 0 0 1 .4.8V16H4.3v-1.6a1 1 0 0 1 .4-.8L12 8z"/>'},
+      {n:'03',t:'Bras',sub:'The perfect fit, everyday support.',grad:'linear-gradient(160deg,#3a2730,#150c10)',icon:'<path d="M3 9c0 2.8 1.7 4.3 3.8 4.3S10.5 11.8 10.5 9M13.5 9c0 2.8 1.7 4.3 3.8 4.3S21 11.8 21 9M3 9c0-1 .8-1.8 1.8-1.8M21 9c0-1-.8-1.8-1.8-1.8M10.5 9h3"/>'},
+      {n:'04',t:'Panties',sub:'Soft everyday essentials.',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'<path d="M4 7h16v3c-2 0-4 1.5-4 4v3H8v-3c0-2.5-2-4-4-4z"/>'},
+      {n:'05',t:'Shapewear',sub:'Smooth, sculpt, and support.',grad:'linear-gradient(160deg,#2c3436,#0d1011)',icon:'<path d="M7 4h10M7 20h10M8 4c0 3 2 4 4 4s4-1 4-4M8 20c0-3 2-4 4-4s4 1 4 4"/>'},
+      {n:'06',t:'Baby Doll',sub:'Playful, elegant silhouettes.',grad:'linear-gradient(160deg,#33302a,#12100c)',icon:'<path d="M9.5 3l2.5 1.8L14.5 3M9.5 3 8 8l-1.5 2.2L8 12M14.5 3 16 8l1.5 2.2L16 12M8 12h8l1.5 8h-11z"/>'},
+      {n:'07',t:'Undershirt',sub:'Second-skin layering basics.',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'<path d="M9 3l3 2 3-2 3 3-2 2v11H8V8L6 6z"/>'},
+      {n:'08',t:'Fragrance',sub:'Signature scents to finish the look.',grad:'linear-gradient(160deg,#3a2b33,#140d11)',icon:'<rect x="8.5" y="9" width="7" height="11" rx="2"/><path d="M10.5 9V6h3v3M11 4h2"/>'},
+      {n:'09',t:'Accessories',sub:'The finishing touches.',grad:'linear-gradient(160deg,#382a2a,#140d0d)',icon:'<path d="M6 9h12l-1 11H7z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/>'}
     ];
-    var DEF=3, active=DEF;
+    var DEF=4, active=DEF;
     acc.innerHTML=cats.map(function(c,i){
       var media=c.img ? 'background-image:url('+c.img+')' : 'background:'+c.grad;
       return '<div class="cat-panel'+(i===DEF?' active':'')+'" data-i="'+i+'">'

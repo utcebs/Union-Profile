@@ -264,9 +264,10 @@
     row.addEventListener('mouseleave', () => paused = false);
     window.addEventListener('resize', measure);
     let last = 0;
+    const PXPS = 30; // px/sec — matched to the Aluna inner-page brand marquee
     function frame(t) {
       if (!last) last = t; const dt = t - last; last = t;
-      if (!paused && W) { pos -= dt * (W / 34000); if (pos <= pos0 - W) pos += W; row.style.transform = 'translateX(' + pos.toFixed(1) + 'px)'; }
+      if (!paused && W) { pos -= dt * PXPS / 1000; if (pos <= pos0 - W) pos += W; row.style.transform = 'translateX(' + pos.toFixed(1) + 'px)'; }
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
@@ -702,11 +703,21 @@
         if (d && d.success) {
           setBtn('MESSAGE SENT ✓ ');
           el('contactForm').reset(); syncPartnership();
+          showFormModal();                                     // "your request has been submitted" popup
           setTimeout(() => { setBtn('SEND MESSAGE'); btn.disabled = false; }, 5000);
         } else { throw new Error('service'); }
       })
       .catch(() => { btn.disabled = false; openMail('OPENING EMAIL… '); }); // fallback so the enquiry isn't lost
   });
+
+  // Contact "request submitted" popup — shown after the website sends the enquiry.
+  function showFormModal() { var m = el('formModal'); if (m) m.classList.add('open'); }
+  (function () {
+    var m = document.getElementById('formModal'); if (!m) return;
+    var close = function () { m.classList.remove('open'); };
+    m.addEventListener('click', function (e) { if (e.target.closest('[data-fm]')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
 
   /* ---------- KPI count-up ---------- */
   function initKpis() {

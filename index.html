@@ -523,6 +523,33 @@
   </footer>
 </div>
 
+<!-- ============ CONTACT SUCCESS POPUP ============ -->
+<style>
+  .fm-modal{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:24px;font-family:'Manrope',system-ui,sans-serif}
+  .fm-modal.open{display:flex}
+  .fm-bg{position:absolute;inset:0;background:rgba(8,8,8,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .fm-card{position:relative;max-width:440px;width:100%;background:#141311;border:1px solid #2a2825;border-radius:18px;padding:clamp(34px,4vw,46px);box-shadow:0 40px 90px -30px rgba(0,0,0,.85);text-align:center;color:#fff;transform:translateY(10px) scale(.98);opacity:0;transition:transform .3s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
+  .fm-modal.open .fm-card{transform:none;opacity:1}
+  .fm-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid #33312d;background:transparent;color:#cfcbc0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+  .fm-close:hover{background:#fff;color:#0d0d0d}
+  .fm-check{width:76px;height:76px;border-radius:50%;background:rgba(52,170,98,.14);border:1px solid rgba(52,170,98,.42);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;color:#48c882}
+  .fm-check svg{width:36px;height:36px}
+  .fm-card h3{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(22px,2.6vw,27px);line-height:1.2;margin:0 0 12px;color:#fff}
+  .fm-card p{color:#a8a49b;font-size:14.5px;line-height:1.7;margin:0 0 26px}
+  .fm-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:.13em;padding:13px 30px;border-radius:999px;border:none;cursor:pointer;transition:background .3s,color .3s}
+  .fm-btn:hover{background:#a07d43;color:#fff}
+</style>
+<div class="fm-modal" id="formModal" role="dialog" aria-modal="true" aria-label="Request submitted">
+  <div class="fm-bg" data-fm></div>
+  <div class="fm-card">
+    <button class="fm-close" data-fm aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+    <div class="fm-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
+    <h3>Your request has been submitted</h3>
+    <p>Thank you for reaching out to Union Trading Co. Your enquiry has been sent to our team — we'll get back to you shortly.</p>
+    <button class="fm-btn" data-fm>Done</button>
+  </div>
+</div>
+
 <script src="app.js"></script>
 <script>
   // Mobile nav: hamburger toggles the dropdown (links + partner button)
