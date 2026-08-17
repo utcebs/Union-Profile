@@ -79,8 +79,11 @@
     .partners-sec{height:auto !important}
     .partners-grid{grid-template-columns:1fr !important}
     .partners-media{min-height:60vw}
-    .story-sec .story-photo,.story-sec .story-panel,.story-sec .story-timeline,.story-sec .story-stats,.story-sec .story-dim{display:none !important}
-    .story-sec .story-mobile{display:block !important}
+    .story-sec .story-desk,.story-sec .story-photo,.story-sec .story-panel,.story-sec .story-timeline,.story-sec .story-stats,.story-sec .story-dim{display:none !important}
+    .story-sec .story-mobile,.story-sec .story-mobile-frame{display:block !important}
+    /* mobile desk: full-bleed edge-to-edge (break out of the section's side padding) */
+    .story-sec .story-mobile-frame{width:100vw !important;max-width:100vw !important;margin:8px calc(50% - 50vw) 6px !important}
+    .story-sec .story-mobile-frame img{border-radius:0 !important}
     .ms-sec{height:auto !important}
     .ms-stage{position:relative !important;height:auto !important;display:block !important;overflow:visible !important}
     .ms-viewport{perspective:none !important;height:auto !important;width:100% !important;max-width:100% !important}
@@ -231,8 +234,8 @@
   <!-- ============ OUR STORY ============ -->
   <section id="story" class="story-sec" style="position:relative;overflow:hidden;background:radial-gradient(130% 90% at 50% 35%,#161616 0%,#0b0b0b 62%,#080808 100%);color:#fff;padding:clamp(6px,0.8vw,12px) clamp(20px,5vw,64px) clamp(8px,1vw,16px)">
     <div style="position:relative;z-index:2;max-width:1500px;margin:0 auto;display:flex;flex-direction:column">
-      <div style="position:relative;width:100%;max-width:1600px;margin:0 auto;aspect-ratio:2475/1452;container-type:inline-size">
-        <img src="uploads/Firefly.png" alt="Union Trading Co. archival desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:8px;transform:scale(1.18)">
+      <div class="story-desk" style="position:relative;width:100%;max-width:1600px;margin:0 auto;aspect-ratio:2475/1452;container-type:inline-size">
+        <img src="uploads/firefly.webp" alt="Union Trading Co. archival desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:8px;transform:scale(1.18)">
 
         <div class="story-photo" style="position:absolute;left:57.8%;top:39.8%;width:40.5%;height:49.1%;overflow:hidden;transform:translate(-50%,-50%) rotate(-2deg);transform-origin:center center;filter:grayscale(1) contrast(1.06) brightness(0.99)">
           <div id="storyPhotos"></div>
@@ -285,8 +288,16 @@
         <div id="storyStats" class="story-stats" style="position:absolute;bottom:6%;left:2.5%;width:95%;display:flex;justify-content:space-between;align-items:center;gap:2cqw"></div>
       </div>
 
+      <!-- mobile: centered desk with the angled slideshow inside the frame -->
+      <div class="story-mobile-frame" style="display:none;position:relative;width:100%;max-width:560px;margin:6px auto 0;aspect-ratio:1974/1098">
+        <img src="uploads/mobile-our-story-bg.webp" alt="Union Trading Co. archival desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px">
+        <div class="story-photo-m" style="position:absolute;left:46.5%;top:47.6%;width:43%;height:53%;overflow:hidden;transform:translate(-50%,-50%) rotate(-2.2deg);transform-origin:center center;filter:grayscale(1) contrast(1.06) brightness(0.99)">
+          <div id="storyPhotosMobile"></div>
+        </div>
+      </div>
+
       <!-- mobile story fallback -->
-      <div class="story-mobile" style="display:none;padding:36px 4px 40px">
+      <div class="story-mobile" style="display:none;padding:24px 4px 40px">
         <div style="font-size:11px;letter-spacing:0.3em;color:#9a978f;font-weight:600;margin-bottom:12px">WHO WE ARE</div>
         <h2 style="font-family:'Archivo';font-size:44px;line-height:0.9;margin:0 0 16px"><span style="font-weight:300;color:#efece5">Our </span><span style="font-weight:800;color:#fff">Story.</span></h2>
         <p style="color:#a8a49b;font-size:15px;line-height:1.6">Union Trading Company W.L.L. (UTC) is a leading retailer and distributor in Kuwait, made up of multiple retail outlets and numerous retail points across the nation.</p>

@@ -87,7 +87,7 @@
   /* ---------- data ---------- */
   const NAV = ['About Us', 'Our Divisions', 'Our Stores', 'Our Channels', 'Careers', 'Contact'];
   const NAV_SOON = ['Careers'];
-  const heroImgs = ['uploads/Carousal4.jpg', 'uploads/OGeneral.jpg', 'uploads/cecotec.webp', 'uploads/changhong.webp', 'uploads/havit.webp'];
+  const heroImgs = ['uploads/Carousal4.webp', 'uploads/OGeneral.webp', 'uploads/cecotec.webp', 'uploads/changhong.webp', 'uploads/havit.webp'];
   const heroPartners = ['GlemGas', 'General', 'Cecotec', 'CHiQ Changhong', 'Havit'];
   const heroLabelLight = [true, false, false, true, true];  // dark label on the light General & Cecotec images; white on Changhong & Havit (dark scenes)
 
@@ -115,12 +115,12 @@
   }
 
   const divData = [
-    { name: 'Union Electronics', href: 'union-electronics.html', logo: 'img/Div/electronics-logo.png', cardLogo: 'img/Div/Black.png', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Braun', 'Hitachi', '+6 more'], slot: 'div-elec' },
-    { name: 'Aluna', href: 'aluna.html', logo: 'img/Div/aluna-logo.png', cardLogo: 'img/Div/aluna-logo.png', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Constance Carroll', 'Glysolid', '+5 more'], slot: 'div-cosmetics' },
-    { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.png', cardLogo: 'img/Div/fmcg-logo.png', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['India Gate', 'Glysolid', 'Angel Wear', '+8 more'], slot: 'div-fmcg' },
-    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.png', cardLogo: 'img/Div/labels-logo.png', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Angel Wear', 'Brandili', '+4 more'], slot: 'div-fashion' },
-    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.png', cardLogo: 'img/Div/services-logo.png', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Glysolid', 'Prestige', 'Eagle Safes', '+5 more'], slot: 'div-health' },
-    { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.png', cardLogo: 'img/Div/commercial-logo.png', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['O General', 'Hitachi', '+3 more'], slot: 'div-commercial' }
+    { name: 'Union Electronics', href: 'union-electronics.html', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Braun', 'Hitachi', '+6 more'], slot: 'div-elec' },
+    { name: 'Aluna', href: 'aluna.html', logo: 'img/Div/aluna-logo.webp', cardLogo: 'img/Div/aluna-logo.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Constance Carroll', 'Glysolid', '+5 more'], slot: 'div-cosmetics' },
+    { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['India Gate', 'Glysolid', 'Angel Wear', '+8 more'], slot: 'div-fmcg' },
+    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.webp', cardLogo: 'img/Div/labels-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Angel Wear', 'Brandili', '+4 more'], slot: 'div-fashion' },
+    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Glysolid', 'Prestige', 'Eagle Safes', '+5 more'], slot: 'div-health' },
+    { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.webp', cardLogo: 'img/Div/commercial-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['O General', 'Hitachi', '+3 more'], slot: 'div-commercial' }
   ];
 
   const storyStats = [
@@ -129,7 +129,7 @@
     { n: '500+', l: 'EMPLOYEES', sub: 'A team powering our promise.', icon: ic('<circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3 3-5 6-5s6 2 6 5"></path><path d="M16 6a3 3 0 010 6M21 20c0-2.5-2-4-4-4.5"></path>') },
     { n: '10+', l: 'RETAIL OUTLETS', sub: 'Across Kuwait and beyond.', icon: ic('<path d="M3 9l1.5-5h15L21 9"></path><path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9"></path><path d="M3 9h18"></path><path d="M9 20v-6h6v6"></path>') }
   ];
-  const storyExtra = ['uploads/City showroom old enhanced.jpg', 'uploads/old general photo.png'];
+  const storyExtra = ['uploads/city-showroom.webp', 'uploads/old-general-photo.webp'];
 
   const plist = [
     { name: 'Milton Lloyd', since: '1978', years: '46+', src: 'uploads/Mil-trimmed.png', person: 'Peter Jackson', role: 'CEO', quote: 'For over four decades, under Union Trading Company’s vision and leadership, we’ve brought consumers exceptional fragrance within reach.' },
@@ -205,43 +205,43 @@
   // via the invert filter. Kept separate from brandNames so the division brand-chip
   // lookup (logoFor) is unaffected.
   const marqBrands = [
-    { name: 'B&D', src: 'img/brands-elec/b-d.png' },
+    { name: 'B&D', src: 'img/brands-elec/b-d.webp' },
     { name: 'Triumph', src: 'img/brands-aluna/triumph.webp' },
-    { name: 'Belkin', src: 'img/brands-elec/belkin.png' },
-    { name: 'Canton', src: 'img/brands-elec/canton.png' },
+    { name: 'Belkin', src: 'img/brands-elec/belkin.webp' },
+    { name: 'Canton', src: 'img/brands-elec/canton.webp' },
     { name: 'Sloggi', src: 'img/brands-aluna/sloggi.webp' },
-    { name: 'Cecotec', src: 'img/brands-elec/cecotec.png' },
-    { name: 'Changhong', src: 'img/brands-elec/changhong.png' },
+    { name: 'Cecotec', src: 'img/brands-elec/cecotec.webp' },
+    { name: 'Changhong', src: 'img/brands-elec/changhong.webp' },
     { name: 'Maidenform', src: 'img/brands-aluna/maidenform.webp' },
-    { name: 'Chigo', src: 'img/brands-elec/chigo.png' },
-    { name: 'Daikin', src: 'img/brands-elec/daikin.png' },
+    { name: 'Chigo', src: 'img/brands-elec/chigo.webp' },
+    { name: 'Daikin', src: 'img/brands-elec/daikin.webp' },
     { name: 'Hanes', src: 'img/brands-aluna/hanes.webp' },
-    { name: 'Fakir', src: 'img/brands-elec/fakir.png' },
-    { name: 'Galanz', src: 'img/brands-elec/galanz.png' },
+    { name: 'Fakir', src: 'img/brands-elec/fakir.webp' },
+    { name: 'Galanz', src: 'img/brands-elec/galanz.webp' },
     { name: 'Bali', src: 'img/brands-aluna/bali.webp' },
-    { name: 'General', src: 'img/brands-elec/general.png' },
-    { name: 'Glemgas', src: 'img/brands-elec/glemgas.png' },
+    { name: 'General', src: 'img/brands-elec/general.webp' },
+    { name: 'Glemgas', src: 'img/brands-elec/glemgas.webp' },
     { name: 'Naomi & Nicole', src: 'img/brands-aluna/naomi-nicole.webp' },
-    { name: 'Havic', src: 'img/brands-elec/havic.png' },
-    { name: 'Hifuture', src: 'img/brands-elec/hifuture.png' },
+    { name: 'Havic', src: 'img/brands-elec/havic.webp' },
+    { name: 'Hifuture', src: 'img/brands-elec/hifuture.webp' },
     { name: 'Carole Hochman', src: 'img/brands-aluna/carole-hochman.webp' },
-    { name: 'Hitachi', src: 'img/brands-elec/hitachi.png' },
-    { name: 'Konka', src: 'img/brands-elec/konka.png' },
+    { name: 'Hitachi', src: 'img/brands-elec/hitachi.webp' },
+    { name: 'Konka', src: 'img/brands-elec/konka.webp' },
     { name: 'Leg Avenue', src: 'img/brands-aluna/leg-avenue.webp' },
-    { name: 'Morphy', src: 'img/brands-elec/morphy.png' },
-    { name: 'Naim & Focal', src: 'img/brands-elec/naim-focal.png', big: true },
+    { name: 'Morphy', src: 'img/brands-elec/morphy.webp' },
+    { name: 'Naim & Focal', src: 'img/brands-elec/naim-focal.webp', big: true },
     { name: 'Eileen West', src: 'img/brands-aluna/eileen-west.webp' },
-    { name: 'Proove', src: 'img/brands-elec/proove.png' },
-    { name: 'ROWA', src: 'img/brands-elec/rowa.png' },
+    { name: 'Proove', src: 'img/brands-elec/proove.webp' },
+    { name: 'ROWA', src: 'img/brands-elec/rowa.webp' },
     { name: 'Cupid', src: 'img/brands-aluna/cupid.webp' },
-    { name: 'Startec', src: 'img/brands-elec/startec.png' },
-    { name: 'TCL', src: 'img/brands-elec/tcl.png' },
+    { name: 'Startec', src: 'img/brands-elec/startec.webp' },
+    { name: 'TCL', src: 'img/brands-elec/tcl.webp' },
     { name: 'Mapale', src: 'img/brands-aluna/mapale.webp' },
-    { name: 'Vestel', src: 'img/brands-elec/vestel.png' },
+    { name: 'Vestel', src: 'img/brands-elec/vestel.webp' },
     { name: 'Ivory', src: 'img/brands-aluna/ivory.webp' },
-    { name: 'Westpoint', src: 'img/brands-elec/westpoint.png' },
+    { name: 'Westpoint', src: 'img/brands-elec/westpoint.webp' },
     { name: 'C.Lengerie', src: 'img/brands-aluna/c-lengerie.webp' },
-    { name: 'Yuwell', src: 'img/brands-elec/yuwell.png' },
+    { name: 'Yuwell', src: 'img/brands-elec/yuwell.webp' },
     { name: 'G World', src: 'img/brands-aluna/g-world.webp' }
   ];
   const marqueeBrands = marqBrands;
@@ -368,16 +368,23 @@
   // Re-fit the description when crossing the mobile/desktop breakpoint
   window.addEventListener('resize', () => { const d = divData[S.div]; el('divDesc').innerHTML = d.descHtml || d.desc; clampDesc(); });
 
-  // story photo layers (storefront + 2 extras)
-  const storyPhotos = el('storyPhotos');
-  const storyLayers = [];
-  [{ id: 'story-storefront', src: 'img/story-storefront.webp' }, { id: 'story-x0', src: storyExtra[0] }, { id: 'story-x1', src: storyExtra[1] }].forEach((o, i) => {
-    const layer = document.createElement('div');
-    layer.style.cssText = 'position:absolute;inset:0;opacity:' + (i === 0 ? 1 : 0) + ';transition:opacity 1.1s ease';
-    layer.appendChild(slotEl(o.id, o.src, 'cover'));
-    storyPhotos.appendChild(layer);
-    storyLayers.push(layer);
-  });
+  // story photo layers (storefront + 2 extras) — built into the desktop frame and,
+  // when present, the mobile frame so both show the same angled slideshow.
+  const STORY_SRC = [{ id: 'story-storefront', src: 'img/story-storefront.webp' }, { id: 'story-x0', src: storyExtra[0] }, { id: 'story-x1', src: storyExtra[1] }];
+  function buildStoryLayers(container) {
+    const layers = [];
+    STORY_SRC.forEach((o, i) => {
+      const layer = document.createElement('div');
+      layer.style.cssText = 'position:absolute;inset:0;opacity:' + (i === 0 ? 1 : 0) + ';transition:opacity 1.1s ease';
+      layer.appendChild(slotEl(o.id, o.src, 'cover'));
+      container.appendChild(layer);
+      layers.push(layer);
+    });
+    return layers;
+  }
+  const storyLayers = buildStoryLayers(el('storyPhotos'));
+  const storyPhotosMobileEl = document.getElementById('storyPhotosMobile');
+  const storyLayersMobile = storyPhotosMobileEl ? buildStoryLayers(storyPhotosMobileEl) : [];
 
   // story stats (desktop cqw + mobile)
   el('storyStats').innerHTML = storyStats.map(s => '<div style="display:flex;gap:1.2cqw;align-items:center"><div style="width:4cqw;height:4cqw;min-width:42px;min-height:42px;border-radius:50%;border:1px solid rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;color:#cfcbc2;flex-shrink:0">' + s.icon + '</div><div><div data-kpi="' + s.n + '" style="font-family:\'Archivo\';font-weight:800;font-size:3.6cqw;line-height:1;color:#fff">' + s.n + '</div><div style="font-size:0.95cqw;letter-spacing:0.08em;color:#cbc7be;font-weight:700;margin:0.55cqw 0 0.3cqw">' + s.l + '</div><div style="font-size:0.8cqw;line-height:1.4;color:#8a867e">' + s.sub + '</div></div></div>').join('');
@@ -560,6 +567,7 @@
     S.storyImg++;
     const active = S.storyImg % storyLayers.length;
     storyLayers.forEach((l, i) => l.style.opacity = i === active ? 1 : 0);
+    storyLayersMobile.forEach((l, i) => l.style.opacity = i === active ? 1 : 0);
   }, 4000);
 
   /* ---------- partners controller ---------- */

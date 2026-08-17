@@ -130,7 +130,7 @@
         </div>
       </div>
       <div class="car-hero-img" style="position:relative">
-        <img src="img/Careers/Hero.png" alt="Union team at work" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        <img src="img/Careers/hero.webp" alt="Union team at work" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
       </div>
     </section>
 
@@ -147,7 +147,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg></a>
       </div>
       <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1709/797;background:#000">
-        <video id="whyVideo" playsinline preload="metadata" poster="img/Careers/Video%20Banner.png" style="width:100%;height:100%;object-fit:cover;display:block">
+        <video id="whyVideo" playsinline preload="metadata" poster="img/Careers/video-banner.webp" style="width:100%;height:100%;object-fit:cover;display:block">
           <source src="img/Careers/Video.mp4" type="video/mp4">
         </video>
         <button id="whyPlayOverlay" aria-label="Play video" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.32));border:none;cursor:pointer;padding:0">
@@ -209,7 +209,7 @@
           <div style="font-family:'Cormorant Garamond',serif;color:#7a756b;font-size:40px;line-height:0;height:16px">&ldquo;</div>
           <p id="empQuote" style="font-family:'Playfair Display',serif;color:#f3efe6;font-size:clamp(19px,2vw,25px);line-height:1.4;margin:8px 0 0">At Union, I found more than a job, I found a place where I can grow, make an impact and build a career I'm proud of.</p>
         </div>
-        <div style="border-radius:8px;overflow:hidden;height:clamp(210px,22vw,260px)"><img id="empImg" class="cover" src="img/Careers/Aisha.png" alt="Aisha Al-Mutairi"></div>
+        <div style="border-radius:8px;overflow:hidden;height:clamp(210px,22vw,260px)"><img id="empImg" class="cover" src="img/Careers/aisha.webp" alt="Aisha Al-Mutairi"></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px;min-width:180px">
         <div id="empMeta" style="transition:opacity .3s ease">
@@ -662,7 +662,7 @@
   <div class="vid-card">
     <button class="vid-close" id="vidClose" aria-label="Close" title="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     <div class="vid-media">
-      <video id="vidModalVideo" controls playsinline preload="metadata" poster="img/Careers/Video%20Banner.png">
+      <video id="vidModalVideo" controls playsinline preload="metadata" poster="img/Careers/video-banner.webp">
         <source src="img/Careers/Video.mp4" type="video/mp4">
       </video>
     </div>
@@ -847,7 +847,7 @@
     var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
     // area = grid-area shorthand: row-start / col-start / row-end / col-end  (4-col x 3-row mosaic for "All")
     var LIFE=[
-      {src:'img/Careers/Hero.png',   alt:'Team collaborating',  cat:'people',    area:'1 / 1 / 3 / 3'},
+      {src:'img/Careers/hero.webp',   alt:'Team collaborating',  cat:'people',    area:'1 / 1 / 3 / 3'},
       {src:'img/store-01-g1.webp',   alt:'Strategy session',    cat:'growth',    area:'1 / 3 / 2 / 4'},
       {src:'img/store-01-g0.webp',   alt:'Union workspace',     cat:'workplace', area:'1 / 4 / 3 / 5'},
       {src:'img/store-04-main.webp', alt:'Colleagues on the floor', cat:'people', area:'2 / 3 / 3 / 4'},
@@ -909,8 +909,8 @@
   // ============ Employee Stories carousel ============
   (function(){
     var EMP=[
-      {quote:"At Union, I found more than a job, I found a place where I can grow, make an impact and build a career I'm proud of.", img:'img/Careers/Aisha.png', name:'Aisha Al-Mutairi', role:'Marketing Executive', years:'4 Years at UTC'},
-      {quote:"From my very first day the team backed my ideas. Union gave me the space to lead and the support to get better every single day.", img:'img/Careers/Hero.png', name:'Yousef Al-Rashid', role:'Sales Manager', years:'6 Years at UTC'}
+      {quote:"At Union, I found more than a job, I found a place where I can grow, make an impact and build a career I'm proud of.", img:'img/Careers/aisha.webp', name:'Aisha Al-Mutairi', role:'Marketing Executive', years:'4 Years at UTC'},
+      {quote:"From my very first day the team backed my ideas. Union gave me the space to lead and the support to get better every single day.", img:'img/Careers/hero.webp', name:'Yousef Al-Rashid', role:'Sales Manager', years:'6 Years at UTC'}
     ];
     var q=document.getElementById('empQuote'), im=document.getElementById('empImg'), nm=document.getElementById('empName'),
         rl=document.getElementById('empRole'), yr=document.getElementById('empYears'),
