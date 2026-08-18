@@ -70,7 +70,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .divcard{height:auto !important;flex-direction:column !important}
     .divcard .divmedia{position:relative !important;width:100% !important;height:230px !important;clip-path:none !important}
     .divcard .divpanel{width:100% !important;min-width:0 !important;margin-left:0 !important}
-    .divcard .divpanel p[data-divdesc]{height:auto !important;overflow:hidden;margin-bottom:18px !important}
+    .divcard .divpanel p[data-divdesc]{height:auto !important;min-height:4.5em;overflow:hidden;margin-bottom:18px !important}
     .div-info-row>:not(a){display:none !important}
     #divMore{margin-left:0 !important;width:100% !important;justify-content:center !important;padding:16px !important}
     #divBrands>:nth-child(n+3){display:none !important}
@@ -98,7 +98,6 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     /* reserve fixed heights for the two variable-length elements (quote + name/role)
        so the section length stays constant across testimonials, even if a longer
        quote wraps to 4 lines on a narrower device */
-    .partners-sec #partnerQuote{min-height:90px !important}
     .partners-sec .partner-nr{min-height:76px !important;display:flex !important;flex-direction:column;justify-content:center}
     #partnerCells{margin-top:14px !important}
     .partners-sec .pc-more-cell{padding-left:6px !important;padding-right:6px !important}
@@ -124,8 +123,27 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   }
   @media(max-width:560px){
     .cf-row{grid-template-columns:1fr !important}
-    .qc-grid{grid-template-columns:1fr !important}
-    .feat-grid{grid-template-columns:1fr !important}
+    /* keep the 3 quick-contact cards in one compact row on phones */
+    .qc-grid{grid-template-columns:repeat(3,1fr) !important;gap:8px !important}
+    .qc-card{padding:14px 7px !important;min-height:0 !important;border-radius:13px !important}
+    .qc-card>span:first-child{width:36px !important;height:36px !important}
+    .qc-card>span:first-child svg{width:16px;height:16px}
+    .qc-card>div{margin-top:8px !important}
+    .qc-card>div>div:first-child{font-size:12.5px !important}
+    .qc-card>div>div:last-child{font-size:9.5px !important;margin-top:3px !important;line-height:1.3;overflow-wrap:anywhere}
+    .qc-arrow{display:none !important}
+    /* feature strip -> one-at-a-time swipe carousel on phones */
+    .feat-grid{display:flex !important;grid-template-columns:none !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:0 !important}
+    .feat-grid::-webkit-scrollbar{display:none}
+    .feat-grid>div{flex:0 0 100% !important;scroll-snap-align:center;background-image:none !important;padding:8px 6px !important}
+    .feat-dots{display:flex !important}
+    /* our offices -> one-at-a-time swipe carousel on phones */
+    .contact-main{min-width:0 !important}
+    .office-col{min-width:0 !important}
+    #offices{flex-direction:row !important;width:100%;min-width:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    #offices::-webkit-scrollbar{display:none}
+    #offices>.office-card{flex:0 0 100% !important;min-width:0;scroll-snap-align:center;border-bottom:0 !important}
+    .office-dots{display:flex !important}
   }
   .cf-input{width:100%;background:transparent;border:none;border-bottom:1px solid #e2ddd2;border-radius:0;padding:12px 2px;font-size:15px;color:#161513;outline:none;transition:border-color .25s}
   .cf-input:focus,#cfMessage:focus,#cfIntent:focus{border-color:#161513 !important}
@@ -236,7 +254,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
               <a id="divMore" href="#contact" class="h-fill-dark" style="margin-left:auto;flex-shrink:0;align-self:center;display:inline-flex;align-items:center;justify-content:center;border:1px solid #161513;color:#161513;font-size:15px;font-weight:600;padding:15px 34px;border-radius:12px">View More</a>
             </div>
             <div style="position:relative;z-index:1;margin-bottom:4px">
-              <div style="font-size:11px;letter-spacing:0.16em;color:#9a978f;font-weight:600;margin-bottom:12px">FEATURED BRANDS</div>
+              <div id="divBrandsLabel" style="font-size:11px;letter-spacing:0.16em;color:#9a978f;font-weight:600;margin-bottom:12px">FEATURED BRANDS</div>
               <div id="divBrands" style="display:flex;flex-wrap:wrap;gap:10px;min-height:48px;align-content:flex-start"></div>
             </div>
           </div>
@@ -316,12 +334,12 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div class="story-photo-m" style="position:absolute;left:30.9%;top:4.9%;width:34.2%;height:11.7%;overflow:hidden;transform:rotate(-0.4deg);transform-origin:center;filter:grayscale(1) contrast(1.06) brightness(0.99)">
           <div id="storyPhotosMobile"></div>
         </div>
-        <div class="story-mobile" style="position:absolute;left:0;right:0;top:19%;z-index:2;padding:0 32px">
+        <div class="story-mobile" style="position:absolute;left:0;right:0;top:19%;z-index:2;padding:46px 32px 0">
           <div style="font-size:11px;letter-spacing:0.3em;color:#9a978f;font-weight:600;margin-bottom:12px">WHO WE ARE</div>
           <h2 style="font-family:'Archivo';font-size:40px;line-height:0.9;margin:0 0 14px"><span style="font-weight:300;color:#efece5">Our </span><span style="font-weight:800;color:#fff">Story.</span></h2>
           <p style="color:#a8a49b;font-size:14.5px;line-height:1.6;margin:0 0 12px">Union Trading Company W.L.L. (UTC) is a leading retailer and distributor in Kuwait, made up of multiple retail outlets and numerous retail points across the nation.</p>
           <p style="color:#a8a49b;font-size:14.5px;line-height:1.6;margin:0">With over <strong style="color:#e9e5db">75 years of service</strong> since 1949, UTC upholds total commitment to its clients, maintaining outstanding partnerships with the global brands it represents.</p>
-          <div id="storyStatsMobile" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px"></div>
+          <div id="storyStatsMobile" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:46px"></div>
         </div>
       </div>
     </div>
@@ -348,6 +366,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
             </div>
           </div>
           <p id="partnerQuote" style="color:#4a473f;font-size:clamp(13px,1.1vw,16px);line-height:1.65;margin:clamp(10px,1.4vw,18px) 0 0"></p>
+          <button id="partnerMore" class="part-viewmore" type="button">View more<span class="vm-line"></span></button>
           <div style="height:1px;background:#d9d5ca;margin:clamp(14px,1.8vw,24px) 0"></div>
           <div style="display:flex;align-items:center;gap:clamp(14px,1.8vw,28px);flex-wrap:nowrap;margin-bottom:clamp(16px,3vh,42px)">
             <div style="display:flex;align-items:center;gap:14px;min-width:0">
@@ -581,6 +600,43 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </div>
 </div>
 
+<!-- full-testimonial popup -->
+<style>
+  .partners-sec #partnerQuote{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .part-viewmore{display:none;margin:10px 0 0;background:none;border:0;padding:0;cursor:pointer;font-family:'Manrope',system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em;color:#a9884f;align-items:center;gap:8px}
+  .part-viewmore:hover{color:#161513}
+  .part-viewmore .vm-line{width:18px;height:1px;background:currentColor;transition:width .25s ease}
+  .part-viewmore:hover .vm-line{width:26px}
+  .pmodal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;font-family:'Manrope',system-ui,sans-serif}
+  .pmodal.open{display:flex}
+  .pmodal-bg{position:absolute;inset:0;background:rgba(20,18,16,.6);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+  .pmodal-card{position:relative;max-width:620px;width:100%;max-height:86vh;overflow:auto;background:#f7f5f0;border:1px solid #e4dfd4;border-radius:20px;padding:clamp(26px,3.4vw,44px);box-shadow:0 40px 90px -30px rgba(0,0,0,.5);transform:translateY(10px) scale(.98);opacity:0;transition:transform .3s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
+  .pmodal.open .pmodal-card{transform:none;opacity:1}
+  .pmodal-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid #d9d5ca;background:#fff;color:#4a473f;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+  .pmodal-x:hover{background:#161513;color:#fff}
+  .pmodal-logo{height:42px;margin-bottom:20px;position:relative;display:flex;align-items:center}
+  .pmodal-logo .slot{height:100%;width:auto;min-width:120px;position:relative}
+  #pmName{font-family:'Archivo',sans-serif;font-weight:800;font-size:24px;letter-spacing:.01em;color:#161513}
+  #pmQuote{color:#3f3d36;font-size:clamp(14px,1.05vw,16px);line-height:1.8;margin:0}
+  #pmQuote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:38px;color:#c8c4ba;line-height:0;vertical-align:-.38em;margin-right:6px}
+  .pmodal-foot{display:flex;align-items:center;gap:22px;margin-top:26px;padding-top:22px;border-top:1px solid #e4dfd4}
+  #pmPerson{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;color:#161513}
+  #pmRole{color:#7a766e;font-size:13px;margin-top:2px}
+  #pmYears{font-family:'Playfair Display',serif;font-weight:600;font-size:30px;line-height:1;color:#161513}
+  .pmodal-yl{font-size:10px;letter-spacing:.14em;color:#8a867e;font-weight:600;margin-top:4px}
+</style>
+<div id="partnerModal" class="pmodal" role="dialog" aria-modal="true" aria-label="Partner testimonial">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-card">
+    <button class="pmodal-x" data-pmclose aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pmodal-logo"><div id="pmLogo" class="slot" data-fit="contain"></div><span id="pmName" style="display:none"></span></div>
+    <p id="pmQuote"></p>
+    <div class="pmodal-foot">
+      <div><div id="pmPerson"></div><div id="pmRole"></div></div>
+      <div style="margin-left:auto;text-align:right"><div id="pmYears"></div><div class="pmodal-yl">YEARS OF PARTNERSHIP</div></div>
+    </div>
+  </div>
+</div>
 <script src="app.js"></script>
 <script>
   // Mobile nav: hamburger toggles the dropdown (links + partner button)

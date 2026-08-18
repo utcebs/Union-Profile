@@ -16,7 +16,8 @@
     'Divisions': [
       ['Explore Divisions', 'Divisions/#explore'],
       ['All Divisions', 'Divisions/#all-divisions'],
-      ['Union Electronics', 'Union-Electronics/']
+      ['Union Electronics', 'Union-Electronics/'],
+      ['Aluna', 'Aluna/']
     ],
     'Our-Stores': [
       ['Explore Stores', 'Our-Stores/#stores'],

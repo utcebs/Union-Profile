@@ -106,7 +106,9 @@
   const brandNames = [
     { name: 'Braun', src: 'assets/b1.png' }, { name: 'Angel Wear', src: 'assets/b2.png' }, { name: 'India Gate', src: 'assets/b3.png' },
     { name: 'Hitachi', src: 'assets/b4.png' }, { name: 'Brandili', src: 'assets/b5.png' }, { name: 'Constance Carroll', src: 'assets/b6.png' },
-    { name: 'Glysolid', src: 'assets/b7.png' }, { name: 'Eagle Safes', src: 'assets/b8.png' }, { name: 'Prestige', src: 'assets/b9.png' }, { name: 'O General', src: 'assets/b10.png' }
+    { name: 'Glysolid', src: 'assets/b7.png' }, { name: 'Eagle Safes', src: 'assets/b8.png' }, { name: 'Prestige', src: 'assets/b9.png' }, { name: 'O General', src: 'assets/b10.png' },
+    { name: 'Daikin', src: 'img/brands-elec/daikin.webp' }, { name: 'Triumph', src: 'img/brands-aluna/triumph.webp' }, { name: 'Sloggi', src: 'img/brands-aluna/sloggi.webp' },
+    { name: 'Vileda', src: 'img/brands-elec/vileda.webp' }, { name: 'Cans', src: 'img/brands-elec/cans.webp' }, { name: 'Palladio', src: 'img/brands-elec/palladio.webp' }, { name: 'Vero Moda', src: 'img/brands-elec/vero-moda.webp' }
   ];
   function logoFor(name) {
     const n = String(name).toLowerCase();
@@ -115,12 +117,12 @@
   }
 
   const divData = [
-    { name: 'Union Electronics', href: 'Union-Electronics/', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Braun', 'Hitachi', '+6 more'], slot: 'div-elec' },
-    { name: 'Aluna', href: 'Aluna/', logo: 'img/Div/aluna-logo.webp', cardLogo: 'img/Div/aluna-logo.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Constance Carroll', 'Glysolid', '+5 more'], slot: 'div-cosmetics' },
-    { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['India Gate', 'Glysolid', 'Angel Wear', '+8 more'], slot: 'div-fmcg' },
-    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.webp', cardLogo: 'img/Div/labels-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Angel Wear', 'Brandili', '+4 more'], slot: 'div-fashion' },
-    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Glysolid', 'Prestige', 'Eagle Safes', '+5 more'], slot: 'div-health' },
-    { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.webp', cardLogo: 'img/Div/commercial-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['O General', 'Hitachi', '+3 more'], slot: 'div-commercial' }
+    { name: 'Union Electronics', href: 'Union-Electronics/', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Hitachi', 'Daikin', '+22 more'], slot: 'div-elec' },
+    { name: 'Aluna', href: 'Aluna/', logo: 'img/Div/aluna-logo.webp', cardLogo: 'img/Div/aluna-logo.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Triumph', 'Sloggi', '+12 more'], slot: 'div-cosmetics' },
+    { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vileda', 'Cans'], slot: 'div-fmcg' },
+    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.webp', cardLogo: 'img/Div/labels-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Palladio', 'Vero Moda'], slot: 'div-fashion' },
+    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: [], slot: 'div-health' },
+    { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.webp', cardLogo: 'img/Div/commercial-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: [], brandsSoon: true, slot: 'div-commercial' }
   ];
 
   const storyStats = [
@@ -132,10 +134,9 @@
   const storyExtra = ['uploads/city-showroom.webp', 'uploads/old-general-photo.webp'];
 
   const plist = [
-    { name: 'Milton Lloyd', since: '1978', years: '46+', src: 'uploads/Mil-trimmed.png', person: 'Peter Jackson', role: 'CEO', quote: 'For over four decades, under Union Trading Company’s vision and leadership, we’ve brought consumers exceptional fragrance within reach.' },
-    { name: 'Glemgas', since: '1970', years: '54+', src: 'uploads/Glem-trimmed.png', person: 'Marco Guerzoni', role: 'Marketing Director', quote: 'For over five decades Glemgas has trusted Union Trading Company to bring Italian craftsmanship into Kuwaiti homes with shared ambition.' },
-    { name: 'Jockey', since: '2003', years: '21+', src: 'uploads/Jock-trimmed.png', person: 'Brand Team', role: 'Brand Partner', quote: 'Since 2003, Union Trading Company has carried the Jockey name across the region with a shared commitment to comfort and quality.' },
-    { name: 'Braun', since: '2001', years: '23+', src: 'uploads/Braun-trimmed.png', person: 'Brand Team', role: 'Brand Partner', quote: 'For more than two decades Union Trading Company has represented Braun in Kuwait, delivering German engineering to our customers with trust and care.' }
+    { name: 'Milton Lloyd', since: '1978', years: '44+', src: 'uploads/Mil-trimmed.png', person: 'Peter Jackson', role: 'CEO', quote: 'Our mission with UTC branded perfumes, throughout the past 44 years, has (under Union Trading Company’s continuing unique and continuing vision / foresight and leadership) always been to offer to consumers with limited financial resources outstanding perfumery of the finest quality and at the lowest possible price. Since 1978, this unique and continuous perfumery cooperation between Union Trading Company and Milton-Lloyd has manufactured (in the UK) and distributed (initially in Kuwait and then throughout the world) more than 300 million bottles of UTC glass perfumery. A huge number. An unprecedented success. We believe that Milton-Lloyd’s cooperation and friendship with Union Trading Company is as strong or stronger today than it has ever been. And the future of UTC is bright.' },
+    { name: 'Glemgas', since: '1970', years: '50+', src: 'uploads/Glem-trimmed.png', person: 'Marco Guerzoni', role: 'Marketing Director', quote: 'It has been a long journey of over 50 years under the guidance of UTC that helped us to be market leader in Kuwait. All of our achievements weren’t possible without the great support and effort of the entire UTC team. From the ones in the past who have made such a great story possible, to the current and future one that god willing they will certainly raise the bar to achieve what now seems impossible to our eyes. I personally want to thank all of UTC for their precious dedication and support, and am looking forward to celebrate our new impossible achievements.' },
+    { name: 'Jockey', since: '2003', years: '20+', src: 'uploads/Jock-trimmed.png', person: 'Brand Team', role: 'Brand Partner', quote: 'Jockey International, Inc. has enjoyed a valuable working relationship with Union Trading Co. for the past 20 years. We value UTC’s loyal patronage over those years and the business relationship that has ensued because of our cooperation. We have watched Union Trading Co. grow into a thriving business and a business well-known throughout the Gulf region. We know Union Trading Co. has many options and we are pleased with the close relationship between our companies and look forward to many more years of serving Union Trading Co. We are committed to providing Union Trading Co. with quality service and the best products at a fair price. The cooperation between Jockey International, Inc. and Union Trading Co. has led to a respectful business relationship between our two companies. Jockey International, Inc. looks forward to many more years of our association with Union Trading Co. and wish you the success that you so richly deserve as you relaunch of your Corporate Website. Thank you, Union Trading Co. for giving Jockey International, Inc. the opportunity to serve your great company.' },
   ];
 
   const milestones = [
@@ -175,9 +176,9 @@
   // Offices for the contact panel — each opens the Our Stores explorer; where a
   // matching store record exists, it deep-links to it via ?store=<index>.
   const offices = [
-    { name: 'Head Office', addr: ['Salhiya, Kuwait City', 'P.O. Box 239, Safat 13003, Kuwait'], phone: '+965 18444449', email: 'info@utc.com.kw', store: 0, img: 'img/store-01-g0.webp' },
-    { name: 'Salmiya Showroom', addr: ['Salmiya, Salem Al Mubarak Street', 'Salmiya, Kuwait'], phone: '+965 25710800', email: 'salmiya@utc.com.kw', store: null, img: 'img/store-07-main.webp' },
-    { name: 'Hawally Showroom', addr: ['Al-Othman Street, Hawally', 'Kuwait'], phone: '+965 22640200', email: 'hawally@utc.com.kw', store: null, img: 'img/store-04-main.webp' }
+    { name: 'Head Office', addr: ['Salhiya, Kuwait City', 'P.O. Box 239, Safat 13003, Kuwait'], phone: '+965 18444449', email: 'info@utc.com.kw', store: 0, img: 'img/stores/fahed-al-salem-1.webp' },
+    { name: 'Salmiya Showroom', addr: ['Salmiya, Salem Al Mubarak Street', 'Salmiya, Kuwait'], phone: '+965 25710800', email: 'salmiya@utc.com.kw', store: 1, img: 'img/stores/salmiya-1.webp' },
+    { name: 'Hawally Showroom', addr: ['Al-Othman Street, Hawally', 'Kuwait'], phone: '+965 22640200', email: 'hawally@utc.com.kw', store: 3, img: 'img/stores/hawally-1.webp' }
   ];
 
   // Bottom feature strip
@@ -296,6 +297,24 @@
         + '<span class="office-arrow" style="width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid #ddd8cc;display:flex;align-items:center;justify-content:center;color:#161513;align-self:center;transition:background .25s,color .25s,border-color .25s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>'
         + '</a>';
     }).join('');
+
+    // mobile only: pagination dots for the offices swipe-carousel (hidden on desktop via inline display:none)
+    if (!document.querySelector('.office-dots')) {
+      const dw = document.createElement('div');
+      dw.className = 'office-dots';
+      dw.style.cssText = 'display:none;justify-content:center;gap:7px;margin-top:12px';
+      dw.innerHTML = offices.map((o, i) => '<button data-od="' + i + '" aria-label="' + o.name + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:' + (i === 0 ? '#a97f43' : 'rgba(60,48,30,0.22)') + ';transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>').join('');
+      officesEl.parentNode.insertBefore(dw, officesEl.nextSibling);
+      const dots = Array.prototype.slice.call(dw.children);
+      const items = Array.prototype.slice.call(officesEl.children);
+      const activeIdx = () => { const mid = officesEl.scrollLeft + officesEl.clientWidth / 2; let best = 0, bd = Infinity; items.forEach((c, i) => { const cen = c.offsetLeft + c.offsetWidth / 2, d = Math.abs(cen - mid); if (d < bd) { bd = d; best = i; } }); return best; };
+      const sync = () => { const a = activeIdx(); dots.forEach((d, i) => { const on = i === a; d.style.background = on ? '#a97f43' : 'rgba(60,48,30,0.22)'; d.style.width = on ? '20px' : '8px'; d.style.borderRadius = on ? '4px' : '50%'; }); };
+      let oraf = 0;
+      officesEl.addEventListener('scroll', () => { cancelAnimationFrame(oraf); oraf = requestAnimationFrame(sync); }, { passive: true });
+      dots.forEach((d, i) => d.addEventListener('click', () => { const c = items[i]; officesEl.scrollTo({ left: c.offsetLeft - (officesEl.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' }); }));
+      window.addEventListener('resize', sync);
+      setTimeout(sync, 200);
+    }
   }
 
   // feature strip — minimal gold-accent icon + title & description, with slim centered dividers
@@ -309,6 +328,24 @@
         + '<div style="font-size:12px;color:#948f85;line-height:1.45">' + f.sub + '</div></div>'
         + '</div>';
     }).join('');
+
+    // mobile only: pagination dots for the feature swipe-carousel (hidden on desktop via inline display:none)
+    if (!document.querySelector('.feat-dots')) {
+      const dw = document.createElement('div');
+      dw.className = 'feat-dots';
+      dw.style.cssText = 'display:none;justify-content:center;gap:7px;margin-top:14px';
+      dw.innerHTML = features.map((f, i) => '<button data-fd="' + i + '" aria-label="' + f.title + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:' + (i === 0 ? '#a97f43' : 'rgba(60,48,30,0.22)') + ';transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>').join('');
+      featEl.parentNode.insertBefore(dw, featEl.nextSibling);
+      const dots = Array.prototype.slice.call(dw.children);
+      const items = Array.prototype.slice.call(featEl.children);
+      const activeIdx = () => { const mid = featEl.scrollLeft + featEl.clientWidth / 2; let best = 0, bd = Infinity; items.forEach((c, i) => { const cen = c.offsetLeft + c.offsetWidth / 2, d = Math.abs(cen - mid); if (d < bd) { bd = d; best = i; } }); return best; };
+      const sync = () => { const a = activeIdx(); dots.forEach((d, i) => { const on = i === a; d.style.background = on ? '#a97f43' : 'rgba(60,48,30,0.22)'; d.style.width = on ? '20px' : '8px'; d.style.borderRadius = on ? '4px' : '50%'; }); };
+      let fraf = 0;
+      featEl.addEventListener('scroll', () => { cancelAnimationFrame(fraf); fraf = requestAnimationFrame(sync); }, { passive: true });
+      dots.forEach((d, i) => d.addEventListener('click', () => { const c = items[i]; featEl.scrollTo({ left: c.offsetLeft - (featEl.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' }); }));
+      window.addEventListener('resize', sync);
+      setTimeout(sync, 200);
+    }
   }
 
   const footHref = { 'Careers': 'Careers/', 'About UTC': 'About/', 'Sitemap': 'Sitemap/', 'Privacy Statement': 'Privacy-Policy/' };
@@ -402,16 +439,19 @@
   plist.forEach((p, i) => {
     const layer = document.createElement('div');
     layer.style.cssText = 'position:absolute;inset:0;opacity:' + (i === 0 ? 1 : 0) + ';transition:opacity .8s ease;pointer-events:none;z-index:' + (i === 0 ? 2 : 1);
-    layer.appendChild(slotEl('pimg-' + i, 'img/pimg-' + i + '.webp', 'cover'));
+    if (!p.noAssets) layer.appendChild(slotEl('pimg-' + i, 'img/pimg-' + i + '.webp', 'cover'));  // no brand image yet -> clean dark panel
     el('partnerImages').appendChild(layer);
   });
   function renderPartnerCells() {
     const a = activePartner();
     let h = plist.map((p, i) => {
       const on = i === a;
+      const bar = p.src
+        ? '<div class="slot pbar" data-slot="pbar-' + i + '" data-fit="contain" data-src="' + p.src + '" style="height:clamp(26px,2.4vw,34px);width:100%;position:relative;filter:' + (on ? 'invert(1) brightness(2)' : 'none') + '"></div>'
+        : '<div style="height:clamp(26px,2.4vw,34px);width:100%;display:flex;align-items:center;justify-content:center;filter:' + (on ? 'invert(1) brightness(2)' : 'none') + '"><span style="font-family:\'Archivo\',sans-serif;font-weight:800;font-size:clamp(13px,1.1vw,16px);color:#161513;white-space:nowrap">' + p.name + '</span></div>';
       return '<div data-pc="' + i + '" style="flex:1;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(10px,1.5vw,22px);background:' + (on ? '#141414' : '#ffffff') + ';border-right:1px solid #ededed;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">'
         + '<span style="position:absolute;top:10px;left:14px;font-size:10px;font-weight:700;letter-spacing:0.1em;color:' + (on ? '#7a7a7a' : '#b3afa6') + '">0' + (i + 1) + '</span>'
-        + '<div class="slot pbar" data-slot="pbar-' + i + '" data-fit="contain" data-src="' + p.src + '" style="height:clamp(26px,2.4vw,34px);width:100%;position:relative;filter:' + (on ? 'invert(1) brightness(2)' : 'none') + '"></div>'
+        + bar
         + '<span style="font-size:10px;letter-spacing:0.12em;font-weight:600;color:' + (on ? '#8a8a8a' : '#9a978f') + '">SINCE ' + p.since + '</span></div>';
     }).join('');
     h += '<div class="pc-more-cell" style="flex:0.8;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(12px,1.6vw,24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px"><span class="pc-more" style="font-size:11px;letter-spacing:0.14em;font-weight:700;color:#6d6a62;text-align:center;line-height:1.5">AND MORE<br>PARTNERS</span><span style="width:34px;height:1px;background:#c8c4ba"></span></div>';
@@ -563,12 +603,18 @@
       }
     }
     // featured brands
+    const featLabel = el('divBrandsLabel');
+    if (d.brandsSoon) {
+      if (featLabel) featLabel.style.display = '';
+      el('divBrands').innerHTML = '<div style="border:1px solid #d8d3c7;background:#fff;height:48px;min-width:120px;display:flex;align-items:center;justify-content:center;padding:0 22px;border-radius:12px"><span style="font-family:\'Archivo\';font-weight:600;font-size:13px;color:#a7a39a">Coming soon</span></div>';
+    } else {
     const raw = d.brands || [];
     const named = raw.filter(n => !/^\+/.test(n));
     const moreEntry = raw.find(n => /^\+/.test(n));
     const moreNum = moreEntry ? (parseInt(moreEntry.replace(/\D/g, ''), 10) || 0) : 0;
     const shown = named.slice(0, 2);
     const moreTotal = (named.length - shown.length) + moreNum;
+    if (featLabel) featLabel.style.display = named.length ? '' : 'none';
     let bh = shown.map(name => {
       const src = logoFor(name);
       if (src) return '<div style="background:#0d0d0d;height:48px;width:126px;display:flex;align-items:center;justify-content:center;padding:0 20px;border-radius:12px"><div role="img" aria-label="' + name + '" style="width:100%;height:26px;filter:brightness(0) invert(1);background-image:url(&quot;' + src + '&quot;);background-size:contain;background-repeat:no-repeat;background-position:center"></div></div>';
@@ -576,6 +622,7 @@
     }).join('');
     if (moreTotal > 0) bh += '<div style="border:1px solid #cfd1d4;background:#fff;height:48px;min-width:72px;display:flex;align-items:center;justify-content:center;padding:0 18px;border-radius:12px"><span style="font-family:\'Archivo\';font-weight:700;font-size:13px;color:#57544c">+' + moreTotal + ' more</span></div>';
     el('divBrands').innerHTML = bh;
+    }
     // image layers
     Array.from(el('divLayers').children).forEach((l, i) => { l.style.opacity = i === S.div ? 1 : 0; l.style.zIndex = i === S.div ? 2 : 1; });
     // tabs
@@ -598,10 +645,16 @@
     S.partner = i;
     const a = activePartner();
     const p = plist[a];
-    fillSlot(el('partnerLogo'), 'plogo-' + a, p.src, 'contain');
+    if (p.src) { fillSlot(el('partnerLogo'), 'plogo-' + a, p.src, 'contain'); }
+    else { el('partnerLogo').innerHTML = '<span style="font-family:\'Archivo\',sans-serif;font-weight:800;font-size:clamp(24px,2.4vw,34px);letter-spacing:.01em;color:#161513;white-space:nowrap">' + p.name + '</span>'; }
     el('partnerLogo').style.width = '100%';
     el('partnerQuote').textContent = p.quote;
-    fillSlot(el('partnerAvatar'), 'pavatar-' + a, 'img/pavatar-' + a + '.webp', 'cover');
+    // "View more" appears only when the quote is actually clamped/overflowing
+    var _more = el('partnerMore');
+    if (_more) requestAnimationFrame(function () { var q = el('partnerQuote'); _more.style.display = (q.scrollHeight - q.clientHeight > 2) ? 'inline-flex' : 'none'; });
+    var _avWrap = el('partnerAvatar').parentElement;
+    if (p.noAssets) { if (_avWrap) _avWrap.style.display = 'none'; }
+    else { if (_avWrap) _avWrap.style.display = ''; fillSlot(el('partnerAvatar'), 'pavatar-' + a, 'img/pavatar-' + a + '.webp', 'cover'); }
     el('partnerPerson').textContent = p.person;
     el('partnerRole').textContent = p.role;
     el('partnerYears').textContent = p.years;
@@ -611,6 +664,25 @@
     renderPartnerCells();
   }
   let partnerTimer = setInterval(() => setPartner(S.partner + 1), 6000);
+
+  // full-testimonial popup (opened by the card's "View more")
+  function fillPartnerModal() {
+    const p = plist[activePartner()];
+    const lg = el('pmLogo'), nm = el('pmName');
+    if (lg && nm) {
+      if (p.src) { nm.style.display = 'none'; lg.style.display = ''; lg.innerHTML = ''; fillSlot(lg, 'pmlogo', p.src, 'contain'); }
+      else { lg.style.display = 'none'; nm.style.display = ''; nm.textContent = p.name; }
+    }
+    if (el('pmQuote')) el('pmQuote').textContent = p.quote;
+    if (el('pmPerson')) el('pmPerson').textContent = p.person;
+    if (el('pmRole')) el('pmRole').textContent = p.role;
+    if (el('pmYears')) el('pmYears').textContent = p.years;
+  }
+  function openPartnerModal() { const m = el('partnerModal'); if (!m) return; fillPartnerModal(); m.classList.add('open'); clearInterval(partnerTimer); }
+  function closePartnerModal() { const m = el('partnerModal'); if (!m) return; m.classList.remove('open'); clearInterval(partnerTimer); partnerTimer = setInterval(() => setPartner(S.partner + 1), 6000); }
+  if (el('partnerMore')) el('partnerMore').addEventListener('click', openPartnerModal);
+  if (el('partnerModal')) el('partnerModal').addEventListener('click', (e) => { if (e.target.closest('[data-pmclose]')) closePartnerModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePartnerModal(); });
 
   /* ---------- contact form ---------- */
   // Static site: route the message via mailto. The "I want to…" dropdown decides
@@ -666,6 +738,28 @@
   // visitor's email app (mailto) so nothing breaks.
   const WEB3FORMS_KEY = '';
 
+  // EmailJS — client-side email that works on ANY hosting (GitHub Pages, a cloud
+  // server, anywhere): the visitor's browser sends the enquiry through YOUR connected
+  // mailbox. Fill the 3 IDs from the EmailJS dashboard (emailjs.com → Account) to turn
+  // it on; while any is blank the form uses the Web3Forms/mailto path below, so nothing
+  // breaks. Per-option routing already works — the dropdown's data-mail is used as the
+  // recipient (`to_email`), so you can point each enquiry type at a different UTC inbox.
+  // Remember to add this site's domain under EmailJS → Account → Security → Allowed origins.
+  const EMAILJS = { publicKey: '', serviceId: '', templateId: '' };
+  let _emailjsReady = null;
+  function ensureEmailJS() {
+    if (_emailjsReady) return _emailjsReady;
+    _emailjsReady = new Promise((res, rej) => {
+      if (window.emailjs) { try { emailjs.init({ publicKey: EMAILJS.publicKey }); } catch (e) {} return res(); }
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+      s.onload = () => { try { emailjs.init({ publicKey: EMAILJS.publicKey }); } catch (e) {} res(); };
+      s.onerror = rej;
+      document.head.appendChild(s);
+    });
+    return _emailjsReady;
+  }
+
   el('contactForm').addEventListener('submit', e => {
     e.preventDefault();
     const sel = el('cfIntent');
@@ -705,6 +799,29 @@
       setBtn(label || 'OPENING EMAIL… ');
       setTimeout(() => setBtn('SEND MESSAGE'), 4000);
     };
+
+    // Preferred: EmailJS (client-side; works on static or cloud hosting). Sends the
+    // enquiry through your connected mailbox, routed to the selected option's inbox.
+    if (EMAILJS.publicKey && EMAILJS.serviceId && EMAILJS.templateId) {
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setBtn('CHECK YOUR EMAIL '); setTimeout(() => setBtn('SEND MESSAGE'), 3000); return; }
+      btn.disabled = true; setBtn('SENDING… ');
+      ensureEmailJS()
+        .then(() => emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, {
+          to_email: to, subject: subject, from_name: name || 'Website visitor', reply_to: email,
+          name: name, email: email, phone: phone,
+          enquiry_type: opt ? opt.text : '',
+          division: division, partnership_type: partType, organisation: org, other_information: other,
+          message: lines.join('\n')
+        }))
+        .then(() => {
+          setBtn('MESSAGE SENT ✓ ');
+          el('contactForm').reset(); syncPartnership();
+          showFormModal();                                     // "your request has been submitted" popup
+          setTimeout(() => { setBtn('SEND MESSAGE'); btn.disabled = false; }, 5000);
+        })
+        .catch(() => { btn.disabled = false; openMail('OPENING EMAIL… '); }); // fallback so the enquiry isn't lost
+      return;
+    }
 
     // No form service configured yet → open the visitor's email app.
     if (!WEB3FORMS_KEY) { openMail(); return; }

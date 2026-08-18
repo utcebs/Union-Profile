@@ -57,6 +57,16 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .uesoc:hover{background:#fff;color:#0d0d0d;border-color:#fff}
   .viewbrand{transition:gap .25s}.viewbrand:hover{gap:13px}
   .prod-rail::-webkit-scrollbar{display:none}
+  /* Hero Brands: on phones/tablets the 5-col grid can't fit — make it a draggable swipe carousel (arrows centre each card) */
+  @media(max-width:860px){
+    #prodRail{display:flex!important;grid-template-columns:none!important;position:relative;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:34px 12vw 14px!important;gap:4vw}
+    /* cards sit slightly back; only the centred (active) one gradually pops forward with the product zoom — the 3D effect */
+    #prodRail>.hbrand{flex:0 0 76vw!important;scroll-snap-align:center;transform:scale(.9);opacity:.82;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .45s ease,box-shadow .45s ease,border-color .3s ease}
+    #prodRail>.hbrand.hb-active{transform:scale(1);opacity:1;z-index:3;box-shadow:0 30px 55px -28px rgba(0,0,0,.35);border-color:#dcd7cb}
+    #prodRail>.hbrand.hb-active .hbrand-media img{transform:scale(1.3) translateY(-6%);filter:drop-shadow(0 30px 28px rgba(0,0,0,.34))}
+    #prodRail>.hbrand.hb-active .hbrand-media img.hb-samsung{transform:scale(1.2) translateY(-2%)}
+    #prodRail>.hbrand.hb-active .hbrand-learn{gap:12px;color:#161513}
+  }
   /* ===== Categories hover-expand accordion ===== */
   .cat-wrap{display:grid;grid-template-columns:0.82fr 1.5fr;gap:clamp(28px,4vw,60px);align-items:center}
   .cat-acc{display:flex;gap:clamp(8px,0.9vw,13px);height:clamp(360px,42vw,540px)}
@@ -88,7 +98,8 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .ue-hero-img{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;width:100%!important;height:300px}
     .ue-hero-img>div{background:linear-gradient(0deg,#0d0d0d,rgba(13,13,13,0) 55%)!important}
     .ue-hero .wrap{padding-left:clamp(20px,5vw,64px)!important;padding-right:clamp(20px,5vw,64px)!important}
-    .ue-hero-left{min-height:auto!important;max-width:none!important;padding:clamp(40px,7vw,60px) 0 clamp(40px,7vw,56px)!important}
+    .ue-hero-left{min-height:auto!important;max-width:none!important;padding:clamp(40px,7vw,60px) 0 clamp(58px,12vw,74px)!important}
+    .feat3{display:none!important}   /* hero affirmations removed on mobile — UE only */
     .ue-hero .crumb{position:static!important;margin-bottom:6px}
     .kp-grid{grid-template-columns:1fr!important}
     .glance-inner{grid-template-columns:1fr!important}
@@ -96,15 +107,29 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .connect-grid{grid-template-columns:1fr!important}
     .stat4,.contact4{grid-template-columns:1fr 1fr!important}
     .cat-wrap{grid-template-columns:1fr!important}
-    .cat-acc{flex-direction:column;height:auto!important;gap:12px}
-    .cat-panel{flex:none!important}
-    .cat-panel .cat-body{position:relative!important;padding:52px 20px 20px!important}
-    .cat-panel .cat-title{font-size:17px!important}
+    /* categories -> one-at-a-time swipe carousel (each panel a full tall image card) */
+    .cat-acc{flex-direction:row!important;height:clamp(440px,92vw,560px)!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px}
+    .cat-acc::-webkit-scrollbar{display:none}
+    .cat-panel{flex:0 0 84%!important;scroll-snap-align:center}
+    .cat-panel .cat-body{padding:clamp(18px,5vw,26px)!important}
+    .cat-panel .cat-title{font-size:clamp(18px,5.4vw,22px)!important}
     .cat-panel .cat-title .ct-s{display:none!important}
     .cat-panel .cat-title .ct-f{display:inline!important}
     .cat-panel .cat-extra{max-height:150px!important;opacity:1!important;margin-top:12px!important}
   }
-  @media(max-width:620px){.hbrandrow,.feat3{grid-template-columns:1fr!important}.stat4,.contact4{grid-template-columns:1fr!important}}
+  @media(max-width:620px){
+    .hbrandrow{grid-template-columns:1fr!important}
+    /* hero badges: 3 compact, centered icons side-by-side (not stacked) */
+    .feat3{grid-template-columns:repeat(3,1fr)!important;gap:10px!important;max-width:100%!important}
+    .feat3>div{text-align:center}
+    .feat3>div>div:first-child{width:38px!important;height:38px!important;margin:0 auto 8px!important}
+    .feat3>div>div:nth-child(2){font-size:12px!important;line-height:1.2}
+    .feat3>div>div:nth-child(3){display:none!important}
+    /* glance stats + connect tiles: tidy 2×2 (not one giant column) */
+    .stat4{grid-template-columns:1fr 1fr!important}
+    .contact4{grid-template-columns:1fr 1fr!important}
+    .contact4>div{aspect-ratio:1.28!important}   /* a touch smaller than square */
+  }
   .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
   .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
   .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
@@ -413,10 +438,33 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 </div>
 
 <script>
-  // hero products rail arrows (horizontal scroll on smaller widths)
+  // hero products rail arrows — step to the next/prev brand card and centre it
   document.querySelectorAll('[data-prod]').forEach(function(b){
-    b.addEventListener('click',function(){ var r=document.getElementById('prodRail'); if(r) r.scrollBy({left:(+b.dataset.prod)*300,behavior:'smooth'}); });
+    b.addEventListener('click',function(){
+      var r=document.getElementById('prodRail'); if(!r) return;
+      var cards=[].slice.call(r.children); if(!cards.length) return;
+      var mid=r.scrollLeft+r.clientWidth/2, cur=0,bd=Infinity;
+      cards.forEach(function(c,i){ var cen=c.offsetLeft+c.offsetWidth/2, d=Math.abs(cen-mid); if(d<bd){bd=d;cur=i;} });
+      var nx=Math.max(0,Math.min(cards.length-1,cur+(+b.dataset.prod)));
+      var c=cards[nx];
+      r.scrollTo({ left:c.offsetLeft-(r.clientWidth-c.offsetWidth)/2, behavior:'smooth' });
+    });
   });
+
+  // Hero Brands: the centred card gets .hb-active (pops forward / zooms) — updates as you swipe or arrow
+  (function(){
+    var r=document.getElementById('prodRail'); if(!r) return;
+    var cards=[].slice.call(r.children); if(!cards.length) return;
+    function markActive(){
+      var mid=r.scrollLeft+r.clientWidth/2, best=0, bd=Infinity;
+      cards.forEach(function(cd,i){ var cen=cd.offsetLeft+cd.offsetWidth/2, d=Math.abs(cen-mid); if(d<bd){bd=d;best=i;} });
+      cards.forEach(function(cd,i){ cd.classList.toggle('hb-active', i===best); });
+    }
+    var raf=0;
+    r.addEventListener('scroll',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(markActive); },{passive:true});
+    window.addEventListener('resize',markActive);
+    setTimeout(markActive,60);
+  })();
 
   // Our Brands: continuous auto-scrolling marquee (pause on hover)
   (function(){
@@ -461,13 +509,19 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     }).join('');
     var panels=Array.prototype.slice.call(acc.querySelectorAll('.cat-panel'));
     var numEl=document.getElementById('catNum');
-    function setActive(i){ active=i; panels.forEach(function(p,j){ p.classList.toggle('active',j===i); }); if(numEl) numEl.textContent=cats[i].n; }
-    panels.forEach(function(p,i){ p.addEventListener('mouseenter',function(){ setActive(i); }); });
+    var isCar=function(){ return acc.scrollWidth > acc.clientWidth + 4; };  // true only in the mobile carousel layout
+    var lockUntil=0;   // while a button-triggered smooth scroll animates, ignore scroll-driven repaints (stops the counter flicker)
+    function paint(i){ active=i; panels.forEach(function(p,j){ p.classList.toggle('active',j===i); }); if(numEl) numEl.textContent=cats[i].n; }
+    function setActive(i,smooth){ paint(i); if(isCar()){ var c=panels[i]; if(smooth!==false) lockUntil=Date.now()+700; acc.scrollTo({ left:c.offsetLeft-(acc.clientWidth-c.offsetWidth)/2, behavior: smooth===false?'auto':'smooth' }); } }
+    panels.forEach(function(p,i){ p.addEventListener('mouseenter',function(){ if(!isCar()) setActive(i); }); });   // hover-expand: desktop only
+    var craf=0;
+    acc.addEventListener('scroll',function(){ cancelAnimationFrame(craf); craf=requestAnimationFrame(function(){ if(!isCar()||Date.now()<lockUntil)return; var mid=acc.scrollLeft+acc.clientWidth/2,best=0,bd=Infinity; panels.forEach(function(c,i){ var cen=c.offsetLeft+c.offsetWidth/2,d=Math.abs(cen-mid); if(d<bd){bd=d;best=i;} }); if(best!==active) paint(best); }); },{passive:true});
+    window.addEventListener('resize',function(){ if(isCar()) setActive(active,false); });
     // no mouseleave reset — the last hovered panel stays expanded (initial default = DEF)
     var pv=document.getElementById('catPrev'), nx=document.getElementById('catNext');
     if(pv) pv.onclick=function(){ setActive((active-1+cats.length)%cats.length); };
     if(nx) nx.onclick=function(){ setActive((active+1)%cats.length); };
-    setActive(DEF);
+    setActive(isCar() ? 0 : DEF, false);   // desktop opens the featured default; mobile carousel starts at the 1st
   })();
 </script>
 <script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>

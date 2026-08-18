@@ -1,2 +1,18 @@
-slotmap.json
-.DS_Store
+# Local dev server (not part of the site)
+serve8097.mjs
+serve*.mjs
+node_modules/
+
+# Editor/backup artifacts
+*.bak
+
+# Working / source material — not referenced by the live site
+img/All Brands/
+img/Div BGs/
+img/Division sec/
+img/Showroom Images/
+img/Careers/Div/Hero brands sample/*.png
+img/Careers/Div/Hero brands sample/*.jpg
+img/Careers/Div/Hero brands sample/*.jpeg
+xtra6miles/
+*.xlsx
