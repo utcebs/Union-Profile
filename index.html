@@ -76,15 +76,33 @@
     #divTabs button:not(.active){display:none !important}
     #divTabs button.active{flex:1 1 100% !important;min-width:0 !important;border-right-color:transparent !important;background:transparent !important}
     #divPrev,#divNext{display:none !important}
+    /* Partners: compact mobile layout — product image small, top-right by the heading */
     .partners-sec{height:auto !important}
-    .partners-grid{grid-template-columns:1fr !important}
-    .partners-media{min-height:60vw}
+    .partners-grid{display:block !important;position:relative}
+    .partners-grid>div:first-child{padding:clamp(30px,7vw,42px) clamp(20px,5vw,26px) 16px !important}
+    .partners-grid>div:first-child>div[style*="max-width:740"]{max-width:100% !important}
+    #partnerRail{display:none !important}
+    .partners-sec h2{max-width:56% !important;font-size:clamp(28px,8vw,40px) !important;line-height:1.02 !important}
+    .partners-media{position:absolute !important;top:clamp(50px,14vw,82px) !important;right:clamp(14px,4vw,22px) !important;left:auto !important;width:41% !important;max-width:205px !important;height:auto !important;aspect-ratio:1/1 !important;min-height:0 !important;border-radius:10px !important;overflow:hidden;z-index:2}
+    .partners-media>div:last-child{display:none !important}
+    /* the partner images are wide banners (text left, product right) — show just the product */
+    .partners-media .slot img{width:auto !important;height:100% !important;max-width:none !important;object-fit:cover !important;object-position:right center !important;transform:none !important;left:auto !important;right:0 !important;top:0 !important;position:absolute}
+    .partners-sec .part-quoterow{flex-wrap:wrap !important;gap:8px 16px !important;margin-top:clamp(84px,24vw,112px) !important}
+    /* partner brand logo: fixed box + uniform height so it doesn't resize between testimonials (Glemgas as reference) */
+    .partners-sec #partnerLogo{width:210px !important;max-width:62vw !important;min-width:0 !important;height:48px !important;flex:0 0 auto !important;position:relative}
+    .partners-sec #partnerLogo img{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;max-width:none !important;object-fit:contain !important;object-position:center !important;transform:none !important;left:0 !important;top:0 !important}
+    /* reserve fixed heights for the two variable-length elements (quote + name/role)
+       so the section length stays constant across testimonials, even if a longer
+       quote wraps to 4 lines on a narrower device */
+    .partners-sec #partnerQuote{min-height:90px !important}
+    .partners-sec .partner-nr{min-height:76px !important;display:flex !important;flex-direction:column;justify-content:center}
+    #partnerCells{margin-top:14px !important}
+    .partners-sec .pc-more-cell{padding-left:6px !important;padding-right:6px !important}
+    .partners-sec .pc-more{font-size:9px !important;letter-spacing:0.02em !important;line-height:1.45 !important}
     .story-sec .story-desk,.story-sec .story-photo,.story-sec .story-panel,.story-sec .story-timeline,.story-sec .story-stats,.story-sec .story-dim{display:none !important}
-    .story-sec .story-mobile,.story-sec .story-mobile-frame{display:block !important}
-    /* mobile desk: full-bleed edge-to-edge (break out of the section's side padding) */
-    .story-sec .story-mobile-frame{width:100vw !important;max-width:100vw !important;margin:8px calc(50% - 50vw) 6px !important}
-    .story-sec .story-mobile-frame img{border-radius:0 !important}
-    .ms-sec{height:auto !important}
+    /* mobile story: full-bleed portrait banner (frame + booklet at top, text over the dark canvas) */
+    .story-sec .story-mobile-frame{display:block !important;width:100vw !important;max-width:100vw !important;margin:0 calc(50% - 50vw) !important;background:#0a0908}
+    .ms-sec{height:auto !important;padding-bottom:clamp(40px,7vh,72px) !important}
     .ms-stage{position:relative !important;height:auto !important;display:block !important;overflow:visible !important}
     .ms-viewport{perspective:none !important;height:auto !important;width:100% !important;max-width:100% !important}
     .ms-viewport .ms-desktoponly{display:none !important}
@@ -288,21 +306,19 @@
         <div id="storyStats" class="story-stats" style="position:absolute;bottom:6%;left:2.5%;width:95%;display:flex;justify-content:space-between;align-items:center;gap:2cqw"></div>
       </div>
 
-      <!-- mobile: centered desk with the angled slideshow inside the frame -->
-      <div class="story-mobile-frame" style="display:none;position:relative;width:100%;max-width:560px;margin:6px auto 0;aspect-ratio:1974/1098">
-        <img src="uploads/mobile-our-story-bg.webp" alt="Union Trading Co. archival desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px">
-        <div class="story-photo-m" style="position:absolute;left:46.5%;top:47.6%;width:43%;height:53%;overflow:hidden;transform:translate(-50%,-50%) rotate(-2.2deg);transform-origin:center center;filter:grayscale(1) contrast(1.06) brightness(0.99)">
+      <!-- mobile: full portrait story banner — slideshow in the frame, text over the dark canvas -->
+      <div class="story-mobile-frame" style="display:none;position:relative">
+        <img src="uploads/newmobbanner.webp" alt="Union Trading Co. archival desk" style="display:block;width:100%;height:auto">
+        <div class="story-photo-m" style="position:absolute;left:30.9%;top:4.9%;width:34.2%;height:11.7%;overflow:hidden;transform:rotate(-0.4deg);transform-origin:center;filter:grayscale(1) contrast(1.06) brightness(0.99)">
           <div id="storyPhotosMobile"></div>
         </div>
-      </div>
-
-      <!-- mobile story fallback -->
-      <div class="story-mobile" style="display:none;padding:24px 4px 40px">
-        <div style="font-size:11px;letter-spacing:0.3em;color:#9a978f;font-weight:600;margin-bottom:12px">WHO WE ARE</div>
-        <h2 style="font-family:'Archivo';font-size:44px;line-height:0.9;margin:0 0 16px"><span style="font-weight:300;color:#efece5">Our </span><span style="font-weight:800;color:#fff">Story.</span></h2>
-        <p style="color:#a8a49b;font-size:15px;line-height:1.6">Union Trading Company W.L.L. (UTC) is a leading retailer and distributor in Kuwait, made up of multiple retail outlets and numerous retail points across the nation.</p>
-        <p style="color:#a8a49b;font-size:15px;line-height:1.6">With over <strong style="color:#e9e5db">75 years of service</strong> since 1949, UTC upholds total commitment to its clients, maintaining outstanding partnerships with the global brands it represents.</p>
-        <div id="storyStatsMobile" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px"></div>
+        <div class="story-mobile" style="position:absolute;left:0;right:0;top:19%;z-index:2;padding:0 32px">
+          <div style="font-size:11px;letter-spacing:0.3em;color:#9a978f;font-weight:600;margin-bottom:12px">WHO WE ARE</div>
+          <h2 style="font-family:'Archivo';font-size:40px;line-height:0.9;margin:0 0 14px"><span style="font-weight:300;color:#efece5">Our </span><span style="font-weight:800;color:#fff">Story.</span></h2>
+          <p style="color:#a8a49b;font-size:14.5px;line-height:1.6;margin:0 0 12px">Union Trading Company W.L.L. (UTC) is a leading retailer and distributor in Kuwait, made up of multiple retail outlets and numerous retail points across the nation.</p>
+          <p style="color:#a8a49b;font-size:14.5px;line-height:1.6;margin:0">With over <strong style="color:#e9e5db">75 years of service</strong> since 1949, UTC upholds total commitment to its clients, maintaining outstanding partnerships with the global brands it represents.</p>
+          <div id="storyStatsMobile" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -318,7 +334,7 @@
             <span style="font-size:12px;letter-spacing:0.32em;color:#5c594f;font-weight:600">WHAT OUR PARTNERS SAY</span>
           </div>
           <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(40px,5vw,74px);line-height:1.02;letter-spacing:-0.01em;margin:0;color:#161513">Decades<br>of Trust.</h2>
-          <div style="display:flex;align-items:center;gap:clamp(16px,1.8vw,40px);margin-top:clamp(16px,2vw,30px);flex-wrap:nowrap">
+          <div class="part-quoterow" style="display:flex;align-items:center;gap:clamp(16px,1.8vw,40px);margin-top:clamp(16px,2vw,30px);flex-wrap:nowrap">
             <p style="color:#6d6a62;font-size:clamp(13px,1.1vw,16px);line-height:1.55;margin:0;max-width:260px">Strong partnerships built on trust, performance, and a shared vision.</p>
             <div style="display:flex;align-items:flex-start;gap:clamp(10px,1.2vw,18px);flex:1;min-width:150px">
               <div style="font-family:'Playfair Display',serif;font-size:clamp(48px,5vw,76px);line-height:0.7;color:#c8c4ba">&ldquo;</div>
@@ -332,7 +348,7 @@
           <div style="display:flex;align-items:center;gap:clamp(14px,1.8vw,28px);flex-wrap:nowrap;margin-bottom:clamp(16px,3vh,42px)">
             <div style="display:flex;align-items:center;gap:14px;min-width:0">
               <div style="width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#ddd;position:relative"><div id="partnerAvatar" class="slot" style="border-radius:50%"></div></div>
-              <div>
+              <div class="partner-nr">
                 <div id="partnerPerson" style="font-family:'Archivo';font-weight:700;font-size:16px;color:#161513"></div>
                 <div id="partnerRole" style="color:#7a766e;font-size:14px;margin-top:2px"></div>
               </div>
@@ -520,13 +536,13 @@
         <p style="color:#8f8c85;font-size:14px;line-height:1.6;margin:0">Salhiya, Jahra, Farwaniya, Shuwaikh &amp; Hawally Showrooms</p>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Subscribe</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.6;margin:0 0 18px">Subscribe to receive the latest updates, promotions and news.</p>
-        <div style="display:flex;border:1px solid #33312d;border-radius:999px;overflow:hidden">
-          <input placeholder="Email Address" style="flex:1;min-width:0;background:none;border:none;outline:none;color:#fff;padding:13px 18px;font-size:14px">
-          <button aria-label="Subscribe" class="h-grey" style="background:#fff;border:none;cursor:pointer;width:48px;display:flex;align-items:center;justify-content:center">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-          </button>
+        <div class="foot-divs" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch">
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img src="img/Div/electronics-logo.webp" alt="Union Electronics" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img src="img/Div/aluna-logo.webp" alt="Aluna" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img src="img/Div/fmcg-logo.webp" alt="FMCG" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img src="img/Div/labels-logo.webp" alt="Labels" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img src="img/Div/commercial-logo.webp" alt="Commercial Projects" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
         </div>
       </div>
     </div>

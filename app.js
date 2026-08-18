@@ -414,7 +414,7 @@
         + '<div class="slot pbar" data-slot="pbar-' + i + '" data-fit="contain" data-src="' + p.src + '" style="height:clamp(26px,2.4vw,34px);width:100%;position:relative;filter:' + (on ? 'invert(1) brightness(2)' : 'none') + '"></div>'
         + '<span style="font-size:10px;letter-spacing:0.12em;font-weight:600;color:' + (on ? '#8a8a8a' : '#9a978f') + '">SINCE ' + p.since + '</span></div>';
     }).join('');
-    h += '<div style="flex:0.8;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(12px,1.6vw,24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px"><span style="font-size:11px;letter-spacing:0.14em;font-weight:700;color:#6d6a62;text-align:center;line-height:1.5">AND MORE<br>PARTNERS</span><span style="width:34px;height:1px;background:#c8c4ba"></span></div>';
+    h += '<div class="pc-more-cell" style="flex:0.8;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(12px,1.6vw,24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px"><span class="pc-more" style="font-size:11px;letter-spacing:0.14em;font-weight:700;color:#6d6a62;text-align:center;line-height:1.5">AND MORE<br>PARTNERS</span><span style="width:34px;height:1px;background:#c8c4ba"></span></div>';
     el('partnerCells').innerHTML = h;
     el('partnerCells').querySelectorAll('.pbar').forEach(sl => fillSlot(sl, sl.dataset.slot, sl.dataset.src, 'contain'));
     el('partnerCells').querySelectorAll('[data-pc]').forEach(d => d.onclick = () => setPartner(+d.dataset.pc));
@@ -465,6 +465,28 @@
     dots.forEach((d, i) => d.addEventListener('click', () => { const c = mob.children[i]; mob.scrollTo({ left: c.offsetLeft - (mob.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' }); }));
     window.addEventListener('resize', sync);
     setTimeout(sync, 200);
+
+    /* Auto-advance the mobile carousel through all milestones. The timer is CLEARED
+       entirely whenever the carousel is off-screen or the tab is hidden (no work in
+       the background), and briefly held after any manual swipe/tap so it never fights
+       the user. On desktop the carousel is display:none (offsetParent === null), so
+       this stays dormant and the 3D drum takes over. */
+    const AUTO_MS = 3600, RESUME_MS = 5000;
+    let autoTimer = 0, pausedUntil = 0, onScreen = false;
+    const shown = () => mob.offsetParent !== null;               // true only in the mobile layout
+    const goTo = i => { const c = mob.children[i]; if (c) mob.scrollTo({ left: c.offsetLeft - (mob.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' }); };
+    const beat = () => { if (!onScreen || !shown() || Date.now() < pausedUntil) return; goTo((activeIdx() + 1) % N); };
+    const startAuto = () => { if (!autoTimer && shown()) autoTimer = setInterval(beat, AUTO_MS); };
+    const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = 0; } };
+    const hold = () => { pausedUntil = Date.now() + RESUME_MS; };
+    ['touchstart', 'pointerdown', 'wheel'].forEach(ev => mob.addEventListener(ev, hold, { passive: true }));
+    dots.forEach(d => d.addEventListener('click', hold));
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      onScreen = e.isIntersecting;
+      if (onScreen) startAuto(); else stopAuto();
+    }), { threshold: 0.2 });
+    io.observe(mob);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopAuto(); else if (onScreen) startAuto(); });
   })();
 
   /* ---------- hero controller ---------- */
@@ -805,11 +827,25 @@
     if (prevBtn) prevBtn.onclick = () => go(Math.round(prog) - 1);
     if (nextBtn) nextBtn.onclick = () => go(Math.round(prog) + 1);
     window.addEventListener('resize', () => { measure(); render(cur); });
-    setInterval(() => {
+    /* Auto-advance the drum, but only in the desktop layout AND while the section is
+       actually on-screen. The timer is cleared entirely off-screen / when the tab is
+       hidden / on mobile (where the swipe carousel takes over), so nothing animates in
+       the background. */
+    let drumTimer = 0, drumOn = false;
+    const drumBeat = () => {
+      if (window.innerWidth <= 900) return;
       const rect = sec.getBoundingClientRect(), vh = window.innerHeight;
       const covers = rect.top <= vh * 0.5 && rect.bottom >= vh * 0.5;
       if (covers && Date.now() - lastWheel > 3200) go((Math.round(prog) + 1) % N);
-    }, 3400);
+    };
+    const startDrum = () => { if (!drumTimer && window.innerWidth > 900) drumTimer = setInterval(drumBeat, 3400); };
+    const stopDrum = () => { if (drumTimer) { clearInterval(drumTimer); drumTimer = 0; } };
+    const drumIO = new IntersectionObserver(es => es.forEach(e => {
+      drumOn = e.isIntersecting && e.intersectionRatio >= 0.45;
+      if (drumOn) startDrum(); else stopDrum();
+    }), { threshold: [0, 0.45, 1] });
+    drumIO.observe(sec);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopDrum(); else if (drumOn) startDrum(); });
     cur = target; render(cur);
   }
 

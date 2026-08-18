@@ -22,7 +22,7 @@
       addr: ['Kuwait City, Block 1', 'Fahad Al-Salem Street', 'Kuwait'], phone: '+965 2242 3355',
       maps: 'https://www.google.com/maps/search/?api=1&query=Union%20Trading%20Company%20Fahad%20Al-Salem%20Street%20Kuwait%20City',
       x: 64, y: 34,
-      photos: ['img/store-01-g0.webp', 'img/store-01-g1.webp'] },
+      photos: P('fahed-al-salem', 6) },
 
     { num: '02', name: 'Salmiya Store', city: 'Salmiya', cats: [],
       tagline: 'At the heart of Salmiya.',
@@ -37,14 +37,14 @@
       desc: 'Your Union Trading destination in Farwaniya, with our full range of brands and dependable everyday service.',
       hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
       addr: ['Farwaniya, Kuwait'], phone: '+965 2473 3820', whatsapp: '+965 9550 1738',
-      maps: 'https://goo.gl/maps/XCckvVJFSS92qqNA6', x: 56, y: 50, photos: [] },
+      maps: 'https://goo.gl/maps/XCckvVJFSS92qqNA6', x: 56, y: 50, photos: ['img/stores/farwaniya-1.webp'] },
 
     { num: '04', name: 'Hawally Store', city: 'Hawally', cats: [],
       tagline: 'Close to Hawally.',
       desc: 'The Union Trading experience in Hawally — trusted brands and expert support, right where you need them.',
       hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
       addr: ['Hawally, Kuwait'], phone: '+965 9407 4000', whatsapp: '+965 9407 4000',
-      maps: 'https://maps.app.goo.gl/emGnAaX6nwLfUri26', x: 68, y: 44, photos: [] },
+      maps: 'https://maps.app.goo.gl/emGnAaX6nwLfUri26', x: 68, y: 44, photos: P('hawally', 4) },
 
     { num: '05', name: 'Fahaheel Store', city: 'Fahaheel', cats: [],
       tagline: 'Inside Fahaheel Yaal Mall.',
@@ -69,7 +69,7 @@
       desc: 'Our Jahra destination brings Union Trading trusted brands and service to the west of Kuwait.',
       hours: '10:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 5:00 PM – 10:00 PM',
       addr: ['Jahra, Kuwait'], phone: '+965 2457 2747', whatsapp: '+965 9550 1808',
-      maps: 'https://maps.app.goo.gl/xjbgbsW6j7vBFirQA', x: 44, y: 30, photos: [] },
+      maps: 'https://maps.app.goo.gl/xjbgbsW6j7vBFirQA', x: 44, y: 30, photos: P('jahra', 1) },
 
     { num: '09', name: 'Shuwaikh Store', city: 'Shuwaikh', cats: [],
       tagline: 'The Shuwaikh showroom.',
@@ -83,7 +83,7 @@
       desc: 'Our Hawalli showroom dedicated to built-in kitchen and home appliances, with specialist advice.',
       hours: '9:30 AM – 1:00 PM  ·  5:00 PM – 9:30 PM', days: 'Saturday – Thursday', friday: '',
       addr: ['Hawalli, Kuwait'], phone: '+965 2264 3788', whatsapp: '+965 9550 1801',
-      maps: 'https://maps.app.goo.gl/sCPyKSSZyjkuczv56', x: 71, y: 48, photos: [] },
+      maps: 'https://maps.app.goo.gl/sCPyKSSZyjkuczv56', x: 71, y: 48, photos: ['img/stores/brazilia-1.webp'] },
 
     { num: '11', name: 'Sabah Al-Salem Store', city: 'Sabah Al-Salem', cats: [],
       tagline: 'Serving Sabah Al-Salem.',
@@ -111,7 +111,7 @@
      Set PIN_EDIT to false (or delete this block + the editor functions below) to turn it off.
      Positions are saved to localStorage so they persist on this browser across reloads.
      Use "Copy coords" to hand the final x/y values back so they can be baked into this file. */
-  const PIN_EDIT = true;
+  const PIN_EDIT = false;
   const PIN_KEY = 'utcStorePins';
   (function loadPins() {
     try {
