@@ -237,7 +237,7 @@
       const on = i === idx;
       const dimmed = !fi.includes(i);
       return '<button data-card="' + i + '" style="text-align:left;border:1px solid ' + (on ? ACCENT : '#2a2825') + ';background:' + (on ? '#161513' : 'transparent') + ';border-radius:12px;padding:12px 14px;cursor:pointer;opacity:' + (dimmed ? 0.35 : 1) + ';transition:all .25s;position:relative;min-width:0">'
-        + '<div style="font-family:\'Archivo\';font-weight:600;font-size:13px;color:' + (on ? ACCENT : '#7c7972') + ';margin-bottom:8px">' + s.num + '</div>'
+        + '<div style="font-family:\'Archivo\';font-weight:600;font-size:13px;color:' + (on ? ACCENT : '#8f8c85') + ';margin-bottom:8px">' + s.num + '</div>'
         + '<div style="font-family:\'Archivo\';font-weight:700;font-size:14px;color:#fff;line-height:1.25;margin-bottom:5px">' + s.name.replace('&', '&amp;') + '</div>'
         + '<div style="font-size:11.5px;color:#8f8c85">' + s.city + '</div>'
         + '<span style="position:absolute;top:14px;right:14px;color:' + ACCENT + ';opacity:' + (on ? 1 : 0) + '">' + ic('<path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle>', 16) + '</span>'

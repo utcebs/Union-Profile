@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="description" content="Discover Union Trading Company's business divisions — Union Electronics, Aluna, FMCG, Labels, Union Services and Commercial Projects — delivering world-class brands across Kuwait.">
 <base href="../">
+<link rel="preload" as="image" href="img/div-elec.webp" fetchpriority="high">
 <script>/* <base> sends bare #links to site root; keep same-page anchors native */
 addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var h=a.getAttribute("href");if(h.length<2){e.preventDefault();scrollTo({top:0,behavior:"smooth"});return;}if(document.getElementById(h.slice(1))){e.preventDefault();location.hash=h;}});</script>
 
@@ -21,7 +23,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   img{display:block;max-width:100%}
   input,button{font-family:inherit}
   .wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
-  .eyebrow{font-size:11.5px;letter-spacing:0.28em;color:#9297a0;font-weight:700;text-transform:uppercase}
+  .eyebrow{font-size:11.5px;letter-spacing:0.28em;color:#6a6f78;font-weight:700;text-transform:uppercase}
   .hoverline{transition:border-color .25s,color .25s}
   .hoverline:hover{border-bottom-color:#fff!important}
   .shopnow:hover{background:#fff !important;color:#0d0d0d !important;border-color:#0d0d0d !important}
@@ -73,7 +75,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .darrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);color:#fff;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   .darrow:hover{background:#0d0d0d;border-color:#0d0d0d}
   .darrow.p{left:-8px}.darrow.n{right:-8px}
-  .ddots{position:relative;z-index:2;display:flex;gap:9px;justify-content:center;padding-bottom:clamp(28px,3.4vw,44px)}
+  .ddots{position:relative;z-index:2;display:flex;gap:18px;justify-content:center;padding-bottom:clamp(28px,3.4vw,44px)}
   .ddots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.3);transition:.2s}
   .ddots button.on{background:#fff;width:24px;border-radius:6px}
 
@@ -88,7 +90,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .dg-desc{color:#5c594f;font-size:14px;line-height:1.6;margin:0 0 22px;flex:1}
   .dg-cta{display:inline-flex;align-items:center;gap:9px;color:#0d0d0d;font-family:'Archivo';font-weight:700;font-size:13px;letter-spacing:.06em;transition:gap .25s}
   .dg-cta:hover{gap:14px}
-  .dg-cta.soon{color:#a7a39a;pointer-events:none}
+  .dg-cta.soon{color:#6f6b62;pointer-events:none}
 
   @media(max-width:860px){
     /* fit the whole division hero into the first viewport; fill the full height so the
@@ -144,10 +146,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <a href="Home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
     </div>
   </header>
+  <main>
 
   <!-- ============ RED BANNER HERO (coverflow) ============ -->
   <section id="explore" class="divred">
-    <div class="divbanner"><img loading="lazy" decoding="async" id="divBanA" alt=""><img loading="lazy" decoding="async" id="divBanB" alt=""></div>
+    <div class="divbanner"><img decoding="async" fetchpriority="high" id="divBanA" alt=""><img loading="lazy" decoding="async" id="divBanB" alt=""></div>
     <div class="divscrim"></div>
     <div class="divcrumb"><div class="crumb"><a href="Home/">Home</a><span>&rsaquo;</span><span style="color:#fff">Our Divisions</span></div></div>
     <div class="divwrap">
@@ -179,6 +182,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </section>
 
   <!-- ============ FOOTER ============ -->
+  </main>
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
@@ -225,12 +229,12 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 
 <script>
   var DIV=[
-    {name:'Union Electronics Retail & Wholesale', short:'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href:'union-electronics.html', logo:'img/Div/electronics-logo.webp', banner:'img/Div/electronics-banner.jpg', img:'img/div-elec.webp'},
+    {name:'Union Electronics Retail & Wholesale', short:'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href:'union-electronics.html', logo:'img/Div/electronics-logo.webp', banner:'img/div-elec.webp', img:'img/div-elec.webp'},
     {name:'Aluna', short:'Internationally acclaimed cosmetics and fragrances. Luxury, elegance, and confidence in every detail.', href:'aluna.html', logo:'img/Div/aluna-logo.webp', banner:'img/aluna-band.webp', img:'img/div-cosmetics.webp'},
-    {name:'FMCG', short:'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href:'', soon:true, logo:'img/Div/fmcg-logo.webp', banner:'img/Div/b2b-banner.jpg', img:'img/div-fmcg.webp'},
-    {name:'Labels', short:'Premium fashion, cosmetics, and lifestyle brands with timeless, everyday style.', href:'', soon:true, logo:'img/Div/labels-logo.webp', banner:'img/Div/labels-banner.jpg', img:'img/div-fashion.webp'},
-    {name:'Union Services', short:'World class VRV and HVAC-R solutions for professionals across Kuwait.', href:'', soon:true, logo:'img/Div/services-logo.webp', logoBig:true, banner:'img/Div/services-banner.jpg', img:'img/div-health.webp'},
-    {name:'Commercial AC and Home Appliance Projects', logoName:'Commercial Projects', short:'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href:'', soon:true, logo:'img/Div/commercial-logo.webp', banner:'img/Div/commercial-banner.jpg', img:'img/div-commercial.webp'}
+    {name:'FMCG', short:'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href:'', soon:true, logo:'img/Div/fmcg-logo.webp', banner:'img/div-fmcg.webp', img:'img/div-fmcg.webp'},
+    {name:'Labels', short:'Premium fashion, cosmetics, and lifestyle brands with timeless, everyday style.', href:'', soon:true, logo:'img/Div/labels-logo.webp', banner:'img/div-fashion.webp', img:'img/div-fashion.webp'},
+    {name:'Union Services', short:'World class VRV and HVAC-R solutions for professionals across Kuwait.', href:'', soon:true, logo:'img/Div/services-logo.webp', logoBig:true, banner:'img/div-health.webp', img:'img/div-health.webp'},
+    {name:'Commercial AC and Home Appliance Projects', logoName:'Commercial Projects', short:'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href:'', soon:true, logo:'img/Div/commercial-logo.webp', banner:'img/div-commercial.webp', img:'img/div-commercial.webp'}
   ];
   var stage=document.getElementById('divStage'), nameEl=document.getElementById('divName'),
       descEl=document.getElementById('divDesc'), cta=document.getElementById('divCta'), dots=document.getElementById('divDots'),

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="description" content="Explore Union Trading Company's retail and distribution channels across Kuwait — showrooms, wholesale, e-commerce and partner networks that bring our brands to market.">
 <base href="../">
 <script>/* <base> sends bare #links to site root; keep same-page anchors native */
 addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var h=a.getAttribute("href");if(h.length<2){e.preventDefault();scrollTo({top:0,behavior:"smooth"});return;}if(document.getElementById(h.slice(1))){e.preventDefault();location.hash=h;}});</script>
@@ -73,7 +74,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .ch-card{background:#fff;border:1px solid #ece7db;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:26px 16px;min-height:154px;text-align:center;transition:transform .3s,box-shadow .3s,border-color .3s}
   .ch-card:hover{transform:translateY(-6px);box-shadow:0 26px 48px -30px rgba(0,0,0,.42);border-color:#dcd7cb}
   .ch-name{font-family:'Archivo';font-weight:800;font-size:19px;letter-spacing:.01em;line-height:1.1}
-  .ch-cat{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a8a49b;font-weight:700}
+  .ch-cat{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6f6b62;font-weight:700}
   .ch-more{border:1.5px dashed #cfc9bb!important;background:transparent!important;box-shadow:none!important}
   .ch-more:hover{transform:translateY(-6px);border-color:#161513!important}
 
@@ -167,8 +168,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .ch-feats::-webkit-scrollbar{display:none}
     .ch-feats>div{flex:0 0 84%;scroll-snap-align:center;background:#fff;border:1px solid #ece7db;border-radius:16px;padding:22px 20px;box-sizing:border-box}
     .ch-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
-    .ch-dot{width:7px;height:7px;border-radius:50%;background:#d6d0c3;border:none;padding:0;cursor:pointer;transition:background .25s,width .25s}
-    .ch-dot.active{background:#161513;width:20px;border-radius:999px}
+    .ch-dot{width:24px;height:24px;border:none;padding:0;cursor:pointer;background:transparent;display:flex;align-items:center;justify-content:center}
+    .ch-dot::before{content:"";width:7px;height:7px;border-radius:50%;background:#d6d0c3;transition:background .25s,width .25s}
+    .ch-dot.active::before{background:#161513;width:20px;border-radius:999px}
   }
 </style>
 </head>
@@ -194,6 +196,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <a href="Home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
     </div>
   </header>
+  <main>
 
   <!-- ============ HERO ============ -->
   <section id="overview" style="position:relative;background:#0d0d0d;color:#fff;overflow:hidden">
@@ -292,6 +295,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </div>
 
   <!-- ============ FOOTER (site standard) ============ -->
+  </main>
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
@@ -397,7 +401,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   side.parentNode.insertBefore(sel, side);
   sel.addEventListener('change',function(){ setCat(sel.value); });
   grid.innerHTML=CH.map(function(c){var top=c.logo?'<img loading="lazy" decoding="async" class="ch-logo" src="'+c.logo+'" alt="'+c.n+'">':'<div class="ch-name" style="color:'+c.col+'">'+c.n+'</div>';return '<div class="ch-card" data-cat="'+c.c+'">'+top+'<div class="ch-cat">'+catName(c.c)+'</div></div>';}).join('')
-    +'<div class="ch-card ch-more" data-cat="_more"><div style="font-size:28px;line-height:.7;color:#b3ad9f;font-weight:300">+</div><div class="ch-name" style="font-size:14px;color:#7c7970">More Channels</div><div class="ch-cat">Coming Soon</div></div>';
+    +'<div class="ch-card ch-more" data-cat="_more"><div style="font-size:28px;line-height:.7;color:#b3ad9f;font-weight:300">+</div><div class="ch-name" style="font-size:14px;color:#615e57">More Channels</div><div class="ch-cat">Coming Soon</div></div>';
 
   function setCat(k){
     if(sel && sel.value!==k) sel.value=k;
