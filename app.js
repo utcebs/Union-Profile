@@ -95,11 +95,11 @@
     const light = (bg, head, sub, kick, track, muted) => ({ heroBg: bg, heroHead: head, heroSub: sub, heroKick: kick, heroTrack: track, heroFill: head, heroMuted: muted, heroCtaBg: '#0d0d0d', heroCtaTx: '#fff' });
     const dark = (bg, head, sub, kick, track, muted) => ({ heroBg: bg, heroHead: head, heroSub: sub, heroKick: kick, heroTrack: track, heroFill: head, heroMuted: muted, heroCtaBg: head, heroCtaTx: bg });
     return [
-      dark('#182430', '#f2efe8', '#b6c0c8', '#7d909c', '#37485580', '#6f818d'),   // GlemGas
-      light('#e6ddc9', '#2a2417', '#57503d', '#978f76', '#c9c0a6', '#a99f83'),    // O General
-      light('#e8e3d9', '#2a2620', '#57524a', '#948d7e', '#cbc4b4', '#a49b88'),    // Cecotec (warm bedroom)
-      dark('#101d33', '#eef2f6', '#aab6c6', '#748399', '#2c3c5680', '#6b7a90'),    // CHiQ Changhong (starry navy)
-      light('#dcdedd', '#20262a', '#4e565a', '#8a9296', '#c1c7c6', '#98a0a1'),    // Havit (cool misty forest)
+      dark('#182430', '#f2efe8', '#b6c0c8', '#9dafba', '#37485580', '#93a3ac'),   // GlemGas
+      light('#e6ddc9', '#2a2417', '#57503d', '#6b6250', '#c9c0a6', '#5c5446'),    // O General
+      light('#e8e3d9', '#2a2620', '#57524a', '#675f51', '#cbc4b4', '#585040'),    // Cecotec (warm bedroom)
+      dark('#101d33', '#eef2f6', '#aab6c6', '#93a3b6', '#2c3c5680', '#8fa0af'),    // CHiQ Changhong (starry navy)
+      light('#dcdedd', '#20262a', '#4e565a', '#5b6367', '#c1c7c6', '#525a5c'),    // Havit (cool misty forest)
     ];
   }
 
@@ -288,7 +288,7 @@
         + '<span style="width:56px;height:52px;flex-shrink:0;border-radius:10px;background:#eceae2 url(&quot;' + o.img + '&quot;) center/cover no-repeat"></span>'
         + '<div style="min-width:0;flex:1">'
         + '<div style="font-family:\'Archivo\';font-weight:700;font-size:15px;color:#161513;margin-bottom:3px">' + o.name + '</div>'
-        + '<div style="font-size:12px;color:#8a877f;line-height:1.4;margin-bottom:5px">' + o.addr.join('<br>') + '</div>'
+        + '<div style="font-size:12px;color:#645f57;line-height:1.4;margin-bottom:5px">' + o.addr.join('<br>') + '</div>'
         + '<div style="display:flex;flex-wrap:wrap;gap:6px 18px">'
         + '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5c5951">' + officeIcon('<path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path>') + o.phone + '</span>'
         + '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5c5951">' + officeIcon('<rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path>') + o.email + '</span>'
@@ -303,7 +303,7 @@
       const dw = document.createElement('div');
       dw.className = 'office-dots';
       dw.style.cssText = 'display:none;justify-content:center;gap:7px;margin-top:12px';
-      dw.innerHTML = offices.map((o, i) => '<button data-od="' + i + '" aria-label="' + o.name + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:' + (i === 0 ? '#a97f43' : 'rgba(60,48,30,0.22)') + ';transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>').join('');
+      dw.innerHTML = offices.map((o, i) => '<button class="tapx" data-od="' + i + '" aria-label="' + o.name + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:' + (i === 0 ? '#a97f43' : 'rgba(60,48,30,0.22)') + ';transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>').join('');
       officesEl.parentNode.insertBefore(dw, officesEl.nextSibling);
       const dots = Array.prototype.slice.call(dw.children);
       const items = Array.prototype.slice.call(officesEl.children);
@@ -325,7 +325,7 @@
       return '<div style="display:flex;gap:13px;align-items:center;padding:2px clamp(14px,1.5vw,22px);' + div + '">'
         + '<div style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f4eee2;display:flex;align-items:center;justify-content:center;color:#a97f43"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + f.icon + '</svg></div>'
         + '<div style="min-width:0"><div style="font-family:\'Archivo\';font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#161513;margin-bottom:4px">' + f.title + '</div>'
-        + '<div style="font-size:12px;color:#948f85;line-height:1.45">' + f.sub + '</div></div>'
+        + '<div style="font-size:12px;color:#635e55;line-height:1.45">' + f.sub + '</div></div>'
         + '</div>';
     }).join('');
 
@@ -334,7 +334,7 @@
       const dw = document.createElement('div');
       dw.className = 'feat-dots';
       dw.style.cssText = 'display:none;justify-content:center;gap:7px;margin-top:14px';
-      dw.innerHTML = features.map((f, i) => '<button data-fd="' + i + '" aria-label="' + f.title + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:' + (i === 0 ? '#a97f43' : 'rgba(60,48,30,0.22)') + ';transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>').join('');
+      dw.innerHTML = features.map((f, i) => '<button class="tapx" data-fd="' + i + '" aria-label="' + f.title + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:' + (i === 0 ? '#a97f43' : 'rgba(60,48,30,0.22)') + ';transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>').join('');
       featEl.parentNode.insertBefore(dw, featEl.nextSibling);
       const dots = Array.prototype.slice.call(dw.children);
       const items = Array.prototype.slice.call(featEl.children);
@@ -360,7 +360,7 @@
     layer.dataset.h = i;
     el('heroSlides').appendChild(layer);
   });
-  el('heroDots').innerHTML = heroImgs.map((_, i) => '<button data-hd="' + i + '" aria-label="slide" style="width:9px;height:9px;border-radius:50%;border:none;cursor:pointer;padding:0;background:' + (i === 0 ? '#141311' : 'rgba(255,255,255,0.55)') + '"></button>').join('');
+  el('heroDots').innerHTML = heroImgs.map((_, i) => '<button class="tapx" data-hd="' + i + '" aria-label="slide" style="width:9px;height:9px;border-radius:50%;border:none;cursor:pointer;padding:0;background:' + (i === 0 ? '#141311' : 'rgba(255,255,255,0.55)') + '"></button>').join('');
   el('heroDots').querySelectorAll('button').forEach(b => b.onclick = () => setHero(+b.dataset.hd));
   el('heroMuted').textContent = ('0' + heroImgs.length).slice(-2);  // total-slides counter, auto-matches heroImgs
 
@@ -452,7 +452,7 @@
       return '<div data-pc="' + i + '" style="flex:1;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(10px,1.5vw,22px);background:' + (on ? '#141414' : '#ffffff') + ';border-right:1px solid #ededed;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">'
         + '<span style="position:absolute;top:10px;left:14px;font-size:10px;font-weight:700;letter-spacing:0.1em;color:' + (on ? '#7a7a7a' : '#b3afa6') + '">0' + (i + 1) + '</span>'
         + bar
-        + '<span style="font-size:10px;letter-spacing:0.12em;font-weight:600;color:' + (on ? '#8a8a8a' : '#9a978f') + '">SINCE ' + p.since + '</span></div>';
+        + '<span style="font-size:10px;letter-spacing:0.12em;font-weight:600;color:' + (on ? '#8a8a8a' : '#67645d') + '">SINCE ' + p.since + '</span></div>';
     }).join('');
     h += '<div class="pc-more-cell" style="flex:0.8;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(12px,1.6vw,24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px"><span class="pc-more" style="font-size:11px;letter-spacing:0.14em;font-weight:700;color:#6d6a62;text-align:center;line-height:1.5">AND MORE<br>PARTNERS</span><span style="width:34px;height:1px;background:#c8c4ba"></span></div>';
     el('partnerCells').innerHTML = h;
@@ -490,7 +490,7 @@
     if (!mob || !dw) return;
     const N = mob.children.length;
     dw.innerHTML = milestones.map((m, i) =>
-      '<button data-msdot="' + i + '" aria-label="' + m.year + '" title="' + m.year + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.3);transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>'
+      '<button class="tapx" data-msdot="' + i + '" aria-label="' + m.year + '" title="' + m.year + '" style="width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.3);transition:width .25s ease,border-radius .25s ease,background .25s ease"></button>'
     ).join('');
     const dots = Array.prototype.slice.call(dw.children);
     const activeIdx = () => {

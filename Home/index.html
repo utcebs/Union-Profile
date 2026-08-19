@@ -10,10 +10,12 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 <title>Union Trading Co.</title>
 <meta name="description" content="Union Trading Company W.L.L. (UTC) — a leading retailer and distributor in Kuwait since 1949.">
 <link rel="icon" type="image/png" href="uploads/union-trading-logo.png">
+<link rel="preload" as="image" href="uploads/Carousal4.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
+  
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:var(--hdr,74px);scroll-snap-type:y proximity}
@@ -45,7 +47,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   a{color:#141311;text-decoration:none}
   img{display:block;max-width:100%}
   input,textarea,button{font-family:inherit}
-  input::placeholder,textarea::placeholder{color:#9a978f}
+  input::placeholder,textarea::placeholder{color:#6d6a62}
   @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   /* image-slot replacement: img sized to cover×s, centred at (50+x)%,(50+y)% */
   .slot{position:absolute;inset:0;overflow:hidden}
@@ -175,6 +177,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <a href="#contact" class="h-shop" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;white-space:nowrap">Want to partner with us?</a>
     </div>
   </header>
+  <main>
 
   <!-- ============ HERO ============ -->
   <section data-hero="1" style="background:#ece9e1;position:relative;height:calc(100dvh - var(--hdr, 74px));overflow:hidden;display:flex;flex-direction:column">
@@ -223,7 +226,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <section id="divisions" class="divisions-zoom" style="background:#fff;zoom:0.78;min-height:calc((100vh - 74px) / 0.78);padding:clamp(20px,3vw,40px) clamp(20px,5vw,64px) clamp(24px,4vw,48px)">
     <div style="max-width:1360px;margin:0 auto">
       <div style="text-align:center;margin-bottom:clamp(20px,3vw,34px)">
-        <div style="font-size:12px;letter-spacing:0.34em;color:#9a978f;font-weight:600;margin-bottom:14px">EXPLORE</div>
+        <div style="font-size:12px;letter-spacing:0.34em;color:#6d6a62;font-weight:600;margin-bottom:14px">EXPLORE</div>
         <h2 style="font-family:'Archivo';font-weight:500;font-size:clamp(32px,4.4vw,50px);margin:0;color:#161513;letter-spacing:-0.01em">Our Divisions</h2>
         <p style="color:#6d6a62;font-size:16px;margin:14px 0 0">Diverse portfolio. One vision — to bring the best of tomorrow, today.</p>
       </div>
@@ -254,7 +257,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
               <a id="divMore" href="#contact" class="h-fill-dark" style="margin-left:auto;flex-shrink:0;align-self:center;display:inline-flex;align-items:center;justify-content:center;border:1px solid #161513;color:#161513;font-size:15px;font-weight:600;padding:15px 34px;border-radius:12px">View More</a>
             </div>
             <div style="position:relative;z-index:1;margin-bottom:4px">
-              <div id="divBrandsLabel" style="font-size:11px;letter-spacing:0.16em;color:#9a978f;font-weight:600;margin-bottom:12px">FEATURED BRANDS</div>
+              <div id="divBrandsLabel" style="font-size:11px;letter-spacing:0.16em;color:#6d6a62;font-weight:600;margin-bottom:12px">FEATURED BRANDS</div>
               <div id="divBrands" style="display:flex;flex-wrap:wrap;gap:10px;min-height:48px;align-content:flex-start"></div>
             </div>
           </div>
@@ -286,7 +289,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div class="story-panel" style="position:absolute;left:4.5%;top:10.5%;width:30%;display:flex;flex-direction:column">
           <div style="display:flex;align-items:center;gap:1cqw;margin-bottom:1.4cqw">
             <span style="width:2.2cqw;height:1px;background:#6a665e"></span>
-            <span style="font-size:0.95cqw;letter-spacing:0.3em;color:#9a978f;font-weight:600">WHO WE ARE</span>
+            <span style="font-size:0.95cqw;letter-spacing:0.3em;color:#6d6a62;font-weight:600">WHO WE ARE</span>
           </div>
           <h2 style="font-family:'Archivo';font-size:5.8cqw;line-height:0.86;margin:0;letter-spacing:-0.015em">
             <span style="font-weight:300;color:#efece5">Our</span><br>
@@ -309,18 +312,18 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div class="story-timeline" style="position:absolute;top:2%;left:27%;width:52%;display:flex;align-items:flex-start;gap:3cqw">
           <div style="text-align:center">
             <div style="font-family:'Archivo';font-weight:700;font-size:1.15cqw;letter-spacing:0.14em;color:#e6e2d8">1949</div>
-            <div style="font-size:0.64cqw;letter-spacing:0.22em;color:#8a867e;margin-top:0.45cqw">OUR BEGINNING</div>
+            <div style="font-size:0.64cqw;letter-spacing:0.22em;color:#67645d;margin-top:0.45cqw">OUR BEGINNING</div>
           </div>
           <div style="flex:1;height:1px;background:linear-gradient(90deg,#3a3a3a,#5f5f5f);margin-top:0.75cqw"></div>
           <div style="text-align:center">
             <div style="font-family:'Archivo';font-weight:700;font-size:1.15cqw;letter-spacing:0.14em;color:#e6e2d8">75+ YEARS</div>
-            <div style="font-size:0.64cqw;letter-spacing:0.22em;color:#8a867e;margin-top:0.45cqw">OF GROWTH</div>
+            <div style="font-size:0.64cqw;letter-spacing:0.22em;color:#67645d;margin-top:0.45cqw">OF GROWTH</div>
             <div style="width:0.55cqw;height:0.55cqw;border-radius:50%;background:#fff;margin:0.6cqw auto 0;box-shadow:0 0 8px rgba(255,255,255,0.6)"></div>
           </div>
           <div style="flex:1;height:1px;background:linear-gradient(90deg,#5f5f5f,#3a3a3a);margin-top:0.75cqw"></div>
           <div style="text-align:center">
             <div style="font-family:'Archivo';font-weight:700;font-size:1.15cqw;letter-spacing:0.14em;color:#e6e2d8">TODAY</div>
-            <div style="font-size:0.64cqw;letter-spacing:0.22em;color:#8a867e;margin-top:0.45cqw">AND BEYOND</div>
+            <div style="font-size:0.64cqw;letter-spacing:0.22em;color:#67645d;margin-top:0.45cqw">AND BEYOND</div>
           </div>
         </div>
 
@@ -335,7 +338,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
           <div id="storyPhotosMobile"></div>
         </div>
         <div class="story-mobile" style="position:absolute;left:0;right:0;top:19%;z-index:2;padding:46px 32px 0">
-          <div style="font-size:11px;letter-spacing:0.3em;color:#9a978f;font-weight:600;margin-bottom:12px">WHO WE ARE</div>
+          <div style="font-size:11px;letter-spacing:0.3em;color:#6d6a62;font-weight:600;margin-bottom:12px">WHO WE ARE</div>
           <h2 style="font-family:'Archivo';font-size:40px;line-height:0.9;margin:0 0 14px"><span style="font-weight:300;color:#efece5">Our </span><span style="font-weight:800;color:#fff">Story.</span></h2>
           <p style="color:#a8a49b;font-size:14.5px;line-height:1.6;margin:0 0 12px">Union Trading Company W.L.L. (UTC) is a leading retailer and distributor in Kuwait, made up of multiple retail outlets and numerous retail points across the nation.</p>
           <p style="color:#a8a49b;font-size:14.5px;line-height:1.6;margin:0">With over <strong style="color:#e9e5db">75 years of service</strong> since 1949, UTC upholds total commitment to its clients, maintaining outstanding partnerships with the global brands it represents.</p>
@@ -373,13 +376,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
               <div style="width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#ddd;position:relative"><div id="partnerAvatar" class="slot" style="border-radius:50%"></div></div>
               <div class="partner-nr">
                 <div id="partnerPerson" style="font-family:'Archivo';font-weight:700;font-size:16px;color:#161513"></div>
-                <div id="partnerRole" style="color:#7a766e;font-size:14px;margin-top:2px"></div>
+                <div id="partnerRole" style="color:#5f5c55;font-size:14px;margin-top:2px"></div>
               </div>
             </div>
             <div style="width:1px;height:44px;background:#d9d5ca;flex-shrink:0"></div>
             <div style="flex-shrink:0">
               <div id="partnerYears" style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3vw,40px);line-height:1;color:#161513"></div>
-              <div style="font-size:11px;letter-spacing:0.14em;color:#8a867e;font-weight:600;margin-top:6px">YEARS OF PARTNERSHIP</div>
+              <div style="font-size:11px;letter-spacing:0.14em;color:#67645d;font-weight:600;margin-top:6px">YEARS OF PARTNERSHIP</div>
             </div>
           </div>
         </div>
@@ -438,7 +441,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <!-- TOP ROW: heading (left) + 3 tall cards (right) -->
       <div class="contact-top" style="display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.18fr);gap:clamp(24px,3vw,52px);align-items:end;margin-bottom:clamp(10px,1.1vw,14px)">
         <div>
-          <div style="font-size:12px;letter-spacing:0.34em;color:#b39a6d;font-weight:700;margin-bottom:10px">CONTACT US</div>
+          <div style="font-size:12px;letter-spacing:0.34em;color:#705725;font-weight:700;margin-bottom:10px">CONTACT US</div>
           <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(30px,3.3vw,48px);line-height:0.99;letter-spacing:-0.025em;margin:0;color:#161513">Let's Build What's Next.</h2>
           <div style="display:flex;align-items:center;gap:10px;margin:12px 0 10px">
             <span style="width:9px;height:9px;border-radius:50%;background:#c9b48c"></span>
@@ -449,17 +452,17 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div class="qc-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.3vw,18px)">
           <a href="tel:+96518444449" class="qc-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1px solid #e6e2d8;border-radius:16px;padding:clamp(12px,1.1vw,16px);text-decoration:none;color:inherit;min-height:clamp(92px,7.4vw,104px);transition:border-color .3s,box-shadow .3s,transform .3s">
             <span style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f1ece2;display:flex;align-items:center;justify-content:center;color:#161513"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path></svg></span>
-            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Call Us</div><div style="font-size:12.5px;color:#8a877f;margin-top:5px">+965 18444449</div></div>
+            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Call Us</div><div style="font-size:12.5px;color:#645f57;margin-top:5px">+965 18444449</div></div>
             <span class="qc-arrow" style="margin-top:8px;color:#b3ad9f;transition:transform .3s,color .3s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
           </a>
           <a href="mailto:info@utc.com.kw" class="qc-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1px solid #e6e2d8;border-radius:16px;padding:clamp(12px,1.1vw,16px);text-decoration:none;color:inherit;min-height:clamp(92px,7.4vw,104px);transition:border-color .3s,box-shadow .3s,transform .3s">
             <span style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f1ece2;display:flex;align-items:center;justify-content:center;color:#161513"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
-            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Email Us</div><div style="font-size:12.5px;color:#8a877f;margin-top:5px">info@utc.com.kw</div></div>
+            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Email Us</div><div style="font-size:12.5px;color:#645f57;margin-top:5px">info@utc.com.kw</div></div>
             <span class="qc-arrow" style="margin-top:8px;color:#b3ad9f;transition:transform .3s,color .3s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
           </a>
           <a href="Our-Stores/" class="qc-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1px solid #e6e2d8;border-radius:16px;padding:clamp(12px,1.1vw,16px);text-decoration:none;color:inherit;min-height:clamp(92px,7.4vw,104px);transition:border-color .3s,box-shadow .3s,transform .3s">
             <span style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f1ece2;display:flex;align-items:center;justify-content:center;color:#161513"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
-            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Visit Us</div><div style="font-size:12.5px;color:#8a877f;margin-top:5px">Kuwait</div></div>
+            <div style="margin-top:10px"><div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#161513">Visit Us</div><div style="font-size:12.5px;color:#645f57;margin-top:5px">Kuwait</div></div>
             <span class="qc-arrow" style="margin-top:8px;color:#b3ad9f;transition:transform .3s,color .3s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
           </a>
         </div>
@@ -468,31 +471,31 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <!-- MAIN CONTAINER: form (left) + offices (right) -->
       <div class="contact-main" style="background:#fbfaf7;border:1px solid #e6e2d8;border-radius:22px;padding:clamp(16px,1.7vw,24px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,2.6vw,42px);margin-bottom:clamp(10px,1.1vw,14px)">
         <form id="contactForm">
-          <div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.22em;color:#8a867e;margin-bottom:clamp(10px,1.2vw,14px)">SEND US A MESSAGE</div>
+          <div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.22em;color:#67645d;margin-bottom:clamp(10px,1.2vw,14px)">SEND US A MESSAGE</div>
 
           <label style="display:block;font-size:13px;color:#6d6a62;margin-bottom:6px">I want to</label>
           <div style="position:relative;margin-bottom:12px">
-            <select id="cfIntent" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid #e2ddd2;border-radius:10px;color:#161513;font-size:15px;padding:11px 40px 11px 16px;outline:none;cursor:pointer">
+            <select id="cfIntent" aria-label="Enquiry type" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid #e2ddd2;border-radius:10px;color:#161513;font-size:15px;padding:11px 40px 11px 16px;outline:none;cursor:pointer">
               <option value="general" data-mail="info@utc.com.kw">General Inquiry</option>
               <option value="partnership" data-mail="partnerships@utc.com.kw">Partnership Opportunity</option>
               <option value="support" data-mail="info@utc.com.kw">Product Support</option>
             </select>
-            <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:#8a867e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
+            <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:#67645d"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
           </div>
 
           <!-- Partnership-only fields (shown when "Partnership Opportunity" is selected) -->
           <div id="cfPartnership" style="display:none">
             <label style="display:block;font-size:13px;color:#6d6a62;margin-bottom:6px">Partnership type</label>
             <div style="position:relative;margin-bottom:12px">
-              <select id="cfPartType" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid #e2ddd2;border-radius:10px;color:#161513;font-size:15px;padding:11px 40px 11px 16px;outline:none;cursor:pointer">
+              <select id="cfPartType" aria-label="Partnership type" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid #e2ddd2;border-radius:10px;color:#161513;font-size:15px;padding:11px 40px 11px 16px;outline:none;cursor:pointer">
                 <option value="Full Distribution">Full Distribution</option>
                 <option value="Retail">Retail</option>
               </select>
-              <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:#8a867e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
+              <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:#67645d"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
             </div>
             <label style="display:block;font-size:13px;color:#6d6a62;margin-bottom:6px">Division</label>
             <div style="position:relative;margin-bottom:12px">
-              <select id="cfDivision" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid #e2ddd2;border-radius:10px;color:#161513;font-size:15px;padding:11px 40px 11px 16px;outline:none;cursor:pointer">
+              <select id="cfDivision" aria-label="Division" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid #e2ddd2;border-radius:10px;color:#161513;font-size:15px;padding:11px 40px 11px 16px;outline:none;cursor:pointer">
                 <option value="">Select a division</option>
                 <option value="union-electronics">Union Electronics</option>
                 <option value="aluna">Aluna</option>
@@ -501,7 +504,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
                 <option value="union-services">Union Services</option>
                 <option value="commercial">Commercial AC Projects</option>
               </select>
-              <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:#8a867e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
+              <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:#67645d"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
             </div>
             <div class="cf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,26px);margin-bottom:10px">
               <input id="cfOrg" placeholder="Name of Organisation" class="cf-input">
@@ -526,7 +529,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 
         <!-- offices -->
         <div class="office-col" style="display:flex;flex-direction:column;border-left:1px solid #ece8de;padding-left:clamp(28px,3.4vw,56px)">
-          <div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.22em;color:#8a867e;margin-bottom:clamp(4px,0.6vw,8px)">OUR OFFICES</div>
+          <div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.22em;color:#67645d;margin-bottom:clamp(4px,0.6vw,8px)">OUR OFFICES</div>
           <div id="offices" style="display:flex;flex-direction:column;flex:1"></div>
           <a href="Our-Stores/" class="viewall-btn" style="margin-top:10px;display:inline-flex;align-items:center;justify-content:center;gap:12px;background:transparent;color:#161513;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.16em;padding:11px;border:1px solid #d8d3c7;border-radius:999px;transition:gap .3s,background .3s,border-color .3s">VIEW ALL LOCATIONS
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
@@ -540,6 +543,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </section>
 
   <!-- ============ FOOTER ============ -->
+  </main>
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
@@ -569,12 +573,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         </div>
       </div>
     </div>
-    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#6a6760;font-size:13px;text-align:center">© 2024 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
+    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center">© 2024 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
   </footer>
 </div>
 
 <!-- ============ CONTACT SUCCESS POPUP ============ -->
 <style>
+  
   .fm-modal{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:24px;font-family:'Manrope',system-ui,sans-serif}
   .fm-modal.open{display:flex}
   .fm-bg{position:absolute;inset:0;background:rgba(8,8,8,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
@@ -602,8 +607,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 
 <!-- full-testimonial popup -->
 <style>
+  
   .partners-sec #partnerQuote{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .part-viewmore{display:none;margin:10px 0 0;background:none;border:0;padding:0;cursor:pointer;font-family:'Manrope',system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em;color:#a9884f;align-items:center;gap:8px}
+  .part-viewmore{display:none;margin:10px 0 0;background:none;border:0;padding:0;cursor:pointer;font-family:'Manrope',system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em;color:#7a6330;align-items:center;gap:8px}
   .part-viewmore:hover{color:#161513}
   .part-viewmore .vm-line{width:18px;height:1px;background:currentColor;transition:width .25s ease}
   .part-viewmore:hover .vm-line{width:26px}
@@ -621,9 +627,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   #pmQuote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:38px;color:#c8c4ba;line-height:0;vertical-align:-.38em;margin-right:6px}
   .pmodal-foot{display:flex;align-items:center;gap:22px;margin-top:26px;padding-top:22px;border-top:1px solid #e4dfd4}
   #pmPerson{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;color:#161513}
-  #pmRole{color:#7a766e;font-size:13px;margin-top:2px}
+  #pmRole{color:#5f5c55;font-size:13px;margin-top:2px}
   #pmYears{font-family:'Playfair Display',serif;font-weight:600;font-size:30px;line-height:1;color:#161513}
-  .pmodal-yl{font-size:10px;letter-spacing:.14em;color:#8a867e;font-weight:600;margin-top:4px}
+  .pmodal-yl{font-size:10px;letter-spacing:.14em;color:#67645d;font-weight:600;margin-top:4px}
 </style>
 <div id="partnerModal" class="pmodal" role="dialog" aria-modal="true" aria-label="Partner testimonial">
   <div class="pmodal-bg" data-pmclose></div>
