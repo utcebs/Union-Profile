@@ -191,7 +191,7 @@
     /* ---- gallery main ---- */
     const cur = photoAt(active, state.img);
     if (cur) {
-      el('galleryMain').innerHTML = '<img src="' + cur + '" alt="' + active.name + '" class="cover">';
+      el('galleryMain').innerHTML = '<img loading="lazy" decoding="async" src="' + cur + '" alt="' + active.name + '" class="cover">';
     } else {
       el('galleryMain').innerHTML = '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#4a4842">' + ICON_STORE + '<span style="font-size:12px;letter-spacing:0.12em;font-weight:700">PHOTOS COMING SOON</span></div>';
     }

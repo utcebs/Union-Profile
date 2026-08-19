@@ -377,7 +377,7 @@
       const active = i === S.div;
       const divider = (i === divData.length - 1 || i === S.div || i === S.div - 1) ? '1px solid transparent' : '1px solid #2c2a26';
       const inner = d.logo
-        ? '<img src="' + d.logo + '" alt="' + d.name + '" style="width:' + (d.tabW || '100px') + ';height:36px;object-fit:contain;filter:brightness(0) invert(1);display:block">'
+        ? '<img loading="lazy" decoding="async" src="' + d.logo + '" alt="' + d.name + '" style="width:' + (d.tabW || '100px') + ';height:36px;object-fit:contain;filter:brightness(0) invert(1);display:block">'
         : '<span style="width:26px;height:26px;display:flex;align-items:center;justify-content:center">' + ic(d.icon) + '</span><span style="font-size:12px;font-weight:700;text-align:center;line-height:1.2">' + d.name + '</span>';
       return '<button data-dt="' + i + '" class="divtab' + (active ? ' active' : '') + '" style="cursor:pointer;background:' + (active ? '#262a2e' : 'transparent') + ';border:none;border-right:' + divider + ';color:' + (active ? '#ffffff' : '#b4b8bc') + ';padding:11px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;flex:1 1 0;min-width:118px;min-height:56px;border-radius:14px;position:relative;transition:background 250ms ease">' + inner + '</button>';
     }).join('');
@@ -582,7 +582,7 @@
     el('divCounter').textContent = '0' + (S.div + 1);
     el('divIcon').innerHTML = ic(d.icon);
     if (d.cardLogo) {
-      el('divName').innerHTML = '<img src="' + d.cardLogo + '" alt="' + d.name + '" style="height:' + (d.cardLogoH || 'clamp(32px,4vw,50px)') + ';width:auto;max-width:100%;object-fit:contain;object-position:left top;display:block' + (d.cardLogoDark ? ';filter:brightness(0)' : '') + '">';
+      el('divName').innerHTML = '<img loading="lazy" decoding="async" src="' + d.cardLogo + '" alt="' + d.name + '" style="height:' + (d.cardLogoH || 'clamp(32px,4vw,50px)') + ';width:auto;max-width:100%;object-fit:contain;object-position:left top;display:block' + (d.cardLogoDark ? ';filter:brightness(0)' : '') + '">';
     } else {
       el('divName').textContent = d.name;
     }
