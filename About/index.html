@@ -72,7 +72,60 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .partner-logos{grid-template-columns:repeat(3,1fr)!important}
     .ceo-quote-photo{display:none!important}
   }
-  @media(max-width:560px){.be-cards,.diff-cards,.partner-logos{grid-template-columns:1fr!important}.stat-row{grid-template-columns:1fr!important}}
+  @media(max-width:560px){.partner-logos{grid-template-columns:1fr!important}.stat-row{grid-template-columns:1fr!important}}
+  /* Our Evolution + The UTC Difference: one-at-a-time swipe carousel on mobile
+     instead of a long stacked column */
+  .ab-dots{display:none}
+  .pl-clone{display:none}
+  @keyframes plMarquee{to{transform:translateX(-50%)}}
+  /* ===== All-brands popup ===== */
+  .bm-overlay{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(12,12,12,.62);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);font-family:'Manrope',system-ui,sans-serif}
+  .bm-overlay.open{display:flex}
+  .bm-panel{background:#131110;border-radius:22px;width:min(1000px,100%);max-height:90vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 44px 110px -34px rgba(0,0,0,.75);transform:translateY(14px) scale(.985);opacity:0;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
+  .bm-overlay.open .bm-panel{transform:none;opacity:1}
+  .bm-head{padding:clamp(22px,3vw,32px) clamp(22px,3vw,38px) 0;position:relative}
+  .bm-eyebrow{font-size:11px;letter-spacing:.26em;color:#c39b4c;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .bm-title{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(23px,3vw,33px);color:#fff;margin:0;line-height:1.1}
+  .bm-sub{color:#a8a49b;font-size:14px;line-height:1.55;margin:9px 0 18px;max-width:540px}
+  .bm-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid #33312d;background:#211d18;color:#cfcbc0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s}
+  .bm-close:hover{background:#fff;color:#0d0d0d;border-color:#fff}
+  .bm-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 clamp(22px,3vw,38px) 16px}
+  .bm-tabs::-webkit-scrollbar{display:none}
+  .bm-tab{border:1px solid #33312d;background:transparent;color:#cfcbc0;font-size:12.5px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;flex:none}
+  .bm-tab:hover{color:#fff;border-color:#575249}
+  .bm-tab.active{background:#fff;color:#0d0d0d;border-color:#fff}
+  .bm-cnt{opacity:.55;margin-left:5px;font-weight:700}
+  .bm-body{overflow-y:auto;padding:clamp(16px,2.2vw,24px) clamp(22px,3vw,38px) clamp(26px,3vw,34px);border-top:1px solid #262218}
+  .bm-group-t{font-family:'Archivo';font-weight:700;font-size:12.5px;letter-spacing:.09em;color:#8a867e;text-transform:uppercase;margin:24px 0 14px}
+  .bm-group:first-child .bm-group-t{margin-top:2px}
+  .bm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:12px}
+  .bm-tile{background:#1d1a15;border:1px solid #2c281f;border-radius:14px;min-height:104px;padding:16px 14px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;transition:border-color .25s,transform .25s,background .25s}
+  .bm-tile:hover{border-color:#4a4436;background:#231f19;transform:translateY(-2px)}
+  .bm-tile img{max-width:82%;max-height:46px;width:auto;object-fit:contain}
+  .bm-name{font-size:11px;color:#8f8c85;font-weight:600;text-align:center;line-height:1.3}
+  @media(max-width:560px){.bm-grid{grid-template-columns:1fr 1fr}.bm-tile{min-height:96px}.bm-tile img{max-height:40px}}
+  @media(max-width:768px){
+    .be-cards,.diff-cards{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 9% 6px}
+    .be-cards::-webkit-scrollbar,.diff-cards::-webkit-scrollbar{display:none}
+    .be-cards>.becard,.diff-cards>.diffcard{flex:0 0 82%!important;scroll-snap-align:center;box-sizing:border-box}
+    .ab-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+    .ab-dot{width:7px;height:7px;border-radius:50%;background:#d6d0c3;border:none;padding:0;cursor:pointer;transition:background .25s,width .25s}
+    .ab-dot.active{background:#161513;width:20px;border-radius:999px}
+    /* "Always Evolving" timeline → horizontal swipe carousel */
+    .evo-steps{flex-direction:row!important;align-items:stretch!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:20px 13% 14px}
+    .evo-steps::-webkit-scrollbar{display:none}
+    .evo-steps>.evo-step{flex:0 0 74%!important;max-width:none!important;scroll-snap-align:center}
+    /* Global Partners → auto-scrolling logo marquee (min-width:0 so the max-content
+       track is clipped by the wrapper instead of stretching the whole page) */
+    .pl-marquee{overflow:hidden;min-width:0}
+    .partners-grid{min-width:0}
+    .partners-grid>*{min-width:0}
+    .partner-logos{display:flex!important;grid-template-columns:none!important;width:max-content;gap:0;animation:plMarquee 26s linear infinite}
+    .partner-logos:hover{animation-play-state:paused}
+    .partner-logos>.p-logo{flex:0 0 auto!important;width:132px;height:80px}
+    .partner-logos>.p-logo::after{display:block!important}
+    .pl-clone{display:flex!important}
+  }
   .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
   .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
   .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
@@ -323,7 +376,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div>
           <div class="eyebrow" style="margin-bottom:16px">Our Global Partners</div>
           <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.6vw,34px);line-height:1.15;margin:0 0 24px">Proud to partner<br>with the world's<br>leading brands.</h2>
-          <a href="Union-Electronics/" class="btn-light">VIEW ALL BRANDS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="Union-Electronics/" id="viewAllBrands" class="btn-light">VIEW ALL BRANDS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="partner-logos" style="display:grid;grid-template-columns:repeat(6,1fr)">
           <div class="p-logo"><img class="pl-img" src="img/brands-elec/daikin.webp" alt="Daikin"></div>
@@ -445,19 +498,49 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     function advance(){ slides[i].classList.remove('on'); i=(i+1)%slides.length; slides[i].classList.add('on'); }
     setTimeout(function(){ advance(); setInterval(advance, 4000); }, 1000 + si*1000);
   });
-  // Our Evolution: auto-advancing active step + filling line, hover to jump
+  // Our Evolution: auto-advancing active step + filling line (desktop); the same
+  // engine drives a one-at-a-time swipe carousel with dots on mobile.
   (function(){
+    var wrap=document.querySelector('.evo-steps');
     var steps=Array.prototype.slice.call(document.querySelectorAll('.evo-step'));
-    var fill=document.getElementById('evoFill'); if(!steps.length) return;
-    var n=steps.length, idx=0, paused=false, span=84/(n-1);
-    function setActive(i){ idx=i; steps.forEach(function(s,j){ s.classList.toggle('on', j===i); }); if(fill) fill.style.width=(i*span)+'%'; }
-    setActive(0);
-    setInterval(function(){ if(!paused) setActive((idx+1)%n); }, 2400);
+    var fill=document.getElementById('evoFill'); if(!wrap||!steps.length) return;
+    var n=steps.length, idx=0, paused=false, span=84/(n-1), holdUntil=0;
+    function isC(){ return window.matchMedia('(max-width:768px)').matches; }
+    var dots=document.createElement('div'); dots.className='ab-dots';
+    dots.innerHTML=steps.map(function(_,i){return '<button class="ab-dot'+(i===0?' active':'')+'" aria-label="Step '+(i+1)+'"></button>';}).join('');
+    wrap.parentNode.insertBefore(dots, wrap.nextSibling);
+    var dotEls=[].slice.call(dots.children);
+    dotEls.forEach(function(d,i){ d.addEventListener('click',function(){ holdUntil=Date.now()+6000; setActive(i,true); }); });
+    function setActive(i, scroll){
+      idx=i; steps.forEach(function(s,j){ s.classList.toggle('on', j===i); });
+      if(fill) fill.style.width=(i*span)+'%';
+      dotEls.forEach(function(d,j){ d.classList.toggle('active', j===i); });
+      if(scroll && isC()){ var s=steps[i]; wrap.scrollTo({left:s.offsetLeft-(wrap.clientWidth-s.offsetWidth)/2, behavior:'smooth'}); }
+    }
+    setActive(0,false);
+    setInterval(function(){ if(paused||Date.now()<holdUntil) return; setActive((idx+1)%n, true); }, 3000);
     steps.forEach(function(s,j){
-      s.addEventListener('mouseenter',function(){ paused=true; setActive(j); });
+      s.addEventListener('mouseenter',function(){ paused=true; setActive(j,false); });
       s.addEventListener('mouseleave',function(){ paused=false; });
-      s.addEventListener('click',function(){ setActive(j); });
+      s.addEventListener('click',function(){ setActive(j,true); });
     });
+    wrap.addEventListener('pointerdown',function(){ holdUntil=Date.now()+6000; });
+    var st=null;
+    wrap.addEventListener('scroll',function(){ if(!isC())return; clearTimeout(st); st=setTimeout(function(){
+      var mid=wrap.scrollLeft+wrap.clientWidth/2, best=0, bd=Infinity;
+      steps.forEach(function(s,i){ var cen=s.offsetLeft+s.offsetWidth/2, dd=Math.abs(cen-mid); if(dd<bd){bd=dd;best=i;} });
+      if(best!==idx) setActive(best,false);
+    },90); });
+    window.addEventListener('resize', function(){ if(!isC()) wrap.scrollLeft=0; });
+  })();
+
+  // Global Partners → duplicate the logos into an auto-scrolling marquee on mobile
+  // (clones are hidden on desktop, where it stays a static grid).
+  (function(){
+    var pl=document.querySelector('.partner-logos'); if(!pl) return;
+    var wrap=document.createElement('div'); wrap.className='pl-marquee';
+    pl.parentNode.insertBefore(wrap, pl); wrap.appendChild(pl);
+    [].slice.call(pl.children).forEach(function(node){ var cl=node.cloneNode(true); cl.classList.add('pl-clone'); cl.setAttribute('aria-hidden','true'); pl.appendChild(cl); });
   })();
   // Our People & Culture: never-ending leftward marquee via transform (clipped at the left edge, pause on hover)
   (function(){
@@ -504,6 +587,39 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     }
     requestAnimationFrame(step);
   })();
+
+  // Mobile swipe carousel for the "Our Evolution" and "The UTC Difference" card rows
+  // (they stack into a long column otherwise). One card at a time + dots + auto-slide.
+  function initAboutCarousel(container, cardSel){
+    if(!container) return;
+    var cards=[].slice.call(container.querySelectorAll(cardSel));
+    if(cards.length<2) return;
+    var idx=0, timer=null, visible=false, holdUntil=0;
+    function isC(){ return window.matchMedia('(max-width:768px)').matches; }
+    var dots=document.createElement('div'); dots.className='ab-dots';
+    dots.innerHTML=cards.map(function(_,i){return '<button class="ab-dot'+(i===0?' active':'')+'" aria-label="Slide '+(i+1)+'"></button>';}).join('');
+    container.parentNode.insertBefore(dots, container.nextSibling);
+    var dotEls=[].slice.call(dots.children);
+    dotEls.forEach(function(d,i){ d.addEventListener('click',function(){ holdUntil=Date.now()+6000; go(i); }); });
+    function syncDots(){ dotEls.forEach(function(d,i){ d.classList.toggle('active',i===idx); }); }
+    function go(i){ idx=(i+cards.length)%cards.length; var c=cards[idx];
+      container.scrollTo({left:c.offsetLeft-(container.clientWidth-c.offsetWidth)/2, behavior:'smooth'}); syncDots(); }
+    function tick(){ if(!isC()||!visible||Date.now()<holdUntil) return; go(idx+1); }
+    function start(){ stop(); if(isC()&&visible) timer=setInterval(tick,4500); }
+    function stop(){ if(timer){clearInterval(timer);timer=null;} }
+    var st=null;
+    container.addEventListener('scroll',function(){ clearTimeout(st); st=setTimeout(function(){
+      var mid=container.scrollLeft+container.clientWidth/2, best=0, bd=Infinity;
+      cards.forEach(function(c,i){ var cen=c.offsetLeft+c.offsetWidth/2, dd=Math.abs(cen-mid); if(dd<bd){bd=dd;best=i;} });
+      if(best!==idx){ idx=best; syncDots(); }
+    },90); });
+    container.addEventListener('pointerdown',function(){ holdUntil=Date.now()+6000; });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ visible=e.isIntersecting; visible?start():stop(); }); },{threshold:0.2}).observe(container); }
+    else { visible=true; start(); }
+    window.addEventListener('resize',function(){ if(isC()){ start(); } else { stop(); container.scrollLeft=0; } });
+  }
+  initAboutCarousel(document.querySelector('.be-cards'), '.becard');
+  initAboutCarousel(document.querySelector('.diff-cards'), '.diffcard');
 </script>
 <script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 <style>
@@ -529,6 +645,51 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       }, Math.round(bi*step));
     });
   })();
+</script>
+<!-- ============ ALL BRANDS POPUP ============ -->
+<div id="brandsModal" class="bm-overlay" role="dialog" aria-modal="true" aria-label="Our Brands">
+  <div class="bm-panel">
+    <div class="bm-head">
+      <button class="bm-close" data-bmclose aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="bm-eyebrow">Our Global Partners</div>
+      <h2 class="bm-title">The brands we represent</h2>
+      <p class="bm-sub">A portfolio of world-class names we proudly distribute across electronics, lifestyle, FMCG and fashion.</p>
+    </div>
+    <div class="bm-tabs" id="bmTabs"></div>
+    <div class="bm-body" id="bmBody"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var ALLBRANDS = {
+    "Electronics": [{"n":"Black & Decker","f":"img/brands-all/electronics/bandd.webp"},{"n":"Belkin","f":"img/brands-all/electronics/belkin.webp"},{"n":"Canton","f":"img/brands-all/electronics/canton.webp"},{"n":"Cecotec","f":"img/brands-all/electronics/cecotec.webp"},{"n":"Changhong","f":"img/brands-all/electronics/changhong.webp"},{"n":"Chigo","f":"img/brands-all/electronics/chigo.webp"},{"n":"Daikin","f":"img/brands-all/electronics/daikin.webp"},{"n":"Fakir","f":"img/brands-all/electronics/fakir.webp"},{"n":"Galanz","f":"img/brands-all/electronics/galanz.webp"},{"n":"General","f":"img/brands-all/electronics/general.webp"},{"n":"Glemgas","f":"img/brands-all/electronics/glemgas.webp"},{"n":"Havic","f":"img/brands-all/electronics/havic.webp"},{"n":"Hifuture","f":"img/brands-all/electronics/hifuture.webp"},{"n":"Hitachi","f":"img/brands-all/electronics/hitachi.webp"},{"n":"Konka","f":"img/brands-all/electronics/konka.webp"},{"n":"Morphy Richards","f":"img/brands-all/electronics/morphy.webp"},{"n":"Naim & Focal","f":"img/brands-all/electronics/naim-and-focal.webp"},{"n":"Proove","f":"img/brands-all/electronics/proove.webp"},{"n":"ROWA","f":"img/brands-all/electronics/rowa.webp"},{"n":"Startec","f":"img/brands-all/electronics/startec.webp"},{"n":"TCL","f":"img/brands-all/electronics/tcl.webp"},{"n":"Vestel","f":"img/brands-all/electronics/vestel.webp"},{"n":"Westpoint","f":"img/brands-all/electronics/westpoint.webp"},{"n":"Yuwell","f":"img/brands-all/electronics/yuwell.webp"}],
+    "Aluna": [{"n":"Bali","f":"img/brands-all/aluna/bali.webp"},{"n":"C. Lingerie","f":"img/brands-all/aluna/c-lengerie.webp"},{"n":"Caha Capo","f":"img/brands-all/aluna/caha-capo.webp"},{"n":"Carole Hochman","f":"img/brands-all/aluna/carole-hochman.webp"},{"n":"Cupid","f":"img/brands-all/aluna/cupid.webp"},{"n":"Eileen West","f":"img/brands-all/aluna/eileen-west.webp"},{"n":"G World","f":"img/brands-all/aluna/g-world.webp"},{"n":"Hanes","f":"img/brands-all/aluna/hanes.webp"},{"n":"Ivory","f":"img/brands-all/aluna/ivory.webp"},{"n":"Leg Avenue","f":"img/brands-all/aluna/leg-avenue.webp"},{"n":"Maidenform","f":"img/brands-all/aluna/maidenform.webp"},{"n":"Mapale","f":"img/brands-all/aluna/mapale.webp"},{"n":"Naomi & Nicole","f":"img/brands-all/aluna/naomi-and-nicole.webp"},{"n":"Sloggi","f":"img/brands-all/aluna/sloggi.webp"},{"n":"Triumph","f":"img/brands-all/aluna/triumph.webp"}],
+    "FMCG": [{"n":"Cans","f":"img/brands-all/fmcg/cans.webp"},{"n":"Vileda","f":"img/brands-all/fmcg/vileda.webp"}],
+    "Labels": [{"n":"Palladio","f":"img/brands-all/labels/palladio.webp"},{"n":"Vero Moda","f":"img/brands-all/labels/vero-moda.webp"}]
+  };
+  var overlay=document.getElementById('brandsModal'); if(!overlay) return;
+  var tabsEl=document.getElementById('bmTabs'), bodyEl=document.getElementById('bmBody');
+  var order=Object.keys(ALLBRANDS);
+  var total=order.reduce(function(a,k){return a+ALLBRANDS[k].length;},0);
+  var filters=[['all','All']].concat(order.map(function(k){return [k,k];}));
+  tabsEl.innerHTML=filters.map(function(f,i){ var cnt=(f[0]==='all')?total:ALLBRANDS[f[0]].length; return '<button class="bm-tab'+(i===0?' active':'')+'" data-f="'+f[0]+'">'+f[1]+'<span class="bm-cnt">'+cnt+'</span></button>'; }).join('');
+  function tile(b){ return '<div class="bm-tile"><img src="'+b.f+'" alt="'+b.n+'" loading="lazy"><div class="bm-name">'+b.n+'</div></div>'; }
+  function render(filter){
+    var html='';
+    order.forEach(function(k){ if(filter!=='all'&&filter!==k) return;
+      html+='<div class="bm-group"><div class="bm-group-t">'+k+' &middot; '+ALLBRANDS[k].length+'</div><div class="bm-grid">'+ALLBRANDS[k].map(tile).join('')+'</div></div>';
+    });
+    bodyEl.innerHTML=html; bodyEl.scrollTop=0;
+  }
+  render('all');
+  tabsEl.addEventListener('click',function(e){ var t=e.target.closest('.bm-tab'); if(!t)return; for(var i=0;i<tabsEl.children.length;i++) tabsEl.children[i].classList.toggle('active',tabsEl.children[i]===t); render(t.getAttribute('data-f')); });
+  function open(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+  overlay.addEventListener('click',function(e){ if(e.target===overlay||e.target.closest('[data-bmclose]')) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&overlay.classList.contains('open')) close(); });
+  var btn=document.getElementById('viewAllBrands');
+  if(btn) btn.addEventListener('click',function(e){ e.preventDefault(); open(); });
+})();
 </script>
 <script src="nav-menu.js"></script>
 </body>

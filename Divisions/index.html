@@ -91,11 +91,25 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .dg-cta.soon{color:#a7a39a;pointer-events:none}
 
   @media(max-width:860px){
-    .divwrap{grid-template-columns:1fr;gap:6px;text-align:center;padding-top:clamp(30px,7vw,48px);min-height:0}
+    /* fit the whole division hero into the first viewport; fill the full height so the
+       banner always reaches the bottom (no white sliver from the next section) */
+    .divred{min-height:100svh}
+    .divwrap{grid-template-columns:1fr;gap:6px;text-align:center;padding:clamp(18px,5vw,30px) clamp(20px,5vw,64px) 14px;min-height:0}
     .dleft{display:flex;flex-direction:column;align-items:center;min-width:0}
-    .dname{font-size:clamp(30px,9vw,44px)}
-    .ddesc{margin-left:auto;margin-right:auto;max-width:100%}
-    .dcarousel{margin-top:8px}
+    .d-eyebrow{margin-bottom:11px}
+    .dname{font-size:clamp(30px,8.4vw,44px)}
+    .dname-logo{height:clamp(52px,14vw,74px)}
+    .d-rule{margin-top:13px}
+    /* reserve 3 lines of height so the CTA + cards + dots stay fixed whether a slide's
+       description is 2 or 3 lines */
+    .ddesc{margin:14px auto 15px;max-width:335px;font-size:13.5px;line-height:1.5;min-height:4.5em}
+    .dcta{padding:13px 27px;font-size:13.5px}
+    .dcarousel{margin-top:11px;min-height:0}
+    .dstage{height:clamp(212px,57vw,266px)}
+    .dcard.active{width:clamp(154px,41vw,190px);height:clamp(212px,57vw,262px)}
+    .dcard.side{width:clamp(120px,32vw,150px);height:clamp(184px,50vw,224px)}
+    .ddots{padding-bottom:16px}
+    .divcrumb{padding-top:clamp(16px,2.2vw,22px)}
     .divcrumb .crumb{justify-content:center}
     .darrow.p{left:0}.darrow.n{right:0}
     .navtog{display:inline-flex;align-items:center;justify-content:center;position:absolute;right:clamp(16px,4vw,44px);top:50%;transform:translateY(-50%)}

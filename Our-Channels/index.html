@@ -154,6 +154,22 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .wf-tab svg{flex:none}
   .ch-logo{max-width:122px;max-height:50px;object-fit:contain;display:block;margin:0 auto}
   @media(max-width:640px){.wheel-panel{width:min(230px,82vw)}.wp-desc{display:none}.wf-tab{padding:8px 12px;font-size:12px}.wl-item img{max-width:74px;max-height:40px}}
+  /* the channel wheel is a desktop-only drag experience — hide its launcher on mobile */
+  @media(max-width:768px){#wheelOpen{display:none!important}}
+  /* channel-directory filter: dropdown on mobile instead of the stacked buttons */
+  .ch-select{display:none;width:100%;box-sizing:border-box;font-family:inherit;font-size:15px;font-weight:600;color:#161513;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23161513' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;border:1px solid #e7e2d7;border-radius:12px;padding:14px 42px 14px 16px;box-shadow:0 20px 40px -34px rgba(0,0,0,.4);-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;margin-bottom:16px}
+  @media(max-width:980px){.ch-sidecard{display:none}.ch-select{display:block}}
+  /* channel "affirmations" (Wide Network / Trusted Partnerships / …): one-at-a-time
+     auto-sliding carousel on mobile instead of a long stacked column */
+  .ch-dots{display:none}
+  @media(max-width:768px){
+    .ch-feats{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 0 6px}
+    .ch-feats::-webkit-scrollbar{display:none}
+    .ch-feats>div{flex:0 0 84%;scroll-snap-align:center;background:#fff;border:1px solid #ece7db;border-radius:16px;padding:22px 20px;box-sizing:border-box}
+    .ch-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+    .ch-dot{width:7px;height:7px;border-radius:50%;background:#d6d0c3;border:none;padding:0;cursor:pointer;transition:background .25s,width .25s}
+    .ch-dot.active{background:#161513;width:20px;border-radius:999px}
+  }
 </style>
 </head>
 <body>
@@ -368,16 +384,23 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     {n:'Mobile 2000',c:'telecom',col:'#1d4ed8',logo:'img/Channels/mobile2000.png'},
     {n:'Jameia',c:'retail',col:'#16a34a',logo:'img/Channels/Jameia.png'}
   ];
-  var side=document.getElementById('chSide'), grid=document.getElementById('chGrid');
+  var side=document.getElementById('chSide'), grid=document.getElementById('chGrid'), sel=null;
   function count(k){return k==='all'?CH.length:CH.filter(function(c){return c.c===k;}).length;}
   function catName(k){for(var i=0;i<CATS.length;i++){if(CATS[i].k===k)return CATS[i].t;}return k;}
   var svg='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">';
 
   side.innerHTML=CATS.map(function(c){return '<button class="ch-side'+(c.k==='all'?' active':'')+'" data-k="'+c.k+'"><span class="lbl">'+svg+c.icon+'</svg>'+c.t+'</span><span class="cnt">'+count(c.k)+'</span></button>';}).join('');
+  // mobile: a compact dropdown filter instead of the stacked category buttons
+  sel=document.createElement('select');
+  sel.id='chSelect'; sel.className='ch-select'; sel.setAttribute('aria-label','Filter channels by category');
+  sel.innerHTML=CATS.map(function(c){return '<option value="'+c.k+'">'+c.t+' ('+count(c.k)+')</option>';}).join('');
+  side.parentNode.insertBefore(sel, side);
+  sel.addEventListener('change',function(){ setCat(sel.value); });
   grid.innerHTML=CH.map(function(c){var top=c.logo?'<img class="ch-logo" src="'+c.logo+'" alt="'+c.n+'">':'<div class="ch-name" style="color:'+c.col+'">'+c.n+'</div>';return '<div class="ch-card" data-cat="'+c.c+'">'+top+'<div class="ch-cat">'+catName(c.c)+'</div></div>';}).join('')
     +'<div class="ch-card ch-more" data-cat="_more"><div style="font-size:28px;line-height:.7;color:#b3ad9f;font-weight:300">+</div><div class="ch-name" style="font-size:14px;color:#7c7970">More Channels</div><div class="ch-cat">Coming Soon</div></div>';
 
   function setCat(k){
+    if(sel && sel.value!==k) sel.value=k;
     Array.prototype.forEach.call(side.children,function(b){b.classList.toggle('active',b.getAttribute('data-k')===k);});
     Array.prototype.forEach.call(grid.children,function(card){
       var cat=card.getAttribute('data-cat');
@@ -386,6 +409,40 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     });
   }
   side.addEventListener('click',function(e){var b=e.target.closest('.ch-side');if(b)setCat(b.getAttribute('data-k'));});
+
+  // ===== "Affirmations" (feature cards) — one-at-a-time auto-slide carousel on mobile =====
+  (function(){
+    var feats=document.querySelector('.ch-feats'); if(!feats) return;
+    var cards=[].slice.call(feats.children);
+    if(cards.length<2) return;
+    var idx=0, timer=null, visible=false, holdUntil=0;
+    function isCarousel(){ return window.matchMedia('(max-width:768px)').matches; }
+    // dots
+    var dots=document.createElement('div'); dots.className='ch-dots';
+    dots.innerHTML=cards.map(function(_,i){return '<button class="ch-dot'+(i===0?' active':'')+'" aria-label="Slide '+(i+1)+'"></button>';}).join('');
+    feats.parentNode.insertBefore(dots, feats.nextSibling);
+    var dotEls=[].slice.call(dots.children);
+    dotEls.forEach(function(d,i){ d.addEventListener('click',function(){ holdUntil=Date.now()+6000; go(i); }); });
+    function syncDots(){ dotEls.forEach(function(d,i){ d.classList.toggle('active', i===idx); }); }
+    function go(i){ idx=(i+cards.length)%cards.length; var card=cards[idx];
+      feats.scrollTo({left: card.offsetLeft-(feats.clientWidth-card.offsetWidth)/2, behavior:'smooth'}); syncDots(); }
+    function tick(){ if(!isCarousel()||!visible||Date.now()<holdUntil) return; go(idx+1); }
+    function start(){ stop(); if(isCarousel()&&visible) timer=setInterval(tick,4000); }
+    function stop(){ if(timer){clearInterval(timer);timer=null;} }
+    // keep dots in sync when the user swipes manually
+    var st=null;
+    feats.addEventListener('scroll',function(){ clearTimeout(st); st=setTimeout(function(){
+      var mid=feats.scrollLeft+feats.clientWidth/2, best=0, bd=Infinity;
+      cards.forEach(function(c,i){ var cen=c.offsetLeft+c.offsetWidth/2, d=Math.abs(cen-mid); if(d<bd){bd=d;best=i;} });
+      if(best!==idx){ idx=best; syncDots(); }
+    },90); });
+    feats.addEventListener('pointerdown',function(){ holdUntil=Date.now()+6000; });
+    // pause when off-screen (and stop the whole thing on desktop)
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){ visible=e.isIntersecting; visible?start():stop(); }); },{threshold:0.25}).observe(feats);
+    } else { visible=true; start(); }
+    window.addEventListener('resize',function(){ if(isCarousel()){ start(); } else { stop(); feats.scrollLeft=0; } });
+  })();
 
   // hero network burst — radiating rays + node dots
   var burst=document.getElementById('netburst');
@@ -461,7 +518,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     function goTo(i){ if(i===current)return; rot-=shortestDelta(i)*STEP; current=i; place(); }
     function move(n){ if(!N)return; rot-=n*STEP; current=((current+n)%N+N)%N; place(); }
     function setFilter(k){ items=(k==='all')?full:full.filter(function(c){return c.c===k;}); if(!items.length){items=full;k='all';} current=0; rot=0; N=items.length; buildLogos(); render(); [].forEach.call(filtersEl.children,function(b){b.classList.toggle('active',b.getAttribute('data-k')===k);}); }
-    function open(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; requestAnimationFrame(render); setTimeout(render,70); }
+    // The channel wheel is a drag-based desktop experience; disable it for mobile users.
+    function isMobile(){ return window.matchMedia('(max-width:768px)').matches; }
+    function open(){ if(isMobile()) return; overlay.classList.add('open'); document.body.style.overflow='hidden'; requestAnimationFrame(render); setTimeout(render,70); }
     function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
     openBtn.addEventListener('click',function(e){ e.preventDefault(); open(); });
     document.getElementById('wPrev').addEventListener('click',function(e){ e.stopPropagation(); move(-1); });

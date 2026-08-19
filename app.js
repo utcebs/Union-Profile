@@ -738,6 +738,30 @@
   // visitor's email app (mailto) so nothing breaks.
   const WEB3FORMS_KEY = '';
 
+  // ── Contact-form routing ─────────────────────────────────────────────────
+  // All enquiries are SENT FROM one central mailbox (the EmailJS-connected account),
+  // and delivered TO the inbox chosen by the enquiry type — and, for partnerships,
+  // by the selected division. Fill in the real division-head addresses below.
+  const MAIL_ROUTES = {
+    general: 'info@utc.com.kw',                 // General Inquiry
+    support: 'unionservices@utc.com.kw',        // Product Support → Union Services division
+    // Partnership Opportunity → the head of the selected division:
+    divisions: {
+      'union-electronics': 'electronics@utc.com.kw',   // TODO: real inbox
+      'aluna':             'aluna@utc.com.kw',          // TODO: real inbox
+      'fmcg':              'fmcg@utc.com.kw',           // TODO: real inbox
+      'labels':            'labels@utc.com.kw',         // TODO: real inbox
+      'union-services':    'unionservices@utc.com.kw',  // TODO: real inbox
+      'commercial':        'commercial@utc.com.kw'      // TODO: real inbox
+    },
+    fallback: 'info@utc.com.kw'                 // partnership with no division picked, etc.
+  };
+  function routeTo(intent, divisionKey) {
+    if (intent === 'partnership') return MAIL_ROUTES.divisions[divisionKey] || MAIL_ROUTES.fallback;
+    if (intent === 'support') return MAIL_ROUTES.support;
+    return MAIL_ROUTES[intent] || MAIL_ROUTES.fallback;
+  }
+
   // EmailJS — client-side email that works on ANY hosting (GitHub Pages, a cloud
   // server, anywhere): the visitor's browser sends the enquiry through YOUR connected
   // mailbox. Fill the 3 IDs from the EmailJS dashboard (emailjs.com → Account) to turn
@@ -764,7 +788,8 @@
     e.preventDefault();
     const sel = el('cfIntent');
     const opt = sel.options[sel.selectedIndex];
-    const to = (opt && opt.dataset.mail) || 'info@utc.com.kw';
+    const divKey = el('cfDivision') ? el('cfDivision').value : '';
+    const to = routeTo(sel.value, divKey);   // central send → routed by enquiry type / division
     const name = (el('cfName').value || '').trim();
     const email = (el('cfEmail').value || '').trim();
     const phone = (el('cfPhone').value || '').trim();
