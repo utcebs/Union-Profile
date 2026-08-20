@@ -58,7 +58,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .divred.acc-aluna .dcta:hover{background:transparent;color:#e6c2bc;border-color:#cf9f98}
   .dcarousel{position:relative;display:flex;align-items:center;justify-content:center;min-height:440px}
   .dstage{position:relative;width:100%;height:420px;display:flex;align-items:center;justify-content:center}
-  .dcard{position:absolute;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .5s,background .5s;padding:26px;text-align:center}
+  .dcard{position:absolute;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .5s,background .5s;padding:26px;text-align:center}
+  .dcard .dcard-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;z-index:0}
+  .dcard .dcard-scrim{position:absolute;inset:0;z-index:1;background:radial-gradient(125% 92% at 50% 44%,rgba(13,13,13,.52),rgba(13,13,13,.14) 58%,rgba(13,13,13,.04))}
+  .dcard .dlogo-img,.dcard .dutc-img{position:relative;z-index:2}
+  .dcard.imgcard{border:0!important;background:#0d0d0d}
   .dcard.active{width:clamp(210px,19vw,280px);height:clamp(290px,32vw,370px);background:#0d0d0d;z-index:3;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.08)}
   .dcard.side{width:clamp(170px,15vw,230px);height:clamp(240px,26vw,310px);background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.14);z-index:2;cursor:pointer;opacity:.9}
   .dcard.prev{transform:translateX(-74%) scale(.95)}
@@ -229,12 +233,12 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 
 <script>
   var DIV=[
-    {name:'Union Electronics Retail & Wholesale', short:'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href:'union-electronics.html', logo:'img/Div/electronics-logo.webp', banner:'img/div-elec.webp', img:'img/div-elec.webp'},
-    {name:'Aluna', short:'Internationally acclaimed cosmetics and fragrances. Luxury, elegance, and confidence in every detail.', href:'aluna.html', logo:'img/Div/aluna-logo.webp', banner:'img/aluna-band.webp', img:'img/div-cosmetics.webp'},
-    {name:'FMCG', short:'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href:'', soon:true, logo:'img/Div/fmcg-logo.webp', banner:'img/div-fmcg.webp', img:'img/div-fmcg.webp'},
-    {name:'Labels', short:'Premium fashion, cosmetics, and lifestyle brands with timeless, everyday style.', href:'', soon:true, logo:'img/Div/labels-logo.webp', banner:'img/div-fashion.webp', img:'img/div-fashion.webp'},
-    {name:'Union Services', short:'World class VRV and HVAC-R solutions for professionals across Kuwait.', href:'', soon:true, logo:'img/Div/services-logo.webp', logoBig:true, banner:'img/div-health.webp', img:'img/div-health.webp'},
-    {name:'Commercial AC and Home Appliance Projects', logoName:'Commercial Projects', short:'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href:'', soon:true, logo:'img/Div/commercial-logo.webp', banner:'img/div-commercial.webp', img:'img/div-commercial.webp'}
+    {name:'Union Electronics Retail & Wholesale', short:'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href:'union-electronics.html', logo:'img/Div/electronics-logo.webp', cardImg:'img/Card%20images/Union%20Electronics.webp', banner:'img/div-elec.webp', img:'img/div-elec.webp'},
+    {name:'Aluna', short:'Internationally acclaimed cosmetics and fragrances. Luxury, elegance, and confidence in every detail.', href:'aluna.html', logo:'img/Div/aluna-logo.webp', cardImg:'img/Card%20images/Aluna.webp', banner:'img/aluna-band.webp', img:'img/div-cosmetics.webp'},
+    {name:'FMCG', short:'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href:'', soon:true, logo:'img/Div/fmcg-logo.webp', cardImg:'img/Card%20images/FMCG.webp', banner:'img/div-fmcg.webp', img:'img/div-fmcg.webp'},
+    {name:'Labels', short:'Premium fashion, cosmetics, and lifestyle brands with timeless, everyday style.', href:'', soon:true, logo:'img/Div/labels-logo.webp', cardImg:'img/Card%20images/Labels.webp', banner:'img/div-fashion.webp', img:'img/div-fashion.webp'},
+    {name:'Union Services', short:'World class VRV and HVAC-R solutions for professionals across Kuwait.', href:'', soon:true, logo:'img/Div/services-logo.webp', logoBig:true, cardImg:'img/Card%20images/Service.webp', banner:'img/div-health.webp', img:'img/div-health.webp'},
+    {name:'Commercial AC and Home Appliance Projects', logoName:'Commercial Projects', short:'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href:'', soon:true, logo:'img/Div/commercial-logo.webp', cardImg:'img/Card%20images/CAC.webp', banner:'img/Div%20BGs/CACimg.webp', img:'img/div-commercial.webp'}
   ];
   var stage=document.getElementById('divStage'), nameEl=document.getElementById('divName'),
       descEl=document.getElementById('divDesc'), cta=document.getElementById('divCta'), dots=document.getElementById('divDots'),
@@ -253,7 +257,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   var nameLogo=document.getElementById('divNameLogo');
   // card content: division logo + UTC monogram (each falls back to text if the file is missing)
   function logo(d){
-    return '<img loading="lazy" decoding="async" class="dlogo-img" src="'+d.logo+'" alt="'+d.name+'" data-name="'+(d.logoName||d.name)+'"'+(d.logoBig?' style="max-width:82%;max-height:60px"':'')+'>'+
+    var head = d.cardImg
+      ? '<img loading="lazy" decoding="async" class="dcard-img" src="'+d.cardImg+'" alt=""><span class="dcard-scrim"></span>'
+      : '';
+    return head +
+           '<img loading="lazy" decoding="async" class="dlogo-img" src="'+d.logo+'" alt="'+d.name+'" data-name="'+(d.logoName||d.name)+'"'+(d.logoBig?' style="max-width:82%;max-height:60px"':'')+'>'+
            '<img loading="lazy" decoding="async" class="dutc-img" src="'+UTC_LOGO+'" alt="UTC">';
   }
   function logoFallback(scope){
@@ -283,10 +291,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     if(explore) explore.classList.toggle('acc-aluna', d.name==='Aluna');
     if(d.soon){ cta.classList.add('soon'); cta.removeAttribute('href'); cta.querySelector('span').textContent='Coming soon'; }
     else{ cta.classList.remove('soon'); cta.setAttribute('href', d.href || '#'); cta.querySelector('span').textContent='Discover'; }
+    var ic=function(x){return x.cardImg?' imgcard':'';};
     stage.innerHTML=
-      '<div class="dcard side prev" data-go="'+prev+'">'+logo(DIV[prev])+'</div>'+
-      '<div class="dcard active">'+logo(d)+'</div>'+
-      '<div class="dcard side next" data-go="'+next+'">'+logo(DIV[next])+'</div>';
+      '<div class="dcard side prev'+ic(DIV[prev])+'" data-go="'+prev+'">'+logo(DIV[prev])+'</div>'+
+      '<div class="dcard active'+ic(d)+'">'+logo(d)+'</div>'+
+      '<div class="dcard side next'+ic(DIV[next])+'" data-go="'+next+'">'+logo(DIV[next])+'</div>';
     logoFallback(stage);
     Array.prototype.forEach.call(stage.querySelectorAll('[data-go]'),function(c){ c.onclick=function(){ go(+c.dataset.go); }; });
     Array.prototype.forEach.call(dots.children,function(b,i){ b.className=i===idx?'on':''; });

@@ -15,9 +15,9 @@
   // gallery photo paths for a store: P('salmiya', 8) -> ['img/stores/salmiya-1.webp', ...]
   const P = (slug, n) => Array.from({ length: n }, (_, i) => 'img/stores/' + slug + '-' + (i + 1) + '.webp');
   const stores = [
-    { num: '01', name: 'Head Office & Main Store', city: 'Kuwait City', cats: [], head: true,
+    { num: '01', name: 'Flagship Store', city: 'Kuwait City', cats: [],
       tagline: 'Where it all began.',
-      desc: 'Our founding flagship in the heart of Kuwait City, home to the full breadth of Union Trading brands and the beating heart of our operations since 1949.',
+      desc: 'Our founding flagship in the heart of Kuwait City, home to the full breadth of Union Trading brands — where the Union Trading story began in 1949.',
       hours: '8:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 4:00 PM – 10:00 PM',
       addr: ['Kuwait City, Block 1', 'Fahad Al-Salem Street', 'Kuwait'], phone: '+965 2242 3355',
       maps: 'https://www.google.com/maps/search/?api=1&query=Union%20Trading%20Company%20Fahad%20Al-Salem%20Street%20Kuwait%20City',
@@ -103,9 +103,17 @@
       hours: '10:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 5:00 PM – 10:00 PM',
       addr: ['Farwaniya, Kuwait'], phone: '+965 2474 2791', whatsapp: '+965 9550 1806',
       maps: 'https://maps.app.goo.gl/sKnpdwsrxFUwvfup8', x: 64.8, y: 53.4, photos: ['img/stores/salmiya-2.webp'] },
+
+    { num: '', name: 'Head Office', city: 'Al Qibla', cats: ['Offices'], head: true,
+      tagline: 'Our corporate headquarters.',
+      desc: 'The head office of Union Trading Company — the hub coordinating our divisions, brand partnerships, and retail network across Kuwait.',
+      hours: '8:00 AM – 5:00 PM', days: 'Sunday – Thursday', friday: '',
+      addr: ['Dawliah Commercial Center', 'Floor 3, Block 15', 'Al Qibla, Kuwait'], phone: '+965 2242 3355',
+      maps: 'https://maps.app.goo.gl/SCB6ofeVmjWm91QE9',
+      x: 64, y: 48.5, photos: ['img/Showroom%20Images/HO.webp', 'img/Showroom%20Images/HO2.webp'] },
   ];
 
-  const FILTERS = ['All Stores'];
+  const FILTERS = ['All Stores', 'Offices'];
 
   /* ===== TEMPORARY: manual pin-placement editor =====
      Set PIN_EDIT to false (or delete this block + the editor functions below) to turn it off.
@@ -132,7 +140,8 @@
   let measuring = false;   // true while lockPanelHeight() cycles stores to measure
 
   function filteredIdx() {
-    return stores.map((s, i) => i).filter(i => state.filter === 'All Stores' || stores[i].cats.includes(state.filter));
+    // "All Stores" = the retail stores only (offices excluded); any other filter matches by category
+    return stores.map((s, i) => i).filter(i => state.filter === 'All Stores' ? !stores[i].head : stores[i].cats.includes(state.filter));
   }
   function clampIdx() {
     const fi = filteredIdx();
@@ -169,8 +178,8 @@
     const fi = filteredIdx();
 
     /* ---- store info ---- */
-    el('storeNum').textContent = active.num;
-    if (el('storeTotal')) el('storeTotal').textContent = ('0' + stores.length).slice(-2);
+    el('storeNum').textContent = active.num || '—';
+    if (el('storeTotal')) el('storeTotal').textContent = ('0' + stores.filter(s => !s.head).length).slice(-2);
     el('storeName').innerHTML = active.name.replace('&', '&amp;');
     el('storeTagline').textContent = active.tagline;
     el('storeDesc').textContent = active.desc;
@@ -186,6 +195,7 @@
     const aDir = el('actDirections'), aCall = el('actCall'), aWa = el('actWhatsapp');
     if (active.maps) { aDir.style.display = 'flex'; aDir.href = active.maps; } else { aDir.style.display = 'none'; }
     if (active.phone) { aCall.style.display = 'flex'; aCall.href = telHref(active.phone); } else { aCall.style.display = 'none'; }
+    if (el('actCallLabel')) el('actCallLabel').textContent = active.head ? 'CALL OFFICE' : 'CALL STORE';
     if (active.whatsapp) { aWa.style.display = 'flex'; aWa.href = waHref(active.whatsapp); } else { aWa.style.display = 'none'; }
 
     /* ---- gallery main ---- */
@@ -236,6 +246,7 @@
     el('storeCards').innerHTML = stores.map((s, i) => {
       const on = i === idx;
       const dimmed = !fi.includes(i);
+      if (dimmed) return '';   // filtered out -> hide entirely (e.g. Head Office hidden unless "Offices" filter)
       return '<button data-card="' + i + '" style="text-align:left;border:1px solid ' + (on ? ACCENT : '#2a2825') + ';background:' + (on ? '#161513' : 'transparent') + ';border-radius:12px;padding:12px 14px;cursor:pointer;opacity:' + (dimmed ? 0.35 : 1) + ';transition:all .25s;position:relative;min-width:0">'
         + '<div style="font-family:\'Archivo\';font-weight:600;font-size:13px;color:' + (on ? ACCENT : '#8f8c85') + ';margin-bottom:8px">' + s.num + '</div>'
         + '<div style="font-family:\'Archivo\';font-weight:700;font-size:14px;color:#fff;line-height:1.25;margin-bottom:5px">' + s.name.replace('&', '&amp;') + '</div>'
@@ -271,6 +282,7 @@
     el('mapPins').innerHTML = stores.map((s, i) => {
       const on = i === idx;
       const dimmed = !fi.includes(i);
+      if (dimmed) return '';   // filtered out -> no pin (Head Office pin only under "Offices")
       let marker;
       if (s.head) {
         // Head Office — distinct larger dark pin with a building icon and a standing gold ring
