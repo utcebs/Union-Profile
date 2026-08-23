@@ -349,7 +349,9 @@
   }
 
   const footHref = { 'Careers': 'Careers/', 'About UTC': 'About/', 'Sitemap': 'Sitemap/', 'Privacy Statement': 'Privacy-Policy/' };
-  el('footAbout').innerHTML = footAbout.map(l => '<a href="' + (footHref[l] || '#') + '" style="color:#8f8c85;font-size:14px">' + l + '</a>').join('');
+  el('footAbout').innerHTML = footAbout.map(l => l === 'FAQ'
+    ? '<span title="Coming soon" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">FAQ <span style="font-size:10px;letter-spacing:.1em;opacity:.8">· SOON</span></span>'
+    : '<a href="' + (footHref[l] || '#') + '" style="color:#8f8c85;font-size:14px">' + l + '</a>').join('');
 
   // hero slides + dots
   el('heroSlides').innerHTML = '';

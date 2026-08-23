@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://utc.com.kw/sitemap.xml
