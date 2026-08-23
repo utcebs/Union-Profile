@@ -141,6 +141,19 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     header.nav-open .ico-bars{display:none}
     header.nav-open .ico-close{display:block}
   }
+  /* CEO video popup player (mirrors the Careers page) */
+  .vid-modal{position:fixed;inset:0;z-index:1003;display:none;align-items:center;justify-content:center;background:rgba(6,6,6,.9);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:clamp(16px,3vw,54px)}
+  .vid-modal.open{display:flex}
+  .vid-card{position:relative;width:min(820px,92vw);max-height:90vh;background:#100f0e;border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden;box-shadow:0 40px 110px -30px rgba(0,0,0,.8)}
+  .vid-media{position:relative;aspect-ratio:16/9;background:#000}
+  .vid-media video{width:100%;height:100%;display:block;object-fit:cover}
+  .vid-close{position:absolute;top:13px;right:13px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.22);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:.2s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .vid-close:hover{background:rgba(0,0,0,.72);transform:rotate(90deg)}
+  .vid-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 18px;background:#0c0b0b;border-top:1px solid rgba(255,255,255,.06)}
+  .vid-eyebrow{font-size:10px;letter-spacing:.22em;color:#8f8b81;font-weight:600}
+  .vid-title{font-family:'Playfair Display',serif;color:#f3efe6;font-size:16px;margin-top:3px;line-height:1}
+  .vid-fs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.12em;padding:9px 16px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
+  .vid-fs:hover{background:rgba(255,255,255,.16)}
 </style>
 </head>
 <body>
@@ -182,20 +195,43 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
           <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:#c2c5cc;margin-top:26px">John Knight</div>
           <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:15px;margin-top:10px">Mr. John Knight</div>
           <div style="color:#8b8880;font-size:13px;margin-top:3px">Chief Executive Officer</div>
-          <a href="#" style="display:inline-flex;align-items:center;gap:14px;border:1px solid #2f2d29;border-radius:999px;padding:9px 9px 9px 9px;margin-top:26px">
+          <a href="#" id="ceoWatch" style="display:inline-flex;align-items:center;gap:14px;border:1px solid #2f2d29;border-radius:999px;padding:9px 9px 9px 9px;margin-top:26px;cursor:pointer">
             <span style="width:40px;height:40px;border-radius:50%;background:#c2c5cc;display:flex;align-items:center;justify-content:center;color:#161513;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
             <span style="color:#e7e4dd;font-size:13px;font-weight:600">Watch Mr. John Knight's Vision</span>
-            <span style="color:#8b8880;font-size:12px;padding-right:16px">05:12 min</span>
+            <span style="color:#8b8880;font-size:12px;padding-right:16px">01:15 min</span>
           </a>
           <div style="color:#8b8880;font-size:12.5px;margin-top:16px">Available in English</div>
         </div>
         <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#111">
-          <img loading="lazy" decoding="async" class="cover" src="img/Careers/Div/banner-vid-about.webp" alt="Message from the CEO">
-          <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,13,.5),rgba(13,13,13,.1) 45%,rgba(13,13,13,.5))"></div>
-          <button aria-label="Play" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.92);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px -12px rgba(0,0,0,.6)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#161513" style="margin-left:3px"><path d="M8 5v14l11-7z"/></svg></button>
+          <!-- preload="none": the 12MB video does NOT download until the user hits play; the page only loads the lightweight poster -->
+          <video id="ceoVideo" class="cover" preload="none" playsinline poster="img/Careers/Div/banner-vid-about.webp"><source src="img/Iftar.mp4" type="video/mp4"></video>
+          <div id="ceoOverlay" style="position:absolute;inset:0;cursor:pointer">
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,13,.5),rgba(13,13,13,.1) 45%,rgba(13,13,13,.5));pointer-events:none"></div>
+            <button id="ceoPlay" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.92);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px -12px rgba(0,0,0,.6)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#161513" style="margin-left:3px"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      (function(){
+        var v=document.getElementById('ceoVideo'), o=document.getElementById('ceoOverlay');
+        // Play button ON the video -> plays inline, in place (preload="none" keeps page load light)
+        function playInline(){ if(!v) return; if(o) o.style.display='none'; v.setAttribute('controls',''); var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+        if(o) o.addEventListener('click', playInline);
+        if(v) v.addEventListener('ended', function(){ v.removeAttribute('controls'); if(o) o.style.display=''; });
+        // "Watch ... Vision" CTA -> opens the popup player (modal lives at end of <body>, resolved at click time)
+        function mel(){ return { vm:document.getElementById('vidModal'), mv:document.getElementById('vidModalVideo') }; }
+        function openVid(e){ if(e) e.preventDefault(); var m=mel(); if(!m.vm) return; m.vm.classList.add('open'); document.body.style.overflow='hidden'; if(m.mv){ try{ m.mv.currentTime=0; }catch(_){} var p=m.mv.play(); if(p&&p.catch) p.catch(function(){}); } }
+        function closeVid(){ var m=mel(); if(!m.vm) return; m.vm.classList.remove('open'); document.body.style.overflow=''; if(m.mv) m.mv.pause(); }
+        var w=document.getElementById('ceoWatch'); if(w) w.addEventListener('click', openVid);
+        document.addEventListener('click', function(e){
+          if(e.target.closest && e.target.closest('#vidClose')){ closeVid(); return; }
+          if(e.target.closest && e.target.closest('#vidFs')){ var el=mel().mv; if(el){ if(el.requestFullscreen)el.requestFullscreen(); else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen(); else if(el.webkitEnterFullscreen)el.webkitEnterFullscreen(); } return; }
+          if(e.target.id==='vidModal') closeVid();
+        });
+        document.addEventListener('keydown', function(e){ var m=mel(); if(e.key==='Escape'&&m.vm&&m.vm.classList.contains('open')) closeVid(); });
+      })();
+    </script>
   </section>
 
   <!-- ============ THE COMPANY WE'RE BECOMING ============ -->
@@ -211,7 +247,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div class="becard">
           <div class="be-show"><img loading="lazy" decoding="async" class="be-slide on" src="img/ms-1949.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="img/ms-1958.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="uploads/old-general-photo.webp" alt=""></div>
           <div class="be-body">
-            <div style="color:#57544c;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m3 17 5-4 4 3 3-2 6 4"/></svg></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="color:#57544c;line-height:0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m3 17 5-4 4 3 3-2 6 4"/></svg></div><div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.14em;color:#8a6f38">1949</div></div>
             <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">First Showroom</div>
             <p style="color:#67645d;font-size:12.5px;line-height:1.55;margin:11px 0 0">It began with a single showroom, bringing world-class brands to Kuwait.</p>
           </div>
@@ -220,7 +256,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div class="becard">
           <div class="be-show"><img loading="lazy" decoding="async" class="be-slide on" src="img/ms-1980.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="img/ms-1982.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="img/ms-2020.webp" alt=""></div>
           <div class="be-body">
-            <div style="color:#57544c;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11l2.5 2.5a2 2 0 002.8 0l4-4a2 2 0 000-2.8l-2-2M8 11l-4 4M8 11l3-3 4 4M2 14l4 4"/></svg></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="color:#57544c;line-height:0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11l2.5 2.5a2 2 0 002.8 0l4-4a2 2 0 000-2.8l-2-2M8 11l-4 4M8 11l3-3 4 4M2 14l4 4"/></svg></div><div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.14em;color:#8a6f38">1980s</div></div>
             <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">Multiple Department Stores</div>
             <p style="color:#67645d;font-size:12.5px;line-height:1.55;margin:11px 0 0">Growth into full-scale department stores serving the nation at large.</p>
           </div>
@@ -229,16 +265,16 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div class="becard">
           <div class="be-show"><img loading="lazy" decoding="async" class="be-slide on" src="img/stores/al-jawhara-1.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="img/stores/sabah-al-salem-1.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="img/stores/al-jawhara-4.webp" alt=""></div>
           <div class="be-body">
-            <div style="color:#57544c;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7z"/></svg></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="color:#57544c;line-height:0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7z"/></svg></div><div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.14em;color:#8a6f38">2020s</div></div>
             <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#161513;line-height:1.2">Multiple Specialized Stores</div>
             <p style="color:#67645d;font-size:12.5px;line-height:1.55;margin:11px 0 0">Specialised stores built around distinct product categories and expertise.</p>
           </div>
         </div>
         <div class="be-arrow" style="display:flex;align-items:center;color:#c2beb2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
         <div class="becard" style="background:#0d0d0d;border-color:#0d0d0d">
-          <div class="be-show" style="background:#000"><img loading="lazy" decoding="async" class="be-slide on" src="img/banner-kwt.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="img/timeline-2026.webp" alt=""><img loading="lazy" decoding="async" class="be-slide" src="img/Slideshow/Inn/Ecom.webp" alt=""></div>
+          <div class="be-show" style="background:#000"><img loading="lazy" decoding="async" class="be-slide on" src="img/banner-kwt.webp" alt=""></div>
           <div class="be-body">
-            <div style="color:#c2c5cc;margin-bottom:14px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="color:#c2c5cc;line-height:0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div><div style="font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:0.14em;color:#cbb894">2026+</div></div>
             <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:#fff;line-height:1.2">Omni-Channel</div>
             <p style="color:#a8a49b;font-size:12.5px;line-height:1.55;margin:11px 0 0">One seamless experience connecting every store, screen and touchpoint.</p>
           </div>
@@ -290,7 +326,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         </div>
         <div class="diffcard">
           <div class="ps-slides" style="position:relative;aspect-ratio:4/3;background:#e9e6df;overflow:hidden">
-            <img loading="lazy" decoding="async" class="cover ps-slide is-active" src="img/ms-2020.webp" alt="Nationwide Reach">
+            <img loading="lazy" decoding="async" class="cover ps-slide is-active" src="img/Showroom%20Images/Flagship.webp" alt="Nationwide Reach">
             <img loading="lazy" decoding="async" class="cover ps-slide" src="img/stores/al-qurain-ext.webp" alt="" aria-hidden="true">
             <img loading="lazy" decoding="async" class="cover ps-slide" src="img/stores/shuwaikh-ext.webp" alt="" aria-hidden="true">
           </div>
@@ -305,6 +341,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
           <div style="padding:16px 16px 20px"><div style="font-family:'Archivo';font-weight:700;font-size:14.5px;color:#161513">Innovation &amp; Digital</div><p style="color:#67645d;font-size:12px;line-height:1.5;margin:7px 0 0">Leveraging technology and data to drive smarter retail solutions.</p></div>
         </div>
       </div>
+    </div>
+    <div style="margin-top:clamp(46px,5.4vw,78px);text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(46px,5.6vw,80px);line-height:.5;color:#8a6f38;opacity:.5;height:.5em;margin-bottom:10px">&ldquo;</div>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(16px,1.7vw,22px);line-height:1.4;color:#161513;margin:0 auto;max-width:720px">We&rsquo;re never more than <span style="font-style:normal;color:#8a6f38">20 minutes</span> from any home in Kuwait.</p>
+      <span style="display:inline-block;width:40px;height:2px;background:#8a6f38;opacity:.55;border-radius:2px;margin-top:16px"></span>
     </div>
   </div>
 
@@ -413,7 +454,6 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
           <div class="peoplecard"><img loading="lazy" decoding="async" class="cover" src="img/People/1.webp" alt="Our people"></div>
           <div class="peoplecard"><img loading="lazy" decoding="async" class="cover" src="img/People/7.webp" alt="Our people"></div>
           <div class="peoplecard"><img loading="lazy" decoding="async" class="cover" src="img/People/12.webp" alt="Our people"></div>
-          <div class="peoplecard"><img loading="lazy" decoding="async" class="cover" src="img/People/4.webp" alt="Our people"></div>
           <div class="peoplecard"><img loading="lazy" decoding="async" class="cover" src="img/People/9.webp" alt="Our people"></div>
           <div class="peoplecard"><img loading="lazy" decoding="async" class="cover" src="img/People/2.webp" alt="Our people"></div>
           <div class="peoplecard"><img loading="lazy" decoding="async" class="cover" src="img/People/6.webp" alt="Our people"></div>
@@ -695,6 +735,23 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   if(btn) btn.addEventListener('click',function(e){ e.preventDefault(); open(); });
 })();
 </script>
+<div id="vidModal" class="vid-modal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="vid-card">
+    <button class="vid-close" id="vidClose" aria-label="Close" title="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="vid-media">
+      <video id="vidModalVideo" controls playsinline preload="none" poster="img/Careers/Div/banner-vid-about.webp">
+        <source src="img/Iftar.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vid-bar">
+      <div>
+        <div class="vid-eyebrow">OUR VISION</div>
+        <div class="vid-title">Mr. John Knight&rsquo;s Vision</div>
+      </div>
+      <button class="vid-fs" id="vidFs" aria-label="Fullscreen" title="Fullscreen"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5a1 1 0 011-1h4M20 9V5a1 1 0 00-1-1h-4M4 15v4a1 1 0 001 1h4M20 15v4a1 1 0 01-1 1h-4"/></svg>FULLSCREEN</button>
+    </div>
+  </div>
+</div>
 <script src="nav-menu.js"></script>
 </body>
 </html>

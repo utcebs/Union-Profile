@@ -22,7 +22,7 @@
       addr: ['Kuwait City, Block 1', 'Fahad Al-Salem Street', 'Kuwait'], phone: '+965 2242 3355',
       maps: 'https://www.google.com/maps/search/?api=1&query=Union%20Trading%20Company%20Fahad%20Al-Salem%20Street%20Kuwait%20City',
       x: 65.2, y: 47.2,
-      photos: P('fahed-al-salem', 6) },
+      photos: ['img/Showroom%20Images/Flagship.webp'].concat(P('fahed-al-salem', 6)) },
 
     { num: '02', name: 'Salmiya Store', city: 'Salmiya', cats: [],
       tagline: 'At the heart of Salmiya.',
@@ -110,7 +110,7 @@
       hours: '8:00 AM – 5:00 PM', days: 'Sunday – Thursday', friday: '',
       addr: ['Dawliah Commercial Center', 'Floor 3, Block 15', 'Al Qibla, Kuwait'], phone: '+965 2242 3355',
       maps: 'https://maps.app.goo.gl/SCB6ofeVmjWm91QE9',
-      x: 64, y: 48.5, photos: ['img/Showroom%20Images/HO.webp', 'img/Showroom%20Images/HO2.webp'] },
+      x: 64, y: 48.5, photos: ['img/Showroom%20Images/HOPrem.webp', 'img/Showroom%20Images/HO2.webp'] },
   ];
 
   const FILTERS = ['All Stores', 'Offices'];
@@ -216,7 +216,7 @@
     // each tile keeps the width of one cell in a 5-up row: (strip - 4 gaps) / 5
     const TILE = 'flex:0 0 calc((100% - 40px) / 5)';
     if (active.photos.length) {
-      thumbs.style.position = 'static';
+      thumbs.style.position = 'relative';   // so tile.offsetLeft is measured within the strip -> correct active-thumb centering
       const activePhoto = ((state.img % active.photos.length) + active.photos.length) % active.photos.length;
       thumbs.innerHTML = active.photos.map((src, i) =>
         '<div data-thumb="' + i + '" style="' + TILE + ';aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#161513;border:2px solid ' + (i === activePhoto ? ACCENT : '#2a2825') + ';cursor:pointer;opacity:' + (i === activePhoto ? 1 : 0.55) + ';transition:opacity .2s,border-color .2s"><img src="' + src + '" alt="" class="cover" loading="lazy"></div>'
@@ -434,7 +434,7 @@
   const dlRaw = new URLSearchParams(location.search).get('store');
   const dl = dlRaw == null ? NaN : parseInt(dlRaw, 10);
   const hasDeepLink = !isNaN(dl) && dl >= 0 && dl < stores.length;
-  if (hasDeepLink) { state.store = dl; state.img = 0; state.showTip = true; }
+  if (hasDeepLink) { state.store = dl; state.img = 0; state.showTip = true; if (stores[dl].head) state.filter = 'Offices'; }
 
   // Keep the explorer panel a constant height so it doesn't jump when switching
   // between stores with shorter/longer descriptions. Measures every store once and
