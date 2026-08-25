@@ -157,11 +157,11 @@
   ];
 
   const socials = [
-    { name: 'Facebook', icon: sic('<path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path>') },
-    { name: 'X', icon: sic('<path d="M17.5 4h2.6l-5.7 6.5L21 20h-5.3l-4.2-5.4L6.7 20H4.1l6.1-7L3.5 4h5.4l3.8 5z"></path>') },
-    { name: 'Instagram', icon: sic('<path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path>') },
-    { name: 'LinkedIn', icon: sic('<path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path>') },
-    { name: 'TikTok', icon: sic('<path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path>') }
+    { name: 'Instagram', href: 'https://www.instagram.com/unionelectronics.kw/', icon: sic('<path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path>') },
+    { name: 'Facebook', href: 'https://www.facebook.com/unionelectronicskw', icon: sic('<path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path>') },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/union-trading-company-kuwait/', icon: sic('<path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path>') },
+    { name: 'TikTok', href: 'https://www.tiktok.com/@unionelectronics.kw?_r=1&_t=ZS-998zkW4Kypg', icon: sic('<path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path>') },
+    { name: 'YouTube', href: 'https://youtube.com/@unionelectronicskw?si=DtCur73sViKpsxy3', icon: sic('<path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4a2.5 2.5 0 00-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"></path>') }
   ];
   const phoneIcon = '<path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path>';
   const contacts = [
@@ -176,9 +176,9 @@
   // Offices for the contact panel — each opens the Our Stores explorer; where a
   // matching store record exists, it deep-links to it via ?store=<index>.
   const offices = [
-    { name: 'Head Office', addr: ['Salhiya, Kuwait City', 'P.O. Box 239, Safat 13003, Kuwait'], phone: '+965 18444449', email: 'info@utc.com.kw', store: 0, img: 'img/stores/fahed-al-salem-1.webp' },
-    { name: 'Salmiya Showroom', addr: ['Salmiya, Salem Al Mubarak Street', 'Salmiya, Kuwait'], phone: '+965 25710800', email: 'salmiya@utc.com.kw', store: 1, img: 'img/stores/salmiya-1.webp' },
-    { name: 'Hawally Showroom', addr: ['Al-Othman Street, Hawally', 'Kuwait'], phone: '+965 22640200', email: 'hawally@utc.com.kw', store: 3, img: 'img/stores/hawally-1.webp' }
+    { name: 'Head Office', addr: ['Dawliah Commercial Center, Block 15', 'Al Qibla, Kuwait City'], phone: '+965 2242 3355', email: 'info@utc.com.kw', store: 13, img: 'img/Showroom%20Images/HOPrem.webp' },
+    { name: 'Flagship Store', addr: ['Fahad Al-Salem Street, Block 1', 'Kuwait City, Kuwait'], phone: '+965 2242 3355', email: 'info@utc.com.kw', store: 0, img: 'img/Showroom%20Images/Flagship.webp' },
+    { name: 'Salmiya Store', addr: ['Salem Al Mubarak Street', 'Salmiya, Kuwait'], phone: '+965 9550 1717', email: 'salmiya@utc.com.kw', store: 1, img: 'img/stores/salmiya-1.webp' }
   ];
 
   // Bottom feature strip
@@ -216,7 +216,7 @@
     { name: 'Maidenform', src: 'img/brands-aluna/maidenform.webp' },
     { name: 'Chigo', src: 'img/brands-elec/chigo.webp' },
     { name: 'Daikin', src: 'img/brands-elec/daikin.webp' },
-    { name: 'Hanes', src: 'img/brands-aluna/hanes.webp' },
+    { name: 'Hanes', src: 'img/brands-aluna/hanes-mark.webp', raw: true },
     { name: 'Fakir', src: 'img/brands-elec/fakir.webp' },
     { name: 'Galanz', src: 'img/brands-elec/galanz.webp' },
     { name: 'Bali', src: 'img/brands-aluna/bali.webp' },
@@ -275,7 +275,7 @@
   })();
 
   // socials (footer), footAbout
-  el('socials2').innerHTML = socials.map(s => '<a href="#" aria-label="' + s.name + '" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0">' + s.icon + '</a>').join('');
+  el('socials2').innerHTML = socials.map(s => '<a href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + s.name + '" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0">' + s.icon + '</a>').join('');
 
   // office rows — open the Our Stores explorer (deep-linked to the store where one exists)
   const officeIcon = (p) => '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="flex-shrink:0">' + p + '</svg>';

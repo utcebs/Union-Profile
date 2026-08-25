@@ -18,7 +18,7 @@
       ['All Divisions', 'Divisions/#all-divisions'],
       ['Union Electronics', 'Union-Electronics/'],
       ['Aluna', 'Aluna/'],
-      ['FMCG', 'Divisions/#all-divisions'],
+      ['FMCG', 'FMCG/'],
       ['Labels', 'Divisions/#all-divisions'],
       ['Union Services', 'Divisions/#all-divisions'],
       ['Commercial Projects', 'Divisions/#all-divisions']
