@@ -85,26 +85,27 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .bm-panel{background:#131110;border-radius:22px;width:min(1000px,100%);max-height:90vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 44px 110px -34px rgba(0,0,0,.75);transform:translateY(14px) scale(.985);opacity:0;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
   .bm-overlay.open .bm-panel{transform:none;opacity:1}
   .bm-head{padding:clamp(22px,3vw,32px) clamp(22px,3vw,38px) 0;position:relative;flex:none}
-  .bm-eyebrow{font-size:11px;letter-spacing:.26em;color:#c39b4c;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .bm-eyebrow{font-size:11px;letter-spacing:.26em;color:#c2b9a5;font-weight:700;text-transform:uppercase;margin-bottom:10px}
   .bm-title{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(23px,3vw,33px);color:#fff;margin:0;line-height:1.1}
   .bm-sub{color:#a8a49b;font-size:14px;line-height:1.55;margin:9px 0 18px;max-width:540px}
   .bm-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid #33312d;background:#211d18;color:#cfcbc0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s}
   .bm-close:hover{background:#fff;color:#0d0d0d;border-color:#fff}
   .bm-tabs{display:flex;gap:8px;overflow-x:auto;overflow-y:visible;scrollbar-width:none;padding:0 clamp(22px,3vw,38px) 16px;flex:none}
   .bm-tabs::-webkit-scrollbar{display:none}
-  .bm-tab{border:1px solid #33312d;background:transparent;color:#cfcbc0;font-size:12.5px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;flex:none}
-  .bm-tab:hover{color:#fff;border-color:#575249}
-  .bm-tab.active{background:#fff;color:#0d0d0d;border-color:#fff}
+  .bm-tab{border:1px solid #3a372f;background:transparent;color:#cfc9bb;font-size:12.5px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;flex:none}
+  .bm-tab:hover{color:#fff;border-color:#5f594d}
+  .bm-tab.active{background:#f4efe4;color:#161311;border-color:#f4efe4}
   .bm-cnt{opacity:.55;margin-left:5px;font-weight:700}
-  .bm-body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:clamp(16px,2.2vw,24px) clamp(22px,3vw,38px) clamp(26px,3vw,34px);border-top:1px solid #262218}
-  .bm-group-t{font-family:'Archivo';font-weight:700;font-size:12.5px;letter-spacing:.09em;color:#8a867e;text-transform:uppercase;margin:24px 0 14px}
-  .bm-group:first-child .bm-group-t{margin-top:2px}
-  .bm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:12px}
-  .bm-tile{background:#1d1a15;border:1px solid #2c281f;border-radius:14px;min-height:104px;padding:16px 14px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;transition:border-color .25s,transform .25s,background .25s}
-  .bm-tile:hover{border-color:#4a4436;background:#231f19;transform:translateY(-2px)}
-  .bm-tile img{max-width:82%;max-height:46px;width:auto;object-fit:contain}
-  .bm-name{font-size:11px;color:#8f8c85;font-weight:600;text-align:center;line-height:1.3}
-  @media(max-width:560px){.bm-grid{grid-template-columns:1fr 1fr}.bm-tile{min-height:96px}.bm-tile img{max-height:40px}}
+  .bm-body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:clamp(16px,2.2vw,22px) clamp(20px,2.6vw,30px) clamp(22px,2.8vw,30px);border-top:1px solid #262218}
+  .bm-well{background:#f4efe4;border-radius:16px;padding:clamp(22px,2.8vw,34px) clamp(18px,2.4vw,30px)}
+  .bm-group + .bm-group{margin-top:clamp(24px,2.8vw,32px);padding-top:clamp(24px,2.8vw,32px);border-top:1px solid #e4ddca}
+  .bm-group-t{font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.12em;color:#9a9078;text-transform:uppercase;margin-bottom:16px}
+  .bm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:clamp(22px,2.6vw,32px) clamp(14px,1.8vw,22px);align-items:center}
+  .bm-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px}
+  .bm-cell img{max-width:76%;max-height:38px;width:auto;object-fit:contain;filter:brightness(0);opacity:.82;transition:opacity .3s ease,transform .35s cubic-bezier(.2,.7,.2,1)}
+  .bm-cell:hover img{opacity:1;transform:translateY(-3px)}
+  .bm-name{font-size:11px;color:#938c7a;font-weight:600;text-align:center;line-height:1.3}
+  @media(max-width:560px){.bm-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:768px){
     .be-cards,.diff-cards{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 9% 6px}
     .be-cards::-webkit-scrollbar,.diff-cards::-webkit-scrollbar{display:none}
@@ -301,7 +302,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </section>
 
   <!-- ============ THE UTC DIFFERENCE ============ -->
-  <div class="wrap" style="padding-top:clamp(46px,6vw,80px);padding-bottom:clamp(46px,6vw,80px)">
+  <div class="wrap" style="padding-top:clamp(46px,6vw,80px);padding-bottom:clamp(18px,2.2vw,30px)">
     <div class="diff-grid" style="display:grid;grid-template-columns:0.85fr 2fr;gap:clamp(28px,3.4vw,54px);align-items:center">
       <div>
         <div class="eyebrow" style="margin-bottom:16px">The UTC Difference</div>
@@ -343,8 +344,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       </div>
     </div>
     <div style="margin-top:clamp(46px,5.4vw,78px);text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(46px,5.6vw,80px);line-height:.5;color:#8a6f38;opacity:.5;height:.5em;margin-bottom:10px">&ldquo;</div>
-      <p style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(16px,1.7vw,22px);line-height:1.4;color:#161513;margin:0 auto;max-width:720px">We&rsquo;re never more than <span style="font-style:normal;color:#8a6f38">20 minutes</span> from any home in Kuwait.</p>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(16px,1.7vw,22px);line-height:1.4;color:#161513;margin:0 auto;max-width:760px"><span style="font-family:'Playfair Display',serif;font-style:normal;font-weight:700;font-size:1.9em;line-height:0;color:#8a6f38;opacity:.5;vertical-align:-.32em;margin-right:9px">&ldquo;</span>We&rsquo;re never more than <span style="font-style:normal;color:#8a6f38">20 minutes</span> from any home in Kuwait.</p>
       <span style="display:inline-block;width:40px;height:2px;background:#8a6f38;opacity:.55;border-radius:2px;margin-top:16px"></span>
     </div>
   </div>
@@ -716,13 +716,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   var total=order.reduce(function(a,k){return a+ALLBRANDS[k].length;},0);
   var filters=[['all','All']].concat(order.map(function(k){return [k,k];}));
   tabsEl.innerHTML=filters.map(function(f,i){ var cnt=(f[0]==='all')?total:ALLBRANDS[f[0]].length; return '<button class="bm-tab'+(i===0?' active':'')+'" data-f="'+f[0]+'">'+f[1]+'<span class="bm-cnt">'+cnt+'</span></button>'; }).join('');
-  function tile(b){ return '<div class="bm-tile"><img src="'+b.f+'" alt="'+b.n+'" loading="lazy"><div class="bm-name">'+b.n+'</div></div>'; }
+  function tile(b){ return '<div class="bm-cell"><img src="'+b.f+'" alt="'+b.n+'" title="'+b.n+'" loading="lazy"><div class="bm-name">'+b.n+'</div></div>'; }
   function render(filter){
     var html='';
     order.forEach(function(k){ if(filter!=='all'&&filter!==k) return;
       html+='<div class="bm-group"><div class="bm-group-t">'+k+' &middot; '+ALLBRANDS[k].length+'</div><div class="bm-grid">'+ALLBRANDS[k].map(tile).join('')+'</div></div>';
     });
-    bodyEl.innerHTML=html; bodyEl.scrollTop=0;
+    bodyEl.innerHTML='<div class="bm-well">'+html+'</div>'; bodyEl.scrollTop=0;
   }
   render('all');
   tabsEl.addEventListener('click',function(e){ var t=e.target.closest('.bm-tab'); if(!t)return; for(var i=0;i<tabsEl.children.length;i++) tabsEl.children[i].classList.toggle('active',tabsEl.children[i]===t); render(t.getAttribute('data-f')); });

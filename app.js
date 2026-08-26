@@ -753,7 +753,7 @@
     // Partnership Opportunity → the head of the selected division:
     divisions: {
       'union-electronics': 'jerin@utc.com.kw',   // real: electronics@utc.com.kw
-      'aluna':             'jerin@utc.com.kw',   // real: aluna@utc.com.kw
+      'aluna':             'thulasi@utc.com.kw', // Aluna partnership → Thulasi
       'fmcg':              'jerin@utc.com.kw',   // real: fmcg@utc.com.kw
       'labels':            'jerin@utc.com.kw',   // real: labels@utc.com.kw
       'union-services':    'jerin@utc.com.kw',   // real: unionservices@utc.com.kw
