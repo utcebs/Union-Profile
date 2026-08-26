@@ -37,7 +37,7 @@
       desc: 'Your Union Trading destination in Farwaniya, with our full range of brands and dependable everyday service.',
       hours: '10:00 AM – 10:00 PM', days: ALLWEEK, friday: '',
       addr: ['Farwaniya, Kuwait'], phone: '+965 2473 3820', whatsapp: '+965 9550 1738',
-      maps: 'https://goo.gl/maps/XCckvVJFSS92qqNA6', x: 65.1, y: 54, photos: ['img/stores/farwaniya-1.webp'] },
+      maps: 'https://maps.app.goo.gl/sKnpdwsrxFUwvfup8', x: 65.1, y: 54, photos: ['img/stores/farwaniya-2.webp', 'img/stores/farwaniya-1.webp'] },
 
     { num: '04', name: 'Hawally Store', city: 'Hawally', cats: [],
       tagline: 'Close to Hawally.',
@@ -62,14 +62,14 @@
     { num: '07', name: 'Al-Qurain Store', city: 'Al-Qurain', cats: [],
       tagline: 'Serving Al-Qurain.',
       desc: 'A look inside our Al-Qurain showroom. Full visiting details for this location are coming soon.',
-      hours: HRS, days: D, friday: F, addr: ['Al-Qurain, Kuwait'], phone: '', x: 70.7, y: 55.4, photos: P('al-qurain', 8) },
+      hours: HRS, days: D, friday: F, addr: ['Al-Qurain, Kuwait'], phone: '', x: 70.7, y: 55.4, photos: P('al-qurain', 6) },
 
     { num: '08', name: 'Jahra Store', city: 'Jahra', cats: [],
       tagline: 'Serving Jahra.',
       desc: 'Our Jahra destination brings Union Trading trusted brands and service to the west of Kuwait.',
       hours: '10:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 5:00 PM – 10:00 PM',
       addr: ['Jahra, Kuwait'], phone: '+965 2457 2747', whatsapp: '+965 9550 1808',
-      maps: 'https://maps.app.goo.gl/xjbgbsW6j7vBFirQA', x: 50.3, y: 46.8, photos: P('jahra', 1) },
+      maps: 'https://maps.app.goo.gl/xjbgbsW6j7vBFirQA', x: 50.3, y: 46.8, photos: P('jahra', 2) },
 
     { num: '09', name: 'Shuwaikh Store', city: 'Shuwaikh', cats: [],
       tagline: 'The Shuwaikh showroom.',
@@ -102,7 +102,14 @@
       desc: 'Our second Farwaniya destination, extending the full Union Trading range across the governorate.',
       hours: '10:00 AM – 10:00 PM', days: 'Saturday – Thursday', friday: 'Friday: 5:00 PM – 10:00 PM',
       addr: ['Farwaniya, Kuwait'], phone: '+965 2474 2791', whatsapp: '+965 9550 1806',
-      maps: 'https://maps.app.goo.gl/sKnpdwsrxFUwvfup8', x: 64.8, y: 53.4, photos: ['img/stores/salmiya-2.webp'] },
+      maps: 'https://goo.gl/maps/XCckvVJFSS92qqNA6', x: 64.8, y: 53.4, photos: ['img/stores/salmiya-2.webp'] },
+
+    { num: '14', name: 'Vero Moda Store', city: 'Warehouse Mall', cats: [], soon: true,
+      tagline: 'Coming soon to Warehouse Mall.',
+      desc: 'Our newest destination inside Warehouse Mall. Full visiting details for this location are coming soon.',
+      hours: 'Coming soon', days: 'Opening details coming soon', friday: '',
+      addr: ['Warehouse Mall, Kuwait'], phone: '', x: 62.6, y: 51.5,
+      photos: ['img/stores/vero-moda-1.webp', 'img/stores/vero-moda-2.webp', 'img/stores/vero-moda-3.webp'] },
 
     { num: '', name: 'Head Office', city: 'Al Qibla', cats: ['Offices'], head: true,
       tagline: 'Our corporate headquarters.',
@@ -183,6 +190,18 @@
     el('storeName').innerHTML = active.name.replace('&', '&amp;');
     el('storeTagline').textContent = active.tagline;
     el('storeDesc').textContent = active.desc;
+
+    /* ---- status badge (green "OPEN NOW", or amber "COMING SOON" for not-yet-open stores) ---- */
+    const stW = el('storeStatus'), stD = el('storeStatusDot'), stT = el('storeStatusText');
+    if (stW) {
+      if (active.soon) {
+        stW.style.background = '#241d10'; stW.style.borderColor = '#4a3a1c';
+        stD.style.background = ACCENT; stT.style.color = '#d8b877'; stT.textContent = 'COMING SOON';
+      } else {
+        stW.style.background = '#17251a'; stW.style.borderColor = '#2c4531';
+        stD.style.background = '#5fbf7a'; stT.style.color = '#7fd398'; stT.textContent = 'OPEN NOW';
+      }
+    }
 
     /* ---- details ---- */
     el('storeHours').textContent = active.hours;

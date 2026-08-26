@@ -119,8 +119,8 @@
   const divData = [
     { name: 'Union Electronics', href: 'Union-Electronics/', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Hitachi', 'Daikin', '+22 more'], slot: 'div-elec' },
     { name: 'Aluna', href: 'Aluna/', logo: 'img/Div/aluna-logo.webp', cardLogo: 'img/Div/aluna-logo.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Triumph', 'Sloggi', '+12 more'], slot: 'div-cosmetics' },
-    { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vileda', 'Cans'], slot: 'div-fmcg' },
-    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.webp', cardLogo: 'img/Div/labels-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion and cosmetics, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Palladio', 'Vero Moda'], slot: 'div-fashion' },
+    { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vileda', 'Cans', '+14 more'], slot: 'div-fmcg' },
+    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.webp', cardLogo: 'img/Div/labels-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion and cosmetics, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Palladio', 'Vero Moda', '+7 more'], slot: 'div-fashion' },
     { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: [], slot: 'div-health' },
     { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.webp', cardLogo: 'img/Div/commercial-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['Daikin', 'Hitachi', 'General'], slot: 'div-commercial' }
   ];
@@ -744,19 +744,22 @@
   // All enquiries are SENT FROM one central mailbox (the EmailJS-connected account),
   // and delivered TO the inbox chosen by the enquiry type — and, for partnerships,
   // by the selected division. Fill in the real division-head addresses below.
+  // Testing phase: every route points to jerin@utc.com.kw so we can verify the live
+  // mechanism end-to-end. Replace each value with the real inbox when they're ready —
+  // the structure (per enquiry type / per division) is already correct.
   const MAIL_ROUTES = {
-    general: 'info@utc.com.kw',                 // General Inquiry
-    support: 'unionservices@utc.com.kw',        // Product Support → Union Services division
+    general: 'jerin@utc.com.kw',                 // General Inquiry            (real: info@utc.com.kw)
+    support: 'jerin@utc.com.kw',                 // Product Support            (real: unionservices@utc.com.kw)
     // Partnership Opportunity → the head of the selected division:
     divisions: {
-      'union-electronics': 'electronics@utc.com.kw',   // TODO: real inbox
-      'aluna':             'aluna@utc.com.kw',          // TODO: real inbox
-      'fmcg':              'fmcg@utc.com.kw',           // TODO: real inbox
-      'labels':            'labels@utc.com.kw',         // TODO: real inbox
-      'union-services':    'unionservices@utc.com.kw',  // TODO: real inbox
-      'commercial':        'commercial@utc.com.kw'      // TODO: real inbox
+      'union-electronics': 'jerin@utc.com.kw',   // real: electronics@utc.com.kw
+      'aluna':             'jerin@utc.com.kw',   // real: aluna@utc.com.kw
+      'fmcg':              'jerin@utc.com.kw',   // real: fmcg@utc.com.kw
+      'labels':            'jerin@utc.com.kw',   // real: labels@utc.com.kw
+      'union-services':    'jerin@utc.com.kw',   // real: unionservices@utc.com.kw
+      'commercial':        'jerin@utc.com.kw'    // real: commercial@utc.com.kw
     },
-    fallback: 'info@utc.com.kw'                 // partnership with no division picked, etc.
+    fallback: 'jerin@utc.com.kw'                 // partnership with no division picked, etc.
   };
   function routeTo(intent, divisionKey) {
     if (intent === 'partnership') return MAIL_ROUTES.divisions[divisionKey] || MAIL_ROUTES.fallback;
@@ -768,10 +771,18 @@
   // server, anywhere): the visitor's browser sends the enquiry through YOUR connected
   // mailbox. Fill the 3 IDs from the EmailJS dashboard (emailjs.com → Account) to turn
   // it on; while any is blank the form uses the Web3Forms/mailto path below, so nothing
-  // breaks. Per-option routing already works — the dropdown's data-mail is used as the
-  // recipient (`to_email`), so you can point each enquiry type at a different UTC inbox.
+  // breaks.
+  //   SENT FROM: connect enquiry@utc.com.kw as the EmailJS Email Service → that becomes
+  //              the From address on every enquiry.
+  //   SENT TO:   the template's "To" field = {{to_email}} (dynamic) — the recipient is
+  //              supplied by the code (routeTo → MAIL_ROUTES; all routes = jerin@utc.com.kw
+  //              during testing), so we can retarget it without editing the template. NOTE: a public,
+  //              dynamic {{to_email}} can in theory be abused as an open relay — fine for
+  //              this testing phase; before the corporate launch, lock it down (fixed To,
+  //              or move sending to a backend/Azure Function).
+  //   reply_to is set to the visitor's email, so replies go straight back to the customer.
   // Remember to add this site's domain under EmailJS → Account → Security → Allowed origins.
-  const EMAILJS = { publicKey: '', serviceId: '', templateId: '' };
+  const EMAILJS = { publicKey: 'LN88tTw5xPwrUuH67', serviceId: 'service_87ki86s', templateId: 'template_zun7cpc' };
   let _emailjsReady = null;
   function ensureEmailJS() {
     if (_emailjsReady) return _emailjsReady;
@@ -832,13 +843,21 @@
     if (EMAILJS.publicKey && EMAILJS.serviceId && EMAILJS.templateId) {
       if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setBtn('CHECK YOUR EMAIL '); setTimeout(() => setBtn('SEND MESSAGE'), 3000); return; }
       btn.disabled = true; setBtn('SENDING… ');
+      // Two message parts for one template: partner_details renders inside a BOLD element in the
+      // template (blank for general enquiries → nothing shows), message_text is the visitor's message
+      // in normal weight. EmailJS escapes HTML inside variables, so the bold styling lives in the template.
+      var partnerDetails = isPartner
+        ? ('Division: ' + division + '\nPartnership type: ' + partType + '\nOrganisation: ' + org + '\nOther information: ' + other + '\n\n')
+        : '';
       ensureEmailJS()
         .then(() => emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, {
           to_email: to, subject: subject, from_name: name || 'Website visitor', reply_to: email,
           name: name, email: email, phone: phone,
           enquiry_type: opt ? opt.text : '',
           division: division, partnership_type: partType, organisation: org, other_information: other,
-          message: lines.join('\n')
+          partner_details: partnerDetails,   // bold block in the template (blank for general enquiries)
+          message_text: msg,                 // the visitor's message (normal weight)
+          message: lines.join('\n')          // full plain-text block (fallback)
         }))
         .then(() => {
           setBtn('MESSAGE SENT ✓ ');

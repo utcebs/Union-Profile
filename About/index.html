@@ -84,19 +84,19 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .bm-overlay.open{display:flex}
   .bm-panel{background:#131110;border-radius:22px;width:min(1000px,100%);max-height:90vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 44px 110px -34px rgba(0,0,0,.75);transform:translateY(14px) scale(.985);opacity:0;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
   .bm-overlay.open .bm-panel{transform:none;opacity:1}
-  .bm-head{padding:clamp(22px,3vw,32px) clamp(22px,3vw,38px) 0;position:relative}
+  .bm-head{padding:clamp(22px,3vw,32px) clamp(22px,3vw,38px) 0;position:relative;flex:none}
   .bm-eyebrow{font-size:11px;letter-spacing:.26em;color:#c39b4c;font-weight:700;text-transform:uppercase;margin-bottom:10px}
   .bm-title{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(23px,3vw,33px);color:#fff;margin:0;line-height:1.1}
   .bm-sub{color:#a8a49b;font-size:14px;line-height:1.55;margin:9px 0 18px;max-width:540px}
   .bm-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid #33312d;background:#211d18;color:#cfcbc0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s}
   .bm-close:hover{background:#fff;color:#0d0d0d;border-color:#fff}
-  .bm-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 clamp(22px,3vw,38px) 16px}
+  .bm-tabs{display:flex;gap:8px;overflow-x:auto;overflow-y:visible;scrollbar-width:none;padding:0 clamp(22px,3vw,38px) 16px;flex:none}
   .bm-tabs::-webkit-scrollbar{display:none}
   .bm-tab{border:1px solid #33312d;background:transparent;color:#cfcbc0;font-size:12.5px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;flex:none}
   .bm-tab:hover{color:#fff;border-color:#575249}
   .bm-tab.active{background:#fff;color:#0d0d0d;border-color:#fff}
   .bm-cnt{opacity:.55;margin-left:5px;font-weight:700}
-  .bm-body{overflow-y:auto;padding:clamp(16px,2.2vw,24px) clamp(22px,3vw,38px) clamp(26px,3vw,34px);border-top:1px solid #262218}
+  .bm-body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:clamp(16px,2.2vw,24px) clamp(22px,3vw,38px) clamp(26px,3vw,34px);border-top:1px solid #262218}
   .bm-group-t{font-family:'Archivo';font-weight:700;font-size:12.5px;letter-spacing:.09em;color:#8a867e;text-transform:uppercase;margin:24px 0 14px}
   .bm-group:first-child .bm-group-t{margin-top:2px}
   .bm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:12px}
@@ -512,10 +512,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       </div>
       <div>
         <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Store Locations</div>
-        <div style="font-size:13px;font-weight:700;color:#cfcbc0;margin-bottom:6px">Department Stores</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.6;margin:0 0 18px">Salmiya, Farwaniya, Hawally, Salhiya, Fahaheel</p>
-        <div style="font-size:13px;font-weight:700;color:#cfcbc0;margin-bottom:6px">Appliances Stores</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.6;margin:0">Salhiya, Jahra, Farwaniya, Shuwaikh &amp; Hawally Showrooms</p>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0">Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Al Jawhara, Shuwaikh &amp; Jahra</p>
       </div>
       <div>
         <div class="foot-divs" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch">
@@ -710,7 +707,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   var ALLBRANDS = {
     "Electronics": [{"n":"Black & Decker","f":"img/brands-all/electronics/bandd.webp"},{"n":"Belkin","f":"img/brands-all/electronics/belkin.webp"},{"n":"Canton","f":"img/brands-all/electronics/canton.webp"},{"n":"Cecotec","f":"img/brands-all/electronics/cecotec.webp"},{"n":"Changhong","f":"img/brands-all/electronics/changhong.webp"},{"n":"Chigo","f":"img/brands-all/electronics/chigo.webp"},{"n":"Daikin","f":"img/brands-all/electronics/daikin.webp"},{"n":"Fakir","f":"img/brands-all/electronics/fakir.webp"},{"n":"Galanz","f":"img/brands-all/electronics/galanz.webp"},{"n":"General","f":"img/brands-all/electronics/general.webp"},{"n":"Glemgas","f":"img/brands-all/electronics/glemgas.webp"},{"n":"Havic","f":"img/brands-all/electronics/havic.webp"},{"n":"Hifuture","f":"img/brands-all/electronics/hifuture.webp"},{"n":"Hitachi","f":"img/brands-all/electronics/hitachi.webp"},{"n":"Konka","f":"img/brands-all/electronics/konka.webp"},{"n":"Morphy Richards","f":"img/brands-all/electronics/morphy.webp"},{"n":"Naim & Focal","f":"img/brands-all/electronics/naim-and-focal.webp"},{"n":"Proove","f":"img/brands-all/electronics/proove.webp"},{"n":"ROWA","f":"img/brands-all/electronics/rowa.webp"},{"n":"Startec","f":"img/brands-all/electronics/startec.webp"},{"n":"TCL","f":"img/brands-all/electronics/tcl.webp"},{"n":"Vestel","f":"img/brands-all/electronics/vestel.webp"},{"n":"Westpoint","f":"img/brands-all/electronics/westpoint.webp"},{"n":"Yuwell","f":"img/brands-all/electronics/yuwell.webp"}],
     "Aluna": [{"n":"Bali","f":"img/brands-all/aluna/bali.webp"},{"n":"C. Lingerie","f":"img/brands-all/aluna/c-lengerie.webp"},{"n":"Caha Capo","f":"img/brands-all/aluna/caha-capo.webp"},{"n":"Carole Hochman","f":"img/brands-all/aluna/carole-hochman.webp"},{"n":"Cupid","f":"img/brands-all/aluna/cupid.webp"},{"n":"Eileen West","f":"img/brands-all/aluna/eileen-west.webp"},{"n":"G World","f":"img/brands-all/aluna/g-world.webp"},{"n":"Hanes","f":"img/brands-all/aluna/hanes.webp"},{"n":"Ivory","f":"img/brands-all/aluna/ivory.webp"},{"n":"Leg Avenue","f":"img/brands-all/aluna/leg-avenue.webp"},{"n":"Maidenform","f":"img/brands-all/aluna/maidenform.webp"},{"n":"Mapale","f":"img/brands-all/aluna/mapale.webp"},{"n":"Naomi & Nicole","f":"img/brands-all/aluna/naomi-and-nicole.webp"},{"n":"Sloggi","f":"img/brands-all/aluna/sloggi.webp"},{"n":"Triumph","f":"img/brands-all/aluna/triumph.webp"}],
-    "FMCG": [{"n":"Cans","f":"img/brands-all/fmcg/cans.webp"},{"n":"Vileda","f":"img/brands-all/fmcg/vileda.webp"}],
+    "FMCG": [{"n":"CANS","f":"img/brands-all/fmcg/cans.webp"},{"n":"Snips","f":"img/brands-all/fmcg/snips.webp"},{"n":"Afia Tuna","f":"img/brands-all/fmcg/afia.webp"},{"n":"Glysolid","f":"img/brands-all/fmcg/glysolid.webp"},{"n":"Vileda","f":"img/brands-all/fmcg/vileda.webp"},{"n":"Lactovit","f":"img/brands-all/fmcg/lactovit.webp"},{"n":"Space Walkers","f":"img/brands-all/fmcg/space-walkers.webp"},{"n":"Yupo","f":"img/brands-all/fmcg/yupo.webp"},{"n":"Royal Mirage","f":"img/brands-all/fmcg/royal-mirage.webp"},{"n":"Yardley","f":"img/brands-all/fmcg/yardley.webp"},{"n":"Prestige","f":"img/brands-all/fmcg/prestige.webp"},{"n":"Eternal Love","f":"img/brands-all/fmcg/eternal-love.webp"},{"n":"Color Me","f":"img/brands-all/fmcg/color-me.webp"},{"n":"Perfumer's Choice","f":"img/brands-all/fmcg/perfumers-choice.webp"},{"n":"UTC Perfumes","f":"img/brands-all/fmcg/utc-perfumes.webp"}],
     "Labels": [{"n":"Palladio","f":"img/brands-all/labels/palladio.webp"},{"n":"Vero Moda","f":"img/brands-all/labels/vero-moda.webp"}]
   };
   var overlay=document.getElementById('brandsModal'); if(!overlay) return;
