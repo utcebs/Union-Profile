@@ -511,7 +511,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       var cx=geo.cx; if(cx==null)return;
       var cy=geo.cy, logoR=geo.logoR, selOuter=geo.selOuter, hubR=geo.hubR, h=geo.h, RAD=geo.RAD;
       if(spinEl) spinEl.style.transform='rotate('+rot+'deg)';
-      for(var i=0;i<N;i++){ var el=logoEls[i], d=shortestDelta(i), ang=d*STEP, pos=pt2(cx,cy,ang,logoR,RAD), hide=(Math.abs(ang)<STEP*0.55)||(Math.abs(ang)>STEP*5.5); el.style.left=pos[0].toFixed(1)+'px'; el.style.top=pos[1].toFixed(1)+'px'; el.style.opacity=hide?'0':'1'; el.style.pointerEvents=hide?'none':'auto'; }
+      // Fast spins / big jumps snap logos straight into place (no left/top transition) so they never tween
+      // in a straight chord across the centre; isolated slow steps keep the smooth glide along the arc.
+      var fast = !!place._fast;
+      for(var i=0;i<N;i++){ var el=logoEls[i], d=shortestDelta(i), ang=d*STEP, pos=pt2(cx,cy,ang,logoR,RAD), hide=(Math.abs(ang)<STEP*0.55)||(Math.abs(ang)>STEP*5.5);
+        el.style.transition = (fast||hide) ? 'none' : '';
+        el.style.left=pos[0].toFixed(1)+'px'; el.style.top=pos[1].toFixed(1)+'px'; el.style.opacity=hide?'0':'1'; el.style.pointerEvents=hide?'none':'auto'; }
+      place._fast=false;
       var c=items[current], desc=c.desc||CATDESC[c.c]||'', lg=c.logo?'<img loading="lazy" decoding="async" src="'+c.logo+'" alt="'+c.n+'">':'<span class="wp-txt">'+c.n+'</span>';
       panelEl.innerHTML='<div class="wp-logo">'+lg+'</div><div class="wp-name">'+c.n+'</div><div class="wp-cat">'+(CATLABEL[c.c]||c.c)+'</div><div class="wp-desc">'+desc+'</div>';
       panelEl.style.top=(cy-selOuter+Math.max(14,h*0.02))+'px';
@@ -519,8 +525,8 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       hubEl.style.top=(cy-hubR+Math.max(16,hubR*0.12))+'px';
     }
     function render(){ drawWheel(); place(); }
-    function goTo(i){ if(i===current)return; rot-=shortestDelta(i)*STEP; current=i; place(); }
-    function move(n){ if(!N)return; rot-=n*STEP; current=((current+n)%N+N)%N; place(); }
+    function goTo(i){ if(i===current)return; place._fast=true; rot-=shortestDelta(i)*STEP; current=i; place(); }
+    function move(n){ if(!N)return; var now=(window.performance&&performance.now)?performance.now():Date.now(); place._fast=(now-(move._last||0))<200; move._last=now; rot-=n*STEP; current=((current+n)%N+N)%N; place(); }
     function setFilter(k){ items=(k==='all')?full:full.filter(function(c){return c.c===k;}); if(!items.length){items=full;k='all';} current=0; rot=0; N=items.length; buildLogos(); render(); [].forEach.call(filtersEl.children,function(b){b.classList.toggle('active',b.getAttribute('data-k')===k);}); }
     // The channel wheel is a drag-based desktop experience; disable it for mobile users.
     function isMobile(){ return window.matchMedia('(max-width:768px)').matches; }
