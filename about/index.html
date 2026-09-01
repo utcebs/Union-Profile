@@ -9,7 +9,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About Us — Union Trading Co.</title>
-<link rel="icon" type="image/png" href="uploads/union-trading-logo.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/favicon-192.png">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 <style>
 @font-face{font-family:'Manrope-fallback';src:local('Arial'),local('Helvetica Neue'),local('Helvetica');size-adjust:90.7%;ascent-override:99%;descent-override:27%;line-gap-override:0%}
 @font-face {
@@ -416,8 +420,8 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         if(v) v.addEventListener('ended', function(){ v.removeAttribute('controls'); if(o) o.style.display=''; });
         // "Watch ... Vision" CTA -> opens the popup player (modal lives at end of <body>, resolved at click time)
         function mel(){ return { vm:document.getElementById('vidModal'), mv:document.getElementById('vidModalVideo') }; }
-        function openVid(e){ if(e) e.preventDefault(); var m=mel(); if(!m.vm) return; m.vm.classList.add('open'); document.body.style.overflow='hidden'; if(m.mv){ try{ m.mv.currentTime=0; }catch(_){} var p=m.mv.play(); if(p&&p.catch) p.catch(function(){}); } }
-        function closeVid(){ var m=mel(); if(!m.vm) return; m.vm.classList.remove('open'); document.body.style.overflow=''; if(m.mv) m.mv.pause(); }
+        function openVid(e){ if(e) e.preventDefault(); var t=0; if(v){ t=v.currentTime||0; v.pause(); v.removeAttribute('controls'); if(o) o.style.display=''; } var m=mel(); if(!m.vm) return; m.vm.classList.add('open'); document.body.style.overflow='hidden'; if(m.mv){ try{ m.mv.currentTime=t; }catch(_){} var p=m.mv.play(); if(p&&p.catch) p.catch(function(){}); } }
+        function closeVid(){ var m=mel(); if(!m.vm) return; m.vm.classList.remove('open'); document.body.style.overflow=''; if(m.mv){ m.mv.pause(); if(v){ try{ v.currentTime=m.mv.currentTime||0; }catch(_){} } } }
         var w=document.getElementById('ceoWatch'); if(w) w.addEventListener('click', openVid);
         document.addEventListener('click', function(e){
           if(e.target.closest && e.target.closest('#vidClose')){ closeVid(); return; }

@@ -19,3 +19,6 @@ xtra6miles/
 
 # 506MB original CEO video source — kept local, never committed (GitHub 100MB limit)
 img/UTC.mp4
+
+# unoptimized source of the CEO poster (we ship img/JohnPlaceholder.webp)
+img/Placeholder New.png
