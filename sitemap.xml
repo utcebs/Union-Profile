@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Sitemap uses the production domain utc.com.kw. Update the domain if it changes. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://utc.com.kw/Home/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/About/</loc><changefreq>monthly</changefreq><priority>0.9</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Divisions/</loc><changefreq>monthly</changefreq><priority>0.9</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Union-Electronics/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Aluna/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Our-Stores/</loc><changefreq>monthly</changefreq><priority>0.9</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Our-Channels/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Careers/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Sitemap/</loc><changefreq>monthly</changefreq><priority>0.3</priority><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://utc.com.kw/Privacy-Policy/</loc><changefreq>yearly</changefreq><priority>0.3</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/home/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/about/</loc><changefreq>monthly</changefreq><priority>0.9</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/divisions/</loc><changefreq>monthly</changefreq><priority>0.9</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/union-electronics/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/aluna/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/fmcg/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/union-services/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/our-stores/</loc><changefreq>monthly</changefreq><priority>0.9</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/our-channels/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/sitemap/</loc><changefreq>monthly</changefreq><priority>0.3</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/privacy-policy/</loc><changefreq>yearly</changefreq><priority>0.3</priority><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://utc.com.kw/faq/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-08-31</lastmod></url>
+  <url><loc>https://utc.com.kw/whistleblower/</loc><changefreq>yearly</changefreq><priority>0.3</priority><lastmod>2026-08-31</lastmod></url>
 </urlset>

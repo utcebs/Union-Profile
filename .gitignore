@@ -16,3 +16,6 @@ img/Careers/Div/Hero brands sample/*.jpg
 img/Careers/Div/Hero brands sample/*.jpeg
 xtra6miles/
 *.xlsx
+
+# 506MB original CEO video source — kept local, never committed (GitHub 100MB limit)
+img/UTC.mp4

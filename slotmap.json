@@ -1,0 +1,182 @@
+{
+ "div-commercial": {
+  "file": "img/div-commercial.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "brand-3": {
+  "file": "img/brand-3.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "div-fmcg": {
+  "file": "img/div-fmcg.webp",
+  "s": 1,
+  "x": 21.83268108986192,
+  "y": 0
+ },
+ "div-elec": {
+  "file": "img/div-elec.webp",
+  "s": 1,
+  "x": 23.439415196042233,
+  "y": 0
+ },
+ "div-cosmetics": {
+  "file": "img/div-cosmetics.webp",
+  "s": 1,
+  "x": 30.906003101233107,
+  "y": 0
+ },
+ "div-fashion": {
+  "file": "img/div-fashion.webp",
+  "s": 1,
+  "x": 16.62787680392823,
+  "y": 0
+ },
+ "story-storefront": {
+  "file": "img/story-storefront.webp",
+  "s": 1,
+  "x": 0,
+  "y": 4.992871243693797
+ },
+ "div-health": {
+  "file": "img/div-health.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "hero-0": {
+  "file": null,
+  "s": 1,
+  "x": 3.056717518016711,
+  "y": 0
+ },
+ "hero-1": {
+  "file": null,
+  "s": 1,
+  "x": -30.92965181485933,
+  "y": 0
+ },
+ "hero-2": {
+  "file": null,
+  "s": 1,
+  "x": -33.60267183796595,
+  "y": 0
+ },
+ "hero-3": {
+  "file": null,
+  "s": 1.0055164276370518,
+  "x": -14.046506232933218,
+  "y": -0.2758213818525812
+ },
+ "testimonial-video": {
+  "file": "img/testimonial-video.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "ms-1949": {
+  "file": "img/ms-1949.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "ms-1958": {
+  "file": "img/ms-1958.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "ms-1966": {
+  "file": "img/ms-1966.webp",
+  "s": 1,
+  "x": 7.692307692307687,
+  "y": 0
+ },
+ "ms-1970": {
+  "file": "img/ms-1970.webp",
+  "s": 1,
+  "x": 7.692307692307687,
+  "y": 0
+ },
+ "ms-1969": {
+  "file": "img/ms-1969.webp",
+  "s": 1,
+  "x": 7.692307692307687,
+  "y": 0
+ },
+ "ms-1977": {
+  "file": "img/ms-1977.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "pimg-4": {
+  "file": "img/pimg-4.webp",
+  "s": 1,
+  "x": 3.907985046680551e-14,
+  "y": 0
+ },
+ "pbar-2": {
+  "file": null,
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "pimg-2": {
+  "file": "img/pimg-2.webp",
+  "s": 1,
+  "x": -26.518168060065534,
+  "y": 0
+ },
+ "pimg-1": {
+  "file": "img/pimg-1.webp",
+  "s": 1,
+  "x": -34.51123290086542,
+  "y": 0
+ },
+ "pimg-0": {
+  "file": "img/pimg-0.webp",
+  "s": 1,
+  "x": -41.9400813999618,
+  "y": 0
+ },
+ "pimg-3": {
+  "file": "img/pimg-3.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "pavatar-1": {
+  "file": "img/pavatar-1.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "pavatar-0": {
+  "file": "img/pavatar-0.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "pavatar-2": {
+  "file": "img/pavatar-2.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "pavatar-3": {
+  "file": "img/pavatar-3.webp",
+  "s": 1,
+  "x": 0,
+  "y": 0
+ },
+ "contact-1949": {
+  "file": null,
+  "s": 1.1285620564034569,
+  "x": -1.1788650194989039,
+  "y": -4.742335236790665
+ }
+}

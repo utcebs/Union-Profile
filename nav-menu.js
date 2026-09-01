@@ -7,35 +7,35 @@
   // page basename -> ordered [label, href] sections
   var MENUS = {
     'About': [
-      ['CEO Message', 'About/#ceo'],
-      ['Our Evolution', 'About/#evolution'],
-      ['Our Story', 'About/#story'],
-      ['Global Partners', 'About/#brands'],
-      ['Our People', 'About/#people']
+      ['CEO Message', 'about/#ceo'],
+      ['Our Evolution', 'about/#evolution'],
+      ['Our Story', 'about/#story'],
+      ['Global Partners', 'about/#brands'],
+      ['Our People', 'about/#people']
     ],
     'Divisions': [
-      ['Explore Divisions', 'Divisions/#explore'],
-      ['All Divisions', 'Divisions/#all-divisions'],
-      ['Union Electronics', 'Union-Electronics/'],
-      ['Aluna', 'Aluna/'],
-      ['FMCG', 'FMCG/'],
-      ['Labels', 'Divisions/#all-divisions'],
-      ['Union Services', 'Divisions/#all-divisions'],
-      ['Commercial Projects', 'Divisions/#all-divisions']
+      ['Explore Divisions', 'divisions/#explore'],
+      ['All Divisions', 'divisions/#all-divisions'],
+      ['Union Electronics', 'union-electronics/'],
+      ['Aluna', 'aluna/'],
+      ['FMCG', 'fmcg/'],
+      ['Labels', 'divisions/#all-divisions'],
+      ['Union Services', 'divisions/#all-divisions'],
+      ['Commercial Projects', 'divisions/#all-divisions']
     ],
     'Our-Stores': [
-      ['Explore Stores', 'Our-Stores/#stores'],
-      ['Our Journey', 'Our-Stores/#journey']
+      ['Explore Stores', 'our-stores/#stores'],
+      ['Our Journey', 'our-stores/#journey']
     ],
     'Our-Channels': [
-      ['Overview', 'Our-Channels/#overview'],
-      ['Channel Directory', 'Our-Channels/#directory']
+      ['Overview', 'our-channels/#overview'],
+      ['Channel Directory', 'our-channels/#directory']
     ]
   };
 
   function basename(href) {
     if (!href) return '';
-    // clean URLs are folders ("About/", "/Union-Profile/About/") -> drop trailing slash, take last segment
+    // clean URLs are folders ("about/", "/Union-Profile/About/") -> drop trailing slash, take last segment
     var h = href.split('#')[0].split('?')[0].replace(/\/+$/, '');
     var parts = h.split('/');
     return parts[parts.length - 1] || 'Home';
@@ -150,7 +150,7 @@
     }
 
     // footer "Careers" link -> same popup (careers.html isn't launched yet)
-    var footEls = document.querySelectorAll('footer a[href="Careers/"]');
+    var footEls = document.querySelectorAll('footer a[href="careers/"]');
     for (var j = 0; j < footEls.length; j++) {
       var fa = footEls[j];
       if (fa.dataset.careers) continue;
@@ -161,7 +161,7 @@
     // non-footer "careers.html" links (About "Join our team", sitemap pill) -> same popup.
     // (job.html keeps its own back-link.)
     if (basename(location.pathname) !== 'Job') {
-      var otherEls = document.querySelectorAll('a[href="Careers/"]');
+      var otherEls = document.querySelectorAll('a[href="careers/"]');
       for (var n = 0; n < otherEls.length; n++) {
         var oa = otherEls[n];
         if (oa.dataset.careers || oa.closest('footer')) continue;

@@ -117,11 +117,11 @@
   }
 
   const divData = [
-    { name: 'Union Electronics', href: 'Union-Electronics/', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Hitachi', 'Daikin', '+22 more'], slot: 'div-elec' },
-    { name: 'Aluna', href: 'Aluna/', logo: 'img/Div/aluna-logo.webp', cardLogo: 'img/Div/aluna-logo.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Triumph', 'Sloggi', '+12 more'], slot: 'div-cosmetics' },
-    { name: 'FMCG', soon: true, logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vileda', 'Cans', '+14 more'], slot: 'div-fmcg' },
+    { name: 'Union Electronics', href: 'union-electronics/', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Hitachi', 'Daikin', '+22 more'], slot: 'div-elec' },
+    { name: 'Aluna', href: 'aluna/', logo: 'img/Div/aluna-logo.webp', cardLogo: 'img/Div/aluna-logo.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Triumph', 'Sloggi', '+12 more'], slot: 'div-cosmetics' },
+    { name: 'FMCG', href: 'fmcg/', logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vileda', 'Cans', '+14 more'], slot: 'div-fmcg' },
     { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.webp', cardLogo: 'img/Div/labels-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion and cosmetics, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Palladio', 'Vero Moda', '+7 more'], slot: 'div-fashion' },
-    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: [], slot: 'div-health' },
+    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'Union Services is dedicated to providing reliable and professional after-sales and technical services to ensure our customers get the best performance and value from their products. From pre-installation (site survey), installation, startup, and preventive maintenance to troubleshooting and repairs, our experienced service teams are committed to delivering quality service and a smooth customer experience.', mgr: 'Available on request', contact: 'Chat with Us', brands: [], services: ['Air Conditioning, HVAC & VRF Systems', 'Home Appliances & Built-in Systems', 'Audio/Video & Electronics Systems', 'Site Survey & Technical Assessment', 'Installation, Start-Up & Commissioning', 'Preventive Maintenance & AMC', 'Corrective Maintenance, Troubleshooting & Repair', 'Product Replacement & Upgrading', 'Genuine Spare Parts & Technical Support', 'Water Solutions Services'], slot: 'div-health' },
     { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.webp', cardLogo: 'img/Div/commercial-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['Daikin', 'Hitachi', 'General'], slot: 'div-commercial' }
   ];
 
@@ -197,7 +197,7 @@
   const el = id => document.getElementById(id);
 
   // nav (About Us -> About page, Our Divisions -> divisions, Contact -> contact)
-  const NAV_HREF = { 'About Us': 'About/', 'Our Divisions': 'Divisions/', 'Our Stores': 'Our-Stores/', 'Our Channels': 'Our-Channels/', 'Contact': '#contact' };
+  const NAV_HREF = { 'About Us': 'about/', 'Our Divisions': 'divisions/', 'Our Stores': 'our-stores/', 'Our Channels': 'our-channels/', 'Careers': 'careers/', 'Contact': '#contact' };
   el('nav').innerHTML = NAV.map(l => NAV_SOON.indexOf(l) !== -1
     ? '<span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">' + l + '</span>'
     : '<a href="' + (NAV_HREF[l] || '#') + '" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">' + l + '</a>').join('');
@@ -282,7 +282,7 @@
   const officesEl = el('offices');
   if (officesEl) {
     officesEl.innerHTML = offices.map((o, i) => {
-      const href = o.store != null ? 'Our-Stores/?store=' + o.store : 'Our-Stores/';
+      const href = o.store != null ? 'our-stores/?store=' + o.store : 'our-stores/';
       const divider = i < offices.length - 1 ? 'border-bottom:1px solid #ece8de;' : '';
       return '<a class="office-card" href="' + href + '" style="display:flex;gap:14px;align-items:center;padding:8px 10px;text-decoration:none;color:inherit;border-radius:12px;' + divider + 'transition:background .25s">'
         + '<span style="width:56px;height:52px;flex-shrink:0;border-radius:10px;background:#eceae2 url(&quot;' + o.img + '&quot;) center/cover no-repeat"></span>'
@@ -291,7 +291,6 @@
         + '<div style="font-size:12px;color:#645f57;line-height:1.4;margin-bottom:5px">' + o.addr.join('<br>') + '</div>'
         + '<div style="display:flex;flex-wrap:wrap;gap:6px 18px">'
         + '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5c5951">' + officeIcon('<path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path>') + o.phone + '</span>'
-        + '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5c5951">' + officeIcon('<rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path>') + o.email + '</span>'
         + '</div>'
         + '</div>'
         + '<span class="office-arrow" style="width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid #ddd8cc;display:flex;align-items:center;justify-content:center;color:#161513;align-self:center;transition:background .25s,color .25s,border-color .25s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>'
@@ -348,9 +347,10 @@
     }
   }
 
-  const footHref = { 'Careers': 'Careers/', 'About UTC': 'About/', 'Sitemap': 'Sitemap/', 'Privacy Statement': 'Privacy-Policy/' };
-  el('footAbout').innerHTML = footAbout.map(l => l === 'FAQ'
-    ? '<span title="Coming soon" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">FAQ <span style="font-size:10px;letter-spacing:.1em;opacity:.8">· SOON</span></span>'
+  const footHref = { 'Careers': 'careers/', 'About UTC': 'about/', 'Sitemap': 'sitemap/', 'Privacy Statement': 'privacy-policy/', 'FAQ': 'faq/' };
+  const footSoon = ['Careers'];   // careers is an unfinished placeholder — keep it un-linked for now
+  el('footAbout').innerHTML = footAbout.map(l => footSoon.indexOf(l) !== -1
+    ? '<span title="Coming soon" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">' + l + ' <span style="font-size:10px;letter-spacing:.1em;opacity:.8">&middot; SOON</span></span>'
     : '<a href="' + (footHref[l] || '#') + '" style="color:#8f8c85;font-size:14px">' + l + '</a>').join('');
 
   // hero slides + dots
@@ -606,7 +606,14 @@
     }
     // featured brands
     const featLabel = el('divBrandsLabel');
-    if (d.brandsSoon) {
+    if (featLabel) featLabel.textContent = d.services ? 'FEATURED SERVICES' : 'FEATURED BRANDS';
+    // services division carries a longer description + a list — let its description size to content so the list/pill fit the fixed card
+    var _dd = el('divDesc'); if (_dd) _dd.style.height = d.services ? 'auto' : '200px';
+    if (d.services) {
+      if (featLabel) featLabel.style.display = '';
+      var sShown = d.services.slice(0, 2), sMore = d.services.length - sShown.length;
+      el('divBrands').innerHTML = '<div class="div-services" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%">' + sShown.map(function (s) { return '<div style="display:flex;gap:11px;align-items:center;font-size:14px;color:#5c594f;line-height:1.4"><span style="width:5px;height:5px;border-radius:50%;background:#161513;flex:none"></span><span>' + s + '</span></div>'; }).join('') + (sMore > 0 ? '<div style="align-self:flex-start;display:inline-flex;align-items:center;border:1px solid #d8d3c7;background:transparent;padding:9px 18px;border-radius:999px;margin-top:4px"><span style="font-family:\'Archivo\';font-weight:700;font-size:12px;letter-spacing:.03em;color:#57544c">+' + sMore + ' more services</span></div>' : '') + '</div>';
+    } else if (d.brandsSoon) {
       if (featLabel) featLabel.style.display = '';
       el('divBrands').innerHTML = '<div style="border:1px solid #d8d3c7;background:#fff;height:48px;min-width:120px;display:flex;align-items:center;justify-content:center;padding:0 22px;border-radius:12px"><span style="font-family:\'Archivo\';font-weight:600;font-size:13px;color:#a7a39a">Coming soon</span></div>';
     } else {
@@ -743,23 +750,21 @@
   // ── Contact-form routing ─────────────────────────────────────────────────
   // All enquiries are SENT FROM one central mailbox (the EmailJS-connected account),
   // and delivered TO the inbox chosen by the enquiry type — and, for partnerships,
-  // by the selected division. Fill in the real division-head addresses below.
-  // Testing phase: every route points to jerin@utc.com.kw so we can verify the live
-  // mechanism end-to-end. Replace each value with the real inbox when they're ready —
-  // the structure (per enquiry type / per division) is already correct.
+  // by the selected division. Multiple recipients = comma-separated (EmailJS To + mailto both accept it).
+  // PRODUCTION addresses (set 2026-08-30).
   const MAIL_ROUTES = {
-    general: 'jerin@utc.com.kw',                 // General Inquiry            (real: info@utc.com.kw)
-    support: 'jerin@utc.com.kw',                 // Product Support            (real: unionservices@utc.com.kw)
+    general: 'info@utc.com.kw',                  // General Inquiry
+    support: 'f.toufic@utc.com.kw',              // Product Support
     // Partnership Opportunity → the head of the selected division:
     divisions: {
-      'union-electronics': 'jerin@utc.com.kw',   // real: electronics@utc.com.kw
-      'aluna':             'thulasi@utc.com.kw', // Aluna partnership → Thulasi
-      'fmcg':              'jerin@utc.com.kw',   // real: fmcg@utc.com.kw
-      'labels':            'jerin@utc.com.kw',   // real: labels@utc.com.kw
-      'union-services':    'jerin@utc.com.kw',   // real: unionservices@utc.com.kw
-      'commercial':        'jerin@utc.com.kw'    // real: commercial@utc.com.kw
+      'union-electronics': 'm.hashem@utc.com.kw,mohamad.habbal@utc.com.kw',  // Electronics (both)
+      'aluna':             'c.elkhoury@utc.com.kw',
+      'fmcg':              'd.ahmed@utc.com.kw',
+      'labels':            'c.daou@utc.com.kw',
+      'union-services':    'f.toufic@utc.com.kw',
+      'commercial':        'r.imad@utc.com.kw'   // Commercial AC & Appliance Projects
     },
-    fallback: 'jerin@utc.com.kw'                 // partnership with no division picked, etc.
+    fallback: 'info@utc.com.kw'                  // partnership with no division picked, etc.
   };
   function routeTo(intent, divisionKey) {
     if (intent === 'partnership') return MAIL_ROUTES.divisions[divisionKey] || MAIL_ROUTES.fallback;
@@ -789,7 +794,7 @@
     _emailjsReady = new Promise((res, rej) => {
       if (window.emailjs) { try { emailjs.init({ publicKey: EMAILJS.publicKey }); } catch (e) {} return res(); }
       const s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+      s.src = 'emailjs.min.js';  // self-hosted (bundled) — no external CDN dependency
       s.onload = () => { try { emailjs.init({ publicKey: EMAILJS.publicKey }); } catch (e) {} res(); };
       s.onerror = rej;
       document.head.appendChild(s);
