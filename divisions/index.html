@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="description" content="Discover Union Trading Company's business divisions — Union Electronics, Aluna, FMCG, Labels, Union Services and Commercial Projects — delivering world-class brands across Kuwait.">
+<meta name="description" content="Discover Union Trading Company's business divisions — Union Electronics, Beauty &amp; Fashion, FMCG, Union Services and Union Engineering Company — delivering world-class brands across Kuwait.">
 <base href="../">
 <link rel="preload" as="image" href="img/div-elec.webp" fetchpriority="high">
 <script>/* <base> sends bare #links to site root; keep same-page anchors native */
 addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var h=a.getAttribute("href");if(h.length<2){e.preventDefault();scrollTo({top:0,behavior:"smooth"});return;}if(document.getElementById(h.slice(1))){e.preventDefault();location.hash=h;}});</script>
 
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Our Divisions — Union Trading Co.</title>
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -181,7 +182,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:74px}
-  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#141311;background:#f5f3ee;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#141311;background:#ede7d9;-webkit-font-smoothing:antialiased;overflow-x:clip}
   a{color:#141311;text-decoration:none}
   img{display:block;max-width:100%}
   input,button{font-family:inherit}
@@ -194,6 +195,15 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .crumb a{color:rgba(255,255,255,.55);transition:color .2s}.crumb a:hover{color:#fff}
   /* header nav + mobile hamburger */
   .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  /* news in the header */
+  .headact{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
+  .headact::before{content:"";width:1px;height:22px;background:rgba(255,255,255,.22);flex:0 0 auto}
+  .newslink{display:inline-flex;align-items:center;gap:7px;color:#bcb6a7;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:color .25s}
+  .newslink::after{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;transition:transform .25s}
+  .newslink:hover{color:#fff}
+  .newslink:hover::after{transform:scale(1.35)}
+  .newslink[aria-current="page"]{color:#fff}
+  /* /news in the header */
   .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
   .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
 
@@ -213,23 +223,51 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .dcta{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#0d0d0d;font-weight:700;font-size:14px;letter-spacing:.06em;padding:16px 30px;border-radius:999px;border:1px solid #fff;transition:background .25s ease,color .25s ease}
   .dcta:hover{background:transparent;color:#fff}
   .dcta.soon{background:rgba(255,255,255,.1);color:#b9b5ac;border-color:rgba(255,255,255,.22);pointer-events:none}
-  /* Aluna division — dusty-rose accent (only on the Aluna slide) */
-  .d-rule{display:block;width:56px;height:2px;border-radius:2px;background:rgba(255,255,255,.5);margin:22px 0 0}
-  .divred.acc-aluna .d-eyebrow{color:#d3a7a0}
-  .divred.acc-aluna .d-rule{background:#cf9f98}
-  .divred.acc-aluna .dcta{background:#c99a93;color:#241a18;border-color:#c99a93}
-  .divred.acc-aluna .dcta:hover{background:transparent;color:#e6c2bc;border-color:#cf9f98}
+  /* EACH DIVISION'S OWN COLOUR, set from the console.
+     Three things take it on a slide: the EXPLORE OUR line, the rule under the name, and the
+     button. This used to be Aluna's dusty rose alone, hard-written here and switched on by
+     comparing a division's NAME to the word "Aluna" — so no other division could have one,
+     and renaming Aluna would have lost hers. The colour now arrives with the division and
+     these three read it; with none set, the properties are unset and the white below stands. */
+  .d-rule{display:block;width:56px;height:2px;border-radius:2px;background:var(--acc-mid,rgba(255,255,255,.5));margin:22px 0 0}
+  .divred .d-eyebrow{color:var(--acc-soft,inherit)}
+  .divred .dcta{background:var(--acc,#fff);color:var(--acc-ink,#0d0d0d);border-color:var(--acc,#fff)}
+  .divred .dcta:hover{background:transparent;color:var(--acc-soft,#fff);border-color:var(--acc-mid,#fff)}
   .dcarousel{position:relative;display:flex;align-items:center;justify-content:center;min-height:440px}
   .dstage{position:relative;width:100%;height:420px;display:flex;align-items:center;justify-content:center}
-  .dcard{position:absolute;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .5s,background .5s;padding:26px;text-align:center}
+  /* Every card is built ONCE and only its place changes (active / prev / next / far), so the
+     browser can glide it from one place to the next. The old code rebuilt all three cards on
+     every turn, and a card that has just been made has no "before" to move from: they swapped. */
+  /* NO size change while moving: every card is always the full (active) size and the side ones are
+     only SCALED down. Animating width/height made the logo inside be measured and sized again on
+     every frame, snapping to whole pixels each time — that was the logo's shiver. A scale is drawn
+     as one picture, so the logo rides with its card. Sizes and gaps match the old layout:
+     the side size is still written down as it always was, on .dprobe (never seen); the script
+     measures it and turns it into the scale and the sideways shift (--sx/--sy/--tx), so at every
+     screen width a side card rests exactly where and as big as it used to. */
+  .dstage:not(.ready) .dcard{transition:none!important}   /* no slide into place while the page loads */
+  .dprobe{position:absolute;visibility:hidden;pointer-events:none;width:clamp(170px,15vw,230px);height:clamp(240px,26vw,310px)}
+  .dcard{position:absolute;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;
+    width:clamp(210px,19vw,280px);height:clamp(290px,32vw,370px);will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden;
+    transition:transform .65s cubic-bezier(.22,.7,.2,1),opacity .22s ease,background .5s,box-shadow .5s,border-color .5s}
+  /* the ones beyond prev and next wait out of sight on their own side, so the next one in slides in from there */
+  .dcard.far{opacity:0;pointer-events:none;z-index:1;border:1px solid transparent}
+  .dcard.far.l{transform:translateX(calc(var(--fx,280px) * -1)) scale(calc(var(--sx,.75) * .85),calc(var(--sy,.77) * .85))}
+  .dcard.far.r{transform:translateX(var(--fx,280px)) scale(calc(var(--sx,.75) * .85),calc(var(--sy,.77) * .85))}
+  @media(prefers-reduced-motion:reduce){.dcard{transition:opacity .2s}}
   .dcard .dcard-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;z-index:0}
   .dcard .dcard-scrim{position:absolute;inset:0;z-index:1;background:radial-gradient(125% 92% at 50% 44%,rgba(13,13,13,.52),rgba(13,13,13,.14) 58%,rgba(13,13,13,.04))}
   .dcard .dlogo-img,.dcard .dutc-img{position:relative;z-index:2}
   .dcard.imgcard{border:0!important;background:#0d0d0d}
-  .dcard.active{width:clamp(210px,19vw,280px);height:clamp(290px,32vw,370px);background:#0d0d0d;z-index:3;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.08)}
-  .dcard.side{width:clamp(170px,15vw,230px);height:clamp(240px,26vw,310px);background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.14);z-index:2;cursor:pointer;opacity:.9}
-  .dcard.prev{transform:translateX(-74%) scale(.95)}
-  .dcard.next{transform:translateX(74%) scale(.95)}
+  .dcard.active{background:#0d0d0d;z-index:3;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.16)}
+  .dcard.side{background:#0d0d0d;border:1px solid rgba(255,255,255,.14);z-index:2;cursor:pointer}
+  /* the cards behind are SOLID, only dimmed: a dark layer over the card, not see-through (they
+     were 90% opaque on a glassy tint, so the banner behind showed through the photo) */
+  .dcard::after{content:"";position:absolute;inset:0;z-index:3;background:#0d0d0d;opacity:0;pointer-events:none;border-radius:inherit;transition:opacity .5s ease}
+  .dcard.side::after,.dcard.far::after{opacity:.42}
+  .dcard.side:hover::after{opacity:.22}
+  .dcard.prev{transform:translateX(calc(var(--tx,150px) * -1)) scale(var(--sx,.75),var(--sy,.77))}
+  .dcard.next{transform:translateX(var(--tx,150px)) scale(var(--sx,.75),var(--sy,.77))}
   .dcard.side:hover{opacity:1}
   .dlogo{font-family:'Archivo';font-weight:800;font-size:clamp(16px,1.4vw,21px);line-height:1.15;letter-spacing:.01em;color:#fff}
   .dcard.side .dlogo{color:rgba(255,255,255,.82)}
@@ -248,7 +286,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 
   /* ===== All divisions grid ===== */
   .dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(18px,2vw,26px)}
-  .dg-card{background:#fff;border:1px solid #ece9e2;border-radius:22px;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;box-shadow:0 24px 60px -42px rgba(0,0,0,.35);transition:transform .3s ease,box-shadow .3s ease}
+  .dg-card{background:#fff;border:1px solid #d6cebd;border-radius:22px;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;box-shadow:0 24px 60px -42px rgba(0,0,0,.35);transition:transform .3s ease,box-shadow .3s ease}
   .dg-card:hover{transform:translateY(-5px);box-shadow:0 34px 70px -34px rgba(0,0,0,.4)}
   .dg-logo{height:96px;border-radius:14px;background:#0d0d0d;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px;margin-bottom:22px}
   .dg-logo span{font-family:'Archivo';font-weight:800;font-size:17px;color:#fff;letter-spacing:.01em;line-height:1.2}
@@ -275,8 +313,8 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .dcta{padding:13px 27px;font-size:13.5px}
     .dcarousel{margin-top:11px;min-height:0}
     .dstage{height:clamp(212px,57vw,266px)}
-    .dcard.active{width:clamp(154px,41vw,190px);height:clamp(212px,57vw,262px)}
-    .dcard.side{width:clamp(120px,32vw,150px);height:clamp(184px,50vw,224px)}
+    .dcard{width:clamp(154px,41vw,190px);height:clamp(212px,57vw,262px)}
+    .dprobe{width:clamp(120px,32vw,150px);height:clamp(184px,50vw,224px)}
     .ddots{padding-bottom:16px}
     .divcrumb{padding-top:clamp(16px,2.2vw,22px)}
     .divcrumb .crumb{justify-content:center}
@@ -285,11 +323,19 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .mainnav{display:none}
     header .shopnow{display:none}
     header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    /* news in the header */
+    header .headact{display:none}
+    header.nav-open .headact{display:flex;flex:0 0 100%;align-items:center;gap:20px;padding:0 2px 10px}
+    header.nav-open .headact::before{display:none}
+    /* /news in the header */
     header.nav-open .shopnow{display:inline-flex}
     header.nav-open .ico-bars{display:none}
     header.nav-open .ico-close{display:block}
   }
 </style>
+<!-- analytics -->
+<!-- test copy: analytics removed -->
+<!-- /analytics -->
 </head>
 <body>
 <div style="overflow-x:clip">
@@ -307,10 +353,10 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <a href="divisions/" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Divisions</a>
         <a href="our-stores/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
         <a href="our-channels/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
-        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
+        <a href="careers/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
         <a href="home/#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <div class="headact"><a href="news/" class="newslink">News</a><a href="home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a></div>
     </div>
   </header>
   <main>
@@ -322,9 +368,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     <div class="divcrumb"><div class="crumb"><a href="home/">Home</a><span>&rsaquo;</span><span style="color:#fff">Our Divisions</span></div></div>
     <div class="divwrap">
       <div class="dleft">
-        <div class="d-eyebrow">EXPLORE OUR DIVISIONS</div>
+        <div class="d-eyebrow"><!-- cms:block divisions.exploreOurDivisionsKicker -->EXPLORE OUR DIVISIONS<!-- /cms:block divisions.exploreOurDivisionsKicker --></div>
         <img decoding="async" fetchpriority="high" id="divNameLogo" class="dname-logo" src="img/Div/electronics-logo.webp" alt="Union Electronics">
-        <h2 class="dname" id="divName">UNION ELECTRONICS</h2>
+        <h2 class="dname" id="divName"><!-- cms:block divisions.exploreOurDivisionsTitle -->UNION ELECTRONICS<!-- /cms:block divisions.exploreOurDivisionsTitle --></h2>
         <div class="d-rule"></div>
         <p class="ddesc" id="divDesc"></p>
         <a class="dcta" id="divCta" href="#"><span>Discover</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
@@ -341,66 +387,71 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <!-- ============ ALL DIVISIONS GRID ============ -->
   <section id="all-divisions" class="wrap" style="padding-top:clamp(48px,6vw,84px);padding-bottom:clamp(48px,6vw,84px)">
     <div style="margin-bottom:clamp(24px,3vw,40px)">
-      <div class="eyebrow" style="margin-bottom:14px">SIX DIVISIONS. ONE VISION.</div>
-      <h2 style="font-family:'Archivo';font-weight:500;font-size:clamp(28px,3.4vw,44px);margin:0;color:#161513;letter-spacing:-0.01em">A diverse portfolio, built on trust.</h2>
-      <p style="color:#6d6a62;font-size:16px;line-height:1.6;margin:14px 0 0;max-width:560px">From consumer electronics to healthcare, fashion, and climate control — each division brings the best of tomorrow to Kuwait today.</p>
+      <div class="eyebrow" style="margin-bottom:14px"><!-- cms:divisionscount -->
+FIVE DIVISIONS. ONE VISION.
+<!-- /cms:divisionscount --></div>
+      <h2 style="font-family:'Archivo';font-weight:500;font-size:clamp(28px,3.4vw,44px);margin:0;color:#161513;letter-spacing:-0.01em"><!-- cms:block divisions.sixDivisionsOneVisionTitle -->A diverse portfolio, built on trust.<!-- /cms:block divisions.sixDivisionsOneVisionTitle --></h2>
+      <p style="color:#6d6a62;font-size:16px;line-height:1.6;margin:14px 0 0;max-width:560px"><!-- cms:block divisions.sixDivisionsOneVisionLine -->From consumer electronics to healthcare, fashion, and climate control — each division brings the best of tomorrow to Kuwait today.<!-- /cms:block divisions.sixDivisionsOneVisionLine --></p>
     </div>
     <div class="dgrid" id="dGrid"></div>
   </section>
 
   <!-- ============ FOOTER ============ -->
   </main>
+<!-- cms:footer -->
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
         <img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block;margin-bottom:22px">
-        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px">Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.</p>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px"><!-- cms:block footer.blurb -->Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.<!-- /cms:block footer.blurb --></p>
         <div style="display:flex;gap:12px">
-          
           <a href="https://www.instagram.com/unionelectronics.kw/" target="_blank" rel="noopener" class="sociallink" aria-label="Instagram" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path></svg></a>
           <a href="https://www.facebook.com/unionelectronicskw" target="_blank" rel="noopener" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
           <a href="https://www.linkedin.com/company/union-trading-company-kuwait/" target="_blank" rel="noopener" class="sociallink" aria-label="LinkedIn" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path></svg></a>
-          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
+          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&amp;_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
           <a href="https://youtube.com/@unionelectronicskw?si=DtCur73sViKpsxy3" target="_blank" rel="noopener" class="sociallink" aria-label="YouTube" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4a2.5 2.5 0 00-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"></path></svg></a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">About</div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.aboutHeading -->About<!-- /cms:block footer.aboutHeading --></div>
         <div style="display:flex;flex-direction:column;gap:13px">
           <a href="about/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">About UTC</a>
           <a href="faq/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">FAQ</a>
-          <span title="Coming soon" class="footlink" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">Careers <span style="font-size:10px;letter-spacing:.1em;opacity:.8">&middot; SOON</span></span>
+          <a href="careers/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Careers</a>
           <a href="sitemap/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
           <a href="privacy-policy/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Store Locations</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0">Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Al Jawhara, Shuwaikh &amp; Jahra</p>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.storesHeading -->Where to find us<!-- /cms:block footer.storesHeading --></div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0"><!-- cms:block footer.storesLine -->Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Shuwaikh &amp; Jahra<!-- /cms:block footer.storesLine --></p>
       </div>
       <div>
         <div class="foot-divs" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch">
+<!-- cms:footdivs -->
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/electronics-logo.webp" alt="Union Electronics" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/aluna-logo.webp" alt="Aluna" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/fmcg-logo.webp" alt="FMCG" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/labels-logo.webp" alt="Labels" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Commercial Projects" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Union Engineering Company" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;grid-column:1/-1;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/beauty-fashion-wordmark.webp" alt="Beauty &amp; Fashion" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+<!-- /cms:footdivs -->
         </div>
       </div>
     </div>
-    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
+    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center"><!-- cms:block footer.copyright -->&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.<!-- /cms:block footer.copyright --></div>
   </footer>
+<!-- /cms:footer -->
 </div>
 
 <script>
   var DIV=[
-    {name:'Union Electronics Retail & Wholesale', short:'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href:'union-electronics.html', logo:'img/Div/electronics-logo.webp', cardImg:'img/Card%20images/Union%20Electronics.webp', banner:'img/div-elec.webp', img:'img/div-elec.webp'},
-    {name:'Aluna', short:'Internationally acclaimed cosmetics and fragrances. Luxury, elegance, and confidence in every detail.', href:'aluna.html', logo:'img/Div/aluna-logo.webp', cardImg:'img/Card%20images/Aluna.webp', banner:'img/aluna-band.webp', img:'img/div-cosmetics.webp'},
-    {name:'FMCG', short:'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href:'fmcg/', logo:'img/Div/fmcg-logo.webp', cardImg:'img/Card%20images/FMCG.webp', banner:'img/div-fmcg.webp', img:'img/div-fmcg.webp'},
-    {name:'Labels', short:'Premium fashion, cosmetics, and lifestyle brands with timeless, everyday style.', href:'', soon:true, logo:'img/Div/labels-logo.webp', cardImg:'img/Card%20images/Labels.webp', banner:'img/div-fashion.webp', img:'img/div-fashion.webp'},
-    {name:'Union Services', short:'World class VRV and HVAC-R solutions for professionals across Kuwait.', href:'', soon:true, logo:'img/Div/services-logo.webp', logoBig:true, cardImg:'img/Card%20images/Service.webp', banner:'img/div-health.webp', img:'img/div-health.webp'},
-    {name:'Commercial AC and Home Appliance Projects', logoName:'Commercial Projects', short:'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href:'', soon:true, logo:'img/Div/commercial-logo.webp', cardImg:'img/Card%20images/CAC.webp', banner:'img/Div%20BGs/CACimg.webp', img:'img/div-commercial.webp'}
+/* cms:divisionspage */
+    { name: 'Union Electronics Retail & Wholesale', short: 'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', href: 'union-electronics/', logo: 'img/Div/electronics-logo.webp', cardImg: 'img/Card%20images/Union%20Electronics.webp', banner: 'img/div-elec.webp', img: 'img/div-elec.webp' },
+    { name: 'Beauty & Fashion', short: 'Apparel, nightwear, fragrance and cosmetics. Sold to retailers, and direct through Labels, Aluna and Vero Moda.', href: 'fashion-beauty/', logo: 'img/Div/beauty-fashion-wordmark.webp', cardImg: 'uploads/images/divisions/fashion-beauty/fashion-beauty-card-8f6b63b1.webp', banner: 'uploads/images/divisions/fashion-beauty/fashion-beauty-banner-15b16ba6.webp', img: 'uploads/images/divisions/fashion-beauty/fashion-beauty-banner-15b16ba6.webp' },
+    { name: 'FMCG', short: 'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', href: 'fmcg/', logo: 'img/Div/fmcg-logo.webp', cardImg: 'img/Card%20images/FMCG.webp', banner: 'img/div-fmcg.webp', img: 'img/div-fmcg.webp' },
+    { name: 'Union Services', short: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', href: 'union-services/', logo: 'img/Div/services-logo.webp', logoBig: true, cardImg: 'img/Card%20images/Service.webp', banner: 'img/div-health.webp', img: 'img/div-health.webp' },
+    { name: 'Union Engineering Company', logoName: 'Union Engineering Company', short: 'Powerful, efficient climate control — led by our own line, General Air Conditioners.', href: 'union-engineering/', logo: 'img/Div/commercial-logo.webp', cardImg: 'img/Card%20images/CAC.webp', banner: 'img/Div%20BGs/CACimg.webp', img: 'img/Div%20BGs/CACimg.webp' },
+/* /cms:divisionspage */
   ];
   var stage=document.getElementById('divStage'), nameEl=document.getElementById('divName'),
       descEl=document.getElementById('divDesc'), cta=document.getElementById('divCta'), dots=document.getElementById('divDots'),
@@ -444,30 +495,99 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     nameLogo.alt=d.name; nameLogo.src=d.logo;
     if(nameLogo.complete && nameLogo.naturalWidth>0){ nameLogo.style.display='block'; nameEl.style.display='none'; }
   }
+  // THE DIVISION'S COLOUR, AND THE TWO LIGHTER SHADES OF IT.
+  //
+  // One colour is set in the console; the rule and the eyebrow are that colour mixed towards
+  // white, which is what Aluna's three hand-picked shades already were (#c99a93, #cf9f98,
+  // #d3a7a0). Asking somebody for three tints of one colour is asking them to do arithmetic
+  // the page can do, and to keep three values in step for ever after.
+  function accRgb(hex){
+    var h=String(hex||'').trim().replace('#','');
+    if(h.length===3) h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    if(!/^[0-9a-fA-F]{6}$/.test(h)) return null;
+    return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];
+  }
+  // LIGHTER, NOT PALER. Mixing a colour towards white raises its lightness and drops its
+  // saturation with it, which came out chalky beside the photograph. Aluna's three shades are
+  // one colour at three lightnesses — same hue, same saturation, 2.2 and 4.5 points apart —
+  // so that is the arithmetic: convert, raise the lightness, convert back.
+  function accLighter(c,points){
+    var r=c[0]/255,g=c[1]/255,b=c[2]/255;
+    var mx=Math.max(r,g,b),mn=Math.min(r,g,b),l=(mx+mn)/2,d=mx-mn;
+    var sat=d===0?0:d/(1-Math.abs(2*l-1));
+    var h=0;
+    if(d){ if(mx===r)h=60*(((g-b)/d)%6); else if(mx===g)h=60*((b-r)/d+2); else h=60*((r-g)/d+4); }
+    if(h<0)h+=360;
+    l=Math.max(0,Math.min(0.97,l+points/100));
+    var C=(1-Math.abs(2*l-1))*sat, X=C*(1-Math.abs((h/60)%2-1)), m=l-C/2, t;
+    if(h<60)t=[C,X,0]; else if(h<120)t=[X,C,0]; else if(h<180)t=[0,C,X];
+    else if(h<240)t=[0,X,C]; else if(h<300)t=[X,0,C]; else t=[C,0,X];
+    return '#'+t.map(function(v){ return ('0'+Math.round((v+m)*255).toString(16)).slice(-2); }).join('');
+  }
+  function setAccent(hex){
+    if(!explore) return;
+    var c=accRgb(hex);
+    // No colour, or something that is not one: clear the properties and the white below stands.
+    if(!c){ ['--acc','--acc-mid','--acc-soft','--acc-ink'].forEach(function(k){ explore.style.removeProperty(k); }); return; }
+    explore.style.setProperty('--acc', accLighter(c,0));
+    explore.style.setProperty('--acc-mid', accLighter(c,2.2));
+    explore.style.setProperty('--acc-soft', accLighter(c,4.5));
+    // black letters on a light colour, white on a dark one, so the button is readable either way
+    explore.style.setProperty('--acc-ink', (0.2126*c[0]+0.7152*c[1]+0.0722*c[2])>150 ? '#241a18' : '#ffffff');
+  }
+
   function render(){
     var prev=(idx-1+N)%N, next=(idx+1)%N, d=DIV[idx];
     setBanner(d.banner, d.img);
     nameEl.textContent=d.name.toUpperCase();
     setNameLogo(d);
     descEl.textContent=d.short;
-    if(explore) explore.classList.toggle('acc-aluna', d.name==='Aluna');
+    setAccent(d.accent);
     if(d.soon){ cta.classList.add('soon'); cta.removeAttribute('href'); cta.querySelector('span').textContent='Coming soon'; }
     else{ cta.classList.remove('soon'); cta.setAttribute('href', d.href || '#'); cta.querySelector('span').textContent='Discover'; }
-    var ic=function(x){return x.cardImg?' imgcard':'';};
-    stage.innerHTML=
-      '<div class="dcard side prev'+ic(DIV[prev])+'" data-go="'+prev+'">'+logo(DIV[prev])+'</div>'+
-      '<div class="dcard active'+ic(d)+'">'+logo(d)+'</div>'+
-      '<div class="dcard side next'+ic(DIV[next])+'" data-go="'+next+'">'+logo(DIV[next])+'</div>';
-    logoFallback(stage);
-    Array.prototype.forEach.call(stage.querySelectorAll('[data-go]'),function(c){ c.onclick=function(){ go(+c.dataset.go); }; });
+    // move the cards, never rebuild them: each takes its place from how far it is from the chosen one
+    cards.forEach(function(c,i){
+      var o=i-idx; if(o>N/2) o-=N; if(o<-N/2) o+=N;
+      var place = o===0 ? 'active' : o===-1 ? 'side prev' : o===1 ? 'side next' : 'far '+(o<0?'l':'r');
+      c.className='dcard '+place+(DIV[i].cardImg?' imgcard':'');
+      if(o===-1||o===1) c.setAttribute('data-go',i); else c.removeAttribute('data-go');
+    });
     Array.prototype.forEach.call(dots.children,function(b,i){ b.className=i===idx?'on':''; });
   }
+  var cards=DIV.map(function(d,i){
+    var c=document.createElement('div'); c.innerHTML=logo(d);
+    c.onclick=function(){ if(i!==idx) go(i); };
+    stage.appendChild(c); return c;
+  });
+  logoFallback(stage);
+  // the side size, as it always was (old: side card, shifted 74% of its width, scaled .95;
+  // the hidden ones 140% out at .85 of that), turned into numbers the full-size cards use
+  var probe=document.createElement('div'); probe.className='dprobe'; probe.setAttribute('aria-hidden','true'); stage.appendChild(probe);
+  function fitCards(){
+    var aw=cards[0].offsetWidth, ah=cards[0].offsetHeight, pw=probe.offsetWidth, ph=probe.offsetHeight;
+    if(!aw||!ah||!pw) return;
+    stage.style.setProperty('--sx',(pw*.95/aw).toFixed(4));
+    stage.style.setProperty('--sy',(ph*.95/ah).toFixed(4));
+    stage.style.setProperty('--tx',(pw*.74).toFixed(1)+'px');
+    stage.style.setProperty('--fx',(pw*1.4).toFixed(1)+'px');
+    if(!stage.classList.contains('ready')) requestAnimationFrame(function(){ requestAnimationFrame(function(){ stage.classList.add('ready'); }); });
+  }
+  // measured whenever the stage changes size — including its first real size, which it does not
+  // have yet while this script runs (measuring only now left the fallback numbers in place)
+  fitCards(); window.addEventListener('resize',fitCards); window.addEventListener('load',fitCards);
+  if(window.ResizeObserver) new ResizeObserver(fitCards).observe(stage);
   function go(i){ idx=((i%N)+N)%N; render(); restart(); }
   function restart(){ clearInterval(timer); timer=setInterval(function(){ go(idx+1); },7000); }
   DIV.forEach(function(_,i){ var b=document.createElement('button'); b.setAttribute('aria-label','Division '+(i+1)); b.onclick=function(){ go(i); }; dots.appendChild(b); });
   document.getElementById('divPrev').onclick=function(){ go(idx-1); };
   document.getElementById('divNext').onclick=function(){ go(idx+1); };
   render(); restart();
+  // a sideways swipe on a touch screen turns the carousel too (up/down still scrolls the page)
+  (function(){ var x0=0,y0=0,on=false; stage.style.touchAction='pan-y';
+    stage.addEventListener('touchstart',function(ev){ var p=ev.changedTouches[0]; if(!p)return; x0=p.clientX; y0=p.clientY; on=true; },{passive:true});
+    stage.addEventListener('touchend',function(ev){ if(!on)return; on=false; var p=ev.changedTouches[0]; if(!p)return;
+      var dx=p.clientX-x0, dy=p.clientY-y0; if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.3) go(idx+(dx<0?1:-1)); },{passive:true});
+  })();
 
   // all-divisions grid
   document.getElementById('dGrid').innerHTML = DIV.map(function(d){
@@ -483,12 +603,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     if(!h||!t) return;
     function set(o){ h.classList.toggle('nav-open',o); t.setAttribute('aria-expanded',o?'true':'false'); t.setAttribute('aria-label',o?'Close menu':'Open menu'); }
     t.addEventListener('click',function(e){ e.stopPropagation(); set(!h.classList.contains('nav-open')); });
-    h.addEventListener('click',function(e){ if(e.target.closest('.mainnav a')||e.target.closest('.shopnow')) set(false); });
+    h.addEventListener('click',function(e){ if(e.target.closest('.mainnav a')||e.target.closest('.shopnow')||e.target.closest('.newslink')) set(false); });
     document.addEventListener('click',function(e){ if(h.classList.contains('nav-open') && !e.target.closest('header')) set(false); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
     window.addEventListener('resize',function(){ if(window.innerWidth>860) set(false); });
   })();
 </script>
 <script defer src="nav-menu.js"></script>
+<script defer src="announcements.js"></script>
 </body>
 </html>

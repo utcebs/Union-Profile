@@ -7,12 +7,15 @@
 addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var h=a.getAttribute("href");if(h.length<2){e.preventDefault();scrollTo({top:0,behavior:"smooth"});return;}if(document.getElementById(h.slice(1))){e.preventDefault();location.hash=h;}});</script>
 
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About Us — Union Trading Co.</title>
 <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/favicon/favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/favicon-512.png">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 <style>
 @font-face{font-family:'Manrope-fallback';src:local('Arial'),local('Helvetica Neue'),local('Helvetica');size-adjust:90.7%;ascent-override:99%;descent-override:27%;line-gap-override:0%}
@@ -180,7 +183,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:74px}
-  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#141311;background:#f5f3ee;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#141311;background:#ede7d9;-webkit-font-smoothing:antialiased;overflow-x:clip}
   a{color:#141311;text-decoration:none}
   img{display:block;max-width:100%}
   input,button{font-family:inherit}
@@ -196,13 +199,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .btn-dark:hover{gap:15px;background:#2a2824}
   .btn-light{display:inline-flex;align-items:center;gap:11px;background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:14px 26px;border-radius:999px;transition:gap .25s,background .3s,color .3s}
   .btn-light:hover{gap:15px;background:#fff;color:#0d0d0d}
-  .becard{background:#fff;border:1px solid #e7e2d7;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+  .becard{background:#fff;border:1px solid #d6cebd;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
   .becard:hover{transform:translateY(-5px);box-shadow:0 24px 44px -30px rgba(0,0,0,.35)}
   .be-show{position:relative;height:clamp(96px,10vw,128px);background:#e5e1d8;flex:none}
   .be-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
   .be-slide.on{opacity:1}
   .be-body{padding:18px 18px 20px;flex:1}
-  .diffcard{background:#fff;border:1px solid #ece7db;border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+  .diffcard{background:#fff;border:1px solid #d6cebd;border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s}
   .diffcard:hover{transform:translateY(-5px);box-shadow:0 24px 44px -30px rgba(0,0,0,.35)}
   .legacy-card{flex:0 0 clamp(220px,24vw,266px);position:relative;border-radius:10px;overflow:hidden;height:clamp(280px,30vw,340px)}
   .peoplecard{flex:0 0 clamp(300px,32vw,380px);border-radius:10px;overflow:hidden;height:clamp(200px,21vw,250px);position:relative}
@@ -266,11 +269,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .bm-tabs::-webkit-scrollbar{display:none}
   .bm-tab{border:1px solid #3a372f;background:transparent;color:#cfc9bb;font-size:12.5px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;flex:none}
   .bm-tab:hover{color:#fff;border-color:#5f594d}
-  .bm-tab.active{background:#f4efe4;color:#161311;border-color:#f4efe4}
+  .bm-tab.active{background:#f4efe4;color:#161311;border-color:#d6cebd}
   .bm-cnt{opacity:.55;margin-left:5px;font-weight:700}
   .bm-body{flex:1 1 auto;min-height:0;overflow-y:auto;padding:clamp(16px,2.2vw,22px) clamp(20px,2.6vw,30px) clamp(22px,2.8vw,30px);border-top:1px solid #262218}
   .bm-well{background:#f4efe4;border-radius:16px;padding:clamp(22px,2.8vw,34px) clamp(18px,2.4vw,30px)}
-  .bm-group + .bm-group{margin-top:clamp(24px,2.8vw,32px);padding-top:clamp(24px,2.8vw,32px);border-top:1px solid #e4ddca}
+  .bm-group + .bm-group{margin-top:clamp(24px,2.8vw,32px);padding-top:clamp(24px,2.8vw,32px);border-top:1px solid #d6cebd}
   .bm-group-t{font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.12em;color:#9a9078;text-transform:uppercase;margin-bottom:16px}
   .bm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:clamp(22px,2.6vw,32px) clamp(14px,1.8vw,22px);align-items:center}
   .bm-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px}
@@ -300,13 +303,25 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .pl-marquee{overflow:hidden;min-width:0}
     .partners-grid{min-width:0}
     .partners-grid>*{min-width:0}
-    .partner-logos{display:flex!important;grid-template-columns:none!important;width:max-content;gap:0;animation:plMarquee 26s linear infinite}
-    .partner-logos:hover{animation-play-state:paused}
+    .partner-logos{display:flex!important;grid-template-columns:none!important;width:max-content;gap:0;will-change:transform}
     .partner-logos>.p-logo{flex:0 0 auto!important;width:132px;height:80px}
     .partner-logos>.p-logo::after{display:block!important}
     .pl-clone{display:flex!important}
   }
+  /* on a wide screen the partner logos are a still grid: no grab hand (18 Nov 2026) */
+  @media (min-width:769px){
+    .pl-marquee{cursor:auto!important}
+  }
   .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  /* news in the header */
+  .headact{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
+  .headact::before{content:"";width:1px;height:22px;background:rgba(255,255,255,.22);flex:0 0 auto}
+  .newslink{display:inline-flex;align-items:center;gap:7px;color:#bcb6a7;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:color .25s}
+  .newslink::after{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;transition:transform .25s}
+  .newslink:hover{color:#fff}
+  .newslink:hover::after{transform:scale(1.35)}
+  .newslink[aria-current="page"]{color:#fff}
+  /* /news in the header */
   .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
   .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
   @media(max-width:900px){
@@ -315,6 +330,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .mainnav{display:none}
     header .shopnow{display:none}
     header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    /* news in the header */
+    header .headact{display:none}
+    header.nav-open .headact{display:flex;flex:0 0 100%;align-items:center;gap:20px;padding:0 2px 10px}
+    header.nav-open .headact::before{display:none}
+    /* /news in the header */
     header.nav-open .shopnow{display:inline-flex}
     header.nav-open .ico-bars{display:none}
     header.nav-open .ico-close{display:block}
@@ -322,12 +342,12 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   /* CEO video popup player (mirrors the Careers page) */
   .vid-modal{position:fixed;inset:0;z-index:1003;display:none;align-items:center;justify-content:center;background:rgba(6,6,6,.9);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:clamp(16px,3vw,54px)}
   .vid-modal.open{display:flex}
-  .vid-card{position:relative;width:min(820px,92vw);max-height:90vh;background:#100f0e;border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden;box-shadow:0 40px 110px -30px rgba(0,0,0,.8)}
+  .vid-card{position:relative;width:min(820px,92vw);max-height:90vh;background:#100f0e;border:1px solid rgba(255,255,255,.16);border-radius:18px;overflow:hidden;box-shadow:0 40px 110px -30px rgba(0,0,0,.8)}
   .vid-media{position:relative;aspect-ratio:16/9;background:#000}
   .vid-media video{width:100%;height:100%;display:block;object-fit:cover}
   .vid-close{position:absolute;top:13px;right:13px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.22);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:.2s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   .vid-close:hover{background:rgba(0,0,0,.72);transform:rotate(90deg)}
-  .vid-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 18px;background:#0c0b0b;border-top:1px solid rgba(255,255,255,.06)}
+  .vid-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 18px;background:#0c0b0b;border-top:1px solid rgba(255,255,255,.16)}
   .vid-eyebrow{font-size:10px;letter-spacing:.22em;color:#8f8b81;font-weight:600}
   .vid-title{font-family:'Playfair Display',serif;color:#f3efe6;font-size:16px;margin-top:3px;line-height:1}
   .vid-fs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.12em;padding:9px 16px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
@@ -350,10 +370,10 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <a href="divisions/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
         <a href="our-stores/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
         <a href="our-channels/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
-        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
+        <a href="careers/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
         <a href="home/#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <div class="headact"><a href="news/" class="newslink">News</a><a href="home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a></div>
     </div>
   </header>
   <main>
@@ -366,16 +386,16 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     <div class="wrap" style="padding-top:clamp(28px,3.4vw,44px);padding-bottom:clamp(40px,5vw,64px)">
       <div class="ceo-grid" style="display:grid;grid-template-columns:0.82fr 1.45fr;gap:clamp(24px,3vw,48px);align-items:center">
         <div>
-          <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px">Our Vision</div>
-          <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,4vw,54px);line-height:1.05;margin:0">A Message<br>From Our CEO</h1>
+          <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px"><!-- cms:block about.ourVisionKicker -->Our Vision<!-- /cms:block about.ourVisionKicker --></div>
+          <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,4vw,54px);line-height:1.05;margin:0"><!-- cms:block about.ourVisionTitle -->A Message<br>From Our CEO<!-- /cms:block about.ourVisionTitle --></h1>
           <div style="font-family:'Cormorant Garamond',serif;color:#8f8b81;font-size:44px;line-height:0;height:20px;margin-top:26px">&ldquo;</div>
-          <p style="color:#c8c4bb;font-size:16px;line-height:1.7;margin:10px 0 0;max-width:400px">The best way to predict the future, is to create it.</p>
+          <p style="color:#c8c4bb;font-size:16px;line-height:1.7;margin:10px 0 0;max-width:400px"><!-- cms:block about.ourVisionLine -->The best way to predict the future, is to create it.<!-- /cms:block about.ourVisionLine --></p>
           <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:#c2c5cc;margin-top:26px">John Knight</div>
           <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:15px;margin-top:10px">Mr. John Knight</div>
           <div style="color:#8b8880;font-size:13px;margin-top:3px">Chief Executive Officer</div>
           <a href="#" id="ceoWatch" style="display:inline-flex;align-items:center;gap:14px;border:1px solid #2f2d29;border-radius:999px;padding:9px 9px 9px 9px;margin-top:26px;cursor:pointer">
             <span style="width:40px;height:40px;border-radius:50%;background:#c2c5cc;display:flex;align-items:center;justify-content:center;color:#161513;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-            <span style="color:#e7e4dd;font-size:13px;font-weight:600">Watch Mr. John Knight's Vision</span>
+            <span style="color:#e7e4dd;font-size:13px;font-weight:600">Watch Our Vision</span>
             <span style="color:#8b8880;font-size:12px;padding-right:16px">03:01 min</span>
           </a>
           <div id="ceoLang" style="color:#8b8880;font-size:12.5px;margin-top:16px">Available in English</div>
@@ -401,19 +421,60 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         //   2) VIDEO_SRC = '<path to the video>'   e.g. 'img/ceo-message.mp4'
         //   3) add <source src="<same path>" type="video/mp4"> inside #vidModalVideo (popup player)
         // Everything then plays exactly as designed (inline play + popup player).
+        /* cms:ceo-video */
+        var VIDEO_MODE = 'video';
         var HAS_VIDEO = true;
-        var VIDEO_SRC = 'uploads/ceo-message.mp4';
-        var v=document.getElementById('ceoVideo'), o=document.getElementById('ceoOverlay');
-        if(!HAS_VIDEO){
-          var ph=document.getElementById('ceoPoster'), wa=document.getElementById('ceoWatch'), la=document.getElementById('ceoLang');
-          if(ph) ph.style.display='block';   // show the static placeholder image
-          if(v) v.style.display='none';      // hide the (source-less) video
-          if(o) o.style.display='none';      // hide the big play-button overlay
-          if(wa) wa.style.display='none';    // hide the "Watch ... Vision" button
-          if(la) la.style.display='none';    // hide "Available in English"
-          return;
-        }
-        if(v && VIDEO_SRC){ v.src = VIDEO_SRC; }
+        var VIDEO_SRC = 'uploads/videos/about/Iftar-fe82d576.mp4';
+        var VIDEO_POSTER = 'img/JohnPlaceholder.webp';
+/* /cms:ceo-video */
+          var v=document.getElementById('ceoVideo'), o=document.getElementById('ceoOverlay');
+          var mode = (typeof VIDEO_MODE === 'string' && VIDEO_MODE)
+            ? VIDEO_MODE
+            : (HAS_VIDEO && VIDEO_SRC ? 'video' : 'still');
+          if (mode === 'video' && !VIDEO_SRC) mode = 'still';
+
+          if (mode !== 'video') {
+            // STILL, or COMING SOON. Both show the picture instead of the film and offer
+            // nothing to press; only the veil tells them apart.
+            var ph=document.getElementById('ceoPoster'), wa=document.getElementById('ceoWatch'), la=document.getElementById('ceoLang');
+            if(ph){ ph.style.display='block'; if(VIDEO_POSTER) ph.setAttribute('src', VIDEO_POSTER); }
+            if(v) v.style.display='none';      // hide the (source-less) video
+            if(o) o.style.display='none';      // hide the big play-button overlay
+            if(wa) wa.style.display='none';    // hide the "Watch ... Vision" button
+            if(la) la.style.display='none';    // hide "Available in English"
+
+            if (mode === 'soon') {
+              // The same treatment the Careers page gives a section that is not ready: the
+              // picture blurred behind a "Coming soon" badge. Built here rather than written
+              // into the markup, so the page carries no veil until one is asked for.
+              var box = ph && ph.parentNode;
+              if (box) {
+                box.style.position = box.style.position || 'relative';
+                if (ph) { ph.style.filter = 'blur(6px)'; ph.style.webkitFilter = 'blur(6px)'; }
+                if (!box.querySelector('.ceo-soon')) {
+                  var veil = document.createElement('div');
+                  veil.className = 'ceo-soon';
+                  veil.setAttribute('style',
+                    'position:absolute;inset:0;z-index:6;display:flex;align-items:center;' +
+                    'justify-content:center;text-align:center;padding:22px');
+                  veil.innerHTML =
+                    '<span style="font-family:\'Archivo\',sans-serif;font-size:11.5px;font-weight:800;' +
+                    'letter-spacing:.18em;text-transform:uppercase;color:#161513;' +
+                    'background:rgba(255,255,255,.94);border:1px solid #d6cebd;' +
+                    'border-radius:999px;padding:9px 20px;' +
+                    'box-shadow:0 12px 32px -16px rgba(0,0,0,.55)">Coming soon</span>';
+                  box.appendChild(veil);
+                }
+              }
+            }
+            return;
+          }
+          if(v && VIDEO_SRC){ v.src = VIDEO_SRC; }
+        if(v && VIDEO_POSTER){ v.setAttribute('poster', VIDEO_POSTER); }
+        (function(){ var ph=document.getElementById('ceoPoster'); if(ph && VIDEO_POSTER) ph.src = VIDEO_POSTER;
+          var mv=document.getElementById('vidModalVideo');
+          if(mv){ if(VIDEO_POSTER) mv.setAttribute('poster', VIDEO_POSTER);
+                  if(VIDEO_SRC) mv.innerHTML = '<source src="' + VIDEO_SRC + '" type="video/mp4">'; } })();
         // Play button ON the video -> plays inline, in place (preload="none" keeps page load light)
         function playInline(){ if(!v) return; if(o) o.style.display='none'; v.setAttribute('controls',''); var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
         if(o) o.addEventListener('click', playInline);
@@ -437,9 +498,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <div id="evolution" class="wrap" style="padding-top:clamp(46px,6vw,80px);padding-bottom:clamp(46px,6vw,80px)">
     <div class="becoming-grid" style="display:grid;grid-template-columns:0.85fr 2fr;gap:clamp(28px,3.4vw,54px);align-items:center">
       <div>
-        <div class="eyebrow" style="margin-bottom:16px">Who We Are Today</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.08;margin:0;color:#161513">Our<br>Evolution</h2>
-        <p style="color:#6f6c65;font-size:14.5px;line-height:1.75;margin:20px 0 26px;max-width:300px">We are evolving to meet the demands of tomorrow while staying true to the values that have defined us for generations.</p>
+        <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block about.whoWeAreTodayKicker -->Who We Are Today<!-- /cms:block about.whoWeAreTodayKicker --></div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.08;margin:0;color:#161513"><!-- cms:block about.whoWeAreTodayTitle -->Our<br>Evolution<!-- /cms:block about.whoWeAreTodayTitle --></h2>
+        <p style="color:#6f6c65;font-size:14.5px;line-height:1.75;margin:20px 0 26px;max-width:300px"><!-- cms:block about.whoWeAreTodayLine -->We are evolving to meet the demands of tomorrow while staying true to the values that have defined us for generations.<!-- /cms:block about.whoWeAreTodayLine --></p>
         <a href="home/#story" class="btn-dark">EXPLORE OUR JOURNEY <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="be-cards" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:stretch;gap:clamp(8px,1vw,14px)">
@@ -503,8 +564,8 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <div class="wrap" style="padding-top:clamp(46px,6vw,80px);padding-bottom:clamp(18px,2.2vw,30px)">
     <div class="diff-grid" style="display:grid;grid-template-columns:0.85fr 2fr;gap:clamp(28px,3.4vw,54px);align-items:center">
       <div>
-        <div class="eyebrow" style="margin-bottom:16px">The UTC Difference</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.1;margin:0;color:#161513">More than distribution.<br>A true partnership.</h2>
+        <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block about.theUtcDifferenceKicker -->The UTC Difference<!-- /cms:block about.theUtcDifferenceKicker --></div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.1;margin:0;color:#161513"><!-- cms:block about.theUtcDifferenceTitle -->More than distribution.<br>A true partnership.<!-- /cms:block about.theUtcDifferenceTitle --></h2>
       </div>
       <div class="diff-cards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px)">
         <div class="diffcard">
@@ -552,9 +613,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     <div class="wrap" style="padding:clamp(44px,5.5vw,72px) clamp(20px,5vw,64px)">
       <div class="legacy-grid" style="display:grid;grid-template-columns:0.7fr 2.1fr;gap:clamp(28px,3.4vw,50px);align-items:center">
         <div>
-          <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px">Our Legacy</div>
-          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.05;margin:0">75 Years of<br>Hard Work,<br>Trust and<br>Togetherness.</h2>
-          <p style="color:#a8a49b;font-size:14px;line-height:1.7;margin:20px 0 26px;max-width:280px">From our humble beginnings to becoming Kuwait's most trusted name in electronics.</p>
+          <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px"><!-- cms:block about.ourLegacyKicker -->Our Legacy<!-- /cms:block about.ourLegacyKicker --></div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.05;margin:0"><!-- cms:block about.ourLegacyTitle -->75 Years of<br>Hard Work,<br>Trust and<br>Togetherness.<!-- /cms:block about.ourLegacyTitle --></h2>
+          <p style="color:#a8a49b;font-size:14px;line-height:1.7;margin:20px 0 26px;max-width:280px"><!-- cms:block about.ourLegacyLine -->From our humble beginnings to becoming Kuwait's most trusted name in electronics.<!-- /cms:block about.ourLegacyLine --></p>
           <a href="home/#milestones" class="btn-light">EXPLORE OUR MILESTONES <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div style="position:relative;overflow:hidden;margin-right:calc(50% - 50vw)">
@@ -574,35 +635,35 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <div class="wrap" style="padding-top:clamp(46px,6vw,80px);padding-bottom:clamp(46px,6vw,80px)">
     <div class="evo-grid" style="display:grid;grid-template-columns:0.7fr 2.1fr;gap:clamp(28px,3.4vw,54px);align-items:center">
       <div>
-        <div class="eyebrow" style="margin-bottom:16px">Our Evolution</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.1;margin:0;color:#161513">Always Evolving.<br>Always Ahead.</h2>
+        <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block about.ourEvolutionKicker -->Our Evolution<!-- /cms:block about.ourEvolutionKicker --></div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.1;margin:0;color:#161513"><!-- cms:block about.ourEvolutionTitle -->Always Evolving.<br>Always Ahead.<!-- /cms:block about.ourEvolutionTitle --></h2>
       </div>
       <div style="position:relative">
         <div class="evo-line" style="position:absolute;top:34px;left:8%;right:8%;height:1px;background:repeating-linear-gradient(90deg,#cfcbc0 0 6px,transparent 6px 12px)"></div>
         <div class="evo-fill" id="evoFill"></div>
         <div class="evo-steps" style="position:relative;z-index:2;display:flex;justify-content:space-between;gap:14px">
           <div class="evo-step" data-i="0" style="flex:1;text-align:center;max-width:180px">
-            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #e6e1d6;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/><path d="M2 3h2.5l2.2 12h11l1.8-8H6"/></svg></div>
+            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #d6cebd;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/><path d="M2 3h2.5l2.2 12h11l1.8-8H6"/></svg></div>
             <div class="evo-title" style="font-family:'Archivo';font-weight:700;font-size:14px;color:#161513">Electronics Retailer</div>
             <p style="color:#67645d;font-size:12px;line-height:1.5;margin:8px 0 0">Serving customers with the best products.</p>
           </div>
           <div class="evo-step" data-i="1" style="flex:1;text-align:center;max-width:180px">
-            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #e6e1d6;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.4"/><rect x="14" y="3" width="7" height="7" rx="1.4"/><rect x="3" y="14" width="7" height="7" rx="1.4"/><rect x="14" y="14" width="7" height="7" rx="1.4"/></svg></div>
+            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #d6cebd;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.4"/><rect x="14" y="3" width="7" height="7" rx="1.4"/><rect x="3" y="14" width="7" height="7" rx="1.4"/><rect x="14" y="14" width="7" height="7" rx="1.4"/></svg></div>
             <div class="evo-title" style="font-family:'Archivo';font-weight:700;font-size:14px;color:#161513">Multi-Division Company</div>
             <p style="color:#67645d;font-size:12px;line-height:1.5;margin:8px 0 0">Expanding into FMCG, Fashion, Healthcare and more.</p>
           </div>
           <div class="evo-step" data-i="2" style="flex:1;text-align:center;max-width:180px">
-            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #e6e1d6;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a3 3 0 016 0v2"/></svg></div>
+            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #d6cebd;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a3 3 0 016 0v2"/></svg></div>
             <div class="evo-title" style="font-family:'Archivo';font-weight:700;font-size:14px;color:#161513">Enterprise Solutions</div>
             <p style="color:#67645d;font-size:12px;line-height:1.5;margin:8px 0 0">Delivering business solutions and value-added services.</p>
           </div>
           <div class="evo-step" data-i="3" style="flex:1;text-align:center;max-width:180px">
-            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #e6e1d6;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></div>
+            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #d6cebd;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></div>
             <div class="evo-title" style="font-family:'Archivo';font-weight:700;font-size:14px;color:#161513">Digital Transformation</div>
             <p style="color:#67645d;font-size:12px;line-height:1.5;margin:8px 0 0">Investing in technology and digital capabilities.</p>
           </div>
           <div class="evo-step" data-i="4" style="flex:1;text-align:center;max-width:180px">
-            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #e6e1d6;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 1 5 4 5 8 0 2-1 4-2 5l-3 2-3-2c-1-1-2-3-2-5 0-4 2-7 5-8z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 16l-2 4M15 16l2 4"/></svg></div>
+            <div class="evo-ic" style="width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid #d6cebd;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#57544c"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 1 5 4 5 8 0 2-1 4-2 5l-3 2-3-2c-1-1-2-3-2-5 0-4 2-7 5-8z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 16l-2 4M15 16l2 4"/></svg></div>
             <div class="evo-title" style="font-family:'Archivo';font-weight:700;font-size:14px;color:#161513">Building Tomorrow</div>
             <p style="color:#67645d;font-size:12px;line-height:1.5;margin:8px 0 0">Creating the future of retail and experiences.</p>
           </div>
@@ -616,8 +677,8 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     <div class="wrap" style="padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)">
       <div class="partners-grid" style="display:grid;grid-template-columns:0.85fr 2fr;gap:clamp(28px,3.4vw,54px);align-items:center">
         <div>
-          <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px">Our Global Partners</div>
-          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.6vw,34px);line-height:1.15;margin:0 0 24px">Proud to partner<br>with the world's<br>leading brands.</h2>
+          <div class="eyebrow" style="color:#c2c5cc;margin-bottom:16px"><!-- cms:block about.ourGlobalPartnersKicker -->Our Global Partners<!-- /cms:block about.ourGlobalPartnersKicker --></div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.6vw,34px);line-height:1.15;margin:0 0 24px"><!-- cms:block about.ourGlobalPartnersTitle -->Proud to partner<br>with the world's<br>leading brands.<!-- /cms:block about.ourGlobalPartnersTitle --></h2>
           <a href="union-electronics/" id="viewAllBrands" class="btn-light">VIEW ALL BRANDS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="partner-logos" style="display:grid;grid-template-columns:repeat(6,1fr)">
@@ -642,9 +703,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <div id="people" class="wrap" style="padding-top:clamp(44px,5.5vw,72px);padding-bottom:clamp(44px,5.5vw,72px)">
     <div class="people-grid" style="display:grid;grid-template-columns:0.7fr 2.1fr;gap:clamp(28px,3.4vw,50px);align-items:center">
       <div>
-        <div class="eyebrow" style="margin-bottom:16px">Our People &amp; Culture</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.1;margin:0;color:#161513">Our people.<br>Our greatest<br>strength.</h2>
-        <p style="color:#6f6c65;font-size:14px;line-height:1.7;margin:18px 0 24px;max-width:260px">A culture of passion, collaboration and continuous growth.</p>
+        <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block about.ourPeopleCultureKicker -->Our People &amp; Culture<!-- /cms:block about.ourPeopleCultureKicker --></div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.1;margin:0;color:#161513"><!-- cms:block about.ourPeopleCultureTitle -->Our people.<br>Our greatest<br>strength.<!-- /cms:block about.ourPeopleCultureTitle --></h2>
+        <p style="color:#6f6c65;font-size:14px;line-height:1.7;margin:18px 0 24px;max-width:260px"><!-- cms:block about.ourPeopleCultureLine -->A culture of passion, collaboration and continuous growth.<!-- /cms:block about.ourPeopleCultureLine --></p>
         <a href="careers/" class="btn-dark">JOIN OUR TEAM <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div style="position:relative;overflow:hidden;margin-right:calc(50% - 50vw)">
@@ -684,47 +745,49 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 
   <!-- ============ FOOTER ============ -->
   </main>
+<!-- cms:footer -->
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
         <img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block;margin-bottom:22px">
-        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px">Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.</p>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px"><!-- cms:block footer.blurb -->Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.<!-- /cms:block footer.blurb --></p>
         <div style="display:flex;gap:12px">
-          
           <a href="https://www.instagram.com/unionelectronics.kw/" target="_blank" rel="noopener" class="sociallink" aria-label="Instagram" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path></svg></a>
           <a href="https://www.facebook.com/unionelectronicskw" target="_blank" rel="noopener" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
           <a href="https://www.linkedin.com/company/union-trading-company-kuwait/" target="_blank" rel="noopener" class="sociallink" aria-label="LinkedIn" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path></svg></a>
-          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
+          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&amp;_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
           <a href="https://youtube.com/@unionelectronicskw?si=DtCur73sViKpsxy3" target="_blank" rel="noopener" class="sociallink" aria-label="YouTube" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4a2.5 2.5 0 00-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"></path></svg></a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">About</div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.aboutHeading -->About<!-- /cms:block footer.aboutHeading --></div>
         <div style="display:flex;flex-direction:column;gap:13px">
-          <a href="about/" class="footlink" style="color:#fff;font-size:14px;transition:color .2s">About UTC</a>
+          <a href="about/" class="footlink" aria-current="page" style="color:#fff;font-size:14px;transition:color .2s">About UTC</a>
           <a href="faq/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">FAQ</a>
-          <span title="Coming soon" class="footlink" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">Careers <span style="font-size:10px;letter-spacing:.1em;opacity:.8">&middot; SOON</span></span>
+          <a href="careers/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Careers</a>
           <a href="sitemap/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
           <a href="privacy-policy/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Store Locations</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0">Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Al Jawhara, Shuwaikh &amp; Jahra</p>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.storesHeading -->Where to find us<!-- /cms:block footer.storesHeading --></div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0"><!-- cms:block footer.storesLine -->Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Shuwaikh &amp; Jahra<!-- /cms:block footer.storesLine --></p>
       </div>
       <div>
         <div class="foot-divs" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch">
+<!-- cms:footdivs -->
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/electronics-logo.webp" alt="Union Electronics" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/aluna-logo.webp" alt="Aluna" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/fmcg-logo.webp" alt="FMCG" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/labels-logo.webp" alt="Labels" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Commercial Projects" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Union Engineering Company" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;grid-column:1/-1;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/beauty-fashion-wordmark.webp" alt="Beauty &amp; Fashion" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+<!-- /cms:footdivs -->
         </div>
       </div>
     </div>
-    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
+    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center"><!-- cms:block footer.copyright -->&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.<!-- /cms:block footer.copyright --></div>
   </footer>
+<!-- /cms:footer -->
 </div>
 
 <script>
@@ -782,6 +845,39 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     var wrap=document.createElement('div'); wrap.className='pl-marquee';
     pl.parentNode.insertBefore(wrap, pl); wrap.appendChild(pl);
     [].slice.call(pl.children).forEach(function(node){ var cl=node.cloneNode(true); cl.classList.add('pl-clone'); cl.setAttribute('aria-hidden','true'); pl.appendChild(cl); });
+    // moved from script (it was a CSS loop, which a finger can't take hold of); same pace, one
+    // full set every 26 s, only on a phone, where the logos are a strip and not a grid
+    var mq=window.matchMedia('(max-width:768px)'), pos=0, period=0, paused=false, last=0;
+    function measure(){ period=mq.matches ? pl.scrollWidth/2 : 0; if(!period){ pos=0; pl.style.transform=''; } }
+    measure(); window.addEventListener('resize',measure); window.addEventListener('load',measure);
+    wrap.addEventListener('pointerenter',function(e){ if(e.pointerType==='mouse') paused=true; });
+    wrap.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse') paused=false; });
+    var held=false;
+    window.marqDrag=window.marqDrag||function(wrap,get,set,hold){ // drag a self-moving strip by touch
+      // Touch events, not pointer events: iPhone Safari stops sending pointer moves after the first
+      // drag on an element that is moving under the finger, so the second drag did nothing.
+      wrap.style.touchAction='pan-y';
+      var d=null, moved=false, t=0;
+      wrap.addEventListener('touchstart',function(e){ if(e.touches.length!==1){ d=null; return; } var p=e.touches[0]; d={x:p.clientX,y:p.clientY,p:get(),on:false}; moved=false; },{passive:true});
+      wrap.addEventListener('touchmove',function(e){ if(!d)return; var p=e.touches[0], dx=p.clientX-d.x, dy=p.clientY-d.y;
+        if(!d.on){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; if(Math.abs(dy)>Math.abs(dx)){ d=null; return; } d.on=true; moved=true; clearTimeout(t); hold(true); }
+        if(e.cancelable) e.preventDefault();
+        set(d.p,dx); },{passive:false});
+      function end(){ if(!d)return; var was=d.on; d=null; if(was){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+      wrap.addEventListener('touchend',end); wrap.addEventListener('touchcancel',end);
+      // MOUSE, too (18 Nov 2026): click and drag the strip the way a finger can. A drag starts only after
+      // the mouse moves a few pixels, so a plain click still opens a card; the strip waits, then carries on.
+      wrap.style.cursor='grab';
+      wrap.addEventListener('dragstart',function(e){ e.preventDefault(); });
+      wrap.addEventListener('mousedown',function(e){ if(e.button!==0)return; var m={x:e.clientX,p:get(),on:false}; moved=false;
+        function mv(ev){ var dx=ev.clientX-m.x; if(!m.on){ if(Math.abs(dx)<5)return; m.on=true; moved=true; clearTimeout(t); hold(true); wrap.style.cursor='grabbing'; document.documentElement.style.userSelect='none'; } set(m.p,dx); }
+        function up(){ window.removeEventListener('mousemove',mv); window.removeEventListener('mouseup',up); wrap.style.cursor='grab'; document.documentElement.style.userSelect=''; if(m.on){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+        window.addEventListener('mousemove',mv); window.addEventListener('mouseup',up); });
+      wrap.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+    };
+    marqDrag(wrap,function(){return pos;},function(p0,dx){ if(!period) return; pos=p0-dx; if(period>0){ pos%=period; if(pos<0)pos+=period; } pl.style.transform='translateX('+(-pos)+'px)'; },function(h){held=h;});
+    function step(ts){ if(!last)last=ts; var dt=ts-last; last=ts; if(!paused && !held && period>0){ pos+=dt*(period/26)/1000; if(pos>=period) pos-=period; pl.style.transform='translateX('+(-pos)+'px)'; } requestAnimationFrame(step); }
+    requestAnimationFrame(step);
   })();
   // Our People & Culture: never-ending leftward marquee via transform (clipped at the left edge, pause on hover)
   (function(){
@@ -798,10 +894,34 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     originals.forEach(function(k){ rail.appendChild(k.cloneNode(true)); });
     measure(); window.addEventListener('resize',measure);
     var paused=false, pos=0;
-    rail.addEventListener('mouseenter',function(){paused=true;});
-    rail.addEventListener('mouseleave',function(){paused=false;});
+    rail.addEventListener('pointerenter',function(e){ if(e.pointerType==='mouse') paused=true; });
+    rail.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse') paused=false; });
+    var held=false;
+    window.marqDrag=window.marqDrag||function(wrap,get,set,hold){ // drag a self-moving strip by touch
+      // Touch events, not pointer events: iPhone Safari stops sending pointer moves after the first
+      // drag on an element that is moving under the finger, so the second drag did nothing.
+      wrap.style.touchAction='pan-y';
+      var d=null, moved=false, t=0;
+      wrap.addEventListener('touchstart',function(e){ if(e.touches.length!==1){ d=null; return; } var p=e.touches[0]; d={x:p.clientX,y:p.clientY,p:get(),on:false}; moved=false; },{passive:true});
+      wrap.addEventListener('touchmove',function(e){ if(!d)return; var p=e.touches[0], dx=p.clientX-d.x, dy=p.clientY-d.y;
+        if(!d.on){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; if(Math.abs(dy)>Math.abs(dx)){ d=null; return; } d.on=true; moved=true; clearTimeout(t); hold(true); }
+        if(e.cancelable) e.preventDefault();
+        set(d.p,dx); },{passive:false});
+      function end(){ if(!d)return; var was=d.on; d=null; if(was){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+      wrap.addEventListener('touchend',end); wrap.addEventListener('touchcancel',end);
+      // MOUSE, too (18 Nov 2026): click and drag the strip the way a finger can. A drag starts only after
+      // the mouse moves a few pixels, so a plain click still opens a card; the strip waits, then carries on.
+      wrap.style.cursor='grab';
+      wrap.addEventListener('dragstart',function(e){ e.preventDefault(); });
+      wrap.addEventListener('mousedown',function(e){ if(e.button!==0)return; var m={x:e.clientX,p:get(),on:false}; moved=false;
+        function mv(ev){ var dx=ev.clientX-m.x; if(!m.on){ if(Math.abs(dx)<5)return; m.on=true; moved=true; clearTimeout(t); hold(true); wrap.style.cursor='grabbing'; document.documentElement.style.userSelect='none'; } set(m.p,dx); }
+        function up(){ window.removeEventListener('mousemove',mv); window.removeEventListener('mouseup',up); wrap.style.cursor='grab'; document.documentElement.style.userSelect=''; if(m.on){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+        window.addEventListener('mousemove',mv); window.addEventListener('mouseup',up); });
+      wrap.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+    };
+    marqDrag(rail.parentElement,function(){return pos;},function(p0,dx){ pos=p0-dx; if(period>0){ pos%=period; if(pos<0)pos+=period; } rail.style.transform='translateX('+(-pos)+'px)'; },function(h){held=h;});
     function step(){
-      if(!paused && period>0){ pos+=0.7; if(pos>=period) pos-=period; rail.style.transform='translateX('+(-pos)+'px)'; }
+      if(!paused && !held && period>0){ pos+=0.7; if(pos>=period) pos-=period; rail.style.transform='translateX('+(-pos)+'px)'; }
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -820,10 +940,34 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     originals.forEach(function(k){ rail.appendChild(k.cloneNode(true)); });
     measure(); window.addEventListener('resize',measure);
     var paused=false, pos=0;
-    rail.addEventListener('mouseenter',function(){paused=true;});
-    rail.addEventListener('mouseleave',function(){paused=false;});
+    rail.addEventListener('pointerenter',function(e){ if(e.pointerType==='mouse') paused=true; });
+    rail.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse') paused=false; });
+    var held=false;
+    window.marqDrag=window.marqDrag||function(wrap,get,set,hold){ // drag a self-moving strip by touch
+      // Touch events, not pointer events: iPhone Safari stops sending pointer moves after the first
+      // drag on an element that is moving under the finger, so the second drag did nothing.
+      wrap.style.touchAction='pan-y';
+      var d=null, moved=false, t=0;
+      wrap.addEventListener('touchstart',function(e){ if(e.touches.length!==1){ d=null; return; } var p=e.touches[0]; d={x:p.clientX,y:p.clientY,p:get(),on:false}; moved=false; },{passive:true});
+      wrap.addEventListener('touchmove',function(e){ if(!d)return; var p=e.touches[0], dx=p.clientX-d.x, dy=p.clientY-d.y;
+        if(!d.on){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; if(Math.abs(dy)>Math.abs(dx)){ d=null; return; } d.on=true; moved=true; clearTimeout(t); hold(true); }
+        if(e.cancelable) e.preventDefault();
+        set(d.p,dx); },{passive:false});
+      function end(){ if(!d)return; var was=d.on; d=null; if(was){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+      wrap.addEventListener('touchend',end); wrap.addEventListener('touchcancel',end);
+      // MOUSE, too (18 Nov 2026): click and drag the strip the way a finger can. A drag starts only after
+      // the mouse moves a few pixels, so a plain click still opens a card; the strip waits, then carries on.
+      wrap.style.cursor='grab';
+      wrap.addEventListener('dragstart',function(e){ e.preventDefault(); });
+      wrap.addEventListener('mousedown',function(e){ if(e.button!==0)return; var m={x:e.clientX,p:get(),on:false}; moved=false;
+        function mv(ev){ var dx=ev.clientX-m.x; if(!m.on){ if(Math.abs(dx)<5)return; m.on=true; moved=true; clearTimeout(t); hold(true); wrap.style.cursor='grabbing'; document.documentElement.style.userSelect='none'; } set(m.p,dx); }
+        function up(){ window.removeEventListener('mousemove',mv); window.removeEventListener('mouseup',up); wrap.style.cursor='grab'; document.documentElement.style.userSelect=''; if(m.on){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+        window.addEventListener('mousemove',mv); window.addEventListener('mouseup',up); });
+      wrap.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+    };
+    marqDrag(rail.parentElement,function(){return pos;},function(p0,dx){ pos=p0-dx; if(period>0){ pos%=period; if(pos<0)pos+=period; } rail.style.transform='translateX('+(-pos)+'px)'; },function(h){held=h;});
     function step(){
-      if(!paused && period>0){ pos+=0.7; if(pos>=period) pos-=period; rail.style.transform='translateX('+(-pos)+'px)'; }
+      if(!paused && !held && period>0){ pos+=0.7; if(pos>=period) pos-=period; rail.style.transform='translateX('+(-pos)+'px)'; }
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -863,7 +1007,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   initAboutCarousel(document.querySelector('.diff-cards'), '.diffcard');
   initAboutCarousel(document.querySelector('.stat-row'), ':scope > *');   // KPIs: dots + auto-advance so it reads as swipeable
 </script>
-<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
+<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow')||e.target.closest('.newslink'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 <style>
   .ps-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
   .ps-slide.is-active{opacity:1}
@@ -895,7 +1039,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <button class="bm-close" data-bmclose aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div class="bm-eyebrow">Our Global Partners</div>
       <h2 class="bm-title">The brands we represent</h2>
-      <p class="bm-sub">A portfolio of world-class names we proudly distribute across electronics, lifestyle, FMCG and fashion.</p>
+      <p class="bm-sub">A portfolio of world-class names we proudly distribute across electronics, fashion and beauty, and FMCG.</p>
     </div>
     <div class="bm-tabs" id="bmTabs"></div>
     <div class="bm-body" id="bmBody"></div>
@@ -904,10 +1048,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 <script>
 (function(){
   var ALLBRANDS = {
-    "Electronics": [{"n":"Black & Decker","f":"img/brands-all/electronics/bandd.webp"},{"n":"Belkin","f":"img/brands-all/electronics/belkin.webp"},{"n":"Canton","f":"img/brands-all/electronics/canton.webp"},{"n":"Cecotec","f":"img/brands-all/electronics/cecotec.webp"},{"n":"Changhong","f":"img/brands-all/electronics/changhong.webp"},{"n":"Chigo","f":"img/brands-all/electronics/chigo.webp"},{"n":"Daikin","f":"img/brands-all/electronics/daikin.webp"},{"n":"Fakir","f":"img/brands-all/electronics/fakir.webp"},{"n":"Galanz","f":"img/brands-all/electronics/galanz.webp"},{"n":"General","f":"img/brands-all/electronics/general.webp"},{"n":"Glemgas","f":"img/brands-all/electronics/glemgas.webp"},{"n":"Havic","f":"img/brands-all/electronics/havic.webp"},{"n":"Hifuture","f":"img/brands-all/electronics/hifuture.webp"},{"n":"Hitachi","f":"img/brands-all/electronics/hitachi.webp"},{"n":"Konka","f":"img/brands-all/electronics/konka.webp"},{"n":"Morphy Richards","f":"img/brands-all/electronics/morphy.webp"},{"n":"Naim & Focal","f":"img/brands-all/electronics/naim-and-focal.webp"},{"n":"Proove","f":"img/brands-all/electronics/proove.webp"},{"n":"ROWA","f":"img/brands-all/electronics/rowa.webp"},{"n":"Startec","f":"img/brands-all/electronics/startec.webp"},{"n":"TCL","f":"img/brands-all/electronics/tcl.webp"},{"n":"Vestel","f":"img/brands-all/electronics/vestel.webp"},{"n":"Westpoint","f":"img/brands-all/electronics/westpoint.webp"},{"n":"Yuwell","f":"img/brands-all/electronics/yuwell.webp"}],
-    "Aluna": [{"n":"Bali","f":"img/brands-all/aluna/bali.webp"},{"n":"C. Lingerie","f":"img/brands-all/aluna/c-lengerie.webp"},{"n":"Caha Capo","f":"img/brands-all/aluna/caha-capo.webp"},{"n":"Carole Hochman","f":"img/brands-all/aluna/carole-hochman.webp"},{"n":"Cupid","f":"img/brands-all/aluna/cupid.webp"},{"n":"Eileen West","f":"img/brands-all/aluna/eileen-west.webp"},{"n":"G World","f":"img/brands-all/aluna/g-world.webp"},{"n":"Hanes","f":"img/brands-all/aluna/hanes.webp"},{"n":"Ivory","f":"img/brands-all/aluna/ivory.webp"},{"n":"Leg Avenue","f":"img/brands-all/aluna/leg-avenue.webp"},{"n":"Maidenform","f":"img/brands-all/aluna/maidenform.webp"},{"n":"Mapale","f":"img/brands-all/aluna/mapale.webp"},{"n":"Naomi & Nicole","f":"img/brands-all/aluna/naomi-and-nicole.webp"},{"n":"Sloggi","f":"img/brands-all/aluna/sloggi.webp"},{"n":"Triumph","f":"img/brands-all/aluna/triumph.webp"}],
-    "FMCG": [{"n":"CANS","f":"img/brands-all/fmcg/cans.webp"},{"n":"Snips","f":"img/brands-all/fmcg/snips.webp"},{"n":"Afia Tuna","f":"img/brands-all/fmcg/afia.webp"},{"n":"Glysolid","f":"img/brands-all/fmcg/glysolid.webp"},{"n":"Vileda","f":"img/brands-all/fmcg/vileda.webp"},{"n":"Lactovit","f":"img/brands-all/fmcg/lactovit.webp"},{"n":"Space Walkers","f":"img/brands-all/fmcg/space-walkers.webp"},{"n":"Yupo","f":"img/brands-all/fmcg/yupo.webp"},{"n":"Royal Mirage","f":"img/brands-all/fmcg/royal-mirage.webp"},{"n":"Yardley","f":"img/brands-all/fmcg/yardley.webp"},{"n":"Prestige","f":"img/brands-all/fmcg/prestige.webp"},{"n":"Eternal Love","f":"img/brands-all/fmcg/eternal-love.webp"},{"n":"Color Me","f":"img/brands-all/fmcg/color-me.webp"},{"n":"Perfumer's Choice","f":"img/brands-all/fmcg/perfumers-choice.webp"},{"n":"UTC Perfumes","f":"img/brands-all/fmcg/utc-perfumes.webp"}],
-    "Labels": [{"n":"Palladio","f":"img/brands-all/labels/palladio.webp"},{"n":"Vero Moda","f":"img/brands-all/labels/vero-moda.webp"}]
+/* cms:aboutbrands */
+    "Union Electronics": [{"n":"B\u0026D","f":"img/brands-elec/b-d.webp"},{"n":"Belkin","f":"img/brands-elec/belkin.webp"},{"n":"Canton","f":"img/brands-elec/canton.webp"},{"n":"Cecotec","f":"img/brands-elec/cecotec.webp"},{"n":"Changhong","f":"img/brands-elec/changhong.webp"},{"n":"Chigo","f":"img/brands-elec/chigo.webp"},{"n":"Daikin","f":"img/brands-elec/daikin.webp"},{"n":"Fakir","f":"img/brands-elec/fakir.webp"},{"n":"Galanz","f":"img/brands-elec/galanz.webp"},{"n":"General","f":"img/brands-elec/general.webp"},{"n":"Glemgas","f":"img/brands-elec/glemgas.webp"},{"n":"Havic","f":"img/brands-elec/havic.webp"},{"n":"Hifuture","f":"img/brands-elec/hifuture.webp"},{"n":"Hitachi","f":"img/brands-elec/hitachi.webp"},{"n":"Konka","f":"img/brands-elec/konka.webp"},{"n":"Morphy","f":"img/brands-elec/morphy.webp"},{"n":"Naim \u0026 Focal","f":"img/brands-elec/naim-focal.webp"},{"n":"Proove","f":"img/brands-elec/proove.webp"},{"n":"ROWA","f":"img/brands-elec/rowa.webp"},{"n":"Startec","f":"img/brands-elec/startec.webp"},{"n":"TCL","f":"img/brands-elec/tcl.webp"},{"n":"Vestel","f":"img/brands-elec/vestel.webp"},{"n":"Westpoint","f":"img/brands-elec/westpoint.webp"},{"n":"Yuwell","f":"img/brands-elec/yuwell.webp"}],
+    "Beauty \u0026 Fashion": [{"n":"Vero Moda","f":"img/brands-fb/vero-moda-dark.webp"},{"n":"Wrangler","f":"img/brands-fb/wrangler.webp"},{"n":"Triumph","f":"img/brands-aluna/triumph.webp"},{"n":"Sloggi","f":"img/brands-aluna/sloggi.webp"},{"n":"Maidenform","f":"img/brands-aluna/maidenform.webp"},{"n":"Bali","f":"img/brands-aluna/bali.webp"},{"n":"Jockey","f":"img/brands-fb/jockey.webp"},{"n":"Hanes","f":"img/brands-aluna/hanes-white.webp"},{"n":"Naomi \u0026 Nicole","f":"img/brands-aluna/naomi-nicole-mono.webp"},{"n":"Cupid","f":"img/brands-aluna/cupid.webp"},{"n":"C.Lingerie","f":"img/brands-aluna/c-lengerie.webp"},{"n":"Leg Avenue","f":"img/brands-aluna/leg-avenue.webp"},{"n":"Mapale","f":"img/brands-aluna/mapale.webp"},{"n":"Ivory","f":"img/brands-aluna/ivory.webp"},{"n":"G World","f":"img/brands-aluna/g-world.webp"},{"n":"Caha Capo","f":"img/brands-aluna/caha-capo.webp"},{"n":"Carole Hochman","f":"img/brands-aluna/carole-hochman.webp"},{"n":"Eileen West","f":"img/brands-aluna/eileen-west.webp"},{"n":"Affinessence","f":"img/brands-fb/affinessence.webp"},{"n":"Aspinal of London","f":"img/brands-fb/aspinal.webp"},{"n":"Collection Priv\u00E9e by Diane Castel","f":"img/brands-fb/diane-castel.webp"},{"n":"Palladio","f":"img/brands-fb/palladio.webp"},{"n":"Veganize","f":"img/brands-fb/veganize.webp"},{"n":"Beaugreen","f":"img/brands-fb/beaugreen.webp"},{"n":"Dr.Bio","f":"img/brands-fb/dr-bio.webp"},{"n":"Hidehere","f":"img/brands-fb/hidehere.webp"},{"n":"Maxclinic","f":"img/brands-fb/maxclinic.webp"},{"n":"OOTD","f":"img/brands-fb/ootd.webp"},{"n":"Teabless","f":"img/brands-fb/teabless.webp"},{"n":"Beaver","f":"img/brands-fb/beaver.webp"}],
+    "FMCG": [{"n":"CANS","f":"img/All%20Brands/FMCG/cans-t.webp"},{"n":"Snips","f":"img/All%20Brands/FMCG/snips-t.webp"},{"n":"Afia Tuna","f":"img/All%20Brands/FMCG/afia-t.webp"},{"n":"Glysolid","f":"img/All%20Brands/FMCG/glysolid-t.webp"},{"n":"Vileda","f":"img/All%20Brands/FMCG/Vileda_.svg"},{"n":"Lactovit","f":"img/All%20Brands/FMCG/lactovit-t.webp"},{"n":"Space Walkers","f":"img/All%20Brands/FMCG/spacewalkers-t.webp"},{"n":"Yupo","f":"img/All%20Brands/FMCG/yupo-t.webp"},{"n":"Royal Mirage","f":"img/All%20Brands/FMCG/royalmirage-t.webp"},{"n":"Yardley","f":"img/All%20Brands/FMCG/yardley-t.webp"},{"n":"Prestige","f":"img/All%20Brands/FMCG/prestige-t.webp"},{"n":"Eternal Love","f":"img/All%20Brands/FMCG/eternallove-t.webp"},{"n":"Color Me","f":"img/All%20Brands/FMCG/colorme-t.webp"},{"n":"Perfumer\u0027s Choice","f":"img/All%20Brands/FMCG/perfumerschoice-t.webp"},{"n":"UTC Perfumes","f":"img/All%20Brands/FMCG/utcperfumes-t.webp"}]
+/* /cms:aboutbrands */
   };
   var overlay=document.getElementById('brandsModal'); if(!overlay) return;
   var tabsEl=document.getElementById('bmTabs'), bodyEl=document.getElementById('bmBody');
@@ -951,5 +1096,6 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </div>
 </div>
 <script defer src="nav-menu.js"></script>
+<script defer src="announcements.js"></script>
 </body>
 </html>

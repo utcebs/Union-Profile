@@ -1,4 +1,3 @@
+# Test copy of the UTC website. Not for search engines; every page is noindex.
 User-agent: *
 Allow: /
-
-Sitemap: https://utc.com.kw/sitemap.xml

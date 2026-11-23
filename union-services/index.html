@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="description" content="Union Services delivers reliable after-sales support, installation, preventive maintenance and technical service for electronics and home appliances across Kuwait.">
 <base href="../">
 <script>/* <base> sends bare #links to site root; keep same-page anchors native */
 addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var h=a.getAttribute("href");if(h.length<2){e.preventDefault();scrollTo({top:0,behavior:"smooth"});return;}if(document.getElementById(h.slice(1))){e.preventDefault();location.hash=h;}});</script>
+
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preload" as="image" href="img/Showroom%20Images/Flagship.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/fashion-beauty-hero.webp" fetchpriority="high">
 <title>Union Services — Union Trading Co.</title>
-<meta name="description" content="Union Services delivers reliable after-sales support, installation, preventive maintenance and technical service for electronics and home appliances across Kuwait.">
-<meta name="robots" content="index,follow">
 <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/favicon/favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/favicon-512.png">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 <style>
 @font-face{font-family:'Manrope-fallback';src:local('Arial'),local('Helvetica Neue'),local('Helvetica');size-adjust:90.7%;ascent-override:99%;descent-override:27%;line-gap-override:0%}
@@ -176,58 +179,340 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   src: url(fonts/playfairdisplay-700.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+  /* MANY CARDS (11 Nov, 12 featured services): the open card takes most of the row so its title and
+     description have room. 12 Nov: the closed strips show their title running up the strip (spine-style)
+     above the number, instead of the number alone */
+  @media (min-width:981px){
+    .cat-acc.many{gap:6px}
+    .cat-acc.many .cat-panel.active{flex:9 1 0}
+    .cat-acc.many .cat-panel:not(.active) .cat-body{padding:14px 0;display:flex;flex-direction:column;align-items:center}
+    .cat-acc.many .cat-panel:not(.active) .cat-line{display:none}
+    .cat-acc.many .cat-panel:not(.active) .cat-title{order:-1;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:12px;letter-spacing:.06em;line-height:1;margin-bottom:12px;text-shadow:0 1px 6px rgba(0,0,0,.55)}
+    .cat-acc.many .cat-panel:not(.active) .cat-title .ct-s{display:none}
+    .cat-acc.many .cat-panel:not(.active) .cat-title .ct-f{display:inline}
+    .cat-acc.many .cat-panel:not(.active) .cat-num{margin-bottom:0}
+  }
+
+  /* FEATURED SERVICES, Option D (15 Nov): every service named in a two-column index; the one
+     pointed at fills the card beside it. Replaced the opening strips, which did not suit 12. */
+  .fs-head{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-bottom:clamp(30px,3.5vw,44px)}
+  .fs-head-r{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+  .fs-d{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,3vw,48px);align-items:stretch}
+  .fs-list{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;column-gap:28px;align-content:stretch;border-bottom:1px solid #d6cebd;height:0;min-height:100%;overflow:hidden}
+  /* The CARD sets the height; the list never makes the section taller than it (height:0 +
+     min-height:100% = stretch to the row without adding to it). With more services than fit,
+     the script steps through these, tighter each time, until every name sits inside. */
+  .fs-list.fit1 a{padding-top:9px;padding-bottom:9px}
+  .fs-list.fit2 a{padding-top:5px;padding-bottom:5px}
+  .fs-list.fit2 .fs-ttl{font-size:12.5px}
+  .fs-list.fit3{grid-template-columns:1fr 1fr 1fr;column-gap:20px}
+  .fs-list.fit3 a{padding-top:5px;padding-bottom:5px;grid-template-columns:28px 1fr;gap:6px}
+  .fs-list.fit3 .fs-ttl{font-size:12px}
+  .fs-list.fit4 .fs-ttl{font-size:11px}
+  .fs-list.fit4 .fs-num{font-size:11.5px}
+  .fs-list.fitgrow{height:auto;min-height:0;overflow:visible}
+  .fs-list a{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;padding:15px 4px;border-top:1px solid #d6cebd;color:inherit;text-decoration:none}
+  .fs-list a>span{transition:transform .25s,color .2s}
+  /* the open row nudges its words across without changing their width, so a name that just fits
+     on one line never wraps to two when it is pointed at */
+  .fs-list a.on>span{transform:translateX(6px)}
+  .fs-num{font-family:'Archivo';font-weight:700;font-size:13px;letter-spacing:.06em}
+  .fs-ttl{font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1.08}
+  .fs-list .fs-num{color:#a29d92}
+  .fs-list .fs-ttl{font-size:13.5px;color:#6f6c65}
+  .fs-list a.on .fs-ttl,.fs-list a:focus-visible .fs-ttl{color:#161513}
+  .fs-list a.on .fs-num{color:#8a6f38}
+  .fs-list .fs-tag{display:inline-block;margin-left:8px;font-size:9.5px;letter-spacing:.14em;color:#8a6f38;vertical-align:middle}
+  .fs-card{position:relative;border-radius:18px;overflow:hidden;color:#fff;text-decoration:none;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,3vw,38px);background:#0d0d0d}
+  .fs-card .fs-media{position:absolute;inset:0;background-size:cover;background-position:center}
+  .fs-card .fs-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 25%,rgba(0,0,0,.86) 100%)}
+  .fs-card .fs-in{position:relative}
+  .fs-card .fs-num{color:rgba(255,255,255,.7)}
+  .fs-card .fs-ttl{font-size:clamp(24px,2.4vw,34px);margin:10px 0 14px}
+  .fs-card .fs-sub{font-size:15px;line-height:1.65;color:rgba(255,255,255,.82);max-width:520px}
+  .fs-card .fs-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:.13em;padding:15px 28px;border-radius:999px;margin-top:22px;transition:background .3s,gap .25s}
+  .fs-card:hover .fs-btn{background:#e6e2d8;gap:14px}
+  .fs-card .fs-ic{position:absolute;top:clamp(24px,3vw,38px);left:clamp(24px,3vw,38px);display:inline-flex;width:46px;height:46px;border-radius:50%;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.35);color:#fff;background:rgba(0,0,0,.18);backdrop-filter:blur(4px)}
+  .fs-card .fs-ic svg{width:22px;height:22px}
+  @media (max-width:980px){ .fs-head{grid-template-columns:1fr} .fs-d{grid-template-columns:1fr} .fs-card{min-height:400px;order:-1} .fs-list{grid-auto-rows:auto;height:auto;min-height:0;overflow:visible} }
+  @media (max-width:560px){ .fs-list{grid-template-columns:1fr} .fs-card{min-height:360px} }
 </style>
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#fff;background:#0d0d0d;-webkit-font-smoothing:antialiased}
-  a{text-decoration:none;color:inherit}
+  html{scroll-behavior:smooth;scroll-padding-top:74px}
+  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#141311;background:#ede7d9;-webkit-font-smoothing:antialiased}
+  a{color:#141311;text-decoration:none}
   img{display:block;max-width:100%}
   input,button{font-family:inherit}
   .cover{width:100%;height:100%;object-fit:cover;display:block}
+  .eyebrow{font-size:12px;letter-spacing:0.26em;color:#9297a0;font-weight:700;text-transform:uppercase}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
   .hoverline{transition:border-color .25s,color .25s}
   .hoverline:hover{border-bottom-color:#fff!important}
   .shopnow:hover{background:#fff !important;color:#0d0d0d !important;border-color:#0d0d0d !important}
+  .shopcta{transition:background .3s ease,border-color .3s ease,gap .25s ease}
+  .shopcta:hover{background:transparent !important;color:#fff !important;border-color:#c2c5cc !important;gap:14px}
+  .darkbtn{transition:background .3s ease,gap .25s ease}
+  .darkbtn:hover{background:#3a3833 !important;gap:14px}
+  .darkbtn{transition:background .3s,gap .25s}.darkbtn:hover{background:#3a3833}
   .footlink:hover{color:#fff}.sociallink:hover{background:#fff;color:#0d0d0d}
+  .brandcard{flex:0 0 clamp(146px,17vw,182px);background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #d6cebd;border-radius:20px;padding:clamp(20px,2.2vw,28px) clamp(12px,1.4vw,18px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .brandcard:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(0,0,0,.28);border-color:#d6cebd}
+  .brandcard-media{height:clamp(60px,7vw,84px);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .brandcard-media img{max-height:100%;max-width:78%;object-fit:contain;transition:transform .45s ease}
+  .brandcard:hover .brandcard-media img{transform:scale(1.06)}
+  /* Featured Brands — logo band (logos carry the names, so no captions) */
+  .fbrand{flex:0 0 auto;height:clamp(60px,6.6vw,88px);display:flex;align-items:center;justify-content:center;padding:0 clamp(16px,2vw,34px);border-right:1px solid #d6cebd}
+  .fbrand:last-child{border-right:none}
+  .fbrand img{max-height:100%;max-width:clamp(110px,13vw,164px);object-fit:contain;transition:transform .35s ease}
+  .fbrand:hover img{transform:scale(1.07)}
+  .arrowbtn{transition:background .2s,color .2s,border-color .2s}
+  .arrowbtn:hover{background:#161513;color:#fff;border-color:#161513}
+  .crumb a{color:#8b8880;transition:color .2s}.crumb a:hover{color:#fff}
+  .reachbtn{transition:background .3s,color .3s,gap .25s,border-color .3s}.reachbtn:hover{background:transparent !important;color:#fff !important;border-color:#c2c5cc !important;gap:14px}
+  .shopcta{transition:background .3s,color .3s,border-color .3s,gap .25s}.shopcta:hover{background:transparent !important;color:#fff !important;border-color:#c2c5cc !important;gap:14px}
+  .uesoc{width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;transition:background .2s,color .2s,border-color .2s}
+  .uesoc:hover{background:#fff;color:#0d0d0d;border-color:#fff}
+  /* 30px cap-height is the size the mid-width marks (Naomi & Nicole, Leg Avenue, Cupid)
+     already rendered at; each logo now takes its own natural width so the long wordmarks
+     reach that height too (Eileen West was drawing 16px, Carole Hochman 22px) */
+  .ourlogo{flex:0 0 auto;height:30px;width:auto;max-width:230px;object-fit:contain;opacity:1;transition:transform .35s ease}
+  .ourlogo:hover{transform:scale(1.12)}
+  .aluna-marq-wrap{flex:1;min-width:0;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+  .aluna-marq{display:flex;align-items:center;gap:clamp(30px,3.4vw,52px);width:max-content;will-change:transform}
+  /* ===== Categories hover-expand accordion ===== */
+  .cat-wrap{display:grid;grid-template-columns:0.82fr 1.5fr;gap:clamp(28px,4vw,60px);align-items:center}
+    /* Beauty is the same section the other way round: panels on the left, words on the
+       right. Done with order rather than by writing the markup backwards, so the words
+       still come first for a screen reader and first when the two stack on a phone. */
+    .cat-wrap.flip{grid-template-columns:1.5fr 0.82fr}
+    .cat-wrap.flip>:first-child{order:2}
+    .cat-wrap.flip>:last-child{order:1}
+  .cat-acc{display:flex;gap:clamp(8px,0.9vw,13px);height:clamp(360px,42vw,540px)}
+  .cat-panel{position:relative;flex:1 1 0;min-width:0;border-radius:16px;overflow:hidden;cursor:pointer;background:transparent;transition:flex .55s cubic-bezier(.4,0,.2,1)}
+  .cat-panel.active{flex:3.8 1 0}
+  .cat-media{position:absolute;inset:0;border-radius:inherit;background-size:cover;background-position:center;transition:transform .6s ease}
+  .cat-panel:hover .cat-media,.cat-panel.active .cat-media{transform:scale(1.05)}
+  .cat-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 28%,rgba(0,0,0,.8))}
+  .cat-icon{display:none}
+  .cat-body{position:absolute;left:0;right:0;bottom:0;padding:14px 12px;color:#fff;z-index:2;overflow:hidden}
+  .cat-panel.active .cat-body{padding:clamp(18px,2vw,28px)}
+  .cat-tag{display:inline-block;margin-bottom:9px;padding:2px 9px;border:1px solid rgba(255,255,255,.5);border-radius:999px;font-family:'Archivo';font-weight:700;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+    .cat-num{font-family:'Archivo';font-weight:700;font-size:12.5px;color:rgba(255,255,255,.72);letter-spacing:.05em;margin-bottom:9px}
+  .cat-line{width:28px;height:2px;background:rgba(255,255,255,.45);margin-bottom:12px}
+  .cat-title{font-family:'Archivo';font-weight:800;font-size:11px;letter-spacing:.01em;line-height:1.2;text-transform:uppercase}
+  .cat-panel.active .cat-title{font-size:clamp(16px,1.55vw,21px);line-height:1.08}
+  .cat-title .ct-f{display:none}
+  .cat-panel.active .cat-title .ct-s{display:none}
+  .cat-panel.active .cat-title .ct-f{display:inline}
+  .cat-extra{max-height:0;opacity:0;margin-top:0;transition:max-height .5s ease,opacity .35s ease,margin-top .5s ease}
+  .cat-panel.active .cat-extra{max-height:320px;opacity:1;margin-top:12px}
+  .cat-sub{color:#cbc8c2;font-size:clamp(13px,1vw,14.5px);line-height:1.5}
+  /* the service centre */
+  .svc-row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #d6cebd;font-size:15px}
+  .svc-k{color:#8b8880;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-top:2px}
+  .svc-v{color:#161513}
+  a.svc-v{text-decoration:none;border-bottom:1px solid #cfc8b8;justify-self:start}
+  .svc-tbc{color:#a8a296;font-style:italic}
+  .svc-sub{display:block;color:#8b8880;font-size:13.5px;margin-top:4px}
+  /* the service centre map: Google's own map in the box (it carries its own "Open in Maps" button; the address opens it too) */
+  /* Google's own map, draggable and zoomable. The frame starts 190px ABOVE the box so Google's
+     place card (top-left, unstyleable, a different size on every screen) is out of sight; ours,
+     with a border, is drawn instead. Google's logo and credits along the bottom stay in view.
+     COLOURS: turned grey and flipped dark, then #EBE7DB laid over in MULTIPLY: white becomes
+     #EBE7DB, black stays black. The overlay lets every touch through, so the map drags and zooms. */
+  .svc-mapframe{position:absolute;left:0;right:0;bottom:0;top:-190px;width:100%;height:calc(100% + 190px);border:0;display:block;filter:grayscale(1) invert(1) contrast(1.25) brightness(.9)}
+  .svc-map::after{content:"";position:absolute;inset:0;background:#EBE7DB;mix-blend-mode:multiply;pointer-events:none;z-index:1;border-radius:inherit}
+  .svc-map{background:#0d0d0d!important;isolation:isolate}
+  .svc-mapcard{position:absolute;left:14px;top:14px;z-index:2;max-width:calc(100% - 28px);width:300px;box-sizing:border-box;text-align:left;background:#0d0d0d;color:#EBE7DB;border:1px solid rgba(235,231,219,.45);border-radius:12px;padding:14px 16px;box-shadow:0 14px 30px -14px rgba(0,0,0,.8)}
+  .svc-mapcard b{display:block;font-size:14.5px;font-weight:700;line-height:1.3}
+  .svc-mapcard span{display:block;color:rgba(235,231,219,.62);font-size:12.5px;line-height:1.45;margin-top:5px}
+  .svc-mapcard .go{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .svc-mapcard .go a{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(235,231,219,.45);border-radius:999px;padding:7px 13px;color:#EBE7DB;font-size:12px;font-weight:700;text-decoration:none;transition:background .2s,color .2s}
+  .svc-mapcard .go a:hover{background:#EBE7DB;color:#0d0d0d}
+  @media(max-width:520px){.svc-mapcard span{display:none}.svc-map{min-height:380px!important}}
+  @media(min-width:901px){ .stat4>div>div:nth-child(2){white-space:nowrap} }
+  @media(max-width:1100px){ .stat4{grid-template-columns:repeat(2,auto)!important;justify-content:start!important;column-gap:clamp(32px,4.5vw,64px)!important} }
+  @media(max-width:900px){ .svc-centre{grid-template-columns:1fr!important} .stat4{grid-template-columns:repeat(2,1fr)!important} .glance-inner{grid-template-columns:1fr!important} }
+  /* HERO BRANDS — the same cards as Union Electronics, laid out in ROWS (four across) rather than
+     one sliding rail, so a whole product range fits. Shown or hidden from the console. */
+  .hb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.5vw,18px);row-gap:clamp(22px,2.6vw,32px);padding-top:18px}
+  @media(max-width:1000px){.hb-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:720px){.hb-grid{grid-template-columns:repeat(2,1fr)}}
+  .hbrand{background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #d6cebd;border-radius:20px;overflow:visible;position:relative;z-index:1;display:flex;flex-direction:column;padding:22px 20px 20px;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .hbrand:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(0,0,0,.35);border-color:#d6cebd;z-index:3}
+  .hbrand-media{position:relative;display:flex;align-items:flex-end;justify-content:center;height:clamp(150px,14vw,188px);margin-bottom:16px}
+  .hbrand-media img{width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:scale(1.12);transform-origin:center bottom;filter:drop-shadow(0 16px 18px rgba(0,0,0,.24));transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .5s ease}
+  .hbrand:hover .hbrand-media img{transform:scale(1.3) translateY(-5%);filter:drop-shadow(0 30px 28px rgba(0,0,0,.34))}
+  .hbrand-logo{font-family:'Archivo';font-weight:800;letter-spacing:.02em;line-height:1.1}
+  .hbrand-sub{color:#9a968c;font-size:12.5px;line-height:1.5;margin-top:6px}
+  .hbrand-learn{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#57544c;margin-top:auto;padding-top:16px;transition:gap .25s,color .25s}
+  .hbrand:hover .hbrand-learn{gap:12px;color:#161513}
+  @media(max-width:720px){.hbrand{padding:16px 14px 14px}.hbrand-media{height:120px}}
+  .cat-go{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:3px}
+  .cat-go:hover{border-bottom-color:#fff}
+  .catnav{width:44px;height:44px;border-radius:50%;border:1px solid #d1d4d9;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#161513;transition:background .2s,color .2s,border-color .2s}
+  .catnav:hover{background:#161513;color:#fff;border-color:#161513}
+  @media(max-width:980px){
+    .ue-hero-img{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;width:100%!important;height:300px}
+    .ue-hero-img>div{background:linear-gradient(0deg,#0d0d0d,rgba(13,13,13,0) 55%)!important}
+    .ue-hero .wrap{padding-left:clamp(20px,5vw,64px)!important;padding-right:clamp(20px,5vw,64px)!important}
+    .ue-hero-left{min-height:auto!important;max-width:none!important;padding:clamp(40px,7vw,60px) 0 clamp(86px,19vw,104px)!important}   /* extra bottom room so the badges clear the overlapping Our Brands strip */
+    .ue-hero .crumb{position:static!important;margin-bottom:6px}
+    .glance-inner{grid-template-columns:1fr!important}
+    .glance-fade{background:linear-gradient(0deg,#0d0d0d 24%,rgba(13,13,13,.78))!important}
+    .connect-grid{grid-template-columns:1fr!important}
+    .stat4,.contact4{grid-template-columns:1fr 1fr!important}
+    .cat-wrap{grid-template-columns:1fr!important}
+      /* stacked: the mirror would put the panels above their own heading */
+      .cat-wrap.flip>:first-child{order:0!important} .cat-wrap.flip>:last-child{order:0!important}
+    /* categories -> one-at-a-time swipe carousel (each panel a full tall image card) */
+    .cat-acc{flex-direction:row!important;height:clamp(440px,92vw,560px)!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px}
+    .cat-acc::-webkit-scrollbar{display:none}
+    .cat-panel{flex:0 0 84%!important;scroll-snap-align:center}
+    .cat-panel .cat-body{padding:clamp(18px,5vw,26px)!important}
+    .cat-panel .cat-title{font-size:clamp(18px,5.4vw,22px)!important}
+    .cat-panel .cat-title .ct-s{display:none!important}
+    .cat-panel .cat-title .ct-f{display:inline!important}
+    .cat-panel .cat-extra{max-height:320px!important;opacity:1!important;margin-top:12px!important}
+  }
+  @media(max-width:620px){
+    .brand2{gap:6px 0!important}
+    .fbrand{border-right:none!important;flex:0 0 33.33%!important;height:auto!important;padding:16px 8px!important}
+    .fbrand img{max-width:80%!important;max-height:42px!important}
+    /* hero badges: 3 compact, centered icons side-by-side (not stacked) */
+    .feat3{grid-template-columns:repeat(3,1fr)!important;gap:10px!important;max-width:100%!important}
+    .feat3>div{text-align:center}
+    .feat3>div>div:first-child{width:38px!important;height:38px!important;margin:0 auto 8px!important}
+    .feat3>div>div:nth-child(2){font-size:12px!important;line-height:1.2}
+    .feat3>div>div:nth-child(3){display:none!important}
+    /* glance stats + connect tiles: tidy 2×2 (not one giant column) */
+    .stat4{grid-template-columns:1fr 1fr!important}
+    .contact4{grid-template-columns:1fr 1fr!important}
+    .contact4>div{aspect-ratio:1.28!important}   /* a touch smaller than square */
+  }
   .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  /* news in the header */
+  .headact{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
+  .headact::before{content:"";width:1px;height:22px;background:rgba(255,255,255,.22);flex:0 0 auto}
+  .newslink{display:inline-flex;align-items:center;gap:7px;color:#bcb6a7;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:color .25s}
+  .newslink::after{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;transition:transform .25s}
+  .newslink:hover{color:#fff}
+  .newslink:hover::after{transform:scale(1.35)}
+  .newslink[aria-current="page"]{color:#fff}
+  /* /news in the header */
   .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
   .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
-
-  /* ===== 404 hero ===== */
-  .nf{position:relative;overflow:hidden;min-height:calc(100vh - 76px);display:flex;align-items:center;background:#0d0d0d}
-  .nf-bg{position:absolute;inset:0;z-index:0}
-  .nf-bg img{width:100%;height:100%;object-fit:cover;object-position:center right}
-  .nf-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0d0d0d 0%,rgba(13,13,13,.82) 34%,rgba(13,13,13,.34) 64%,rgba(13,13,13,.5) 100%),linear-gradient(180deg,rgba(13,13,13,.5) 0%,rgba(13,13,13,0) 32%,rgba(13,13,13,0) 74%,#0d0d0d 100%)}
-  .nf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#1c1b19;z-index:1}
-  .nf-inner{position:relative;z-index:2;max-width:1360px;margin:0 auto;width:100%;padding:clamp(56px,8vw,110px) clamp(20px,5vw,64px)}
-  .nf-eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:#8f8c85;margin-bottom:clamp(18px,2.4vw,26px)}
-  .nf-code{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(96px,20vw,220px);line-height:.86;letter-spacing:-.03em;color:#f3efe6;margin:0}
-  .nf-h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,4vw,46px);line-height:1.1;margin:clamp(22px,3vw,34px) 0 0;color:#f3efe6}
-  .nf-p{color:#a8a49b;font-size:clamp(15px,1.4vw,16.5px);line-height:1.75;margin:18px 0 0;max-width:480px}
-  .nf-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(30px,3.6vw,42px)}
-  .nf-btn{display:inline-flex;align-items:center;gap:11px;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:15px 30px;border-radius:999px;transition:background .3s,color .3s,border-color .3s,gap .25s}
-  .nf-btn.primary{background:#fff;color:#0d0d0d}
-  .nf-btn.primary:hover{background:#e7e3d9;color:#0d0d0d;gap:15px}
-  .nf-btn.ghost{border:1px solid #3a3833;color:#fff}
-  .nf-btn.ghost:hover{border-color:#fff;background:#fff;color:#0d0d0d;gap:15px}
-  .nf-links{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:clamp(34px,4vw,48px);padding-top:clamp(22px,2.6vw,30px);border-top:1px solid #232220;max-width:620px}
-  .nf-links a{color:#8f8c85;font-size:13.5px;font-weight:500;transition:color .2s}
-  .nf-links a:hover{color:#fff}
-  @media(max-width:820px){
-    .nf-bg img{object-position:center}
-    .nf-bg::after{background:linear-gradient(180deg,rgba(13,13,13,.68) 0%,rgba(13,13,13,.9) 100%)}
-  }
-
   @media(max-width:900px){
     header>div{position:relative}
     .navtog{display:inline-flex;align-items:center;justify-content:center;position:absolute;right:clamp(16px,4vw,44px);top:50%;transform:translateY(-50%);z-index:3}
     .mainnav{display:none}
     header .shopnow{display:none}
     header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    /* news in the header */
+    header .headact{display:none}
+    header.nav-open .headact{display:flex;flex:0 0 100%;align-items:center;gap:20px;padding:0 2px 10px}
+    header.nav-open .headact::before{display:none}
+    /* /news in the header */
     header.nav-open .shopnow{display:inline-flex}
     header.nav-open .ico-bars{display:none}
     header.nav-open .ico-close{display:block}
   }
+  /* ===== "View all" brands modal — matches the site's popup style, Aluna rose accent ===== */
+  .bm{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:clamp(16px,3vw,44px);font-family:'Manrope','Manrope-fallback',system-ui,sans-serif}
+  .bm.open{display:flex}
+  .bm-bg{position:absolute;inset:0;background:rgba(8,8,8,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .bm-panel{position:relative;width:min(880px,100%);max-height:90vh;overflow-y:auto;background:#141311;border:1px solid #2a2825;border-radius:20px;box-shadow:0 45px 100px -30px rgba(0,0,0,.85);padding:clamp(32px,4vw,48px) clamp(26px,3.4vw,46px) clamp(28px,3.4vw,42px);text-align:center;transform:translateY(12px) scale(.98);opacity:0;transition:transform .32s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
+  .bm.open .bm-panel{transform:none;opacity:1}
+  .bm-panel::-webkit-scrollbar{width:0}
+  .bm-close{position:absolute;top:15px;right:15px;z-index:6;width:36px;height:36px;border-radius:50%;border:1px solid #33312d;background:transparent;color:#cfcbc0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+  .bm-close:hover{background:#fff;color:#0d0d0d}
+  .bm-eyebrow{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#c2b9a5;font-weight:700;margin-bottom:14px}
+  .bm-panel h3{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.9vw,34px);line-height:1.14;margin:0 0 12px;color:#fff}
+  .bm-panel>p{color:#a8a49b;font-size:14.5px;line-height:1.7;margin:0 auto clamp(24px,2.8vw,32px);max-width:500px}
+  .bw2{display:grid;grid-template-columns:0.66fr 1.55fr;gap:clamp(20px,2.6vw,36px);align-items:start}
+    /* The picture is a button: the whole card advances, which is what anybody tries first. */
+    .bw2-card{display:block;position:relative;width:100%;padding:0;border:0;cursor:pointer;
+              border-radius:16px;overflow:hidden;background:transparent;
+              height:clamp(360px,42vw,560px)}
+    .bw2-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;
+                  transition:transform .6s ease}
+    .bw2-card:hover img{transform:scale(1.045)}
+    .bw2-card::after{content:'';position:absolute;inset:0;
+                     background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.82))}
+    .bw2-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;display:block;
+             padding:clamp(18px,2vw,28px);text-align:left;color:#fff}
+    .bw2-n{display:block;font-family:'Archivo';font-weight:700;font-size:12.5px;
+           color:rgba(255,255,255,.72);letter-spacing:.05em}
+    .bw2-line{display:block;width:28px;height:2px;background:rgba(255,255,255,.45);margin:9px 0 12px}
+    .bw2-t{display:block;font-family:'Playfair Display',serif;font-weight:600;
+           font-size:clamp(20px,2.1vw,30px);line-height:1.08;letter-spacing:-.012em}
+    .bw2-s{display:block;margin-top:9px;color:#cbc8c2;font-size:clamp(13px,1vw,14.5px);line-height:1.5}
+    .bw2-nav{display:flex;align-items:center;gap:22px;margin-top:clamp(18px,2.2vw,26px)}
+    .bw2-right{display:flex;flex-direction:column;justify-content:flex-start}
+    /* How many houses are in the category being shown, above their logos. */
+    .bw2-count{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#a79f8f;
+               font-weight:700;margin-bottom:clamp(18px,2.2vw,26px)}
+    @media(max-width:900px){ .bw2{grid-template-columns:1fr} .bw2-card{height:clamp(280px,56vw,380px)} }
+    .bw-head{display:grid;grid-template-columns:1fr auto;gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:clamp(24px,3vw,34px)}
+    .bw-tabs{display:flex;gap:9px;flex-wrap:wrap}
+    .bw-tab{display:inline-flex;align-items:center;gap:9px;border:1px solid #d6cebd;background:transparent;
+            border-radius:999px;padding:10px 18px;font-family:'Archivo';font-size:13px;color:#56524b;
+            cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+    .bw-tab:hover{border-color:#9297a0}
+    .bw-tab[aria-selected=true]{background:#161513;border-color:#161513;color:#fff}
+    /* the count, so the size of a category is visible before it is opened */
+    .bw-tab i{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.04em;opacity:.6}
+    /* a white-on-transparent mark, turned dark so it can be seen on a light panel */
+    .bw-logo.inv img{filter:invert(1)}
+    .bw-logo{display:flex;align-items:center;justify-content:center;min-height:clamp(44px,5vw,62px)}
+    .bw-logo img{max-width:100%;max-height:clamp(40px,4.6vw,56px);width:auto;height:auto;object-fit:contain}
+    /* A BRAND WITH NO ARTWORK IS STILL A BRAND. Set as its name, in the page's own face, so
+       the wall is complete and the gap is obvious to whoever can fix it. */
+    .bw-name{display:flex;align-items:center;justify-content:center;text-align:center;
+             min-height:clamp(44px,5vw,62px);padding:10px 8px;border:1px dashed #d6cebd;border-radius:10px;
+             font-family:'Playfair Display',serif;font-size:clamp(15px,1.5vw,19px);color:#3f3b35}
+    .bw-note{color:#6f6c65;font-size:14.5px;line-height:1.7;max-width:52ch;margin:0 auto;text-align:center}
+    .bw-grid-empty{display:none}
+    @media(max-width:820px){ .bw-head{grid-template-columns:1fr} }
+    .bm-well{background:#ffffff;border:1px solid #d6cebd;border-radius:16px;box-shadow:0 18px 42px -26px rgba(60,50,30,.45),0 2px 6px -3px rgba(60,50,30,.18);padding:clamp(26px,3.4vw,44px) clamp(24px,3vw,42px)}
+  .bm-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(26px,3.4vw,48px) clamp(16px,2.2vw,32px);align-items:center}
+  .bm-cell{display:flex;align-items:center;justify-content:center;height:clamp(28px,3vw,38px);opacity:.9;transition:opacity .3s ease,transform .35s cubic-bezier(.2,.7,.2,1)}
+  .bm-cell:hover{opacity:1;transform:translateY(-3px)}
+  .bm-cell img{max-width:80%;max-height:100%;width:auto;object-fit:contain;mix-blend-mode:multiply}
+  .bm-cta{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:14px 28px;border-radius:999px;margin-top:clamp(22px,2.6vw,30px);transition:gap .25s,background .3s,color .3s}
+  .bm-cta:hover{gap:14px;background:#161311;color:#f4efe4}
+  @media(max-width:820px){.bm-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:470px){.bm-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+<!-- analytics -->
+<!-- test copy: analytics removed -->
+<!-- /analytics -->
+<style>
+  /* connect tiles on a phone */
+  /* A grid column is never narrower than its longest line ("Sun - Thu: 8:00 AM - 5:00 PM"), so on a
+     phone the two columns came out wider than the card and the right-hand tiles were cut off.
+     minmax(0,1fr) lets them shrink; the tiles take the height their words need and may wrap.
+     The square rule only ever caught the tiles that are boxes, not the one that is a link. */
+  @media(max-width:980px){
+    .connect-grid{grid-template-columns:minmax(0,1fr)!important}
+    .contact4,.stat4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    .contact4>*{min-width:0;aspect-ratio:auto!important;min-height:clamp(112px,30vw,150px);padding:14px 10px!important}
+    .contact4>* div{overflow-wrap:anywhere}
+  }
+  /* an iPhone turns a phone number into a link of its own colour, near black on these tiles */
+  a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}
+</style>
+<meta name="format-detection" content="telephone=no">
+<style>
+  /* rounded photo cards: no rim at the corners */
+  /* A dark fallback behind a rounded photo shows through where the corner is smoothed, as a thin
+     dark line, worst on a light photo. And a photo that zooms on hover is drawn on a layer of its
+     own, which some browsers (Safari above all) clip a hair short of the curve. So: nothing dark
+     behind, the photo rounded itself, and the card made its own clipping layer. */
+  .cat-panel,.bw2-card{background:transparent!important;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black);mask-image:radial-gradient(white,black)}
+  .cat-media,.bw2-card img{border-radius:inherit}
 </style>
 </head>
 <body>
@@ -236,81 +521,410 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:100;background:#0d0d0d;color:#fff">
     <div style="padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
-      <a href="home/" style="display:inline-flex;align-items:center"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
+      <a href="home/"><img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block"></a>
       <button id="navToggle" class="navtog" type="button" aria-label="Open menu" aria-expanded="false">
         <svg class="ico-bars" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         <svg class="ico-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
       <nav class="mainnav">
         <a href="about/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">About Us</a>
-        <a href="divisions/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
+        <a href="divisions/" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Divisions</a>
         <a href="our-stores/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
         <a href="our-channels/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
-        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
+        <a href="careers/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
         <a href="home/#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <div class="headact"><a href="news/" class="newslink">News</a><a href="home/?intent=partnership&division=union-services#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a></div>
     </div>
   </header>
 
-  <!-- ============ 404 ============ --  <!-- ============ COMING SOON ============ -->
-  <section class="nf">
-    <div class="nf-bg"><img fetchpriority="high" src="img/Showroom%20Images/Flagship.webp" alt=""></div>
-    <div class="nf-inner">
-      <div class="nf-eyebrow">Our Divisions</div>
-      <h1 class="nf-h1" style="margin-top:0">Union Services</h1>
-      <p class="nf-p">World-class VRV and HVAC-R solutions for professionals across Kuwait. The full details for this division are on the way — coming soon.</p>
-      <div class="nf-actions">
-        <a href="home/" class="nf-btn primary">Back to Home
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="divisions/" class="nf-btn ghost">Explore divisions</a>
+  <!-- ============ HERO ============ -->
+  <section class="ue-hero" style="background:#0d0d0d;color:#fff;position:relative;overflow:hidden">
+    <div class="ue-hero-img" style="position:absolute;top:0;right:0;bottom:0;width:64%">
+      <img fetchpriority="high" class="cover" src="img/div-health.webp" alt="The Union Services team" style="object-position:center">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,#0d0d0d 0%,rgba(13,13,13,.95) 16%,rgba(13,13,13,.5) 40%,rgba(13,13,13,.06) 66%,rgba(13,13,13,.32) 100%)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,13,13,.55),rgba(13,13,13,0) 45%)"></div>
+    </div>
+    <div class="wrap" style="position:relative;z-index:2">
+    <div class="ue-hero-left" style="position:relative;min-height:clamp(560px,52vw,720px);max-width:560px;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,2.4vw,28px);padding:clamp(90px,9vw,120px) 0 clamp(70px,8vw,100px)">
+      <div class="crumb" style="position:absolute;top:clamp(24px,3.4vw,40px);left:0;font-size:13px;color:#6f6c65;display:flex;align-items:center;gap:9px">
+        <a href="home/">Home</a><span>&rsaquo;</span><a href="divisions/">Our Divisions</a><span>&rsaquo;</span><span style="color:#cfcbc0">Union Services</span>
       </div>
+      <img loading="eager" decoding="async" src="img/Div/services-logo-white.png" alt="Union Services" style="width:clamp(280px,34vw,460px);max-width:100%;height:auto;margin:2px 0">
+      <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;padding:0;border:0"><!-- cms:block services.unionServicesCaringForTitle -->Union Services — Caring for Every Family<!-- /cms:block services.unionServicesCaringForTitle --></h1>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2vw,26px);color:#c2c5cc">Caring for Every Family.</div>
+      <p style="color:#a8a49b;font-size:15.5px;line-height:1.8;margin:0;max-width:430px"><!-- cms:block services.unionServicesCaringForLine -->Installation, maintenance and repair for air conditioning, home appliances and TVs &mdash; for homes and businesses across Kuwait.<!-- /cms:block services.unionServicesCaringForLine --></p>
+      <div style="display:flex;align-items:center;gap:clamp(16px,2vw,24px);flex-wrap:wrap">
+        <a href="union-services/#services" class="shopcta" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 30px;border-radius:999px;border:1px solid #fff">VIEW SERVICES <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="feat3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px);margin-top:6px;max-width:470px">
+        <div>
+          <div style="width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0114 0"/><path d="M9.5 8.5 11 10l3-3"/></svg></div>
+          <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:14px">Certified Technicians</div>
+          <div style="color:#8b8880;font-size:12.5px;line-height:1.5;margin-top:5px">Trained on the brands we service.</div>
+        </div>
+        <div>
+          <div style="width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:14px">Genuine Spare Parts</div>
+          <div style="color:#8b8880;font-size:12.5px;line-height:1.5;margin-top:5px">Straight from the manufacturer.</div>
+        </div>
+        <div>
+          <div style="width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 005.5 5.5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 6a2 2 0 012-2z"/></svg></div>
+          <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:14px">One Hotline</div>
+          <div style="color:#8b8880;font-size:12.5px;line-height:1.5;margin-top:5px"><a href="tel:+9651840011" style="color:inherit">1840011</a></div>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
 
- -->
+  <!-- ============ FEATURED SERVICES (the accordion: this division's categories) ============ -->
+<div class="wrap" id="services" style="scroll-margin-top:90px;padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(40px,5vw,64px)">
+  <div class="fs-head">
+    <div>
+      <div class="eyebrow" style="margin-bottom:18px"><!-- cms:block services.featuredServicesKicker -->Featured services<!-- /cms:block services.featuredServicesKicker --></div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513"><!-- cms:block services.featuredServicesTitle -->Your home,<br>kept running.<!-- /cms:block services.featuredServicesTitle --></h2>
+    </div>
+    <div class="fs-head-r">
+      <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:0;max-width:380px"><!-- cms:block services.featuredServicesLine -->From one air conditioner to a whole building&rsquo;s central system &mdash; installed, maintained and repaired by our own technicians.<!-- /cms:block services.featuredServicesLine --></p>
+      <a href="home/?intent=support#contact" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 28px;border-radius:999px">BOOK A SERVICE <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div class="fs-d"><div class="fs-list" id="fsList"></div><a class="fs-card" id="fsCard"></a></div>
+</div>
+
+<!-- ============ OUR DIVISION AT A GLANCE ============ -->
+  <div class="wrap" style="padding-top:clamp(30px,4vw,44px);padding-bottom:clamp(30px,4vw,44px)">
+    <div class="glance-grid" style="position:relative;background:#0d0d0d;border-radius:14px;overflow:hidden;min-height:clamp(230px,23vw,300px)">
+      <img loading="lazy" decoding="async" class="cover" src="img/Careers/Div/us-service-banner.webp" alt="Union Trading Company showroom and service centre" style="position:absolute;inset:0;object-position:left center">
+      <div class="glance-fade" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,13,0) 16%,rgba(13,13,13,.45) 34%,rgba(13,13,13,.9) 52%,#0d0d0d 100%)"></div>
+      <div class="glance-inner" style="position:relative;display:grid;grid-template-columns:0.8fr 1.5fr;min-height:inherit">
+        <div></div>
+        <div style="padding:clamp(16px,2.2vw,28px) clamp(22px,2.8vw,38px);display:flex;flex-direction:column;justify-content:center;color:#fff">
+        <div style="font-size:11.5px;letter-spacing:0.28em;color:#8b8880;font-weight:600;margin-bottom:clamp(22px,3vw,32px)">OUR DIVISION AT A GLANCE</div>
+        <div class="stat4" style="display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:clamp(16px,2vw,26px)"><!-- cms:divpagestats -->
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">150+</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">People on the team</div>
+          </div>
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">Safety-first</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">High safety &amp; quality standards</div>
+          </div>
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">Brand-trained</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">Trained by the global brands we service</div>
+          </div>
+          <div>
+            <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11v9H4v-9zM7 11l4-8a2 2 0 012 2v4h5.5a2 2 0 012 2.3l-1.2 6.5a2 2 0 01-2 1.7H7"/></svg></div>
+            <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">90%+</div>
+            <div style="color:#8b8880;font-size:12.5px;margin-top:6px">Customer satisfaction</div>
+          </div>
+<!-- /cms:divpagestats --></div>
+        <p style="color:#8b8880;font-size:13.5px;margin:clamp(22px,3vw,30px) 0 0;line-height:1.6">Trained people, genuine parts, and one number to call.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ============ HERO BRANDS (a product range, in rows) ============
+     Never removed from the page: the console shows or hides it ("On the website"), and it hides
+     itself while it has no cards. Label, heading, description and every card come from the
+     console's "Featured brands on its page". -->
+<!-- cms:divpageherobrandsshow -->
+<style>#heroBrands{display:none}</style>
+<!-- /cms:divpageherobrandsshow -->
+  <div class="wrap" id="heroBrands" style="padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(20px,3vw,30px)">
+    <div style="margin-bottom:clamp(18px,2.4vw,28px)"><!-- cms:divpageherohead -->
+      <div class="eyebrow" style="margin-bottom:14px">Hero Brands</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.05;margin:0;color:#161513">The names we carry.</h2>
+<!-- /cms:divpageherohead --></div>
+    <div class="hb-grid"><!-- cms:divpageherobrands -->
+
+<!-- /cms:divpageherobrands --></div>
+  </div>
+
+<!-- ============ THE SERVICE CENTRE ============ -->
+  <div class="wrap" style="padding-top:clamp(40px,5vw,70px);padding-bottom:clamp(20px,3vw,40px)">
+    <div class="svc-centre" style="display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,3.4vw,48px);align-items:stretch">
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px"><!-- cms:block services.serviceCentreKicker -->Service centre<!-- /cms:block services.serviceCentreKicker --></div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513"><!-- cms:block services.serviceCentreTitle -->Visit our<br>service centre.<!-- /cms:block services.serviceCentreTitle --></h2>
+        <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 28px;max-width:380px"><!-- cms:block services.serviceCentreLine -->Bring an appliance in, collect a repair, or speak to a technician in person.<!-- /cms:block services.serviceCentreLine --></p>
+        <div class="svc-rows" style="display:grid;gap:14px;max-width:420px">
+          <div class="svc-row"><span class="svc-k">Address</span><a class="svc-v" href="https://www.google.com/maps/place/Union+Trading+Company+Service+Centre+(Shuwaikh)/@29.3298216,47.9443007,15z/data=!4m6!3m5!1s0x3fcf9b7b9ab403c7:0x4ca492c8fb5a614!8m2!3d29.3342512!4d47.9437118!16s%2Fg%2F11jj_xl5h5" target="_blank" rel="noopener">Street 12, Block 1, Shuwaikh Industrial 70051</a></div>
+          <div class="svc-row"><span class="svc-k">Opening hours</span><span class="svc-v">8:00 AM - 2:00 PM<span class="svc-sub">Closed on Friday</span></span></div>
+          <div class="svc-row"><span class="svc-k">Hotline</span><a class="svc-v" href="tel:+9651840011">1840011</a></div>
+          <div class="svc-row"><span class="svc-k">WhatsApp</span><a class="svc-v" href="https://wa.me/9651840011" target="_blank" rel="noopener">1840011</a></div>
+        </div>
+      </div>
+      <div class="svc-map" style="position:relative;border-radius:16px;overflow:hidden;background:#e4dfd3;min-height:clamp(260px,28vw,380px);display:flex;align-items:center;justify-content:center;text-align:center;color:#6f6c65">
+        <iframe class="svc-mapframe" src="https://maps.google.com/maps?q=Union%20Trading%20Company%20Service%20Centre%20(Shuwaikh)&amp;ll=29.33687,47.9437118&amp;z=16&amp;output=embed" title="Map: Union Trading Company Service Centre, Shuwaikh" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="svc-mapcard"><b>Union Trading Company Service Centre (Shuwaikh)</b><span>Street 12, Block 1, Shuwaikh Industrial 70051, Kuwait</span><div class="go"><a href="https://www.google.com/maps/place/Union+Trading+Company+Service+Centre+(Shuwaikh)/@29.3298216,47.9443007,15z/data=!4m6!3m5!1s0x3fcf9b7b9ab403c7:0x4ca492c8fb5a614!8m2!3d29.3342512!4d47.9437118!16s%2Fg%2F11jj_xl5h5" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Open in Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=29.3342512,47.9437118" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l10 10-10 10L2 12z"/><path d="M9 13v-2h5M12 8l3 3-3 3"/></svg>Directions</a></div></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ============ LET'S CONNECT ============ -->
+  <div class="wrap" style="padding-top:clamp(40px,5vw,60px);padding-bottom:clamp(48px,6vw,80px)">
+    <div style="position:relative;background:#0d0d0d;border-radius:16px;overflow:hidden">
+      <img loading="lazy" decoding="async" src="img/Card%20images/Service.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.22;pointer-events:none">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,#0d0d0d 20%,rgba(13,13,13,.75) 55%,rgba(13,13,13,.6) 100%)"></div>
+      <div class="connect-grid" style="position:relative;display:grid;grid-template-columns:0.78fr 1.6fr;gap:clamp(24px,3.4vw,44px);align-items:center;padding:clamp(16px,2.2vw,28px) clamp(14px,1.9vw,26px)">
+        <div style="color:#fff">
+          <div style="font-size:11.5px;letter-spacing:0.28em;color:#9297a0;font-weight:600;margin-bottom:16px">LET'S CONNECT</div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(14px,1.5vw,20px);line-height:1.15;margin:0"><!-- cms:block services.somethingNotWorkingWeTitle -->Something not working?<br>We&rsquo;re a call away.<!-- /cms:block services.somethingNotWorkingWeTitle --></h2>
+          <p style="color:#a8a49b;font-size:14.5px;line-height:1.7;margin:18px 0 26px;max-width:320px"><!-- cms:block services.somethingNotWorkingWeLine -->Book a visit, ask about a maintenance contract, or check on a repair &mdash; our service team will help.<!-- /cms:block services.somethingNotWorkingWeLine --></p>
+          <a href="home/?intent=partnership&division=union-services#contact" class="reachbtn" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px;border:1px solid transparent">Contact us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="contact4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(5px,0.7vw,8px)">
+          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 005.5 5.5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 6a2 2 0 012-2z"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Service Hotline</div>
+            <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">1840011</div>
+          </div>
+          <a href="home/?intent=support#contact" style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px);text-decoration:none;cursor:pointer">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Email Us</div>
+            <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">Send us a message</div>
+          </a>
+          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Visit Us</div>
+            <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">Head Office, Shuwaikh Kuwait</div>
+          </div>
+          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0116 0"/><rect x="2.5" y="13" width="4" height="7" rx="1.5"/><rect x="17.5" y="13" width="4" height="7" rx="1.5"/><path d="M20 20a4 4 0 01-4 3h-2"/></svg></div>
+            <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Working Hours</div>
+            <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">Sun - Thu: 7:30 AM - 4:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+<!-- cms:footer -->
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
         <img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block;margin-bottom:22px">
-        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px">Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.</p>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px"><!-- cms:block footer.blurb -->Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.<!-- /cms:block footer.blurb --></p>
         <div style="display:flex;gap:12px">
-          <a href="#" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
-          <a href="#" class="sociallink" aria-label="X" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 4h2.6l-5.7 6.5L21 20h-5.3l-4.2-5.4L6.7 20H4.1l6.1-7L3.5 4h5.4l3.8 5z"></path></svg></a>
-          <a href="#" class="sociallink" aria-label="Instagram" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm10 3.5a1 1 0 100 2 1 1 0 000-2z"></path></svg></a>
-          <a href="#" class="sociallink" aria-label="LinkedIn" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path></svg></a>
+          <a href="https://www.instagram.com/unionelectronics.kw/" target="_blank" rel="noopener" class="sociallink" aria-label="Instagram" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path></svg></a>
+          <a href="https://www.facebook.com/unionelectronicskw" target="_blank" rel="noopener" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
+          <a href="https://www.linkedin.com/company/union-trading-company-kuwait/" target="_blank" rel="noopener" class="sociallink" aria-label="LinkedIn" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path></svg></a>
+          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&amp;_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
+          <a href="https://youtube.com/@unionelectronicskw?si=DtCur73sViKpsxy3" target="_blank" rel="noopener" class="sociallink" aria-label="YouTube" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4a2.5 2.5 0 00-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"></path></svg></a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Manrope','Manrope-fallback',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">About</div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.aboutHeading -->About<!-- /cms:block footer.aboutHeading --></div>
         <div style="display:flex;flex-direction:column;gap:13px">
           <a href="about/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">About UTC</a>
           <a href="faq/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">FAQ</a>
-          <span title="Coming soon" class="footlink" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">Careers <span style="font-size:10px;letter-spacing:.1em;opacity:.8">&middot; SOON</span></span>
+          <a href="careers/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Careers</a>
           <a href="sitemap/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
           <a href="privacy-policy/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Manrope','Manrope-fallback',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Store Locations</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0">Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Al Jawhara, Shuwaikh &amp; Jahra</p>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.storesHeading -->Where to find us<!-- /cms:block footer.storesHeading --></div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0"><!-- cms:block footer.storesLine -->Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Shuwaikh &amp; Jahra<!-- /cms:block footer.storesLine --></p>
       </div>
       <div>
         <div class="foot-divs" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch">
+<!-- cms:footdivs -->
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/electronics-logo.webp" alt="Union Electronics" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/aluna-logo.webp" alt="Aluna" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/fmcg-logo.webp" alt="FMCG" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/labels-logo.webp" alt="Labels" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Commercial Projects" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Union Engineering Company" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;grid-column:1/-1;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/beauty-fashion-wordmark.webp" alt="Beauty &amp; Fashion" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+<!-- /cms:footdivs -->
         </div>
       </div>
     </div>
-    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#6a6760;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
+    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center"><!-- cms:block footer.copyright -->&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.<!-- /cms:block footer.copyright --></div>
   </footer>
+<!-- /cms:footer -->
 </div>
-<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
+
+<script>
+  // ===== Our Brands: continuous auto-scrolling marquee (pause on hover) =====
+  (function(){
+    var track=document.getElementById('alunaMarq'); if(!track) return;
+    var originals=Array.prototype.slice.call(track.children);
+    var period=0;
+    function measure(){ var g=parseFloat(getComputedStyle(track).gap)||0, w=0; originals.forEach(function(k){ w+=k.getBoundingClientRect().width; }); period=w+g*originals.length; }
+    originals.forEach(function(k){ track.appendChild(k.cloneNode(true)); });
+    originals.forEach(function(k){ track.appendChild(k.cloneNode(true)); });
+    measure(); window.addEventListener('resize',measure);
+    var paused=false, pos=0, wrap=track.parentElement, last=0, PXPS=30; // px/sec — framerate-independent
+    wrap.addEventListener('pointerenter',function(e){ if(e.pointerType==='mouse') paused=true; });
+    wrap.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse') paused=false; });
+    var held=false;
+    window.marqDrag=window.marqDrag||function(wrap,get,set,hold){ // drag a self-moving strip by touch
+      // Touch events, not pointer events: iPhone Safari stops sending pointer moves after the first
+      // drag on an element that is moving under the finger, so the second drag did nothing.
+      wrap.style.touchAction='pan-y';
+      var d=null, moved=false, t=0;
+      wrap.addEventListener('touchstart',function(e){ if(e.touches.length!==1){ d=null; return; } var p=e.touches[0]; d={x:p.clientX,y:p.clientY,p:get(),on:false}; moved=false; },{passive:true});
+      wrap.addEventListener('touchmove',function(e){ if(!d)return; var p=e.touches[0], dx=p.clientX-d.x, dy=p.clientY-d.y;
+        if(!d.on){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; if(Math.abs(dy)>Math.abs(dx)){ d=null; return; } d.on=true; moved=true; clearTimeout(t); hold(true); }
+        if(e.cancelable) e.preventDefault();
+        set(d.p,dx); },{passive:false});
+      function end(){ if(!d)return; var was=d.on; d=null; if(was){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+      wrap.addEventListener('touchend',end); wrap.addEventListener('touchcancel',end);
+      // MOUSE, too (18 Nov 2026): click and drag the strip the way a finger can. A drag starts only after
+      // the mouse moves a few pixels, so a plain click still opens a card; the strip waits, then carries on.
+      wrap.style.cursor='grab';
+      wrap.addEventListener('dragstart',function(e){ e.preventDefault(); });
+      wrap.addEventListener('mousedown',function(e){ if(e.button!==0)return; var m={x:e.clientX,p:get(),on:false}; moved=false;
+        function mv(ev){ var dx=ev.clientX-m.x; if(!m.on){ if(Math.abs(dx)<5)return; m.on=true; moved=true; clearTimeout(t); hold(true); wrap.style.cursor='grabbing'; document.documentElement.style.userSelect='none'; } set(m.p,dx); }
+        function up(){ window.removeEventListener('mousemove',mv); window.removeEventListener('mouseup',up); wrap.style.cursor='grab'; document.documentElement.style.userSelect=''; if(m.on){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+        window.addEventListener('mousemove',mv); window.addEventListener('mouseup',up); });
+      wrap.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+    };
+    marqDrag(wrap,function(){return pos;},function(p0,dx){ pos=p0-dx; if(period>0){ pos%=period; if(pos<0)pos+=period; } track.style.transform='translateX('+(-pos)+'px)'; },function(h){held=h;});
+    function step(ts){ if(!last)last=ts; var dt=ts-last; last=ts; if(!paused && !held && period>0){ pos+=dt*PXPS/1000; if(pos>=period) pos-=period; track.style.transform='translateX('+(-pos)+'px)'; } requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  })();
+
+  // ===== the category accordion, mounted once per section =====
+//
+// It was written for one section and reached for four ids by name. Two accordions cannot both
+// own "catAcc", so the ids and the list are handed in. The behaviour below is unchanged.
+function mountCatAcc(ids, cats, DEF_IN) {
+  var acc = document.getElementById(ids.acc); if (!acc) return;
+  var DEF_OVERRIDE = DEF_IN;
+
+    
+    
+    // the panel the console marked open (one at most), otherwise the page's own choice
+    var DEF=(function(){for(var i=0;i<cats.length;i++){if(cats[i].open)return i;}return DEF_OVERRIDE!=null?DEF_OVERRIDE:0;}()), active=DEF;
+    acc.innerHTML=cats.map(function(c,i){
+      var media=c.img ? 'background-image:url('+c.img+')' : 'background:'+c.grad;
+      return '<div class="cat-panel'+(i===DEF?' active':'')+'" data-i="'+i+'">'
+        +'<div class="cat-media" style="'+media+'"></div>'
+        +'<span class="cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+c.icon+'</svg></span>'
+        +'<div class="cat-body"><div class="cat-num">'+c.n+'</div>'+(c.tag?'<div class="cat-tag">'+c.tag+'</div>':'')+'<div class="cat-line"></div><div class="cat-title"><span class="ct-s">'+(c.short||c.t)+'</span><span class="ct-f">'+c.t+'</span></div>'
+        +'<div class="cat-extra"><div class="cat-sub">'+c.sub+'</div>'
+        // a panel with an address can be followed: the Aluna concept goes on to the Aluna page
+        +(c.url?'<a class="cat-go" href="'+c.url+'"'+(/^https?:/.test(c.url)?' target="_blank" rel="noopener"':'')+'>Visit '+(c.short||c.t)+' <span aria-hidden="true">&rarr;</span></a>':'')
+        +'</div>'
+        +'</div></div>';
+    }).join('');
+    var panels=Array.prototype.slice.call(acc.querySelectorAll('.cat-panel'));
+    var numEl=document.getElementById(ids.num);
+    var isCar=function(){ return acc.scrollWidth > acc.clientWidth + 4; };  // true only in the mobile carousel layout
+    var lockUntil=0;   // while a button-triggered smooth scroll animates, ignore scroll-driven repaints (stops the counter flicker)
+    function paint(i){ active=i; panels.forEach(function(p,j){ p.classList.toggle('active',j===i); }); if(numEl) numEl.textContent=cats[i].n; }
+    function setActive(i,smooth){ paint(i); if(isCar()){ var c=panels[i]; if(smooth!==false) lockUntil=Date.now()+700; acc.scrollTo({ left:c.offsetLeft-(acc.clientWidth-c.offsetWidth)/2, behavior: smooth===false?'auto':'smooth' }); } }
+    panels.forEach(function(p,i){ p.addEventListener('mouseenter',function(){ if(!isCar()) setActive(i); }); });   // hover-expand: desktop only
+    var craf=0;
+    acc.addEventListener('scroll',function(){ cancelAnimationFrame(craf); craf=requestAnimationFrame(function(){ if(!isCar()||Date.now()<lockUntil)return; var mid=acc.scrollLeft+acc.clientWidth/2,best=0,bd=Infinity; panels.forEach(function(c,i){ var cen=c.offsetLeft+c.offsetWidth/2,d=Math.abs(cen-mid); if(d<bd){bd=d;best=i;} }); if(best!==active) paint(best); }); },{passive:true});
+    window.addEventListener('resize',function(){ if(isCar()) setActive(active,false); });
+    var pv=document.getElementById(ids.prev), nx=document.getElementById(ids.next);
+    if(pv) pv.onclick=function(){ setActive((active-1+cats.length)%cats.length); };
+    if(nx) nx.onclick=function(){ setActive((active+1)%cats.length); };
+    setActive(isCar() ? 0 : DEF, false);   // desktop opens the featured 5th; mobile carousel starts at the 1st
+  
+}
+// ===== Featured services (Option D): an index of every service + one big preview card =====
+// The list comes from the console (the cms fence below). Every row and the card open the contact
+// form on Product support with that service already chosen in "Service needed".
+function mountFeatList(cats) {
+  var list = document.getElementById('fsList'), card = document.getElementById('fsCard');
+  if (!list || !card || !cats.length) return;
+  var esc = function (x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var href = function (c) { return c.url || ('home/?intent=support&service=' + encodeURIComponent(c.t) + '#contact'); };
+  var ext = function (c) { return c.url && /^https?:/.test(c.url); };
+  var tot = (cats.length < 10 ? '0' : '') + cats.length, on = -1;
+  list.innerHTML = cats.map(function (c, i) {
+    return '<a href="' + href(c) + '"' + (ext(c) ? ' target="_blank" rel="noopener"' : '') + ' data-i="' + i + '" aria-label="Book a service: ' + esc(c.t) + '">'
+      + '<span class="fs-num">' + esc(c.n) + '</span><span class="fs-ttl">' + esc(c.t) + (c.tag ? '<span class="fs-tag">' + esc(c.tag) + '</span>' : '') + '</span></a>';
+  }).join('');
+  var rows = Array.prototype.slice.call(list.querySelectorAll('a'));
+  function show(i) {
+    if (i === on) return; on = i; var c = cats[i];
+    rows.forEach(function (a, k) { a.classList.toggle('on', k === i); });
+    card.href = href(c);
+    if (ext(c)) { card.target = '_blank'; card.rel = 'noopener'; } else { card.removeAttribute('target'); card.removeAttribute('rel'); }
+    card.setAttribute('aria-label', 'Book a service: ' + c.t);
+    card.innerHTML = '<div class="fs-media" style="' + (c.img ? 'background-image:url(' + c.img + ')' : 'background:' + c.grad) + '"></div><div class="fs-shade"></div>'
+      + '<span class="fs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' + c.icon + '</svg></span>'
+      + '<div class="fs-in"><span class="fs-num">' + esc(c.n) + ' / ' + tot + '</span><div class="fs-ttl">' + esc(c.t) + '</div><div class="fs-sub">' + esc(c.sub) + '</div>'
+      + '<span class="fs-btn">' + (c.url ? 'VISIT ' + esc(c.short || c.t).toUpperCase() : 'BOOK THIS SERVICE') + ' <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>';
+  }
+  // a mouse takes over a row only after resting on it a moment, so sweeping across doesn't flicker
+  var t = 0;
+  list.addEventListener('pointerover', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    var a = e.target.closest('a'); if (!a) return;
+    clearTimeout(t); t = setTimeout(function () { show(+a.dataset.i); }, 70);
+  });
+  list.addEventListener('pointerleave', function () { clearTimeout(t); });
+  list.addEventListener('focusin', function (e) { var a = e.target.closest('a'); if (a) show(+a.dataset.i); });
+  // touch: the first tap on a row shows it in the card (which sits above the list); a second tap books
+  var touch = false;
+  list.addEventListener('pointerdown', function (e) { touch = e.pointerType !== 'mouse'; });
+  list.addEventListener('click', function (e) {
+    var a = e.target.closest('a'); if (!a || !touch) return;
+    var i = +a.dataset.i; if (i === on) return;
+    e.preventDefault(); show(i);
+    var r = card.getBoundingClientRect();
+    if (r.top < 0 || r.bottom > innerHeight) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+  var def = 0; for (var k = 0; k < cats.length; k++) { if (cats[k].open) { def = k; break; } }
+  show(def);
+  // However many services the console publishes, the list stays inside the card's height:
+  // each step is tighter (less space, then smaller type, then three columns) and the first one
+  // where every name fits is kept. On a phone the list simply runs on below the card.
+  // (past about 30 services even the tightest step cannot fit, and then the card grows with the
+  // list rather than hiding any of them)
+  var FITS = ['', 'fit1', 'fit2', 'fit2 fit3', 'fit2 fit3 fit4', 'fit2 fit3 fit4 fitgrow'];
+  function fit() {
+    FITS.forEach(function (f) { f && f.split(' ').forEach(function (x) { list.classList.remove(x); }); });
+    if (getComputedStyle(list).overflow !== 'hidden') return;   // phone layout: nothing to fit
+    for (var s = 0; s < FITS.length; s++) {
+      if (FITS[s]) FITS[s].split(' ').forEach(function (x) { list.classList.add(x); });
+      if (list.scrollHeight <= list.clientHeight + 1) return;
+    }
+  }
+  fit();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('resize', fit);
+  // refit when the card changes WIDTH only: the last step lets the card grow with the list, and
+  // reacting to that height change would undo it and loop
+  var lastW = 0;
+  if (window.ResizeObserver) new ResizeObserver(function () { var w = card.offsetWidth; if (w !== lastW) { lastW = w; fit(); } }).observe(card);
+}
+mountFeatList([/* cms:divpagecats */
+      {n:'01',t:'Service Contracts',short:'Contracts',sub:'Tailored preventive and corrective maintenance solutions for residential and commercial customers.',img:'img/cat/us/amc.webp',grad:'linear-gradient(160deg,#2c3436,#0d1011)',icon:'\u003cpath d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>\u003cpath d="M14 3v5h5"/>\u003cpath d="m9 14 2 2 4-4"/>'},
+      {n:'02',t:'Air Conditioning & HVAC Solutions',short:'AC & HVAC',sub:'Installation, servicing, and maintenance of air conditioning, HVAC, and VRF systems.',img:'img/cat/us/rac.webp',grad:'linear-gradient(160deg,#2f333a,#0e0f12)',icon:'\u003crect x="2" y="4" width="20" height="9" rx="2"/>\u003cpath d="M6 9h12"/>\u003cpath d="M7 17c0 1.5-1 2.5-1 4M12 16v5M17 17c0 1.5 1 2.5 1 4"/>'},
+      {n:'03',t:'Home Appliances & Built-In Solutions',short:'Appliances',sub:'Professional installation, maintenance, and repair of household and built-in appliances.',img:'img/cat/us/built-in.webp',grad:'linear-gradient(160deg,#33302a,#12100c)',icon:'\u003crect x="4" y="2" width="16" height="20" rx="2"/>\u003cpath d="M4 7h16"/>\u003ccircle cx="12" cy="14" r="4"/>\u003cpath d="M8 4.5h.01M11 4.5h.01"/>'},
+      {n:'04',t:'Audio, Video & Electronics',short:'AV & Electronics',sub:'Specialized installation, troubleshooting, and technical support for electronic and entertainment systems.',img:'img/cat/us/tv-installation.webp',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'\u003crect x="2" y="4" width="20" height="13" rx="2"/>\u003cpath d="M8 21h8M12 17v4"/>\u003cpath d="m10 8.5 4 2-4 2z"/>'},
+      {n:'05',t:'Site Surveys & Technical Assessments',short:'Site Surveys',sub:'Professional site inspections and technical evaluations to identify the most suitable solutions.',grad:'linear-gradient(160deg,#2a2f36,#0c0e11)',icon:'\u003cpath d="M9 3h6v3H9z"/>\u003cpath d="M15 4.5h2a2 2 0 0 1 2 2V11"/>\u003cpath d="M9 4.5H7a2 2 0 0 0-2 2V20a2 2 0 0 0 2 2h5"/>\u003ccircle cx="17" cy="17" r="3"/>\u003cpath d="m21 21-1.8-1.8"/>'},
+      {n:'06',t:'Installation & Commissioning',short:'Installation',sub:'Expert installation, start-up, testing, and commissioning to ensure optimal product performance.',img:'img/cat/us/central-ac.webp',grad:'linear-gradient(160deg,#30333a,#0f1013)',icon:'\u003cpath d="M9 2v6M15 2v6"/>\u003cpath d="M6 8h12v3a6 6 0 0 1-12 0z"/>\u003cpath d="M12 17v5"/>'},
+      {n:'07',t:'Troubleshooting & Repairs',short:'Repairs',sub:'Reliable diagnostics and professional repairs to restore functionality and minimize downtime.',img:'img/cat/us/small-appliances.webp',grad:'linear-gradient(160deg,#2c3436,#0d1011)',icon:'\u003cpath d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>'},
+      {n:'08',t:'Genuine Spare Parts & Technical Support',short:'Spare Parts',sub:'Access to genuine spare parts and dedicated technical assistance to maintain product quality and reliability.',grad:'linear-gradient(160deg,#2f333a,#0e0f12)',icon:'\u003ccircle cx="12" cy="12" r="3"/>\u003cpath d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>'},
+      {n:'09',t:'Kitchen Design & Fit-Out Solutions',short:'Kitchens',sub:'Comprehensive end-to-end kitchen solutions, from concept development and space planning to design, equipment selection, installation, and commissioning for residential and commercial kitchens.',grad:'linear-gradient(160deg,#33302a,#12100c)',icon:'\u003cpath d="M2 12h20"/>\u003cpath d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/>\u003cpath d="m4 8 16-4"/>\u003cpath d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/>'},
+      {n:'10',t:'Residential Fit-Out Solutions',short:'Residential Fit-Out',sub:'Customized home interior solutions, encompassing space planning, renovation, finishing works, and technical installations to create modern, functional, and comfortable living spaces.',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'\u003cpath d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/>\u003cpath d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/>\u003cpath d="M4 18v2M20 18v2M12 4v9"/>'},
+      {n:'11',t:'General & Commercial Fit-Out Solutions',short:'Commercial Fit-Out',sub:'Comprehensive fit-out and refurbishment services for offices, retail outlets, and commercial facilities, covering interior finishing, technical installations, and project execution to deliver functional, efficient, and high-quality environments.',grad:'linear-gradient(160deg,#2a2f36,#0c0e11)',icon:'\u003cpath d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/>\u003cpath d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>\u003cpath d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>\u003cpath d="M10 6h4M10 10h4M10 14h4M10 18h4"/>'},
+      {n:'12',t:'Smart Home & Automation Solutions',short:'Smart Home',sub:'Transform your home or business into a smarter, safer, and more energy-efficient environment. Our integrated automation solutions provide seamless control over lighting, climate, appliances, security, and connected systems—anytime, anywhere.',grad:'linear-gradient(160deg,#30333a,#0f1013)',icon:'\u003cpath d="M3 10.5 12 3l9 7.5"/>\u003cpath d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/>\u003cpath d="M8.5 14.5a5 5 0 0 1 7 0"/>\u003cpath d="M10.2 16.8a2.5 2.5 0 0 1 3.6 0"/>\u003cpath d="M12 19h.01"/>'}
+/* /cms:divpagecats */
+]);
+</script>
+<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow')||e.target.closest('.newslink'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 <script defer src="nav-menu.js"></script>
+<script defer src="announcements.js"></script>
+
+
+
+
 </body>
 </html>

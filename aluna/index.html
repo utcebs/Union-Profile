@@ -7,13 +7,16 @@
 addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var h=a.getAttribute("href");if(h.length<2){e.preventDefault();scrollTo({top:0,behavior:"smooth"});return;}if(document.getElementById(h.slice(1))){e.preventDefault();location.hash=h;}});</script>
 
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preload" as="image" href="img/div-cosmetics.webp" fetchpriority="high">
 <title>Aluna Division — Union Trading Co.</title>
 <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/favicon/favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/favicon-512.png">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 <style>
 @font-face{font-family:'Manrope-fallback';src:local('Arial'),local('Helvetica Neue'),local('Helvetica');size-adjust:90.7%;ascent-override:99%;descent-override:27%;line-gap-override:0%}
@@ -181,7 +184,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:74px}
-  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#141311;background:#f5f3ee;-webkit-font-smoothing:antialiased}
+  body{font-family:'Manrope','Manrope-fallback',system-ui,sans-serif;color:#141311;background:#ede7d9;-webkit-font-smoothing:antialiased}
   a{color:#141311;text-decoration:none}
   img{display:block;max-width:100%}
   input,button{font-family:inherit}
@@ -197,13 +200,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .darkbtn:hover{background:#bb887f !important;gap:14px}
   .darkbtn{transition:background .3s,gap .25s}.darkbtn:hover{background:#3a3833}
   .footlink:hover{color:#fff}.sociallink:hover{background:#fff;color:#0d0d0d}
-  .brandcard{flex:0 0 clamp(146px,17vw,182px);background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #ece7db;border-radius:20px;padding:clamp(20px,2.2vw,28px) clamp(12px,1.4vw,18px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .3s,box-shadow .3s,border-color .3s}
-  .brandcard:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(0,0,0,.28);border-color:#dcd7cb}
+  .brandcard{flex:0 0 clamp(146px,17vw,182px);background:linear-gradient(180deg,#ffffff,#f1efe9);border:1px solid #d6cebd;border-radius:20px;padding:clamp(20px,2.2vw,28px) clamp(12px,1.4vw,18px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .brandcard:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(0,0,0,.28);border-color:#d6cebd}
   .brandcard-media{height:clamp(60px,7vw,84px);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
   .brandcard-media img{max-height:100%;max-width:78%;object-fit:contain;transition:transform .45s ease}
   .brandcard:hover .brandcard-media img{transform:scale(1.06)}
   /* Featured Brands — logo band (logos carry the names, so no captions) */
-  .fbrand{flex:0 0 auto;height:clamp(60px,6.6vw,88px);display:flex;align-items:center;justify-content:center;padding:0 clamp(16px,2vw,34px);border-right:1px solid #e4dfd4}
+  .fbrand{flex:0 0 auto;height:clamp(60px,6.6vw,88px);display:flex;align-items:center;justify-content:center;padding:0 clamp(16px,2vw,34px);border-right:1px solid #d6cebd}
   .fbrand:last-child{border-right:none}
   .fbrand img{max-height:100%;max-width:clamp(110px,13vw,164px);object-fit:contain;transition:transform .35s ease}
   .fbrand:hover img{transform:scale(1.07)}
@@ -214,8 +217,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .shopcta{transition:background .3s,color .3s,border-color .3s,gap .25s}.shopcta:hover{background:transparent !important;color:#e6c2bc !important;border-color:#cf9f98 !important;gap:14px}
   .uesoc{width:42px;height:42px;border-radius:50%;border:1px solid #34322e;display:flex;align-items:center;justify-content:center;color:#c2c5cc;transition:background .2s,color .2s,border-color .2s}
   .uesoc:hover{background:#fff;color:#0d0d0d;border-color:#fff}
-  .ourlogo{flex:0 0 auto;width:clamp(72px,7.6vw,116px);height:44px;background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.9;transition:opacity .35s ease,transform .35s ease}
-  .ourlogo:hover{opacity:1;transform:scale(1.12)}
+  /* 30px cap-height is the size the mid-width marks (Naomi & Nicole, Leg Avenue, Cupid)
+     already rendered at; each logo now takes its own natural width so the long wordmarks
+     reach that height too (Eileen West was drawing 16px, Carole Hochman 22px) */
+  .ourlogo{flex:0 0 auto;height:30px;width:auto;max-width:230px;object-fit:contain;opacity:1;transition:transform .35s ease}
+  .ourlogo:hover{transform:scale(1.12)}
   .aluna-marq-wrap{flex:1;min-width:0;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
   .aluna-marq{display:flex;align-items:center;gap:clamp(30px,3.4vw,52px);width:max-content;will-change:transform}
   /* ===== Categories hover-expand accordion ===== */
@@ -278,6 +284,15 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .contact4>div{aspect-ratio:1.28!important}   /* a touch smaller than square */
   }
   .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  /* news in the header */
+  .headact{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
+  .headact::before{content:"";width:1px;height:22px;background:rgba(255,255,255,.22);flex:0 0 auto}
+  .newslink{display:inline-flex;align-items:center;gap:7px;color:#bcb6a7;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:color .25s}
+  .newslink::after{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;transition:transform .25s}
+  .newslink:hover{color:#fff}
+  .newslink:hover::after{transform:scale(1.35)}
+  .newslink[aria-current="page"]{color:#fff}
+  /* /news in the header */
   .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
   .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
   @media(max-width:900px){
@@ -286,6 +301,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .mainnav{display:none}
     header .shopnow{display:none}
     header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    /* news in the header */
+    header .headact{display:none}
+    header.nav-open .headact{display:flex;flex:0 0 100%;align-items:center;gap:20px;padding:0 2px 10px}
+    header.nav-open .headact::before{display:none}
+    /* /news in the header */
     header.nav-open .shopnow{display:inline-flex}
     header.nav-open .ico-bars{display:none}
     header.nav-open .ico-close{display:block}
@@ -312,6 +332,31 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   @media(max-width:820px){.bm-grid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:470px){.bm-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
+<style>
+  /* connect tiles on a phone */
+  /* A grid column is never narrower than its longest line ("Sun - Thu: 8:00 AM - 5:00 PM"), so on a
+     phone the two columns came out wider than the card and the right-hand tiles were cut off.
+     minmax(0,1fr) lets them shrink; the tiles take the height their words need and may wrap.
+     The square rule only ever caught the tiles that are boxes, not the one that is a link. */
+  @media(max-width:980px){
+    .connect-grid{grid-template-columns:minmax(0,1fr)!important}
+    .contact4,.stat4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    .contact4>*{min-width:0;aspect-ratio:auto!important;min-height:clamp(112px,30vw,150px);padding:14px 10px!important}
+    .contact4>* div{overflow-wrap:anywhere}
+  }
+  /* an iPhone turns a phone number into a link of its own colour, near black on these tiles */
+  a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}
+</style>
+<meta name="format-detection" content="telephone=no">
+<style>
+  /* rounded photo cards: no rim at the corners */
+  /* A dark fallback behind a rounded photo shows through where the corner is smoothed, as a thin
+     dark line, worst on a light photo. And a photo that zooms on hover is drawn on a layer of its
+     own, which some browsers (Safari above all) clip a hair short of the curve. So: nothing dark
+     behind, the photo rounded itself, and the card made its own clipping layer. */
+  .cat-panel,.bw2-card{background:transparent!important;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black);mask-image:radial-gradient(white,black)}
+  .cat-media,.bw2-card img{border-radius:inherit}
+</style>
 </head>
 <body>
 <div style="overflow-x:clip">
@@ -329,10 +374,10 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <a href="divisions/" class="hoverline" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid #fff">Our Divisions</a>
         <a href="our-stores/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
         <a href="our-channels/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
-        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
+        <a href="careers/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
         <a href="home/#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="home/?intent=partnership&division=aluna#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <div class="headact"><a href="news/" class="newslink">News</a><a href="home/?intent=partnership&division=aluna#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a></div>
     </div>
   </header>
 
@@ -349,11 +394,11 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <a href="home/">Home</a><span>&rsaquo;</span><a href="divisions/">Our Divisions</a><span>&rsaquo;</span><span style="color:#cfcbc0">Aluna</span>
       </div>
       <img src="img/cat/Aluna/logo.png" alt="Aluna" fetchpriority="high" style="width:clamp(230px,28vw,360px);max-width:100%;height:auto;margin:2px 0">
-      <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;padding:0;border:0">Aluna — Beauty in Every Detail</h1>
+      <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;padding:0;border:0"><!-- cms:block aluna.alunaBeautyInEveryTitle -->Aluna — Beauty in Every Detail<!-- /cms:block aluna.alunaBeautyInEveryTitle --></h1>
       <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2vw,26px);color:#d3a7a0">Beauty in Every Detail.</div>
-      <p style="color:#a8a49b;font-size:15.5px;line-height:1.8;margin:0;max-width:430px">We bring the world's most loved beauty and fragrance names closer to you. From premium cosmetics and skincare to fine perfumes, we deliver authenticity, elegance, and confidence in every product.</p>
+      <p style="color:#a8a49b;font-size:15.5px;line-height:1.8;margin:0;max-width:430px"><!-- cms:block aluna.alunaBeautyInEveryLine -->We bring the world's most loved beauty and fragrance names closer to you. From premium cosmetics and skincare to fine perfumes, we deliver authenticity, elegance, and confidence in every product.<!-- /cms:block aluna.alunaBeautyInEveryLine --></p>
       <div style="display:flex;align-items:center;gap:clamp(16px,2vw,24px);flex-wrap:wrap">
-        <a href="https://alunakw.com/collections" target="_blank" rel="noopener" class="shopcta" style="display:inline-flex;align-items:center;gap:10px;background:#c99a93;color:#241a18;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 30px;border-radius:999px;border:1px solid #c99a93">SHOP NOW <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://alunakw.com/" target="_blank" rel="noopener" class="shopcta" style="display:inline-flex;align-items:center;gap:10px;background:#c99a93;color:#241a18;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 30px;border-radius:999px;border:1px solid #c99a93">SHOP NOW <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div style="display:flex;align-items:center;gap:10px"><a href="https://www.instagram.com/aluna_kw/" target="_blank" rel="noopener" class="uesoc" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path></svg></a><a href="https://www.facebook.com/alunakw/" target="_blank" rel="noopener" class="uesoc" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a></div>
       </div>
       <div class="feat3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px);margin-top:6px;max-width:470px">
@@ -383,22 +428,22 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <div style="font-family:'Archivo';font-weight:700;font-size:16px;color:#161513;margin-bottom:20px">Our Brands</div>
       <div style="display:flex;align-items:center;gap:clamp(18px,2.6vw,40px)">
         <div class="aluna-marq-wrap">
-        <div class="aluna-marq" id="alunaMarq">
-          <div class="ourlogo" role="img" aria-label="Triumph" style="background-image:url('img/brands-aluna/triumph.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Sloggi" style="background-image:url('img/brands-aluna/sloggi.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Maidenform" style="background-image:url('img/brands-aluna/maidenform.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Hanes" style="background-image:url('img/brands-aluna/hanes.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Bali" style="background-image:url('img/brands-aluna/bali.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Naomi &amp; Nicole" style="background-image:url('img/brands-aluna/naomi-nicole.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Carole Hochman" style="background-image:url('img/brands-aluna/carole-hochman.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Leg Avenue" style="background-image:url('img/brands-aluna/leg-avenue.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Eileen West" style="background-image:url('img/brands-aluna/eileen-west.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Cupid" style="background-image:url('img/brands-aluna/cupid.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Mapale" style="background-image:url('img/brands-aluna/mapale.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="Ivory" style="background-image:url('img/brands-aluna/ivory.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="C.Lengerie" style="background-image:url('img/brands-aluna/c-lengerie.webp')"></div>
-          <div class="ourlogo" role="img" aria-label="G World" style="background-image:url('img/brands-aluna/g-world.webp')"></div>
-        </div>
+        <div class="aluna-marq" id="alunaMarq"><!-- cms:divpagestrip -->
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/triumph.webp" alt="Triumph">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/sloggi.webp" alt="Sloggi">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/maidenform.webp" alt="Maidenform">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/hanes.webp" alt="Hanes" style="height:44px">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/bali.webp" alt="Bali">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/naomi-nicole.webp" alt="Naomi &amp; Nicole">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/carole-hochman.webp" alt="Carole Hochman">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/leg-avenue.webp" alt="Leg Avenue">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/eileen-west.webp" alt="Eileen West">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/cupid.webp" alt="Cupid">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/mapale.webp" alt="Mapale">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/ivory.webp" alt="Ivory">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/c-lengerie.webp" alt="C.Lengerie">
+          <img loading="eager" decoding="async" class="ourlogo" src="img/brands-aluna/g-world.webp" alt="G World" style="height:44px">
+<!-- /cms:divpagestrip --></div>
         </div>
         <div style="display:flex;align-items:center;gap:16px;flex:none">
           <div style="width:1px;height:34px;background:#e6e2d8"></div>
@@ -412,9 +457,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <div class="wrap" style="padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(40px,5vw,64px)">
     <div class="cat-wrap">
       <div>
-        <div class="eyebrow" style="margin-bottom:18px">Our Categories</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513">Everything for<br>modern intimates.</h2>
-        <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 30px;max-width:340px">Explore our world of intimates &mdash; from everyday essentials to elegant statement pieces.</p>
+        <div class="eyebrow" style="margin-bottom:18px"><!-- cms:block aluna.ourCategoriesKicker -->Our Categories<!-- /cms:block aluna.ourCategoriesKicker --></div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:0;color:#161513"><!-- cms:block aluna.ourCategoriesTitle -->Everything for<br>modern intimates.<!-- /cms:block aluna.ourCategoriesTitle --></h2>
+        <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 30px;max-width:340px"><!-- cms:block aluna.ourCategoriesLine -->Explore our world of intimates &mdash; from everyday essentials to elegant statement pieces.<!-- /cms:block aluna.ourCategoriesLine --></p>
         <a href="home/?intent=partnership&division=aluna#contact" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#c99a93;color:#241a18;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 28px;border-radius:999px">GET IN TOUCH <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#241a18" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div style="display:flex;align-items:center;gap:22px;margin-top:clamp(34px,4vw,50px)">
           <div class="catnav" id="catPrev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
@@ -436,7 +481,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <div></div>
         <div style="padding:clamp(16px,2.2vw,28px) clamp(22px,2.8vw,38px);display:flex;flex-direction:column;justify-content:center;color:#fff">
         <div style="font-size:11.5px;letter-spacing:0.28em;color:#d3a7a0;font-weight:600;margin-bottom:clamp(22px,3vw,32px)">OUR DIVISION AT A GLANCE</div>
-        <div class="stat4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,26px)">
+        <div class="stat4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,26px)"><!-- cms:divpagestats -->
           <div>
             <div style="color:#c2c5cc;margin-bottom:12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
             <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">20+</div>
@@ -457,7 +502,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
             <div style="font-family:'Archivo';font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1">75+</div>
             <div style="color:#8b8880;font-size:12.5px;margin-top:6px">Years of Trust</div>
           </div>
-        </div>
+<!-- /cms:divpagestats --></div>
         <p style="color:#8b8880;font-size:13.5px;margin:clamp(22px,3vw,30px) 0 0;line-height:1.6">Bringing beauty, confidence, and elegance to every home.</p>
         </div>
       </div>
@@ -467,15 +512,18 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   <!-- ============ FEATURED BRANDS ============ -->
   <div class="wrap" style="padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(20px,3vw,30px)">
     <div style="text-align:center;margin-bottom:clamp(26px,3vw,38px)">
-      <div class="eyebrow" style="margin-bottom:14px">Featured Brands</div>
-      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.05;margin:0;color:#161513">Beauty names you love.</h2>
+      <div class="eyebrow" style="margin-bottom:14px"><!-- cms:block aluna.featuredBrandsKicker -->Featured Brands<!-- /cms:block aluna.featuredBrandsKicker --></div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.05;margin:0;color:#161513"><!-- cms:block aluna.featuredBrandsTitle -->Beauty names you love.<!-- /cms:block aluna.featuredBrandsTitle --></h2>
     </div>
     <div class="brand2" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0;max-width:1120px;margin:0 auto">
+<!-- cms:divpagefeatured -->
       <div class="fbrand"><img loading="lazy" decoding="async" src="img/brands-aluna/carole-hochman.webp" alt="Carole Hochman"></div>
       <div class="fbrand"><img loading="lazy" decoding="async" src="img/brands-aluna/c-lengerie.webp" alt="C.Lingerie"></div>
       <div class="fbrand"><img loading="lazy" decoding="async" src="img/brands-aluna/ivory.webp" alt="Ivory"></div>
       <div class="fbrand"><img loading="lazy" decoding="async" src="img/brands-aluna/caha-capo.webp" alt="Caha Capo"></div>
       <div class="fbrand"><img loading="lazy" decoding="async" src="img/brands-aluna/eileen-west.webp" alt="Eileen West"></div>
+      <div class="fbrand"><img loading="lazy" decoding="async" src="img/brands-aluna/ivory.webp" alt="Ivory"></div>
+<!-- /cms:divpagefeatured -->
     </div>
   </div>
 
@@ -487,27 +535,27 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       <div class="connect-grid" style="position:relative;display:grid;grid-template-columns:0.78fr 1.6fr;gap:clamp(24px,3.4vw,44px);align-items:center;padding:clamp(16px,2.2vw,28px) clamp(14px,1.9vw,26px)">
         <div style="color:#fff">
           <div style="font-size:11.5px;letter-spacing:0.28em;color:#d3a7a0;font-weight:600;margin-bottom:16px">LET'S CONNECT</div>
-          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(14px,1.5vw,20px);line-height:1.15;margin:0">We're here to help you<br>look and feel your best.</h2>
-          <p style="color:#a8a49b;font-size:14.5px;line-height:1.7;margin:18px 0 26px;max-width:320px">Have a question, need beauty advice, or looking for business solutions? Reach out to our team.</p>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(14px,1.5vw,20px);line-height:1.15;margin:0"><!-- cms:block aluna.weReHereToTitle -->We're here to help you<br>look and feel your best.<!-- /cms:block aluna.weReHereToTitle --></h2>
+          <p style="color:#a8a49b;font-size:14.5px;line-height:1.7;margin:18px 0 26px;max-width:320px"><!-- cms:block aluna.weReHereToLine -->Have a question, need beauty advice, or looking for business solutions? Reach out to our team.<!-- /cms:block aluna.weReHereToLine --></p>
           <a href="home/?intent=partnership&division=aluna#contact" class="reachbtn" style="display:inline-flex;align-items:center;gap:10px;background:#c99a93;color:#241a18;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 26px;border-radius:999px;border:1px solid transparent">Partner with us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="contact4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(5px,0.7vw,8px)">
-          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
             <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 005.5 5.5l1.5-2 4 1.5v3a2 2 0 01-2 2A16 16 0 014.5 6a2 2 0 012-2z"/></svg></div>
             <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Call Us</div>
             <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">+965 2242 3355</div>
           </div>
-          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+          <a href="home/?intent=partnership&division=aluna#contact" style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px);text-decoration:none;cursor:pointer">
             <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
             <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Email Us</div>
-            <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">c.elkhoury@utc.com.kw</div>
-          </div>
-          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+            <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">Send us a message</div>
+          </a>
+          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
             <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
             <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Visit Us</div>
             <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">Head Office, Shuwaikh Kuwait</div>
           </div>
-          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.08);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
+          <div style="background:rgba(8,8,8,.66);border:1px solid rgba(255,255,255,.16);border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:clamp(5px,0.55vw,7px) clamp(5px,0.55vw,7px)">
             <div style="color:#c2c5cc;margin-bottom:8px;display:flex;justify-content:center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0116 0"/><rect x="2.5" y="13" width="4" height="7" rx="1.5"/><rect x="17.5" y="13" width="4" height="7" rx="1.5"/><path d="M20 20a4 4 0 01-4 3h-2"/></svg></div>
             <div style="color:#fff;font-family:'Archivo';font-weight:700;font-size:13px">Working Hours</div>
             <div style="color:#b2aea5;font-size:11.5px;margin-top:5px;line-height:1.4">Sun - Thu: 8:00 AM - 5:00 PM</div>
@@ -518,47 +566,49 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </div>
 
   <!-- ============ FOOTER ============ -->
+<!-- cms:footer -->
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
         <img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block;margin-bottom:22px">
-        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px">Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.</p>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px"><!-- cms:block footer.blurb -->Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.<!-- /cms:block footer.blurb --></p>
         <div style="display:flex;gap:12px">
-          
           <a href="https://www.instagram.com/unionelectronics.kw/" target="_blank" rel="noopener" class="sociallink" aria-label="Instagram" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path></svg></a>
           <a href="https://www.facebook.com/unionelectronicskw" target="_blank" rel="noopener" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
           <a href="https://www.linkedin.com/company/union-trading-company-kuwait/" target="_blank" rel="noopener" class="sociallink" aria-label="LinkedIn" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path></svg></a>
-          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
+          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&amp;_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
           <a href="https://youtube.com/@unionelectronicskw?si=DtCur73sViKpsxy3" target="_blank" rel="noopener" class="sociallink" aria-label="YouTube" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4a2.5 2.5 0 00-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"></path></svg></a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">About</div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.aboutHeading -->About<!-- /cms:block footer.aboutHeading --></div>
         <div style="display:flex;flex-direction:column;gap:13px">
           <a href="about/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">About UTC</a>
           <a href="faq/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">FAQ</a>
-          <span title="Coming soon" class="footlink" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">Careers <span style="font-size:10px;letter-spacing:.1em;opacity:.8">&middot; SOON</span></span>
+          <a href="careers/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Careers</a>
           <a href="sitemap/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
           <a href="privacy-policy/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Store Locations</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0">Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Al Jawhara, Shuwaikh &amp; Jahra</p>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.storesHeading -->Where to find us<!-- /cms:block footer.storesHeading --></div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0"><!-- cms:block footer.storesLine -->Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Shuwaikh &amp; Jahra<!-- /cms:block footer.storesLine --></p>
       </div>
       <div>
         <div class="foot-divs" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch">
+<!-- cms:footdivs -->
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/electronics-logo.webp" alt="Union Electronics" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/aluna-logo.webp" alt="Aluna" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/fmcg-logo.webp" alt="FMCG" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/labels-logo.webp" alt="Labels" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Commercial Projects" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Union Engineering Company" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;grid-column:1/-1;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/beauty-fashion-wordmark.webp" alt="Beauty &amp; Fashion" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+<!-- /cms:footdivs -->
         </div>
       </div>
     </div>
-    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#6a6760;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
+    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center"><!-- cms:block footer.copyright -->&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.<!-- /cms:block footer.copyright --></div>
   </footer>
+<!-- /cms:footer -->
 </div>
 
 <script>
@@ -571,28 +621,59 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     originals.forEach(function(k){ track.appendChild(k.cloneNode(true)); });
     originals.forEach(function(k){ track.appendChild(k.cloneNode(true)); });
     measure(); window.addEventListener('resize',measure);
+    // The logos are fetched after this script runs, and an <img> with nothing in it yet is zero
+    // pixels wide — so the first measurement is always wrong. Measure again as each one lands.
+    window.addEventListener('load',measure);
+    Array.prototype.forEach.call(track.querySelectorAll('img'),function(im){
+      if(!im.complete) im.addEventListener('load',measure,{once:true});
+    });
     var paused=false, pos=0, wrap=track.parentElement, last=0, PXPS=30; // px/sec — framerate-independent
-    wrap.addEventListener('mouseenter',function(){paused=true;});
-    wrap.addEventListener('mouseleave',function(){paused=false;});
-    function step(ts){ if(!last)last=ts; var dt=ts-last; last=ts; if(!paused && period>0){ pos+=dt*PXPS/1000; if(pos>=period) pos-=period; track.style.transform='translateX('+(-pos)+'px)'; } requestAnimationFrame(step); }
+    wrap.addEventListener('pointerenter',function(e){ if(e.pointerType==='mouse') paused=true; });
+    wrap.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse') paused=false; });
+    var held=false;
+    window.marqDrag=window.marqDrag||function(wrap,get,set,hold){ // drag a self-moving strip by touch
+      // Touch events, not pointer events: iPhone Safari stops sending pointer moves after the first
+      // drag on an element that is moving under the finger, so the second drag did nothing.
+      wrap.style.touchAction='pan-y';
+      var d=null, moved=false, t=0;
+      wrap.addEventListener('touchstart',function(e){ if(e.touches.length!==1){ d=null; return; } var p=e.touches[0]; d={x:p.clientX,y:p.clientY,p:get(),on:false}; moved=false; },{passive:true});
+      wrap.addEventListener('touchmove',function(e){ if(!d)return; var p=e.touches[0], dx=p.clientX-d.x, dy=p.clientY-d.y;
+        if(!d.on){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; if(Math.abs(dy)>Math.abs(dx)){ d=null; return; } d.on=true; moved=true; clearTimeout(t); hold(true); }
+        if(e.cancelable) e.preventDefault();
+        set(d.p,dx); },{passive:false});
+      function end(){ if(!d)return; var was=d.on; d=null; if(was){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+      wrap.addEventListener('touchend',end); wrap.addEventListener('touchcancel',end);
+      // MOUSE, too (18 Nov 2026): click and drag the strip the way a finger can. A drag starts only after
+      // the mouse moves a few pixels, so a plain click still opens a card; the strip waits, then carries on.
+      wrap.style.cursor='grab';
+      wrap.addEventListener('dragstart',function(e){ e.preventDefault(); });
+      wrap.addEventListener('mousedown',function(e){ if(e.button!==0)return; var m={x:e.clientX,p:get(),on:false}; moved=false;
+        function mv(ev){ var dx=ev.clientX-m.x; if(!m.on){ if(Math.abs(dx)<5)return; m.on=true; moved=true; clearTimeout(t); hold(true); wrap.style.cursor='grabbing'; document.documentElement.style.userSelect='none'; } set(m.p,dx); }
+        function up(){ window.removeEventListener('mousemove',mv); window.removeEventListener('mouseup',up); wrap.style.cursor='grab'; document.documentElement.style.userSelect=''; if(m.on){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+        window.addEventListener('mousemove',mv); window.addEventListener('mouseup',up); });
+      wrap.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+    };
+    marqDrag(wrap,function(){return pos;},function(p0,dx){ pos=p0-dx; if(period>0){ pos%=period; if(pos<0)pos+=period; } track.style.transform='translateX('+(-pos)+'px)'; },function(h){held=h;});
+    function step(ts){ if(!last)last=ts; var dt=ts-last; last=ts; if(!paused && !held && period>0){ pos+=dt*PXPS/1000; if(pos>=period) pos-=period; track.style.transform='translateX('+(-pos)+'px)'; } requestAnimationFrame(step); }
     requestAnimationFrame(step);
   })();
 
   // ===== Our Categories hover-expand accordion =====
   (function(){
     var acc=document.getElementById('catAcc'); if(!acc) return;
-    var cats=[
-      {n:'01',t:'Lingerie',sub:'Delicate pieces, beautifully crafted.',img:'img/cat/Aluna/Lingerie.webp',grad:'linear-gradient(160deg,#3a2b33,#140d11)',icon:'<path d="M12 20s-7-4.3-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.7-7 9-7 9z"/>'},
-      {n:'02',t:'Activewear & Nightwear',short:'Activewear',sub:'Easy comfort for rest and movement.',img:'img/cat/Aluna/Active.webp',grad:'linear-gradient(160deg,#2f333a,#0e0f12)',icon:'<path d="M12 4a1.7 1.7 0 0 0-1.2 2.9c.4.4.7.6.7 1.1M12 8l7.3 5.6a1 1 0 0 1 .4.8V16H4.3v-1.6a1 1 0 0 1 .4-.8L12 8z"/>'},
-      {n:'03',t:'Bras',sub:'The perfect fit, everyday support.',img:'img/cat/Aluna/Bras.webp',grad:'linear-gradient(160deg,#3a2730,#150c10)',icon:'<path d="M3 9c0 2.8 1.7 4.3 3.8 4.3S10.5 11.8 10.5 9M13.5 9c0 2.8 1.7 4.3 3.8 4.3S21 11.8 21 9M3 9c0-1 .8-1.8 1.8-1.8M21 9c0-1-.8-1.8-1.8-1.8M10.5 9h3"/>'},
-      {n:'04',t:'Panties',sub:'Soft everyday essentials.',img:'img/cat/Aluna/Panties.webp',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'<path d="M4 7h16v3c-2 0-4 1.5-4 4v3H8v-3c0-2.5-2-4-4-4z"/>'},
-      {n:'05',t:'Baby Doll',sub:'Playful, elegant silhouettes.',img:'img/cat/Aluna/Babydoll.webp',grad:'linear-gradient(160deg,#33302a,#12100c)',icon:'<path d="M9.5 3l2.5 1.8L14.5 3M9.5 3 8 8l-1.5 2.2L8 12M14.5 3 16 8l1.5 2.2L16 12M8 12h8l1.5 8h-11z"/>'},
-      {n:'06',t:'Shapewear',sub:'Smooth, sculpt, and support.',img:'img/cat/Aluna/Shaping.webp',grad:'linear-gradient(160deg,#2c3436,#0d1011)',icon:'<path d="M7 4h10M7 20h10M8 4c0 3 2 4 4 4s4-1 4-4M8 20c0-3 2-4 4-4s4 1 4 4"/>'},
-      {n:'07',t:'Undershirt',sub:'Second-skin layering basics.',img:'img/cat/Aluna/Undershirt.webp',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'<path d="M9 3l3 2 3-2 3 3-2 2v11H8V8L6 6z"/>'},
-      {n:'08',t:'Fragrance',sub:'Signature scents to finish the look.',img:'img/cat/Aluna/Fragrance.webp',grad:'linear-gradient(160deg,#3a2b33,#140d11)',icon:'<rect x="8.5" y="9" width="7" height="11" rx="2"/><path d="M10.5 9V6h3v3M11 4h2"/>'},
-      {n:'09',t:'Accessories',sub:'The finishing touches.',img:'img/cat/Aluna/Accessories.webp',grad:'linear-gradient(160deg,#382a2a,#140d0d)',icon:'<path d="M6 9h12l-1 11H7z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/>'}
+    var cats=[/* cms:divpagecats */
+      {n:'01',t:'Lingerie',sub:'Delicate pieces, beautifully crafted.',img:'img/cat/Aluna/Lingerie.webp',grad:'linear-gradient(160deg,#3a2b33,#140d11)',icon:'\u003cpath d="M12 20s-7-4.3-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.7-7 9-7 9z"/>'},
+      {n:'02',t:'Activewear & Nightwear',short:'Activewear',sub:'Easy comfort for rest and movement.',img:'img/cat/Aluna/Active.webp',grad:'linear-gradient(160deg,#2f333a,#0e0f12)',icon:'\u003cpath d="M12 4a1.7 1.7 0 0 0-1.2 2.9c.4.4.7.6.7 1.1M12 8l7.3 5.6a1 1 0 0 1 .4.8V16H4.3v-1.6a1 1 0 0 1 .4-.8L12 8z"/>'},
+      {n:'03',t:'Bras',sub:'The perfect fit, everyday support.',img:'img/cat/Aluna/Bras.webp',grad:'linear-gradient(160deg,#3a2730,#150c10)',icon:'\u003cpath d="M3 9c0 2.8 1.7 4.3 3.8 4.3S10.5 11.8 10.5 9M13.5 9c0 2.8 1.7 4.3 3.8 4.3S21 11.8 21 9M3 9c0-1 .8-1.8 1.8-1.8M21 9c0-1-.8-1.8-1.8-1.8M10.5 9h3"/>'},
+      {n:'04',t:'Panties',sub:'Soft everyday essentials.',img:'img/cat/Aluna/Panties.webp',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'\u003cpath d="M4 7h16v3c-2 0-4 1.5-4 4v3H8v-3c0-2.5-2-4-4-4z"/>'},
+      {n:'05',t:'Baby Doll',sub:'Playful, elegant silhouettes.',img:'img/cat/Aluna/Babydoll.webp',grad:'linear-gradient(160deg,#33302a,#12100c)',icon:'\u003cpath d="M9.5 3l2.5 1.8L14.5 3M9.5 3 8 8l-1.5 2.2L8 12M14.5 3 16 8l1.5 2.2L16 12M8 12h8l1.5 8h-11z"/>'},
+      {n:'06',t:'Shapewear',sub:'Smooth, sculpt, and support.',img:'img/cat/Aluna/Shaping.webp',grad:'linear-gradient(160deg,#2c3436,#0d1011)',icon:'\u003cpath d="M7 4h10M7 20h10M8 4c0 3 2 4 4 4s4-1 4-4M8 20c0-3 2-4 4-4s4 1 4 4"/>'},
+      {n:'07',t:'Undershirt',sub:'Second-skin layering basics.',img:'img/cat/Aluna/Undershirt.webp',grad:'linear-gradient(160deg,#332c33,#120e12)',icon:'\u003cpath d="M9 3l3 2 3-2 3 3-2 2v11H8V8L6 6z"/>'},
+      {n:'08',t:'Fragrance',sub:'Signature scents to finish the look.',img:'img/cat/Aluna/Fragrance.webp',grad:'linear-gradient(160deg,#3a2b33,#140d11)',icon:'\u003crect x="8.5" y="9" width="7" height="11" rx="2"/>\u003cpath d="M10.5 9V6h3v3M11 4h2"/>'},
+      {n:'09',t:'Accessories',sub:'The finishing touches.',img:'img/cat/Aluna/Accessories.webp',grad:'linear-gradient(160deg,#382a2a,#140d0d)',icon:'\u003cpath d="M6 9h12l-1 11H7z"/>\u003cpath d="M9 9V7a3 3 0 0 1 6 0v2"/>'}
+/* /cms:divpagecats */
     ];
-    var DEF=4, active=DEF;
+    var DEF=(function(){for(var i=0;i<cats.length;i++){if(cats[i].open)return i;}return 4;}()), active=DEF;
     acc.innerHTML=cats.map(function(c,i){
       var media=c.img ? 'background-image:url('+c.img+')' : 'background:'+c.grad;
       return '<div class="cat-panel'+(i===DEF?' active':'')+'" data-i="'+i+'">'
@@ -618,7 +699,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     setActive(isCar() ? 0 : DEF, false);   // desktop opens the featured 5th; mobile carousel starts at the 1st
   })();
 </script>
-<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
+<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow')||e.target.closest('.newslink'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 <!-- ===== View-all brands modal ===== -->
 <div class="bm" id="brandsModal" role="dialog" aria-modal="true" aria-label="All Aluna brands">
   <div class="bm-bg" data-bm-close></div>
@@ -633,15 +714,26 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 </div>
 <script>
 (function(){
-  var brands=[
-    {n:'Triumph',src:'triumph.webp'},{n:'Sloggi',src:'sloggi.webp'},{n:'Maidenform',src:'maidenform.webp'},
-    {n:'Hanes',src:'hanes.webp'},{n:'Bali',src:'bali.webp'},{n:'Naomi & Nicole',src:'naomi-nicole.webp'},
-    {n:'Carole Hochman',src:'carole-hochman.webp'},{n:'Leg Avenue',src:'leg-avenue.webp'},{n:'Eileen West',src:'eileen-west.webp'},
-    {n:'Cupid',src:'cupid.webp'},{n:'Mapale',src:'mapale.webp'},{n:'Ivory',src:'ivory.webp'},
-    {n:'C.Lengerie',src:'c-lengerie.webp'},{n:'G World',src:'g-world.webp'},{n:'Caha Capo',src:'caha-capo.webp'}
+  var brands=[/* cms:divpagebrands */
+    {n:'Triumph',src:'img/brands-aluna/triumph.webp'},
+    {n:'Sloggi',src:'img/brands-aluna/sloggi.webp'},
+    {n:'Maidenform',src:'img/brands-aluna/maidenform.webp'},
+    {n:'Hanes',src:'img/brands-aluna/hanes.webp'},
+    {n:'Bali',src:'img/brands-aluna/bali.webp'},
+    {n:'Naomi & Nicole',src:'img/brands-aluna/naomi-nicole.webp'},
+    {n:'Carole Hochman',src:'img/brands-aluna/carole-hochman.webp'},
+    {n:'Leg Avenue',src:'img/brands-aluna/leg-avenue.webp'},
+    {n:'Eileen West',src:'img/brands-aluna/eileen-west.webp'},
+    {n:'Cupid',src:'img/brands-aluna/cupid.webp'},
+    {n:'Mapale',src:'img/brands-aluna/mapale.webp'},
+    {n:'Ivory',src:'img/brands-aluna/ivory.webp'},
+    {n:'C.Lengerie',src:'img/brands-aluna/c-lengerie.webp'},
+    {n:'G World',src:'img/brands-aluna/g-world.webp'},
+    {n:'Caha Capo',src:'img/brands-aluna/caha-capo.webp'}
+/* /cms:divpagebrands */
   ];
   var grid=document.getElementById('bmLogos');
-  if(grid) grid.innerHTML=brands.map(function(b){return '<div class="bm-cell"><img loading="lazy" decoding="async" src="img/brands-aluna/'+b.src+'" alt="'+b.n+'" title="'+b.n+'"></div>';}).join('');
+  if(grid) grid.innerHTML=brands.map(function(b){return '<div class="bm-cell"><img loading="lazy" decoding="async" src="'+b.src+'" alt="'+b.n+'" title="'+b.n+'"></div>';}).join('');
   var modal=document.getElementById('brandsModal'); if(!modal) return;
   function open(){ modal.classList.add('open'); document.documentElement.style.overflow='hidden'; }
   function close(){ modal.classList.remove('open'); document.documentElement.style.overflow=''; }
@@ -651,5 +743,6 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 })();
 </script>
 <script defer src="nav-menu.js"></script>
+<script defer src="announcements.js"></script>
 </body>
 </html>

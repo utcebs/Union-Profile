@@ -6,9 +6,10 @@
 addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var h=a.getAttribute("href");if(h.length<2){e.preventDefault();scrollTo({top:0,behavior:"smooth"});return;}if(document.getElementById(h.slice(1))){e.preventDefault();location.hash=h;}});</script>
 
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Job — Union Trading Co.</title>
-<meta name="robots" content="noindex,follow"><!-- individual job pages stay out of Google until careers is finished; remove when live -->
+<!-- individual job pages stay out of Google until careers is finished; remove when live -->
 
 <meta name="description" content="Open role at Union Trading Company in Kuwait. Review the responsibilities, requirements and details, and apply to join our team.">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -209,6 +210,15 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   }
   @media(max-width:520px){.learn-grid{grid-template-columns:1fr!important}}
   .mainnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,38px);flex-wrap:wrap}
+  /* news in the header */
+  .headact{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
+  .headact::before{content:"";width:1px;height:22px;background:rgba(255,255,255,.22);flex:0 0 auto}
+  .newslink{display:inline-flex;align-items:center;gap:7px;color:#bcb6a7;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:color .25s}
+  .newslink::after{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;transition:transform .25s}
+  .newslink:hover{color:#fff}
+  .newslink:hover::after{transform:scale(1.35)}
+  .newslink[aria-current="page"]{color:#fff}
+  /* /news in the header */
   .navtog{display:none;background:transparent;border:0;color:#fff;cursor:pointer;padding:8px;line-height:0;-webkit-tap-highlight-color:transparent}
   .navtog .ico-bars{display:block}.navtog .ico-close{display:none}
   @media(max-width:900px){
@@ -217,11 +227,19 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .mainnav{display:none}
     header .shopnow{display:none}
     header.nav-open .mainnav{display:flex;flex:0 0 100%;flex-direction:column;align-items:flex-start;gap:22px;padding:16px 2px 8px}
+    /* news in the header */
+    header .headact{display:none}
+    header.nav-open .headact{display:flex;flex:0 0 100%;align-items:center;gap:20px;padding:0 2px 10px}
+    header.nav-open .headact::before{display:none}
+    /* /news in the header */
     header.nav-open .shopnow{display:inline-flex}
     header.nav-open .ico-bars{display:none}
     header.nav-open .ico-close{display:block}
   }
 </style>
+<!-- analytics -->
+<!-- test copy: analytics removed -->
+<!-- /analytics -->
 </head>
 <body>
 <div style="overflow-x:clip">
@@ -239,10 +257,10 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <a href="divisions/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Divisions</a>
         <a href="our-stores/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Stores</a>
         <a href="our-channels/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Our Channels</a>
-        <span title="Coming soon" style="color:rgba(255,255,255,0.32);font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent;cursor:not-allowed">Careers</span>
+        <a href="careers/" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Careers</a>
         <a href="home/#contact" class="hoverline" style="color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em;padding-bottom:4px;border-bottom:2px solid transparent">Contact</a>
       </nav>
-      <a href="home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a>
+      <div class="headact"><a href="news/" class="newslink">News</a><a href="home/?intent=partnership#contact" class="shopnow" style="border:1px solid #fff;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.02em;padding:11px 22px;border-radius:999px;transition:background .3s ease,color .3s ease,border-color .3s ease;white-space:nowrap">Want to partner with us?</a></div>
     </div>
   </header>
 
@@ -285,13 +303,13 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </div>
 
   <!-- ============ BODY ============ -->
-  <div style="background:#f5f3ee">
+  <div style="background:#ede7d9">
     <div class="job-body" style="max-width:1360px;margin:0 auto;padding:clamp(36px,4.5vw,64px) clamp(20px,4vw,56px);display:grid;grid-template-columns:1fr 380px;gap:clamp(30px,4vw,58px);align-items:start">
 
       <!-- main -->
       <div>
         <section id="overview" style="scroll-margin-top:150px">
-          <div class="eyebrow" style="margin-bottom:16px">Job Overview</div>
+          <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block job.overviewKicker -->Job Overview<!-- /cms:block job.overviewKicker --></div>
           <h2 id="ovHeading" style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,3vw,38px);line-height:1.12;margin:0 0 20px;color:#161513"></h2>
           <p id="ovText" style="color:#5f5b52;font-size:15px;line-height:1.8;margin:0"></p>
           <div style="height:1px;background:#e4dccb;margin:clamp(28px,3.4vw,40px) 0"></div>
@@ -302,20 +320,20 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         </section>
 
         <section id="responsibilities" style="scroll-margin-top:150px;margin-top:clamp(40px,5vw,64px)">
-          <div class="eyebrow" style="margin-bottom:16px">Responsibilities</div>
-          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.7vw,32px);margin:0 0 20px;color:#161513">What the role involves.</h2>
+          <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block job.responsibilitiesKicker -->Responsibilities<!-- /cms:block job.responsibilitiesKicker --></div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.7vw,32px);margin:0 0 20px;color:#161513"><!-- cms:block job.responsibilitiesTitle -->What the role involves.<!-- /cms:block job.responsibilitiesTitle --></h2>
           <div id="respList" style="display:flex;flex-direction:column;gap:13px"></div>
         </section>
 
         <section id="requirements" style="scroll-margin-top:150px;margin-top:clamp(40px,5vw,64px)">
-          <div class="eyebrow" style="margin-bottom:16px">Requirements</div>
-          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.7vw,32px);margin:0 0 20px;color:#161513">What we're looking for.</h2>
+          <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block job.requirementsKicker -->Requirements<!-- /cms:block job.requirementsKicker --></div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.7vw,32px);margin:0 0 20px;color:#161513"><!-- cms:block job.requirementsTitle -->What we're looking for.<!-- /cms:block job.requirementsTitle --></h2>
           <div id="reqList" style="display:flex;flex-direction:column;gap:13px"></div>
         </section>
 
         <section id="benefits" style="scroll-margin-top:150px;margin-top:clamp(40px,5vw,64px)">
-          <div class="eyebrow" style="margin-bottom:16px">Benefits</div>
-          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.7vw,32px);margin:0 0 20px;color:#161513">What you'll get.</h2>
+          <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block job.benefitsKicker -->Benefits<!-- /cms:block job.benefitsKicker --></div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,2.7vw,32px);margin:0 0 20px;color:#161513"><!-- cms:block job.benefitsTitle -->What you'll get.<!-- /cms:block job.benefitsTitle --></h2>
           <div id="benList" style="display:flex;flex-direction:column;gap:13px"></div>
         </section>
 
@@ -342,7 +360,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <img loading="lazy" decoding="async" class="cover" src="uploads/Carousal3-0b6c7d58.jpg" alt="" style="position:absolute;inset:0">
         <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,13,.94),rgba(13,13,13,.5))"></div>
         <div style="position:relative;padding:clamp(30px,4vw,54px)">
-          <div class="eyebrow" style="margin-bottom:16px">Ready to Make an Impact?</div>
+          <div class="eyebrow" style="margin-bottom:16px"><!-- cms:block job.closingKicker -->Tested at 1792659074826<!-- /cms:block job.closingKicker --></div>
           <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3.4vw,44px);margin:0;color:#fff">Your journey starts here.</h2>
           <p style="color:#c7c3ba;font-size:15px;margin:14px 0 0">Join UTC and be part of something bigger.</p>
         </div>
@@ -351,47 +369,49 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   </div>
 
   <!-- ============ FOOTER ============ -->
+<!-- cms:footer -->
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(48px,6vw,76px) clamp(20px,5vw,64px) 0;border-top:1px solid #1c1b19">
     <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(30px,4vw,56px);padding-bottom:48px;border-bottom:1px solid #232220">
       <div>
         <img src="img/Careers/Div/logo-tight.png" alt="Union Trading Co." style="height:46px;width:auto;display:block;margin-bottom:22px">
-        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px">Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.</p>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.65;margin:0 0 22px;max-width:280px"><!-- cms:block footer.blurb -->Union Trading Company W.L.L. (UTC) is one of the leading business pioneers in Kuwait and a premier wholesaler, retailer and distributor.<!-- /cms:block footer.blurb --></p>
         <div style="display:flex;gap:12px">
-          
           <a href="https://www.instagram.com/unionelectronics.kw/" target="_blank" rel="noopener" class="sociallink" aria-label="Instagram" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path></svg></a>
           <a href="https://www.facebook.com/unionelectronicskw" target="_blank" rel="noopener" class="sociallink" aria-label="Facebook" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></a>
           <a href="https://www.linkedin.com/company/union-trading-company-kuwait/" target="_blank" rel="noopener" class="sociallink" aria-label="LinkedIn" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8v10H3.5V8h3zM5 3.5A1.75 1.75 0 105 7 1.75 1.75 0 005 3.5zM20.5 18h-3v-5c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2v5h-3V8h3v1.3c.5-.8 1.4-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4z"></path></svg></a>
-          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
+          <a href="https://www.tiktok.com/@unionelectronics.kw?_r=1&amp;_t=ZS-998zkW4Kypg" target="_blank" rel="noopener" class="sociallink" aria-label="TikTok" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path></svg></a>
           <a href="https://youtube.com/@unionelectronicskw?si=DtCur73sViKpsxy3" target="_blank" rel="noopener" class="sociallink" aria-label="YouTube" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0;transition:all .2s"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4a2.5 2.5 0 00-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"></path></svg></a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">About</div>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.aboutHeading -->About<!-- /cms:block footer.aboutHeading --></div>
         <div style="display:flex;flex-direction:column;gap:13px">
           <a href="about/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">About UTC</a>
           <a href="faq/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">FAQ</a>
-          <span title="Coming soon" class="footlink" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">Careers <span style="font-size:10px;letter-spacing:.1em;opacity:.8">&middot; SOON</span></span>
+          <a href="careers/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Careers</a>
           <a href="sitemap/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Sitemap</a>
           <a href="privacy-policy/" class="footlink" style="color:#8f8c85;font-size:14px;transition:color .2s">Privacy Statement</a>
         </div>
       </div>
       <div>
-        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px">Store Locations</div>
-        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0">Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Al Jawhara, Shuwaikh &amp; Jahra</p>
+        <div style="font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:0.1em;margin-bottom:22px"><!-- cms:block footer.storesHeading -->Where to find us<!-- /cms:block footer.storesHeading --></div>
+        <p style="color:#8f8c85;font-size:14px;line-height:1.7;margin:0"><!-- cms:block footer.storesLine -->Kuwait City, Salmiya, Hawally, Farwaniya, Fahaheel, Al-Qurain, Sabah Al-Salem, Al-Rai, Shuwaikh &amp; Jahra<!-- /cms:block footer.storesLine --></p>
       </div>
       <div>
         <div class="foot-divs" style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch">
+<!-- cms:footdivs -->
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/electronics-logo.webp" alt="Union Electronics" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/aluna-logo.webp" alt="Aluna" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
           <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/fmcg-logo.webp" alt="FMCG" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/labels-logo.webp" alt="Labels" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><span style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:#2f2c28;pointer-events:none"></span><img loading="lazy" decoding="async" src="img/Div/services-logo.webp" alt="Union Services" style="max-height:60px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
-          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Commercial Projects" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/commercial-logo.webp" alt="Union Engineering Company" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+          <div style="display:flex;align-items:center;justify-content:center;grid-column:1/-1;min-height:66px;padding:16px 16px;position:relative"><img loading="lazy" decoding="async" src="img/Div/beauty-fashion-wordmark.webp" alt="Beauty &amp; Fashion" style="max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85"></div>
+<!-- /cms:footdivs -->
         </div>
       </div>
     </div>
-    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#6a6760;font-size:13px;text-align:center">&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.</div>
+    <div style="max-width:1360px;margin:0 auto;padding:26px 0;color:#8f8c85;font-size:13px;text-align:center"><!-- cms:block footer.copyright -->&copy; 2026 Union Trading Company W.L.L. (UTC). All rights reserved.<!-- /cms:block footer.copyright --></div>
   </footer>
+<!-- /cms:footer -->
 </div>
 
 <script>
@@ -510,7 +530,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   document.getElementById('benList').innerHTML = job.benefits.map(checkRow).join('');
 
   document.getElementById('learnGrid').innerHTML = job.learn.map(function(l){
-    return '<div style="background:#fbf9f4;border:1px solid #ece5d6;border-radius:9px;padding:20px 18px"><span style="display:block;width:24px;height:24px;margin-bottom:14px">'+IC[l[0]]+'</span><div style="color:#5f5b52;font-size:13px;line-height:1.55">'+esc(l[1])+'</div></div>';
+    return '<div style="background:#fbf9f4;border:1px solid #d6cebd;border-radius:9px;padding:20px 18px"><span style="display:block;width:24px;height:24px;margin-bottom:14px">'+IC[l[0]]+'</span><div style="color:#5f5b52;font-size:13px;line-height:1.55">'+esc(l[1])+'</div></div>';
   }).join('');
 
   var sumIcon = {Title:'title',Department:'dept',Location:'loc',Type:'type',Duration:'clock','Reports To':'person'};
@@ -541,7 +561,8 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     });
   })();
 </script>
-<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
+<script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow')||e.target.closest('.newslink'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 <script defer src="nav-menu.js"></script>
+<script defer src="announcements.js"></script>
 </body>
 </html>

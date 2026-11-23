@@ -86,7 +86,7 @@
 
   /* ---------- data ---------- */
   const NAV = ['About Us', 'Our Divisions', 'Our Stores', 'Our Channels', 'Careers', 'Contact'];
-  const NAV_SOON = ['Careers'];
+  const NAV_SOON = [];   // nothing held back; Careers went live 2026-10-15
   const heroImgs = ['uploads/Carousal4.webp', 'uploads/OGeneral.webp', 'uploads/cecotec.webp', 'uploads/changhong.webp', 'uploads/havit.webp'];
   const heroPartners = ['GlemGas', 'General', 'Cecotec', 'CHiQ Changhong', 'Havit'];
   const heroLabelLight = [true, false, false, true, true];  // dark label on the light General & Cecotec images; white on Changhong & Havit (dark scenes)
@@ -104,11 +104,50 @@
   }
 
   const brandNames = [
-    { name: 'Braun', src: 'assets/b1.png' }, { name: 'Angel Wear', src: 'assets/b2.png' }, { name: 'India Gate', src: 'assets/b3.png' },
-    { name: 'Hitachi', src: 'assets/b4.png' }, { name: 'Brandili', src: 'assets/b5.png' }, { name: 'Constance Carroll', src: 'assets/b6.png' },
-    { name: 'Glysolid', src: 'assets/b7.png' }, { name: 'Eagle Safes', src: 'assets/b8.png' }, { name: 'Prestige', src: 'assets/b9.png' }, { name: 'O General', src: 'assets/b10.png' },
-    { name: 'Daikin', src: 'img/brands-elec/daikin.webp' }, { name: 'Triumph', src: 'img/brands-aluna/triumph.webp' }, { name: 'Sloggi', src: 'img/brands-aluna/sloggi.webp' },
-    { name: 'Vileda', src: 'img/brands-elec/vileda.webp' }, { name: 'Cans', src: 'img/brands-elec/cans.webp' }, { name: 'Palladio', src: 'img/brands-elec/palladio.webp' }, { name: 'Vero Moda', src: 'img/brands-elec/vero-moda.webp' }
+/* cms:brandnames */
+    { name: 'Daikin', src: 'img/brands-elec/daikin.webp' },
+    { name: 'Wrangler', src: 'img/brands-fb/wrangler.webp' },
+    { name: 'Triumph', src: 'img/brands-aluna/triumph.webp' },
+    { name: 'Sloggi', src: 'img/brands-aluna/sloggi.webp' },
+    { name: 'Jockey', src: 'img/brands-fb/jockey.webp' },
+    { name: 'Caha Capo', src: 'img/brands-aluna/caha-capo.webp' },
+    { name: 'Affinessence', src: 'img/brands-fb/affinessence.webp' },
+    { name: 'Aspinal of London', src: 'img/brands-fb/aspinal.webp' },
+    { name: 'Collection Privée by Diane Castel', src: 'img/brands-fb/diane-castel.webp' },
+    { name: 'Veganize', src: 'img/brands-fb/veganize.webp' },
+    { name: 'Beaugreen', src: 'img/brands-fb/beaugreen.webp' },
+    { name: 'Dr.Bio', src: 'img/brands-fb/dr-bio.webp' },
+    { name: 'Hidehere', src: 'img/brands-fb/hidehere.webp' },
+    { name: 'Maxclinic', src: 'img/brands-fb/maxclinic.webp' },
+    { name: 'OOTD', src: 'img/brands-fb/ootd.webp' },
+    { name: 'Teabless', src: 'img/brands-fb/teabless.webp' },
+    { name: 'Beaver', src: 'img/brands-fb/beaver.webp' },
+    { name: 'Snips', src: 'img/All%20Brands/FMCG/snips-white.webp' },
+    { name: 'Lactovit', src: 'img/All%20Brands/FMCG/lactovit-t.webp' },
+    { name: 'Space Walkers', src: 'img/All%20Brands/FMCG/spacewalkers-t.webp' },
+    { name: 'Yupo', src: 'img/All%20Brands/FMCG/yupo-t.webp' },
+    { name: 'Royal Mirage', src: 'img/All%20Brands/FMCG/royalmirage-t.webp' },
+    { name: 'Yardley', src: 'img/All%20Brands/FMCG/yardley-t.webp' },
+    { name: 'Eternal Love', src: 'img/All%20Brands/FMCG/eternallove-t.webp' },
+    { name: 'Color Me', src: 'img/All%20Brands/FMCG/colorme-t.webp' },
+    { name: 'Perfumer\'s Choice', src: 'img/All%20Brands/FMCG/perfumerschoice-t.webp' },
+    { name: 'UTC Perfumes', src: 'img/All%20Brands/FMCG/utcperfumes-t.webp' },
+    { name: 'Afia', src: 'img/All%20Brands/FMCG/afia-t.webp' },
+    { name: 'Braun', src: 'assets/b1.png' },
+    { name: 'Angel Wear', src: 'assets/b2.png' },
+    { name: 'India Gate', src: 'assets/b3.png' },
+    { name: 'Hitachi', src: 'assets/b4.png' },
+    { name: 'Brandili', src: 'assets/b5.png' },
+    { name: 'Constance Carroll', src: 'assets/b6.png' },
+    { name: 'Glysolid', src: 'assets/b7.png' },
+    { name: 'Eagle Safes', src: 'assets/b8.png' },
+    { name: 'Prestige', src: 'assets/b9.png' },
+    { name: 'O General', src: 'assets/b10.png' },
+    { name: 'Vileda', src: 'img/brands-elec/vileda.webp' },
+    { name: 'Cans', src: 'img/brands-elec/cans.webp' },
+    { name: 'Palladio', src: 'img/brands-elec/palladio.webp' },
+    { name: 'Vero Moda', src: 'img/brands-elec/vero-moda.webp' }
+/* /cms:brandnames */
   ];
   function logoFor(name) {
     const n = String(name).toLowerCase();
@@ -117,12 +156,13 @@
   }
 
   const divData = [
-    { name: 'Union Electronics', href: 'union-electronics/', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Hitachi', 'Daikin', '+22 more'], slot: 'div-elec' },
-    { name: 'Aluna', href: 'aluna/', logo: 'img/Div/aluna-logo.webp', cardLogo: 'img/Div/aluna-logo.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Recognizing the growing demand for premium beauty and fragrance products, UNION developed a distinguished portfolio of internationally acclaimed cosmetics and perfume brands. By offering authentic, high-quality products, the company continues to deliver luxury, elegance, and confidence to customers throughout Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Triumph', 'Sloggi', '+12 more'], slot: 'div-cosmetics' },
-    { name: 'FMCG', href: 'fmcg/', logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vileda', 'Cans', '+14 more'], slot: 'div-fmcg' },
-    { name: 'Labels', soon: true, logo: 'img/Div/labels-logo.webp', cardLogo: 'img/Div/labels-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Timeless Everyday Style.', icon: '<circle cx="12" cy="5" r="2"></circle><path d="M12 7l7 5-2 2-2-1.5V21H9v-8.5L7 14l-2-2 7-5z"></path>', desc: 'With changing lifestyles and increasing demand for premium fashion and cosmetics, UNION established a strong presence by introducing internationally renowned fashion, cosmetics, and lifestyle brands. Through a carefully curated portfolio, the company continues to deliver quality, style, and exceptional retail experiences to customers across the region.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Palladio', 'Vero Moda', '+7 more'], slot: 'div-fashion' },
-    { name: 'Union Services', soon: true, logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'Union Services is dedicated to providing reliable and professional after-sales and technical services to ensure our customers get the best performance and value from their products. From pre-installation (site survey), installation, startup, and preventive maintenance to troubleshooting and repairs, our experienced service teams are committed to delivering quality service and a smooth customer experience.', mgr: 'Available on request', contact: 'Chat with Us', brands: [], services: ['Air Conditioning, HVAC & VRF Systems', 'Home Appliances & Built-in Systems', 'Audio/Video & Electronics Systems', 'Site Survey & Technical Assessment', 'Installation, Start-Up & Commissioning', 'Preventive Maintenance & AMC', 'Corrective Maintenance, Troubleshooting & Repair', 'Product Replacement & Upgrading', 'Genuine Spare Parts & Technical Support', 'Water Solutions Services'], slot: 'div-health' },
-    { name: 'Commercial AC Projects', soon: true, logo: 'img/Div/commercial-logo.webp', cardLogo: 'img/Div/commercial-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tabW: '138px', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.", descHtml: "At the time of the company's inception there was a great demand in the market for climate control technology. UTC's answer to this demand was the creation of its very own line of climate control <strong style=\"color:#161513;font-weight:700\">solution: General Air Conditioners.</strong>", mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['Daikin', 'Hitachi', 'General'], slot: 'div-commercial' }
+  /* cms:divisions */
+    { name: 'Union Electronics', href: 'union-electronics/', logo: 'img/Div/electronics-logo.webp', cardLogo: 'img/Div/Black.webp', cardLogoH: 'clamp(48px,6vw,74px)', tagline: 'Smarter Homes. Simpler Living.', icon: '<rect x="4" y="3" width="7" height="18" rx="1.5"></rect><circle cx="7.5" cy="8" r="1.4"></circle><rect x="13" y="3" width="7" height="18" rx="1.5"></rect><circle cx="16.5" cy="8" r="1.4"></circle>', desc: 'Recognizing the growing demand for premium electronic appliances, UNION strategically expanded its portfolio to offer a comprehensive range of world-renowned consumer electronics and home appliances. Through partnerships with leading global brands, the company has consistently delivered innovative, reliable, and energy-efficient solutions that enhance everyday living while meeting the evolving needs of customers across Kuwait.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Hitachi', 'Daikin', '+22 more'], slot: 'div-elec', divPage: { name: 'Union Electronics Retail & Wholesale', short: 'World-class consumer electronics and home appliances — innovative, reliable, and energy-efficient living.', cardImg: 'img/Card%20images/Union%20Electronics.webp', banner: 'img/div-elec.webp' }, categories: [{ title: 'RAC', short: '', line: 'Cool comfort, all year round.', url: 'https://www.unionelectronics.store/kw/en/category/air-conditioner', image: 'img/cat/rac.jpg', soon: false, n: '01', grad: 'linear-gradient(160deg,#2a333c,#0c0f13)', icon: '<rect x="3" y="5" width="18" height="8" rx="2"/><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"/>' }, { title: 'Home Appliance', short: 'HA', line: 'The heart of every home.', url: 'https://www.unionelectronics.store/kw/en/category/home-appliance', image: 'img/cat/ha.jpg', soon: false, n: '02', grad: 'linear-gradient(160deg,#342c25,#100d0b)', icon: '<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.2"/><circle cx="8" cy="6.5" r="1"/>' }, { title: 'SDA', short: '', line: 'Everyday essentials, elevated.', url: 'https://www.unionelectronics.store/kw/en/category/cooking_appliances', image: 'img/cat/sda.jpg', soon: false, n: '03', grad: 'linear-gradient(160deg,#2c3033,#0d0e10)', icon: '<path d="M7 3h10l-1.4 8.5H8.4z"/><path d="M10 11.5v4.5M14 11.5v4.5"/><rect x="8" y="16" width="8" height="4.5" rx="1"/>' }, { title: 'TV', short: '', line: 'Entertainment, redefined.', url: 'https://www.unionelectronics.store/kw/en/category/electronics-televisions-flat-screen', image: 'img/cat/tv.jpg', soon: false, n: '04', grad: 'linear-gradient(160deg,#1b2532,#090c11)', icon: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>' }, { title: 'Mobile', short: '', line: 'Stay connected, everywhere.', url: 'https://www.unionelectronics.store/kw/en/category/mobile-accessories', image: 'img/cat/mobiles.jpg', soon: false, n: '05', grad: 'linear-gradient(160deg,#26282c,#0c0d0e)', icon: '<rect x="7" y="2" width="10" height="20" rx="2.4"/><path d="M11 18.2h2"/>' }, { title: 'Gaming', short: '', line: 'Play without limits.', url: 'https://www.unionelectronics.store/kw/en/category/gamin-tv', image: 'img/cat/gaming.jpg', soon: false, n: '06', grad: 'linear-gradient(160deg,#2a2334,#0d0b11)', icon: '<path d="M8 12H5m1.5-1.5v3"/><circle cx="15.5" cy="11.5" r="1"/><circle cx="18" cy="13.5" r="1"/><path d="M17 7H7a5 5 0 00-5 5v.4A3.4 3.4 0 008.6 14l.7-1.1h5.4l.7 1.1A3.4 3.4 0 0022 12.4V12a5 5 0 00-5-5z"/>' }, { title: 'IT', short: '', line: 'Work smarter, create more.', url: '', image: 'img/cat/it.jpg', soon: true, n: '07', grad: 'linear-gradient(160deg,#1e2c2b,#0a0f0e)', icon: '<rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20l-1-2H3z"/>' }], pageBrands: [{ name: 'B&D', logo: 'img/brands-elec/b-d.webp' }, { name: 'Belkin', logo: 'img/brands-elec/belkin.webp' }, { name: 'Canton', logo: 'img/brands-elec/canton.webp' }, { name: 'Cecotec', logo: 'img/brands-elec/cecotec.webp' }, { name: 'Changhong', logo: 'img/brands-elec/changhong.webp' }, { name: 'Chigo', logo: 'img/brands-elec/chigo.webp' }, { name: 'Daikin', logo: 'img/brands-elec/daikin.webp' }, { name: 'Fakir', logo: 'img/brands-elec/fakir.webp' }, { name: 'Galanz', logo: 'img/brands-elec/galanz.webp' }, { name: 'General', logo: 'img/brands-elec/general.webp' }, { name: 'Glemgas', logo: 'img/brands-elec/glemgas.webp' }, { name: 'Havic', logo: 'img/brands-elec/havic.webp' }, { name: 'Hifuture', logo: 'img/brands-elec/hifuture.webp' }, { name: 'Hitachi', logo: 'img/brands-elec/hitachi.webp' }, { name: 'Konka', logo: 'img/brands-elec/konka.webp' }, { name: 'Morphy', logo: 'img/brands-elec/morphy.webp' }, { raw: '<!-- stacked two-line lockup: keeps its own taller cap so it reads at the same                optical size as the single-line wordmarks (it had a 64x46 override before) -->' }, { name: 'Naim & Focal', logo: 'img/brands-elec/naim-focal.webp', logoStyle: 'height:34px' }, { name: 'Proove', logo: 'img/brands-elec/proove.webp' }, { name: 'ROWA', logo: 'img/brands-elec/rowa.webp' }, { name: 'Startec', logo: 'img/brands-elec/startec.webp' }, { name: 'TCL', logo: 'img/brands-elec/tcl.webp' }, { name: 'Vestel', logo: 'img/brands-elec/vestel.webp' }, { name: 'Westpoint', logo: 'img/brands-elec/westpoint.webp' }, { name: 'Yuwell', logo: 'img/brands-elec/yuwell.webp' }], brandStyle: 'standard', modalBrands: [{ name: 'B&D', logo: 'img/brands-elec/b-d.webp' }, { name: 'Belkin', logo: 'img/brands-elec/belkin.webp' }, { name: 'Canton', logo: 'img/brands-elec/canton.webp' }, { name: 'Cecotec', logo: 'img/brands-elec/cecotec.webp' }, { name: 'Changhong', logo: 'img/brands-elec/changhong.webp' }, { name: 'Chigo', logo: 'img/brands-elec/chigo.webp' }, { name: 'Daikin', logo: 'img/brands-elec/daikin.webp' }, { name: 'Fakir', logo: 'img/brands-elec/fakir.webp' }, { name: 'Galanz', logo: 'img/brands-elec/galanz.webp' }, { name: 'General', logo: 'img/brands-elec/general.webp' }, { name: 'Glemgas', logo: 'img/brands-elec/glemgas.webp' }, { name: 'Havic', logo: 'img/brands-elec/havic.webp' }, { name: 'Hifuture', logo: 'img/brands-elec/hifuture.webp' }, { name: 'Hitachi', logo: 'img/brands-elec/hitachi.webp' }, { name: 'Konka', logo: 'img/brands-elec/konka.webp' }, { name: 'Morphy', logo: 'img/brands-elec/morphy.webp' }, { name: 'Naim & Focal', logo: 'img/brands-elec/naim-focal.webp' }, { name: 'Proove', logo: 'img/brands-elec/proove.webp' }, { name: 'ROWA', logo: 'img/brands-elec/rowa.webp' }, { name: 'Startec', logo: 'img/brands-elec/startec.webp' }, { name: 'TCL', logo: 'img/brands-elec/tcl.webp' }, { name: 'Vestel', logo: 'img/brands-elec/vestel.webp' }, { name: 'Westpoint', logo: 'img/brands-elec/westpoint.webp' }, { name: 'Yuwell', logo: 'img/brands-elec/yuwell.webp' }], heroBrands: [{ name: 'SAMSUNG', sub: 'Consumer Electronics', image: 'img/Careers/Div/Hero brands sample/samsung.webp', logo: '', mediaClass: 'hb-samsung', mediaAlt: 'Samsung products', colour: '#1428a0', url: 'https://www.unionelectronics.store/kw/en/search?q=SAMSUNG', linkLabel: 'Discover Samsung' }, { name: 'PANASONIC', sub: 'Appliances & Electronics', image: 'img/Careers/Div/Hero brands sample/panasonic.webp', logo: '', mediaClass: '', mediaAlt: 'Panasonic products', colour: '#0033a0', url: 'https://www.unionelectronics.store/kw/en/search?q=PANASONIC', linkLabel: 'Discover Panasonic' }, { name: 'HONOR', sub: 'Smartphones & Wearables', image: 'img/Careers/Div/Hero brands sample/honor.webp', logo: '', mediaClass: '', mediaAlt: 'HONOR products', colour: '#111', url: 'https://www.unionelectronics.store/kw/en/search?q=HONOR', linkLabel: 'Discover HONOR' }, { name: 'GALANZ', sub: 'Kitchen & Home Appliances', image: 'img/Careers/Div/Hero brands sample/galanz.webp', logo: '', mediaClass: '', mediaAlt: 'Galanz products', colour: '#e60012', url: 'https://www.unionelectronics.store/kw/en/search?q=GALANZ', linkLabel: 'Discover Galanz' }, { name: 'GLEM GAS', sub: 'Cooking Appliances', image: 'img/Careers/Div/Hero brands sample/glemgas.webp', logo: '', mediaClass: '', mediaAlt: 'Glem Gas products', colour: '#c8102e', url: 'https://www.unionelectronics.store/kw/en/search?q=GLEM%20GAS', linkLabel: 'Discover Glem Gas' }], heroBrandStyle: 'named', stats: [{ value: '120+', label: 'Global Brands', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>' }, { value: '10,000+', label: 'Products', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 8h6v13H4"/><path d="M7 7h4M7 11h4M7 15h4M17 12h.01M17 16h.01"/></svg>' }, { value: '500K+', label: 'Happy Customers', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg>' }, { value: '75+', label: 'Years of Trust', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg>' }] },
+    { name: 'Beauty & Fashion', href: 'fashion-beauty/', logo: 'img/Div/beauty-fashion-wordmark.webp', cardLogo: 'img/Div/beauty-fashion-wordmark.webp', cardLogoDark: true, tagline: 'Beauty in Every Detail.', icon: '<path d="M9 21h6a2 2 0 002-2v-6a3 3 0 00-3-3h-1V7h-2v3H10a3 3 0 00-3 3v6a2 2 0 002 2z"></path><path d="M10 5h4M11 3h2"></path>', desc: 'Apparel, nightwear, fragrance and cosmetics, distributed to retailers across Kuwait and sold direct through our own concepts: Labels, Aluna and Vero Moda.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vero Moda', 'Triumph', '+28 more'], slot: 'div-cosmetics', divPage: { short: 'Apparel, nightwear, fragrance and cosmetics. Sold to retailers, and direct through Labels, Aluna and Vero Moda.', cardImg: 'uploads/images/divisions/fashion-beauty/fashion-beauty-card-8f6b63b1.webp', banner: 'uploads/images/divisions/fashion-beauty/fashion-beauty-banner-15b16ba6.webp' }, categories: [{ title: 'Apparel', short: '', line: 'Vero Moda, Wrangler.', url: '', image: '', soon: false, n: '01', grad: 'linear-gradient(160deg,#39323c,#120f14)', icon: '<path d="M7 4h10l-1 16H8z"/><path d="M9 4a3 3 0 0 1 6 0"/>' }, { title: 'Nightwear and Underwear', short: 'Nightwear', line: 'Jockey, Hanes, Triumph, Sloggi, Maidenform, Bali, Naomi &amp; Nicole, Carole Hochman, Leg Avenue, Eileen West, Cupid, Mapale, Ivory, C.Lingerie, G World, Caha Capo', url: '', image: 'img/cat/fb/nightwear.webp', soon: false, n: '02', icon: '<path d="M7 4h10l-1 16H8z"/><path d="M9 4a3 3 0 0 1 6 0"/>' }, { title: 'Fragrance', short: '', line: 'Our current houses, plus new niche and prestige names.', url: '', image: 'img/cat/fb/fragrance.webp', soon: false, n: '03', icon: '<path d="M7 4h10l-1 16H8z"/><path d="M9 4a3 3 0 0 1 6 0"/>' }, { title: 'Cosmetics', short: '', line: 'Makeup, skincare and haircare.', url: '', image: 'img/cat/fb/cosmetics-2.webp', soon: false, n: '04', icon: '<path d="M7 4h10l-1 16H8z"/><path d="M9 4a3 3 0 0 1 6 0"/>' }], concepts: [{ title: 'Labels', short: '', line: 'Multi-brand fashion and beauty. Stores and e-commerce.', url: '', image: 'img/cat/fb/labels-concept-3.webp', soon: false, n: '01', icon: '<path d="M4 9h16l-1.2 11H5.2z"/><path d="M4 9l1.6-4h12.8L20 9"/><path d="M9.5 13h5"/>' }, { title: 'Aluna', short: '', line: 'Multi-brand nightwear. Stores and alunakw.com.', url: 'aluna/', image: 'img/cat/fb/aluna-concept.webp', soon: false, n: '02', icon: '<path d="M4 9h16l-1.2 11H5.2z"/><path d="M4 9l1.6-4h12.8L20 9"/><path d="M9.5 13h5"/>', open: true }, { title: 'Vero Moda', short: '', line: 'Womenswear and denim. Stores across Kuwait.', url: '', image: 'img/cat/fb/vero-moda-concept.webp', soon: false, n: '03', icon: '<path d="M4 9h16l-1.2 11H5.2z"/><path d="M4 9l1.6-4h12.8L20 9"/><path d="M9.5 13h5"/>' }], pageBrands: [{ name: 'Vero Moda', logo: 'img/brands-fb/vero-moda-dark.webp' }, { name: 'Wrangler', logo: 'img/brands-fb/wrangler.webp' }, { name: 'Triumph', logo: 'img/brands-aluna/triumph.webp' }, { name: 'Sloggi', logo: 'img/brands-aluna/sloggi.webp' }, { name: 'Maidenform', logo: 'img/brands-aluna/maidenform.webp' }, { name: 'Bali', logo: 'img/brands-aluna/bali.webp' }, { name: 'Jockey', logo: 'img/brands-fb/jockey.webp' }, { name: 'Hanes', logo: 'img/brands-aluna/hanes.webp', logoStyle: 'height:44px', popupLogo: 'img/brands-aluna/hanes-white.webp' }, { name: 'Naomi & Nicole', logo: 'img/brands-aluna/naomi-nicole.webp', popupLogo: 'img/brands-aluna/naomi-nicole-mono.webp' }, { name: 'Cupid', logo: 'img/brands-aluna/cupid.webp' }, { name: 'C.Lingerie', logo: 'img/brands-aluna/c-lengerie.webp' }, { name: 'Leg Avenue', logo: 'img/brands-aluna/leg-avenue.webp' }, { name: 'Mapale', logo: 'img/brands-aluna/mapale.webp' }, { name: 'Ivory', logo: 'img/brands-aluna/ivory.webp' }, { name: 'G World', logo: 'img/brands-aluna/g-world.webp', logoStyle: 'height:44px' }, { name: 'Caha Capo', logo: 'img/brands-aluna/caha-capo.webp' }, { name: 'Carole Hochman', logo: 'img/brands-aluna/carole-hochman.webp' }, { name: 'Eileen West', logo: 'img/brands-aluna/eileen-west.webp' }, { name: 'Affinessence', logo: 'img/brands-fb/affinessence.webp' }, { name: 'Aspinal of London', logo: 'img/brands-fb/aspinal.webp' }, { name: 'Collection Privée by Diane Castel', logo: 'img/brands-fb/diane-castel.webp' }, { name: 'Palladio', logo: 'img/brands-fb/palladio.webp' }, { name: 'Veganize', logo: 'img/brands-fb/veganize.webp' }, { name: 'Beaugreen', logo: 'img/brands-fb/beaugreen.webp', logoStyle: 'height:44px' }, { name: 'Dr.Bio', logo: 'img/brands-fb/dr-bio.webp', logoStyle: 'height:44px' }, { name: 'Hidehere', logo: 'img/brands-fb/hidehere.webp' }, { name: 'Maxclinic', logo: 'img/brands-fb/maxclinic.webp' }, { name: 'OOTD', logo: 'img/brands-fb/ootd.webp', logoStyle: 'height:44px' }, { name: 'Teabless', logo: 'img/brands-fb/teabless.webp' }, { name: 'Beaver', logo: 'img/brands-fb/beaver.webp', logoStyle: 'height:44px' }], brandStyle: 'standard', modalBrands: [{ name: 'Vero Moda', logo: 'img/brands-fb/vero-moda-dark.webp' }, { name: 'Wrangler', logo: 'img/brands-fb/wrangler.webp' }, { name: 'Triumph', logo: 'img/brands-aluna/triumph.webp' }, { name: 'Sloggi', logo: 'img/brands-aluna/sloggi.webp' }, { name: 'Maidenform', logo: 'img/brands-aluna/maidenform.webp' }, { name: 'Bali', logo: 'img/brands-aluna/bali.webp' }, { name: 'Jockey', logo: 'img/brands-fb/jockey.webp' }, { name: 'Hanes', logo: 'img/brands-aluna/hanes.webp' }, { name: 'Naomi & Nicole', logo: 'img/brands-aluna/naomi-nicole.webp' }, { name: 'Cupid', logo: 'img/brands-aluna/cupid.webp' }, { name: 'C.Lingerie', logo: 'img/brands-aluna/c-lengerie.webp' }, { name: 'Leg Avenue', logo: 'img/brands-aluna/leg-avenue.webp' }, { name: 'Mapale', logo: 'img/brands-aluna/mapale.webp' }, { name: 'Ivory', logo: 'img/brands-aluna/ivory.webp' }, { name: 'G World', logo: 'img/brands-aluna/g-world.webp' }, { name: 'Caha Capo', logo: 'img/brands-aluna/caha-capo.webp' }, { name: 'Carole Hochman', logo: 'img/brands-aluna/carole-hochman.webp' }, { name: 'Eileen West', logo: 'img/brands-aluna/eileen-west.webp' }, { name: 'Affinessence', logo: 'img/brands-fb/affinessence.webp' }, { name: 'Aspinal of London', logo: 'img/brands-fb/aspinal.webp' }, { name: 'Collection Privée by Diane Castel', logo: 'img/brands-fb/diane-castel.webp' }, { name: 'Palladio', logo: 'img/brands-fb/palladio.webp' }, { name: 'Veganize', logo: 'img/brands-fb/veganize.webp' }, { name: 'Beaugreen', logo: 'img/brands-fb/beaugreen.webp' }, { name: 'Dr.Bio', logo: 'img/brands-fb/dr-bio.webp' }, { name: 'Hidehere', logo: 'img/brands-fb/hidehere.webp' }, { name: 'Maxclinic', logo: 'img/brands-fb/maxclinic.webp' }, { name: 'OOTD', logo: 'img/brands-fb/ootd.webp' }, { name: 'Teabless', logo: 'img/brands-fb/teabless.webp' }, { name: 'Beaver', logo: 'img/brands-fb/beaver.webp' }], heroBrands: [], heroBrandStyle: 'none', stats: [{ value: '20+', label: 'Beauty Brands', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>' }, { value: '2,000+', label: 'Products', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 8h6v13H4"/><path d="M7 7h4M7 11h4M7 15h4M17 12h.01M17 16h.01"/></svg>' }, { value: '500K+', label: 'Happy Customers', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg>' }, { value: '75+', label: 'Years of Trust', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg>' }], img: 'img/fashion-beauty-hero.webp', cardLogoH: 'clamp(48px,6vw,74px)' },
+    { name: 'FMCG', href: 'fmcg/', logo: 'img/Div/fmcg-logo.webp', cardLogo: 'img/Div/fmcg-logo.webp', cardLogoDark: true, tagline: 'Everyday Essentials, Delivered.', icon: '<circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle><path d="M2 4h2.5l2.5 12h10l2-8H6.2"></path>', desc: 'As consumer expectations for quality everyday essentials continued to rise, UNION expanded its portfolio to include a wide range of fast-moving consumer goods from leading international brands. By delivering trusted food, beverage, and household products, the company has become a reliable partner in meeting the daily needs of consumers.', mgr: 'Available on request', contact: 'Chat with Us', brands: ['Vileda', 'Cans', '+14 more'], slot: 'div-fmcg', divPage: { short: 'Trusted FMCG — food, beverage, and household essentials, delivered at scale across Kuwait.', cardImg: 'img/Card%20images/FMCG.webp', banner: 'img/div-fmcg.webp' }, categories: [{ title: 'Commodities', short: '', line: 'Everyday pantry staples, in bulk.', url: '#', image: 'img/cat/FMCG/commodities.webp', soon: false, n: '01', grad: 'linear-gradient(160deg,#3a2f22,#120d08)', icon: '<path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>' }, { title: 'Confectionaries', short: '', line: 'Sweets and treats.', url: '#', image: 'img/cat/FMCG/confectionaries.webp', soon: false, n: '02', grad: 'linear-gradient(160deg,#33202a,#12080d)', icon: '<circle cx="12" cy="12" r="3.6"/><path d="M8.4 8.4 4 6l1.4 4.6M15.6 15.6 20 18l-1.4-4.6"/>' }, { title: 'Snacks', short: '', line: 'Crisps, nuts and savoury bites.', url: '#', image: 'img/cat/FMCG/snacks.webp', soon: false, n: '03', grad: 'linear-gradient(160deg,#33291b,#110d07)', icon: '<circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14.5" cy="9" r="1"/><circle cx="13" cy="14.5" r="1"/><circle cx="9.5" cy="14" r="1"/>' }, { title: 'Personal Care', short: '', line: 'Everyday care, head to toe.', url: '#', image: 'img/cat/FMCG/personal-care.webp', soon: false, n: '04', grad: 'linear-gradient(160deg,#24303a,#0b0f13)', icon: '<path d="M12 3s6 6 6 10a6 6 0 01-12 0c0-4 6-10 6-10z"/>' }, { title: 'Home Care', short: '', line: 'A cleaner, brighter home.', url: '#', image: 'img/cat/FMCG/homecare.webp', soon: false, n: '05', grad: 'linear-gradient(160deg,#1f2e33,#0a1012)', icon: '<path d="M10 9h4l3 3v8a1 1 0 01-1 1H10a1 1 0 01-1-1z"/><path d="M10 9V4h3M13 4h4M13 6h4"/>' }, { title: 'Perfumeries', short: '', line: 'Fragrances and fine scents.', url: '#', image: 'img/cat/FMCG/perfumeries.webp', soon: false, n: '06', grad: 'linear-gradient(160deg,#2f2733,#0f0b11)', icon: '<rect x="9" y="9" width="6" height="11" rx="1.5"/><path d="M10.5 9V6h3v3M11 3.5h2V6h-2z"/><path d="M16 10h2.5v3H16"/>' }, { title: 'Cookware', short: '', line: 'Kitchenware and cookware.', url: '#', image: 'img/cat/FMCG/cookware.webp', soon: false, n: '07', grad: 'linear-gradient(160deg,#26302c,#0b0f0d)', icon: '<path d="M3 11h15a6.5 6.5 0 01-6.5 6.5h-2A6.5 6.5 0 013 11z"/><path d="M18 12.5h3M6 9l-1-2M16 9l1-2"/>' }], pageBrands: [{ name: 'CANS', logo: 'img/All%20Brands/FMCG/cans-t.webp' }, { name: 'Snips', logo: 'img/All%20Brands/FMCG/snips-t.webp' }, { name: 'Afia Tuna', logo: 'img/All%20Brands/FMCG/afia-t.webp' }, { name: 'Glysolid', logo: 'img/All%20Brands/FMCG/glysolid-t.webp' }, { name: 'Vileda', logo: 'img/All%20Brands/FMCG/Vileda_.svg', logoStyle: 'position:relative;top:-4px' }, { name: 'Lactovit', logo: 'img/All%20Brands/FMCG/lactovit-t.webp' }, { name: 'Space Walkers', logo: 'img/All%20Brands/FMCG/spacewalkers-t.webp' }, { name: 'Yupo', logo: 'img/All%20Brands/FMCG/yupo-t.webp' }, { name: 'Royal Mirage', logo: 'img/All%20Brands/FMCG/royalmirage-t.webp' }, { name: 'Yardley', logo: 'img/All%20Brands/FMCG/yardley-t.webp' }, { name: 'Prestige', logo: 'img/All%20Brands/FMCG/prestige-t.webp' }, { name: 'Eternal Love', logo: 'img/All%20Brands/FMCG/eternallove-t.webp', logoStyle: 'mix-blend-mode:normal;filter:brightness(0)' }, { name: 'Color Me', logo: 'img/All%20Brands/FMCG/colorme-t.webp', logoStyle: 'mix-blend-mode:normal;filter:brightness(0)' }, { name: 'Perfumer\'s Choice', logo: 'img/All%20Brands/FMCG/perfumerschoice-t.webp' }, { name: 'UTC Perfumes', logo: 'img/All%20Brands/FMCG/utcperfumes-t.webp' }], brandStyle: 'blended', modalBrands: [{ name: 'CANS', logo: 'img/All%20Brands/FMCG/cans-t.webp' }, { name: 'Snips', logo: 'img/All%20Brands/FMCG/snips-t.webp' }, { name: 'Afia Tuna', logo: 'img/All%20Brands/FMCG/afia-t.webp' }, { name: 'Glysolid', logo: 'img/All%20Brands/FMCG/glysolid-t.webp' }, { name: 'Vileda', logo: 'img/All%20Brands/FMCG/Vileda_.svg' }, { name: 'Lactovit', logo: 'img/All%20Brands/FMCG/lactovit-t.webp' }, { name: 'Space Walkers', logo: 'img/All%20Brands/FMCG/spacewalkers-t.webp' }, { name: 'Yupo', logo: 'img/All%20Brands/FMCG/yupo-t.webp' }, { name: 'Royal Mirage', logo: 'img/All%20Brands/FMCG/royalmirage-t.webp' }, { name: 'Yardley', logo: 'img/All%20Brands/FMCG/yardley-t.webp' }, { name: 'Prestige', logo: 'img/All%20Brands/FMCG/prestige-t.webp' }, { name: 'Eternal Love', logo: 'img/All%20Brands/FMCG/eternallove-t.webp', dark: true }, { name: 'Color Me', logo: 'img/All%20Brands/FMCG/colorme-t.webp', dark: true }, { name: 'Perfumer\'s Choice', logo: 'img/All%20Brands/FMCG/perfumerschoice-t.webp' }, { name: 'UTC Perfumes', logo: 'img/All%20Brands/FMCG/utcperfumes-t.webp' }], heroBrands: [{ raw: '<!-- FMCG hero brands — UE format: product image (3D pop) on top, brand logo below.            To add a product photo: replace the <div class="hb-ph">…</div> with            <img loading="lazy" decoding="async" src="img/All%20Brands/FMCG/products/<brand>.png" alt="<Brand> products"> (transparent PNG). -->' }, { name: 'Vileda', sub: 'Household Cleaning', image: 'img/Hero/FMCG/vileda.webp', logo: 'img/All%20Brands/FMCG/Vileda_.svg', mediaClass: '', mediaAlt: 'Vileda products', colour: '', url: '', linkLabel: '' }, { name: 'Snips', sub: 'Baked Snacks', image: 'img/Hero/FMCG/snips.webp', logo: 'img/All%20Brands/FMCG/snips-t.webp', mediaClass: '', mediaAlt: 'Snips products', colour: '', url: '', linkLabel: '' }, { name: 'CANS', sub: 'Beverages', image: 'img/Hero/FMCG/cans.webp', logo: 'img/All%20Brands/FMCG/cans-t.webp', mediaClass: '', mediaAlt: 'CANS products', colour: '', url: '', linkLabel: '' }, { name: 'Afia', sub: 'Canned Food', image: 'img/Hero/FMCG/afia.webp', logo: 'img/All%20Brands/FMCG/afia-t.webp', mediaClass: '', mediaAlt: 'Afia products', colour: '', url: '', linkLabel: '' }, { name: 'Glysolid', sub: 'Skin & Personal Care', image: 'img/Hero/FMCG/glysolid.webp', logo: 'img/All%20Brands/FMCG/glysolid-t.webp', mediaClass: '', mediaAlt: 'Glysolid products', colour: '', url: '', linkLabel: '' }], heroBrandStyle: 'logo', stats: [{ value: '10+', label: 'Trusted Brands', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>' }, { value: '500+', label: 'Products (SKUs)', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>' }, { value: '1,000+', label: 'Retail Partners', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg>' }, { value: '55+', label: 'Sales & Brand Management Force', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg>' }] },
+    { name: 'Union Services', logo: 'img/Div/services-logo.webp', cardLogo: 'img/Div/services-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.4vw,66px)', tagline: 'Caring for Every Family.', icon: '<path d="M12 20s-6.5-4.2-9-8.2C1.4 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.4 0 4.6 3.5 3 6.3-2.5 4-9 8.2-9 8.2z"></path>', desc: 'Union Services is dedicated to providing reliable and professional after-sales and technical services to ensure our customers get the best performance and value from their products. From pre-installation (site survey), installation, startup, and preventive maintenance to troubleshooting and repairs, our experienced service teams are committed to delivering quality service and a smooth customer experience.', mgr: 'Available on request', contact: 'Chat with Us', brands: [], services: ['Air Conditioning, HVAC & VRF Systems', 'Home Appliances & Built-in Systems', 'Audio/Video & Electronics Systems', 'Site Survey & Technical Assessment', 'Installation, Start-Up & Commissioning', 'Preventive Maintenance & AMC', 'Corrective Maintenance, Troubleshooting & Repair', 'Product Replacement & Upgrading', 'Genuine Spare Parts & Technical Support', 'Water Solutions Services'], slot: 'div-health', divPage: { short: 'World class VRV and HVAC-R solutions for professionals across Kuwait.', cardImg: 'img/Card%20images/Service.webp', banner: 'img/div-health.webp', logoBig: true }, href: 'union-services/', categories: [{ title: 'Service Contracts', short: 'Contracts', line: 'Tailored preventive and corrective maintenance solutions for residential and commercial customers.', url: '', image: 'img/cat/us/amc.webp', soon: false, n: '01', grad: 'linear-gradient(160deg,#2c3436,#0d1011)', icon: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 14 2 2 4-4"/>' }, { title: 'Air Conditioning & HVAC Solutions', short: 'AC & HVAC', line: 'Installation, servicing, and maintenance of air conditioning, HVAC, and VRF systems.', url: '', image: 'img/cat/us/rac.webp', soon: false, n: '02', grad: 'linear-gradient(160deg,#2f333a,#0e0f12)', icon: '<rect x="2" y="4" width="20" height="9" rx="2"/><path d="M6 9h12"/><path d="M7 17c0 1.5-1 2.5-1 4M12 16v5M17 17c0 1.5 1 2.5 1 4"/>' }, { title: 'Home Appliances & Built-In Solutions', short: 'Appliances', line: 'Professional installation, maintenance, and repair of household and built-in appliances.', url: '', image: 'img/cat/us/built-in.webp', soon: false, n: '03', grad: 'linear-gradient(160deg,#33302a,#12100c)', icon: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M4 7h16"/><circle cx="12" cy="14" r="4"/><path d="M8 4.5h.01M11 4.5h.01"/>' }, { title: 'Audio, Video & Electronics', short: 'AV & Electronics', line: 'Specialized installation, troubleshooting, and technical support for electronic and entertainment systems.', url: '', image: 'img/cat/us/tv-installation.webp', soon: false, n: '04', grad: 'linear-gradient(160deg,#332c33,#120e12)', icon: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8.5 4 2-4 2z"/>' }, { title: 'Site Surveys & Technical Assessments', short: 'Site Surveys', line: 'Professional site inspections and technical evaluations to identify the most suitable solutions.', url: '', image: '', soon: false, n: '05', grad: 'linear-gradient(160deg,#2a2f36,#0c0e11)', icon: '<path d="M9 3h6v3H9z"/><path d="M15 4.5h2a2 2 0 0 1 2 2V11"/><path d="M9 4.5H7a2 2 0 0 0-2 2V20a2 2 0 0 0 2 2h5"/><circle cx="17" cy="17" r="3"/><path d="m21 21-1.8-1.8"/>' }, { title: 'Installation & Commissioning', short: 'Installation', line: 'Expert installation, start-up, testing, and commissioning to ensure optimal product performance.', url: '', image: 'img/cat/us/central-ac.webp', soon: false, n: '06', grad: 'linear-gradient(160deg,#30333a,#0f1013)', icon: '<path d="M9 2v6M15 2v6"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v5"/>' }, { title: 'Troubleshooting & Repairs', short: 'Repairs', line: 'Reliable diagnostics and professional repairs to restore functionality and minimize downtime.', url: '', image: 'img/cat/us/small-appliances.webp', soon: false, n: '07', grad: 'linear-gradient(160deg,#2c3436,#0d1011)', icon: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>' }, { title: 'Genuine Spare Parts & Technical Support', short: 'Spare Parts', line: 'Access to genuine spare parts and dedicated technical assistance to maintain product quality and reliability.', url: '', image: '', soon: false, n: '08', grad: 'linear-gradient(160deg,#2f333a,#0e0f12)', icon: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>' }, { title: 'Kitchen Design & Fit-Out Solutions', short: 'Kitchens', line: 'Comprehensive end-to-end kitchen solutions, from concept development and space planning to design, equipment selection, installation, and commissioning for residential and commercial kitchens.', url: '', image: '', soon: false, n: '09', grad: 'linear-gradient(160deg,#33302a,#12100c)', icon: '<path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/>' }, { title: 'Residential Fit-Out Solutions', short: 'Residential Fit-Out', line: 'Customized home interior solutions, encompassing space planning, renovation, finishing works, and technical installations to create modern, functional, and comfortable living spaces.', url: '', image: '', soon: false, n: '10', grad: 'linear-gradient(160deg,#332c33,#120e12)', icon: '<path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M4 18v2M20 18v2M12 4v9"/>' }, { title: 'General & Commercial Fit-Out Solutions', short: 'Commercial Fit-Out', line: 'Comprehensive fit-out and refurbishment services for offices, retail outlets, and commercial facilities, covering interior finishing, technical installations, and project execution to deliver functional, efficient, and high-quality environments.', url: '', image: '', soon: false, n: '11', grad: 'linear-gradient(160deg,#2a2f36,#0c0e11)', icon: '<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/>' }, { title: 'Smart Home & Automation Solutions', short: 'Smart Home', line: 'Transform your home or business into a smarter, safer, and more energy-efficient environment. Our integrated automation solutions provide seamless control over lighting, climate, appliances, security, and connected systems—anytime, anywhere.', url: '', image: '', soon: false, n: '12', grad: 'linear-gradient(160deg,#30333a,#0f1013)', icon: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M8.5 14.5a5 5 0 0 1 7 0"/><path d="M10.2 16.8a2.5 2.5 0 0 1 3.6 0"/><path d="M12 19h.01"/>' }], pageBrands: [], brandStyle: 'standard', modalBrands: [], heroBrands: [], heroBrandStyle: 'named', stats: [{ value: '150+', label: 'People on the team', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6a3 3 0 010 6M21 20a5.5 5.5 0 00-4.5-5.4"/></svg>' }, { value: 'Safety-first', label: 'High safety & quality standards', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="m9 12 2 2 4-4"/></svg>' }, { value: 'Brand-trained', label: 'Trained by the global brands we service', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg>' }, { value: '90%+', label: 'Customer satisfaction', icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11v9H4v-9zM7 11l4-8a2 2 0 012 2v4h5.5a2 2 0 012 2.3l-1.2 6.5a2 2 0 01-2 1.7H7"/></svg>' }], heroBrandsHidden: true },
+    { name: 'Union Engineering Company', logo: 'img/Div/commercial-logo.webp', cardLogo: 'img/Div/commercial-logo.webp', cardLogoDark: true, cardLogoH: 'clamp(44px,5.2vw,64px)', tagline: 'Powerful, Efficient Cooling.', icon: '<rect x="3" y="5" width="18" height="8" rx="2"></rect><path d="M6.5 9h1M10 9h7.5M7 16c.2 1.4 1 1.8 1 3M12 16c.2 1.4 1 1.8 1 3M17 16c-.2 1.4-1 1.8-1 3"></path>', desc: 'At the time of the company\'s inception there was a great demand in the market for climate control technology. UTC\'s answer to this demand was the creation of its very own line of climate control solution: General Air Conditioners.', descHtml: 'At the time of the company\'s inception there was a great demand in the market for climate control technology. UTC\'s answer to this demand was the creation of its very own line of climate control <strong style="color:#161513;font-weight:700">solution: General Air Conditioners.</strong>', mgr: 'Mr. Walid Khalid', contact: 'Chat with Us', brands: ['Daikin', 'Hitachi', 'General'], slot: 'div-commercial', divPage: { name: 'Union Engineering Company', logoName: 'Union Engineering Company', short: 'Powerful, efficient climate control — led by our own line, General Air Conditioners.', cardImg: 'img/Card%20images/CAC.webp', banner: 'img/Div%20BGs/CACimg.webp' }, heroBrands: [], stats: [], href: 'union-engineering/' },
+/* /cms:divisions */
   ];
 
   const storyStats = [
@@ -140,6 +180,7 @@
   ];
 
   const milestones = [
+  /* cms:milestones */
     { year: '1949', title: 'First Showroom, Ahmadi', desc: 'Our journey began with a single showroom in Ahmadi, marking the start of Union Trading Co.', slot: 'ms-1949' },
     { year: '1958', title: 'Kuwait City Showroom Launch', desc: 'We expanded our presence with the launch of our showroom in Kuwait City, bringing us closer to our customers.', slot: 'ms-1958' },
     { year: '1966', title: 'Partnership with Gillette', desc: 'We partnered with Gillette to bring world-class grooming products to our customers.', slot: 'ms-1966' },
@@ -153,9 +194,10 @@
     { year: '2017', title: 'Yaal Showroom', desc: 'The Yaal showroom opened, adding a modern retail destination to our growing network.', slot: 'ms-2017' },
     { year: '2020', title: 'New Hawally Department Store', desc: 'We unveiled our new Hawally department store — a flagship retail experience for a new generation of customers.', slot: 'ms-2020' },
     { year: '2024', title: 'Launch of Aluna', desc: 'We introduced Aluna, our dedicated beauty and fragrance destination, bringing internationally acclaimed cosmetics and perfumes to customers across Kuwait.', slot: 'ms-2024' },
-    { year: '2026', title: 'Union Electronics', desc: 'We brought Union Electronics to life across Physical and Digital Stores, delivering a seamless omni-channel experience for the latest technology and home appliances.', slot: 'ms-2026' }
+    { year: '2026', title: 'Union Electronics', desc: 'We brought Union Electronics to life across Physical and Digital Stores, delivering a seamless omni-channel experience for the latest technology and home appliances.', slot: 'ms-2026' },
+/* /cms:milestones */
   ];
-
+/* cms:socials */
   const socials = [
     { name: 'Instagram', href: 'https://www.instagram.com/unionelectronics.kw/', icon: sic('<path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm0 2a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2H7zm10.5 1.5a1 1 0 110 2 1 1 0 010-2z"></path>') },
     { name: 'Facebook', href: 'https://www.facebook.com/unionelectronicskw', icon: sic('<path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"></path>') },
@@ -163,7 +205,9 @@
     { name: 'TikTok', href: 'https://www.tiktok.com/@unionelectronics.kw?_r=1&_t=ZS-998zkW4Kypg', icon: sic('<path d="M16 3c.3 2 1.5 3.5 3.5 4v3c-1.4 0-2.6-.4-3.5-1v5.5A5.5 5.5 0 118 9v3.2A2.5 2.5 0 1011 14V3h3z"></path>') },
     { name: 'YouTube', href: 'https://youtube.com/@unionelectronicskw?si=DtCur73sViKpsxy3', icon: sic('<path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4a2.5 2.5 0 00-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"></path>') }
   ];
+/* /cms:socials */
   const phoneIcon = '<path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path>';
+/* cms:contacts */
   const contacts = [
     { icon: ic(phoneIcon), main: '+965 2242 3355', sub: 'Head Office Number' },
     { icon: ic(phoneIcon), main: '+965 184 0011', sub: 'Service Center Hotline' },
@@ -171,12 +215,15 @@
     { icon: ic('<rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path>'), main: 'info@utc.com.kw', sub: 'Email Us' },
     { icon: ic('<path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle>'), main: 'Union Trading Co.', sub: 'Rehab Al-Salem Street, Al Dawliya Complex, 3rd Floor, Kuwait City.' }
   ];
+/* /cms:contacts */
+/* cms:footlinks.order */
   const footAbout = ['About UTC', 'FAQ', 'Careers', 'Sitemap', 'Privacy Statement'];
+/* /cms:footlinks.order */
 
   // Offices for the contact panel — each opens the Our Stores explorer; where a
   // matching store record exists, it deep-links to it via ?store=<index>.
   const offices = [
-    { name: 'Head Office', addr: ['Dawliah Commercial Center, Block 15', 'Al Qibla, Kuwait City'], phone: '+965 2242 3355', email: 'info@utc.com.kw', store: 13, img: 'img/Showroom%20Images/HOPrem.webp' },
+    { name: 'Head Office', addr: ['Dawliah Commercial Center, Block 15', 'Al Qibla, Kuwait City'], phone: '+965 2242 3355', email: 'info@utc.com.kw', store: 12, img: 'img/Showroom%20Images/HOPrem.webp' },
     { name: 'Flagship Store', addr: ['Fahad Al-Salem Street, Block 1', 'Kuwait City, Kuwait'], phone: '+965 2242 3355', email: 'info@utc.com.kw', store: 0, img: 'img/Showroom%20Images/Flagship.webp' },
     { name: 'Salmiya Store', addr: ['Salem Al Mubarak Street', 'Salmiya, Kuwait'], phone: '+965 9550 1717', email: 'salmiya@utc.com.kw', store: 1, img: 'img/stores/salmiya-1.webp' }
   ];
@@ -206,49 +253,82 @@
   // via the invert filter. Kept separate from brandNames so the division brand-chip
   // lookup (logoFor) is unaffected.
   const marqBrands = [
+/* cms:brandmarquee */
     { name: 'B&D', src: 'img/brands-elec/b-d.webp' },
-    { name: 'Triumph', src: 'img/brands-aluna/triumph.webp' },
     { name: 'Belkin', src: 'img/brands-elec/belkin.webp' },
     { name: 'Canton', src: 'img/brands-elec/canton.webp' },
-    { name: 'Sloggi', src: 'img/brands-aluna/sloggi.webp' },
     { name: 'Cecotec', src: 'img/brands-elec/cecotec.webp' },
     { name: 'Changhong', src: 'img/brands-elec/changhong.webp' },
-    { name: 'Maidenform', src: 'img/brands-aluna/maidenform.webp' },
     { name: 'Chigo', src: 'img/brands-elec/chigo.webp' },
     { name: 'Daikin', src: 'img/brands-elec/daikin.webp' },
-    { name: 'Hanes', src: 'img/brands-aluna/hanes-mark.webp', raw: true },
     { name: 'Fakir', src: 'img/brands-elec/fakir.webp' },
     { name: 'Galanz', src: 'img/brands-elec/galanz.webp' },
-    { name: 'Bali', src: 'img/brands-aluna/bali.webp' },
     { name: 'General', src: 'img/brands-elec/general.webp' },
     { name: 'Glemgas', src: 'img/brands-elec/glemgas.webp' },
-    { name: 'Naomi & Nicole', src: 'img/brands-aluna/naomi-nicole.webp' },
     { name: 'Havic', src: 'img/brands-elec/havic.webp' },
     { name: 'Hifuture', src: 'img/brands-elec/hifuture.webp' },
-    { name: 'Carole Hochman', src: 'img/brands-aluna/carole-hochman.webp', big: true },
     { name: 'Hitachi', src: 'img/brands-elec/hitachi.webp' },
     { name: 'Konka', src: 'img/brands-elec/konka.webp' },
-    { name: 'Leg Avenue', src: 'img/brands-aluna/leg-avenue.webp' },
     { name: 'Morphy', src: 'img/brands-elec/morphy.webp' },
-    { name: 'Naim & Focal', src: 'img/brands-elec/naim-focal.webp', big: true },
-    { name: 'Eileen West', src: 'img/brands-aluna/eileen-west.webp' },
+    { name: 'Naim & Focal', src: 'img/brands-elec/naim-focal.webp', pad: '3px 18px' },
     { name: 'Proove', src: 'img/brands-elec/proove.webp' },
     { name: 'ROWA', src: 'img/brands-elec/rowa.webp' },
-    { name: 'Cupid', src: 'img/brands-aluna/cupid.webp' },
     { name: 'Startec', src: 'img/brands-elec/startec.webp' },
     { name: 'TCL', src: 'img/brands-elec/tcl.webp' },
-    { name: 'Mapale', src: 'img/brands-aluna/mapale.webp' },
     { name: 'Vestel', src: 'img/brands-elec/vestel.webp' },
-    { name: 'Ivory', src: 'img/brands-aluna/ivory.webp' },
     { name: 'Westpoint', src: 'img/brands-elec/westpoint.webp' },
-    { name: 'C.Lengerie', src: 'img/brands-aluna/c-lengerie.webp' },
     { name: 'Yuwell', src: 'img/brands-elec/yuwell.webp' },
-    { name: 'G World', src: 'img/brands-aluna/g-world.webp' }
+    { name: 'Vero Moda', src: 'img/brands-fb/vero-moda.webp' },
+    { name: 'Wrangler', src: 'img/brands-fb/wrangler.webp' },
+    { name: 'Triumph', src: 'img/brands-aluna/triumph.webp' },
+    { name: 'Sloggi', src: 'img/brands-aluna/sloggi.webp' },
+    { name: 'Maidenform', src: 'img/brands-aluna/maidenform.webp' },
+    { name: 'Bali', src: 'img/brands-aluna/bali.webp' },
+    { name: 'Jockey', src: 'img/brands-fb/jockey.webp' },
+    { name: 'Hanes', src: 'img/brands-aluna/hanes-white.webp' },
+    { name: 'Naomi & Nicole', src: 'img/brands-aluna/naomi-nicole-mono.webp' },
+    { name: 'Cupid', src: 'img/brands-aluna/cupid.webp' },
+    { name: 'C.Lingerie', src: 'img/brands-aluna/c-lengerie.webp' },
+    { name: 'Leg Avenue', src: 'img/brands-aluna/leg-avenue.webp' },
+    { name: 'Mapale', src: 'img/brands-aluna/mapale.webp' },
+    { name: 'Ivory', src: 'img/brands-aluna/ivory.webp', pad: '8px 12px' },
+    { name: 'G World', src: 'img/brands-aluna/g-world.webp' },
+    { name: 'Caha Capo', src: 'img/brands-aluna/caha-capo.webp' },
+    { name: 'Carole Hochman', src: 'img/brands-aluna/carole-hochman.webp', pad: '6px 14px' },
+    { name: 'Eileen West', src: 'img/brands-aluna/eileen-west.webp', pad: '6px 10px' },
+    { name: 'Affinessence', src: 'img/brands-fb/affinessence.webp' },
+    { name: 'Aspinal of London', src: 'img/brands-fb/aspinal.webp', pad: '2px 6px' },
+    { name: 'Collection Privée by Diane Castel', src: 'img/brands-fb/diane-castel.webp', pad: '3px 18px' },
+    { name: 'Palladio', src: 'img/brands-fb/palladio.webp' },
+    { name: 'Veganize', src: 'img/brands-fb/veganize.webp' },
+    { name: 'Beaugreen', src: 'img/brands-fb/beaugreen.webp', pad: '3px 18px' },
+    { name: 'Dr.Bio', src: 'img/brands-fb/dr-bio.webp', pad: '3px 24px' },
+    { name: 'Hidehere', src: 'img/brands-fb/hidehere.webp' },
+    { name: 'Maxclinic', src: 'img/brands-fb/maxclinic.webp' },
+    { name: 'OOTD', src: 'img/brands-fb/ootd.webp' },
+    { name: 'Teabless', src: 'img/brands-fb/teabless.webp' },
+    { name: 'Beaver', src: 'img/brands-fb/beaver.webp' },
+    { name: 'Cans', src: 'img/All%20Brands/FMCG/cans-t.webp' },
+    { name: 'Snips', src: 'img/All%20Brands/FMCG/snips-white.webp', pad: '4px 22px' },
+    { name: 'Glysolid', src: 'img/All%20Brands/FMCG/glysolid-t.webp' },
+    { name: 'Vileda', src: 'img/All%20Brands/FMCG/Vileda_.svg' },
+    { name: 'Lactovit', src: 'img/All%20Brands/FMCG/lactovit-t.webp' },
+    { name: 'Space Walkers', src: 'img/All%20Brands/FMCG/spacewalkers-t.webp' },
+    { name: 'Yupo', src: 'img/All%20Brands/FMCG/yupo-t.webp', pad: '3px 20px' },
+    { name: 'Royal Mirage', src: 'img/All%20Brands/FMCG/royalmirage-t.webp', pad: '3px 18px' },
+    { name: 'Yardley', src: 'img/All%20Brands/FMCG/yardley-t.webp' },
+    { name: 'Prestige', src: 'img/All%20Brands/FMCG/prestige-white.webp' },
+    { name: 'Eternal Love', src: 'img/All%20Brands/FMCG/eternallove-t.webp' },
+    { name: 'Color Me', src: 'img/All%20Brands/FMCG/colorme-t.webp' },
+    { name: 'Perfumer\'s Choice', src: 'img/All%20Brands/FMCG/perfumerschoice-t.webp' },
+    { name: 'UTC Perfumes', src: 'img/All%20Brands/FMCG/utcperfumes-t.webp' },
+    { name: 'Afia', src: 'img/All%20Brands/FMCG/afia-t.webp' }
+/* /cms:brandmarquee */
   ];
   const marqueeBrands = marqBrands;
   const marqHtml = marqueeBrands.map(b => {
     const filt = b.raw ? 'none' : 'brightness(0) invert(1)';
-    return '<div class="bcell" style="width:200px;height:56px;border-right:1px solid rgba(255,255,255,0.16);padding:' + (b.big ? '5px 24px' : '13px 24px') + ';opacity:0.82;transition:opacity .35s ease">'
+    return '<div class="bcell" style="width:200px;height:56px;border-right:1px solid rgba(255,255,255,0.16);padding:' + (b.pad || (b.big ? '5px 24px' : '13px 24px')) + ';opacity:0.82;transition:opacity .35s ease">'
       + '<div class="bimg" role="img" aria-label="' + b.name + '" style="width:100%;height:100%;filter:' + filt + ';background-image:url(&quot;' + b.src + '&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;transition:transform .35s ease"></div></div>';
   }).join('');
   const marqsets = document.querySelectorAll('.marqset');
@@ -261,21 +341,47 @@
     let W = 0, pos0 = 0, pos = 0, paused = false;
     function measure() { W = marqsets[0].getBoundingClientRect().width; pos0 = window.innerWidth / 2 - 100 - W; pos = pos0; }
     measure();
-    row.addEventListener('mouseenter', () => paused = true);
-    row.addEventListener('mouseleave', () => paused = false);
+    row.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') paused = true; });
+    row.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') paused = false; });
+    let held = false;
+    window.marqDrag=window.marqDrag||function(wrap,get,set,hold){ // drag a self-moving strip by touch
+      // Touch events, not pointer events: iPhone Safari stops sending pointer moves after the first
+      // drag on an element that is moving under the finger, so the second drag did nothing.
+      wrap.style.touchAction='pan-y';
+      var d=null, moved=false, t=0;
+      wrap.addEventListener('touchstart',function(e){ if(e.touches.length!==1){ d=null; return; } var p=e.touches[0]; d={x:p.clientX,y:p.clientY,p:get(),on:false}; moved=false; },{passive:true});
+      wrap.addEventListener('touchmove',function(e){ if(!d)return; var p=e.touches[0], dx=p.clientX-d.x, dy=p.clientY-d.y;
+        if(!d.on){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; if(Math.abs(dy)>Math.abs(dx)){ d=null; return; } d.on=true; moved=true; clearTimeout(t); hold(true); }
+        if(e.cancelable) e.preventDefault();
+        set(d.p,dx); },{passive:false});
+      function end(){ if(!d)return; var was=d.on; d=null; if(was){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+      wrap.addEventListener('touchend',end); wrap.addEventListener('touchcancel',end);
+      // MOUSE, too (18 Nov 2026): click and drag the strip the way a finger can. A drag starts only after
+      // the mouse moves a few pixels, so a plain click still opens a card; the strip waits, then carries on.
+      wrap.style.cursor='grab';
+      wrap.addEventListener('dragstart',function(e){ e.preventDefault(); });
+      wrap.addEventListener('mousedown',function(e){ if(e.button!==0)return; var m={x:e.clientX,p:get(),on:false}; moved=false;
+        function mv(ev){ var dx=ev.clientX-m.x; if(!m.on){ if(Math.abs(dx)<5)return; m.on=true; moved=true; clearTimeout(t); hold(true); wrap.style.cursor='grabbing'; document.documentElement.style.userSelect='none'; } set(m.p,dx); }
+        function up(){ window.removeEventListener('mousemove',mv); window.removeEventListener('mouseup',up); wrap.style.cursor='grab'; document.documentElement.style.userSelect=''; if(m.on){ clearTimeout(t); t=setTimeout(function(){hold(false);},1800); } }
+        window.addEventListener('mousemove',mv); window.addEventListener('mouseup',up); });
+      wrap.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+    };
+    marqDrag(row.parentElement, () => pos, (p0, dx) => { pos = p0 + dx; if (W) { while (pos > pos0) pos -= W; while (pos <= pos0 - W) pos += W; } row.style.transform = 'translateX(' + pos.toFixed(1) + 'px)'; }, h => { held = h; });
     window.addEventListener('resize', measure);
     let last = 0;
     const PXPS = 30; // px/sec — matched to the Aluna inner-page brand marquee
     function frame(t) {
       if (!last) last = t; const dt = t - last; last = t;
-      if (!paused && W) { pos -= dt * PXPS / 1000; if (pos <= pos0 - W) pos += W; row.style.transform = 'translateX(' + pos.toFixed(1) + 'px)'; }
+      if (!paused && !held && W) { pos -= dt * PXPS / 1000; if (pos <= pos0 - W) pos += W; row.style.transform = 'translateX(' + pos.toFixed(1) + 'px)'; }
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
   })();
 
   // socials (footer), footAbout
-  el('socials2').innerHTML = socials.map(s => '<a href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + s.name + '" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0">' + s.icon + '</a>').join('');
+  // since 18 Nov 2026 the footer arrives complete from the console (templates/footer.html), so
+  // these two fill in only on a page still carrying the old empty placeholders
+  if (el('socials2')) el('socials2').innerHTML = socials.map(s => '<a href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + s.name + '" style="width:34px;height:34px;border:1px solid #33312d;display:flex;align-items:center;justify-content:center;color:#cfcbc0">' + s.icon + '</a>').join('');
 
   // office rows — open the Our Stores explorer (deep-linked to the store where one exists)
   const officeIcon = (p) => '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="flex-shrink:0">' + p + '</svg>';
@@ -283,7 +389,7 @@
   if (officesEl) {
     officesEl.innerHTML = offices.map((o, i) => {
       const href = o.store != null ? 'our-stores/?store=' + o.store : 'our-stores/';
-      const divider = i < offices.length - 1 ? 'border-bottom:1px solid #ece8de;' : '';
+      const divider = i < offices.length - 1 ? 'border-bottom:1px solid #d6cebd;' : '';
       return '<a class="office-card" href="' + href + '" style="display:flex;gap:14px;align-items:center;padding:8px 10px;text-decoration:none;color:inherit;border-radius:12px;' + divider + 'transition:background .25s">'
         + '<span style="width:56px;height:52px;flex-shrink:0;border-radius:10px;background:#eceae2 url(&quot;' + o.img + '&quot;) center/cover no-repeat"></span>'
         + '<div style="min-width:0;flex:1">'
@@ -293,7 +399,7 @@
         + '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5c5951">' + officeIcon('<path d="M4 4h4l2 5-2 2a11 11 0 005 5l2-2 5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2z"></path>') + o.phone + '</span>'
         + '</div>'
         + '</div>'
-        + '<span class="office-arrow" style="width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid #ddd8cc;display:flex;align-items:center;justify-content:center;color:#161513;align-self:center;transition:background .25s,color .25s,border-color .25s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>'
+        + '<span class="office-arrow" style="width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid #d6cebd;display:flex;align-items:center;justify-content:center;color:#161513;align-self:center;transition:background .25s,color .25s,border-color .25s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>'
         + '</a>';
     }).join('');
 
@@ -322,7 +428,7 @@
     featEl.innerHTML = features.map((f, i) => {
       const div = i > 0 ? 'background:linear-gradient(#e6e0d3,#e6e0d3) left center / 1px 54% no-repeat;' : '';
       return '<div style="display:flex;gap:13px;align-items:center;padding:2px clamp(14px,1.5vw,22px);' + div + '">'
-        + '<div style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f4eee2;display:flex;align-items:center;justify-content:center;color:#a97f43"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + f.icon + '</svg></div>'
+        + '<div style="width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#ede7d9;display:flex;align-items:center;justify-content:center;color:#a97f43"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + f.icon + '</svg></div>'
         + '<div style="min-width:0"><div style="font-family:\'Archivo\';font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#161513;margin-bottom:4px">' + f.title + '</div>'
         + '<div style="font-size:12px;color:#635e55;line-height:1.45">' + f.sub + '</div></div>'
         + '</div>';
@@ -346,10 +452,11 @@
       setTimeout(sync, 200);
     }
   }
-
-  const footHref = { 'Careers': 'careers/', 'About UTC': 'about/', 'Sitemap': 'sitemap/', 'Privacy Statement': 'privacy-policy/', 'FAQ': 'faq/' };
-  const footSoon = ['Careers'];   // careers is an unfinished placeholder — keep it un-linked for now
-  el('footAbout').innerHTML = footAbout.map(l => footSoon.indexOf(l) !== -1
+/* cms:footlinks.map */
+  const footHref = { 'About UTC': 'about/', 'FAQ': 'faq/', 'Careers': 'careers/', 'Sitemap': 'sitemap/', 'Privacy Statement': 'privacy-policy/' };
+  const footSoon = [];
+/* /cms:footlinks.map */
+  if (el('footAbout')) el('footAbout').innerHTML = footAbout.map(l => footSoon.indexOf(l) !== -1
     ? '<span title="Coming soon" style="color:#5c5850;font-size:14px;cursor:default;pointer-events:none">' + l + ' <span style="font-size:10px;letter-spacing:.1em;opacity:.8">&middot; SOON</span></span>'
     : '<a href="' + (footHref[l] || '#') + '" style="color:#8f8c85;font-size:14px">' + l + '</a>').join('');
 
@@ -371,17 +478,20 @@
   divData.forEach((d, i) => {
     const layer = document.createElement('div');
     layer.style.cssText = 'position:absolute;inset:0;transition:opacity 500ms ease;opacity:' + (i === 0 ? 1 : 0) + ';z-index:' + (i === 0 ? 2 : 1) + ';pointer-events:none';
-    layer.appendChild(slotEl(d.slot, 'img/' + d.slot + '.webp', 'cover'));
+    const bigPicture = d.img || 'img/' + d.slot + '.webp';
+    if (bigPicture) layer.appendChild(slotEl(d.slot, bigPicture, 'cover'));
     el('divLayers').appendChild(layer);
   });
   function tabHtml() {
     return divData.map((d, i) => {
       const active = i === S.div;
       const divider = (i === divData.length - 1 || i === S.div || i === S.div - 1) ? '1px solid transparent' : '1px solid #2c2a26';
+      // the strip draws the division's own logo, never a redrawn version of it: a long wordmark
+      // is given a wider box (d.tabW) rather than being folded onto two lines
       const inner = d.logo
-        ? '<img loading="lazy" decoding="async" src="' + d.logo + '" alt="' + d.name + '" style="width:' + (d.tabW || '100px') + ';height:36px;object-fit:contain;filter:brightness(0) invert(1);display:block">'
+        ? '<img loading="lazy" decoding="async" src="' + d.logo + '" alt="' + d.name + '" style="width:100%;max-width:' + (d.tabW || '100px') + ';height:36px;object-fit:contain;filter:brightness(0) invert(1);display:block">'
         : '<span style="width:26px;height:26px;display:flex;align-items:center;justify-content:center">' + ic(d.icon) + '</span><span style="font-size:12px;font-weight:700;text-align:center;line-height:1.2">' + d.name + '</span>';
-      return '<button data-dt="' + i + '" class="divtab' + (active ? ' active' : '') + '" style="cursor:pointer;background:' + (active ? '#262a2e' : 'transparent') + ';border:none;border-right:' + divider + ';color:' + (active ? '#ffffff' : '#b4b8bc') + ';padding:11px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;flex:1 1 0;min-width:118px;min-height:56px;border-radius:14px;position:relative;transition:background 250ms ease">' + inner + '</button>';
+      return '<button data-dt="' + i + '" class="divtab' + (active ? ' active' : '') + '" style="cursor:pointer;background:' + (active ? '#262a2e' : 'transparent') + ';border:none;border-right:' + divider + ';color:' + (active ? '#ffffff' : '#b4b8bc') + ';padding:11px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;flex:1 1 0;min-width:86px;min-height:56px;border-radius:14px;position:relative;transition:background 250ms ease">' + inner + '</button>';
     }).join('');
   }
   el('divTabs').innerHTML = tabHtml();
@@ -451,7 +561,7 @@
       const bar = p.src
         ? '<div class="slot pbar" data-slot="pbar-' + i + '" data-fit="contain" data-src="' + p.src + '" style="height:clamp(26px,2.4vw,34px);width:100%;position:relative;filter:' + (on ? 'invert(1) brightness(2)' : 'none') + '"></div>'
         : '<div style="height:clamp(26px,2.4vw,34px);width:100%;display:flex;align-items:center;justify-content:center;filter:' + (on ? 'invert(1) brightness(2)' : 'none') + '"><span style="font-family:\'Archivo\',sans-serif;font-weight:800;font-size:clamp(13px,1.1vw,16px);color:#161513;white-space:nowrap">' + p.name + '</span></div>';
-      return '<div data-pc="' + i + '" style="flex:1;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(10px,1.5vw,22px);background:' + (on ? '#141414' : '#ffffff') + ';border-right:1px solid #ededed;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">'
+      return '<div data-pc="' + i + '" style="flex:1;min-width:0;padding:clamp(16px,1.8vw,26px) clamp(10px,1.5vw,22px);background:' + (on ? '#141414' : '#ffffff') + ';border-right:1px solid #d6cebd;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">'
         + '<span style="position:absolute;top:10px;left:14px;font-size:10px;font-weight:700;letter-spacing:0.1em;color:' + (on ? '#7a7a7a' : '#b3afa6') + '">0' + (i + 1) + '</span>'
         + bar
         + '<span style="font-size:10px;letter-spacing:0.12em;font-weight:600;color:' + (on ? '#8a8a8a' : '#67645d') + '">SINCE ' + p.since + '</span></div>';
@@ -463,10 +573,15 @@
   }
   el('partnerLogo').style.width = '100%';
 
+// A milestone's picture: the one uploaded through the console if there is one, otherwise the
+  // one that has always sat beside the page as img/<slot>.webp. Every milestone has the second,
+  // so a milestone with nothing uploaded still shows its photograph.
+  function msPhoto(m) { return m.img || ('img/' + m.slot + '.webp'); }
+
   // milestones panels + mobile
   el('msPanels').innerHTML = milestones.map(m =>
     '<div data-ms-panel style="position:absolute;inset:0;overflow:hidden;border-radius:14px;background:#151515;backface-visibility:hidden;transform-origin:center center;will-change:transform,opacity;box-shadow:0 28px 70px -26px rgba(0,0,0,.85)">'
-    + '<div class="slot" data-slot="' + m.slot + '"><img alt="" src="img/' + m.slot + '.webp"></div>'
+    + '<div class="slot" data-slot="' + m.slot + '"><img alt="" src="' + msPhoto(m) + '"></div>'
     + '<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.72) 30%,rgba(10,10,10,.25) 62%,rgba(10,10,10,0) 85%)"></div>'
     + '<div style="position:absolute;left:0;top:0;bottom:0;width:min(52%,420px);display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,4vw,54px)">'
     + '<div style="font-family:\'Archivo\';font-weight:800;font-size:clamp(40px,4.6vw,68px);line-height:0.9;color:#fff">' + m.year + '</div>'
@@ -474,11 +589,11 @@
     + '<div style="width:36px;height:2px;background:#7a7a7a;margin-bottom:14px"></div>'
     + '<p style="color:#b5b5b5;font-size:clamp(13px,1.05vw,15px);line-height:1.6;margin:0;max-width:300px">' + m.desc + '</p></div>'
     + '<div data-ms-dim style="position:absolute;inset:0;background:#0a0a0a;opacity:0.5;transition:opacity .45s ease;pointer-events:none"></div>'
-    + '<div data-ms-ring style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.09);border-radius:14px;opacity:0;transition:opacity .45s ease;pointer-events:none"></div></div>'
+    + '<div data-ms-ring style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.16);border-radius:14px;opacity:0;transition:opacity .45s ease;pointer-events:none"></div></div>'
   ).join('');
   el('msMobile').innerHTML = milestones.map(m =>
     '<div style="position:relative;border-radius:14px;overflow:hidden;margin-bottom:16px;min-height:200px;background:#151515">'
-    + '<div class="slot" data-slot="' + m.slot + '-m"><img alt="" src="img/' + m.slot + '.webp"></div>'
+    + '<div class="slot" data-slot="' + m.slot + '-m"><img alt="" src="' + msPhoto(m) + '"></div>'
     + '<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.92),rgba(10,10,10,.4))"></div>'
     + '<div style="position:relative;padding:24px"><div style="font-family:\'Archivo\';font-weight:800;font-size:42px;color:#fff">' + m.year + '</div>'
     + '<h3 style="font-family:\'Archivo\';font-weight:700;font-size:20px;margin:10px 0 10px;color:#fff">' + m.title + '</h3>'
@@ -555,6 +670,20 @@
     el('heroDots').querySelectorAll('button').forEach(b => b.style.background = (+b.dataset.hd === S.hero) ? '#141311' : 'rgba(255,255,255,0.55)');
   }
   let heroTimer = setInterval(() => setHero(S.hero + 1), 5000);
+  // A sideways swipe on a touch screen does what the arrows and dots do. Up/down still scrolls.
+  function onSwipe(node, fn) {
+    if (!node) return;
+    node.style.touchAction = 'pan-y';   // sideways is ours, not the browser's back gesture
+    let x0 = 0, y0 = 0, on = false;
+    node.addEventListener('touchstart', e => { const t = e.changedTouches[0]; if (!t) return; x0 = t.clientX; y0 = t.clientY; on = true; }, { passive: true });
+    node.addEventListener('touchend', e => {
+      if (!on) return; on = false;
+      const t = e.changedTouches[0]; if (!t) return;
+      const dx = t.clientX - x0, dy = t.clientY - y0;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.3) fn(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  }
+  onSwipe(document.querySelector('section[data-hero]'), d => { setHero(S.hero + d); clearInterval(heroTimer); heroTimer = setInterval(() => setHero(S.hero + 1), 5000); });
 
   /* ---------- divisions controller ---------- */
   // Mobile-only: clamp the division description to 3 lines, trimming at a word
@@ -581,7 +710,12 @@
     S.div = ((i % divData.length) + divData.length) % divData.length;
     const d = divData[S.div];
     el('divTagline').textContent = d.tagline;
-    el('divCounter').textContent = '0' + (S.div + 1);
+    // two digits, and the total comes from the list — a division added in the console used to
+    // be counted 07 out of a 06 typed into the page
+    const pad2 = n => (n < 10 ? '0' + n : '' + n);
+    el('divCounter').textContent = pad2(S.div + 1);
+    const divTotalEl = el('divTotal');
+    if (divTotalEl) divTotalEl.textContent = pad2(divData.length);
     el('divIcon').innerHTML = ic(d.icon);
     if (d.cardLogo) {
       el('divName').innerHTML = '<img loading="lazy" decoding="async" src="' + d.cardLogo + '" alt="' + d.name + '" style="height:' + (d.cardLogoH || 'clamp(32px,4vw,50px)') + ';width:auto;max-width:100%;object-fit:contain;object-position:left top;display:block' + (d.cardLogoDark ? ';filter:brightness(0)' : '') + '">';
@@ -673,6 +807,7 @@
     renderPartnerCells();
   }
   let partnerTimer = setInterval(() => setPartner(S.partner + 1), 6000);
+  onSwipe(el('partnerImages') && el('partnerImages').closest('section'), d => { setPartner(activePartner() + d); clearInterval(partnerTimer); partnerTimer = setInterval(() => setPartner(S.partner + 1), 6000); });
 
   // full-testimonial popup (opened by the card's "View more")
   function fillPartnerModal() {
@@ -694,15 +829,29 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePartnerModal(); });
 
   /* ---------- contact form ---------- */
-  // Static site: route the message via mailto. The "I want to…" dropdown decides
-  // the recipient — Partnerships and General Inquiry go to two different inboxes
-  // (each <option> carries its target address in data-mail).
+  // The "I want to…" dropdown decides the recipient, resolved by routeTo() against
+  // MAIL_ROUTES below — NOT from the markup. The options used to carry a data-mail
+  // attribute each; that was removed because nothing read it, and it published a
+  // staff address into the page source for anyone who opened the inspector.
   // Partnership selection reveals extra fields (type, organisation, other info)
   // and auto-fills the Subject with "Partnership Inquiry".
   const cfIntent = el('cfIntent'), cfPart = el('cfPartnership');
+  // The visible choice is three cards; the hidden select underneath stays the value the form
+  // reads, so a preselect from another page only has to set the select.
+  const intentCards = document.querySelectorAll('.cf-intent');
   function syncPartnership() {
+    intentCards.forEach(function (c) {
+      c.setAttribute('aria-checked', cfIntent && c.getAttribute('data-intent') === cfIntent.value ? 'true' : 'false');
+    });
+    if (cfIntent && cfIntent.value) {
+      const box = document.querySelector('.cf-intents'), note = el('cfIntentNote');
+      if (box) box.classList.remove('need');
+      if (note) note.hidden = true;
+    }
     const on = cfIntent && cfIntent.value === 'partnership';
     if (cfPart) cfPart.style.display = on ? 'block' : 'none';
+    const cfSup = el('cfSupport');
+    if (cfSup) cfSup.style.display = cfIntent && cfIntent.value === 'support' ? 'block' : 'none';
     const subj = el('cfSubject');
     if (subj) {
       if (on) { if (!subj.value.trim()) subj.value = 'Partnership Inquiry'; }
@@ -710,6 +859,13 @@
     }
   }
   if (cfIntent) { cfIntent.addEventListener('change', syncPartnership); syncPartnership(); }
+  intentCards.forEach(function (c) {
+    c.addEventListener('click', function () {
+      if (!cfIntent) return;
+      cfIntent.value = c.getAttribute('data-intent');
+      syncPartnership();
+    });
+  });
 
   // Preselect "Partnership Opportunity" (and optionally a division) — used by the
   // inner-page "Partner with us" CTAs and the homepage partner button.
@@ -722,8 +878,12 @@
   (function () {
     const p = new URLSearchParams(location.search || '');
     const intent = p.get('intent'), division = p.get('division');
-    if (intent === 'partnership' || division) {
-      preselectPartnership(division || '');
+    // ?intent=support — Union Services' "Contact us": a customer, not a partner, so the form
+    // opens on Product Support (which reaches the service team) rather than on a partnership
+    const support = intent === 'support' && !division;
+    if (support && cfIntent) { cfIntent.value = 'support'; syncPartnership(); }
+    if (support || intent === 'partnership' || division) {
+      if (!support) preselectPartnership(division || '');
       // scroll to the form itself (not the section top) so the preselected dropdowns are visible.
       // Recompute the absolute position each time — images above load late and shift the layout.
       const target = el('contactForm') || el('contact');
@@ -740,6 +900,47 @@
   // Homepage's own "Want to partner with us?" button — preselect without a reload
   const homePartnerBtn = document.querySelector('a.h-shop[href="#contact"]');
   if (homePartnerBtn) homePartnerBtn.addEventListener('click', function () { preselectPartnership(''); });
+  // Clear the "please choose a service" warning as soon as one is picked
+  const cfService = el('cfService');
+  // ?intent=support&service=<name> — a card on the Union Services page opens the form on
+  // Product support with that service already chosen. Applied now (to the list in the HTML)
+  // and again once the live list arrives, in case the page's names differ from the fallback.
+  const wantService = (new URLSearchParams(location.search || '')).get('service') || '';
+  function applyWantedService() {
+    if (!cfService || !wantService || !cfIntent || cfIntent.value !== 'support') return;
+    for (let i = 0; i < cfService.options.length; i++) {
+      if (cfService.options[i].value && cfService.options[i].value.toLowerCase() === wantService.toLowerCase()) { cfService.selectedIndex = i; return; }
+    }
+  }
+  applyWantedService();
+  // The service list belongs to the Union Services page ("Featured services" accordion, the
+  // CMS's divpagecats fence). Read it from there so the two never drift; if the page can't be
+  // fetched or parsed, the options already in the HTML stay.
+  if (cfService && window.fetch) {
+    fetch('union-services/', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.text() : ''; })
+      .then(function (html) {
+        const m = /\/\* cms:divpagecats \*\/([\s\S]*?)\/\* \/cms:divpagecats \*\//.exec(html || '');
+        if (!m) return;
+        const titles = [], re = /\bt:'((?:[^'\\]|\\.)*)'/g;
+        let t;
+        while ((t = re.exec(m[1]))) {
+          const s = t[1].replace(/\\u([0-9a-fA-F]{4})/g, function (_, h) { return String.fromCharCode(parseInt(h, 16)); })
+                        .replace(/\\(.)/g, '$1').trim();
+          if (s) titles.push(s);
+        }
+        if (!titles.length) return;
+        const keep = cfService.value;
+        while (cfService.options.length > 1) cfService.remove(1);   // keep "Select a service"
+        titles.concat('Other / not sure').forEach(function (s) { cfService.add(new Option(s, s)); });
+        if (keep && titles.concat('Other / not sure').indexOf(keep) >= 0) cfService.value = keep;
+        if (!cfService.value) applyWantedService();
+      })
+      .catch(function () {});
+  }
+  if (cfService) cfService.addEventListener('change', function () {
+    if (cfService.value) { cfService.classList.remove('need'); const n = el('cfServiceNote'); if (n) n.hidden = true; }
+  });
 
   // Paste your free Web3Forms access key here to have the WEBSITE send submissions
   // straight to your inbox (get one in 30s at https://web3forms.com — enter your email,
@@ -753,18 +954,18 @@
   // by the selected division. Multiple recipients = comma-separated (EmailJS To + mailto both accept it).
   // PRODUCTION addresses (set 2026-08-30).
   const MAIL_ROUTES = {
-    general: 'info@utc.com.kw',                  // General Inquiry
-    support: 'f.toufic@utc.com.kw',              // Product Support
-    // Partnership Opportunity → the head of the selected division:
+/* cms:mailroutes */
+    general: 'info@utc.com.kw',
+    support: 'f.toufic@utc.com.kw,ahmed.hassan@utc.com.kw,A.Marwan@utc.com.kw,O.Rabei@utc.com.kw',
     divisions: {
-      'union-electronics': 'm.hashem@utc.com.kw,mohamad.habbal@utc.com.kw',  // Electronics (both)
-      'aluna':             'c.elkhoury@utc.com.kw',
-      'fmcg':              'd.ahmed@utc.com.kw',
-      'labels':            'c.daou@utc.com.kw',
-      'union-services':    'f.toufic@utc.com.kw',
-      'commercial':        'r.imad@utc.com.kw'   // Commercial AC & Appliance Projects
+      'union-electronics': 'm.hashem@utc.com.kw,mohamad.habbal@utc.com.kw',
+      'fashion-beauty': 'i.ahmad@utc.com.kw',
+      fmcg: 'd.ahmed@utc.com.kw',
+      'union-services': 'f.toufic@utc.com.kw,ahmed.hassan@utc.com.kw,A.Marwan@utc.com.kw,O.Rabei@utc.com.kw',
+      commercial: 'r.imad@utc.com.kw'
     },
-    fallback: 'info@utc.com.kw'                  // partnership with no division picked, etc.
+    fallback: 'info@utc.com.kw'
+/* /cms:mailroutes */
   };
   function routeTo(intent, divisionKey) {
     if (intent === 'partnership') return MAIL_ROUTES.divisions[divisionKey] || MAIL_ROUTES.fallback;
@@ -780,14 +981,14 @@
   //   SENT FROM: connect enquiry@utc.com.kw as the EmailJS Email Service → that becomes
   //              the From address on every enquiry.
   //   SENT TO:   the template's "To" field = {{to_email}} (dynamic) — the recipient is
-  //              supplied by the code (routeTo → MAIL_ROUTES; all routes = jerin@utc.com.kw
-  //              during testing), so we can retarget it without editing the template. NOTE: a public,
-  //              dynamic {{to_email}} can in theory be abused as an open relay — fine for
-  //              this testing phase; before the corporate launch, lock it down (fixed To,
-  //              or move sending to a backend/Azure Function).
+  //              supplied by the code (routeTo → MAIL_ROUTES), so a recipient can be
+  //              changed without editing the template. NOTE: a public, dynamic
+  //              {{to_email}} can in theory be abused as an open relay. Before the
+  //              corporate launch, lock it down (fixed To, or move sending to a
+  //              backend).
   //   reply_to is set to the visitor's email, so replies go straight back to the customer.
   // Remember to add this site's domain under EmailJS → Account → Security → Allowed origins.
-  const EMAILJS = { publicKey: 'LN88tTw5xPwrUuH67', serviceId: 'service_87ki86s', templateId: 'template_zun7cpc' };
+  const EMAILJS = { publicKey: '', serviceId: '', templateId: '' };
   let _emailjsReady = null;
   function ensureEmailJS() {
     if (_emailjsReady) return _emailjsReady;
@@ -805,6 +1006,24 @@
   el('contactForm').addEventListener('submit', e => {
     e.preventDefault();
     const sel = el('cfIntent');
+    // nothing is chosen in advance: an enquiry nobody classified would land in the wrong inbox
+    if (!sel.value) {
+      const box = document.querySelector('.cf-intents'), note = el('cfIntentNote');
+      if (box) box.classList.add('need');
+      if (note) note.hidden = false;
+      const first = document.querySelector('.cf-intent');
+      if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); first.focus({ preventScroll: true }); }
+      return;
+    }
+    // Product support must say which service, so the team knows what kind of job it is
+    const svcSel = el('cfService');
+    const service = sel.value === 'support' && svcSel ? svcSel.value : '';
+    if (sel.value === 'support' && svcSel && !service) {
+      svcSel.classList.add('need');
+      const n = el('cfServiceNote'); if (n) n.hidden = false;
+      svcSel.scrollIntoView({ behavior: 'smooth', block: 'center' }); svcSel.focus({ preventScroll: true });
+      return;
+    }
     const opt = sel.options[sel.selectedIndex];
     const divKey = el('cfDivision') ? el('cfDivision').value : '';
     const to = routeTo(sel.value, divKey);   // central send → routed by enquiry type / division
@@ -833,6 +1052,7 @@
       lines.push('Organisation: ' + org);
       lines.push('Other information: ' + other);
     }
+    if (service) lines.push('Service: ' + service);
     lines.push('', msg);
 
     const btn = el('submitBtn');
@@ -845,6 +1065,7 @@
 
     // Preferred: EmailJS (client-side; works on static or cloud hosting). Sends the
     // enquiry through your connected mailbox, routed to the selected option's inbox.
+    if (true) { /* TEST COPY: nothing is sent */ setBtn('TEST COPY — NOT SENT '); setTimeout(() => setBtn('SEND MESSAGE'), 4000); return; }
     if (EMAILJS.publicKey && EMAILJS.serviceId && EMAILJS.templateId) {
       if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setBtn('CHECK YOUR EMAIL '); setTimeout(() => setBtn('SEND MESSAGE'), 3000); return; }
       btn.disabled = true; setBtn('SENDING… ');
@@ -853,13 +1074,14 @@
       // in normal weight. EmailJS escapes HTML inside variables, so the bold styling lives in the template.
       var partnerDetails = isPartner
         ? ('Division: ' + division + '\nPartnership type: ' + partType + '\nOrganisation: ' + org + '\nOther information: ' + other + '\n\n')
-        : '';
+        : service ? ('Service: ' + service + '\n\n') : '';   // support enquiries reuse the same bold block
       ensureEmailJS()
         .then(() => emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, {
           to_email: to, subject: subject, from_name: name || 'Website visitor', reply_to: email,
           name: name, email: email, phone: phone,
           enquiry_type: opt ? opt.text : '',
           division: division, partnership_type: partType, organisation: org, other_information: other,
+          service: service,
           partner_details: partnerDetails,   // bold block in the template (blank for general enquiries)
           message_text: msg,                 // the visitor's message (normal weight)
           message: lines.join('\n')          // full plain-text block (fallback)
@@ -892,6 +1114,7 @@
         name: name, email: email, phone: phone,
         enquiry_type: opt ? opt.text : '',
         division: division, partnership_type: partType, organisation: org, other_information: other,
+        service: service,
         message: lines.join('\n'),
         botcheck: ''
       })
