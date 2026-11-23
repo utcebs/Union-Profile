@@ -264,6 +264,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .cat-soon{color:#9a968d;cursor:default;letter-spacing:.14em}
   .cat-soon:hover{gap:8px}
   .catnav{width:44px;height:44px;border-radius:50%;border:1px solid #d1d4d9;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#161513;transition:background .2s,color .2s,border-color .2s}
+  button.catnav{background:transparent;padding:0;font:inherit;-webkit-appearance:none;appearance:none}
   .catnav:hover{background:#161513;color:#fff;border-color:#161513}
   @media(max-width:980px){
     .ue-hero-img{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;width:100%!important;height:300px}
@@ -496,9 +497,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
         <p style="color:#6f6c65;font-size:15px;line-height:1.75;margin:22px 0 30px;max-width:340px"><!-- cms:block electronics.ourCategoriesLine -->Explore our categories across home, entertainment, mobility and technology.<!-- /cms:block electronics.ourCategoriesLine --></p>
         <a href="https://www.unionelectronics.store/" target="_blank" rel="noopener" class="darkbtn" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.13em;padding:15px 28px;border-radius:999px">EXPLORE ALL CATEGORIES <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div style="display:flex;align-items:center;gap:22px;margin-top:clamp(34px,4vw,50px)">
-          <div class="catnav" id="catPrev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></div>
+          <button type="button" class="catnav" id="catPrev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
           <div style="font-family:'Archivo';font-weight:700;font-size:15px;color:#161513;letter-spacing:0.05em"><span id="catNum">01</span> <span style="color:#b6b1a5">/ 07</span></div>
-          <div class="catnav" id="catNext" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div>
+          <button type="button" class="catnav" id="catNext" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
         </div>
       </div>
       <div class="cat-acc" id="catAcc"></div>
