@@ -342,6 +342,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     .nh-fade,.nh-art,.nw-focus-media{display:none}
     .nh-left,.nh-right,.nh-mpic,.nh-count,.nh-dots{position:relative}
     .nh-h1{font-size:clamp(40px,9vw,58px)}
+    /* phones (23 Nov 2026): two centred lines, "Stories Shape" / "Tomorrow." */
+    .nh-h1{text-align:center}
+    .nh-h1 br:first-of-type{display:none}
     .nh-lead{max-width:460px}
     .nh-mpic{display:block;aspect-ratio:16/10;border-radius:14px 4px 4px 4px;overflow:hidden;border:1.5px solid #d2bd9f;box-shadow:0 0 10px rgba(221,196,165,.15);background:#1c1915}
     .nh-mpic img{width:100%;height:100%;object-fit:cover;display:block}
@@ -448,7 +451,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
     <div class="nh-left">
       <nav class="nh-crumb" aria-label="Breadcrumb"><a href="home/">Home</a><span>&rsaquo;</span><span>News</span></nav>
       <div class="nh-eyebrow"><!-- cms:block news.eyebrow -->NEWS &amp; INSIGHTS<!-- /cms:block news.eyebrow --></div>
-      <h1 class="nh-h1"><!-- cms:block news.title -->Stories<br>Shape<br>Tomorrow.<!-- /cms:block news.title --></h1>
+      <h1 class="nh-h1"><!-- cms:block news.title -->Stories <br>Shape<br>Tomorrow.<!-- /cms:block news.title --></h1>
       <p class="nh-lead"><!-- cms:block news.lead -->News, launches, partnerships, product innovations and people stories — exploring the moments that drive UTC forward.<!-- /cms:block news.lead --></p>
     </div>
     <a class="nh-mpic" id="nhMPicLink"><img id="nhMPic" class="nh-layer" loading="eager" decoding="async" src="" alt=""><img id="nhMPicB" class="nh-layer off" decoding="async" src="" alt=""></a>
@@ -559,6 +562,32 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   }
   function pad(n) { return String(n).padStart(2, '0'); }
 
+  // THE FEATURED STORY KEEPS ONE HEIGHT (23 Nov 2026). Below 1100px the words sit in the page's
+  // flow, so a two-line headline and a three-line one made the whole hero grow and shrink as the
+  // stories turned. Every featured story is laid out once, unseen, at the real width, and the
+  // space is held at the tallest of them.
+  function focusHtml(s) {
+    return meta(s) + '<h2 class="nw-focus-h">' + esc(s.title) + '</h2>' +
+      (s.summary ? '<p class="nw-focus-p">' + esc(s.summary) + '</p>' : '') +
+      (opens(s) ? '<a class="nw-read" href="' + href(s) + '">Read the full story ' + ARROW + '</a>' : '');
+  }
+  function reserveFocus() {
+    var box = el('nwFocus'); if (!box) return;
+    box.style.minHeight = '';
+    if (window.innerWidth >= 1100 || focus.length < 2) return;
+    var probe = box.cloneNode(false);
+    probe.removeAttribute('id');
+    probe.style.cssText = 'position:absolute;visibility:hidden;left:0;top:0;min-height:0;width:' + box.getBoundingClientRect().width + 'px';
+    box.parentNode.appendChild(probe);
+    var tallest = 0;
+    focus.forEach(function (f) { probe.innerHTML = focusHtml(f); tallest = Math.max(tallest, probe.getBoundingClientRect().height); });
+    probe.remove();
+    box.style.minHeight = Math.ceil(tallest) + 'px';
+  }
+  var reserveT = 0;
+  window.addEventListener('resize', function () { clearTimeout(reserveT); reserveT = setTimeout(reserveFocus, 150); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { reserveFocus(); });
+
   function drawFocus(first) {
     if (!focus.length) return;
     var s = focus[at % focus.length];
@@ -580,7 +609,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
       phone[i].setAttribute('src', pic);
       phone[i].setAttribute('alt', s.title || '');
     };
-    if (first) { set(0); words(); }
+    if (first) { set(0); words(); reserveFocus(); }
     else {
       // The current picture stays exactly where it is until the next one has loaded; then the
       // next one fades in on top of it. A click before that simply replaces the request.
@@ -603,9 +632,9 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 
     var many = focus.length > 1;
     el('nhCount').innerHTML = many
-      ? '<button class="nh-arrow" type="button" data-go="-1" aria-label="Previous story"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>' +
+      ? '<button class="nh-arrow" type="button" data-go="-1" aria-label="Previous story"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>' +
         '<b>' + pad(at + 1) + '</b><small>/' + pad(focus.length) + '</small><i></i>' +
-        '<button class="nh-arrow" type="button" data-go="1" aria-label="Next story"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>'
+        '<button class="nh-arrow" type="button" data-go="1" aria-label="Next story"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>'
       : '';
     el('nhDots').innerHTML = many
       ? focus.map(function (f, i) {

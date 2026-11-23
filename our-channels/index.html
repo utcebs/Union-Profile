@@ -200,6 +200,17 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .btn-dark:hover{gap:16px;background:#2a2824}
   .btn-light{display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.14em;padding:14px 26px;border-radius:999px;transition:gap .25s,background .3s,color .3s;cursor:pointer}
   .btn-light:hover{gap:16px;background:#fff;color:#0d0d0d}
+  /* VIEW CHANNELS (23 Nov 2026): the button that opens the channel wheel, made to be noticed —
+     solid gold, and a ring that pulses three times shortly after the page opens (never again once
+     it has been used, and not at all for anyone who has asked for less motion) */
+  .btn-wheel{position:relative;background:#e7c884;border-color:#e7c884;color:#0d0d0d}
+  .btn-wheel:hover{background:#fff;border-color:#fff;color:#0d0d0d}
+  .btn-wheel svg{transition:transform .6s ease}
+  .btn-wheel:hover svg{transform:rotate(90deg)}
+  .btn-wheel::after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:2px solid #e7c884;opacity:0;pointer-events:none}
+  .btn-wheel.nudge::after{animation:wheelPulse 1.8s ease-out 3}
+  @keyframes wheelPulse{0%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(1.35,1.6)}}
+  @media (prefers-reduced-motion:reduce){.btn-wheel.nudge::after{animation:none}}
 
   /* ===== Hero network hub ===== */
   .ch-globe{position:relative;width:min(100%,480px);aspect-ratio:1;margin-left:auto}
@@ -341,7 +352,7 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
   .ch-logo{max-width:122px;max-height:50px;object-fit:contain;display:block;margin:0 auto}
   @media(max-width:640px){.wheel-panel{width:min(230px,82vw)}.wp-desc{display:none}.wf-tab{padding:8px 12px;font-size:12px}.wl-item img{max-width:74px;max-height:40px}}
   /* the channel wheel is a desktop-only drag experience — hide its launcher on mobile */
-  @media(max-width:768px){#wheelOpen{display:none!important}}
+  @media(max-width:768px){#wheelOpen,#wheelHint{display:none!important}}
   /* channel-directory filter: dropdown on mobile instead of the stacked buttons */
   .ch-select{display:none;width:100%;box-sizing:border-box;font-family:inherit;font-size:15px;font-weight:600;color:#161513;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23161513' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;border:1px solid #d6cebd;border-radius:12px;padding:14px 42px 14px 16px;box-shadow:0 20px 40px -34px rgba(0,0,0,.4);-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;margin-bottom:16px}
   @media(max-width:980px){.ch-sidecard{display:none}.ch-select{display:block}}
@@ -404,7 +415,10 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
             <div style="width:1px;background:#2c2a26"></div>
             <div><div style="font-family:'Archivo';font-weight:800;font-size:clamp(28px,3vw,40px);color:#e7c884;line-height:1">1</div><div style="font-size:12px;letter-spacing:.06em;color:#8f8c85;margin-top:7px">Unified Vision</div></div>
           </div>
-          <a href="#directory" id="wheelOpen" class="btn-light" style="border-color:rgba(255,255,255,.4)">VIEW CHANNELS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 5V3M12 21v-2M5 12H3M21 12h-2M7 7 5.5 5.5M18.5 18.5 17 17M17 7l1.5-1.5M5.5 18.5 7 17"/></svg></a>
+          <div class="wheel-cta" style="display:flex;align-items:center;flex-wrap:wrap;gap:16px 20px">
+            <a href="#directory" id="wheelOpen" class="btn-light btn-wheel">VIEW CHANNELS <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 5V3M12 21v-2M5 12H3M21 12h-2M7 7 5.5 5.5M18.5 18.5 17 17M17 7l1.5-1.5M5.5 18.5 7 17"/></svg></a>
+            <span id="wheelHint" style="font-size:13px;color:#a8a49b;line-height:1.5">Explore every channel on an interactive wheel</span>
+          </div>
         </div>
       </div>
     </div>
@@ -769,5 +783,16 @@ addEventListener("click",function(e){if(e.defaultPrevented)return;var a=e.target
 <script>(function(){var h=document.querySelector('header'),t=document.getElementById('navToggle');if(!h||!t)return;function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('nav-open'));});h.addEventListener('click',function(e){if(e.target.closest('.mainnav a')||e.target.closest('.shopnow')||e.target.closest('.newslink'))set(false);});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!e.target.closest('header'))set(false);});})();</script>
 <script defer src="nav-menu.js"></script>
 <script defer src="announcements.js"></script>
+<script>
+/* nudge the VIEW CHANNELS button (see .btn-wheel) */
+(function(){var b=document.getElementById('wheelOpen');if(!b)return;
+  var seen=false;try{seen=localStorage.getItem('utcWheelSeen')==='1'}catch(e){}
+  if(seen)return;
+  var t=setTimeout(function(){b.classList.add('nudge')},1400);
+  function stop(){clearTimeout(t);b.classList.remove('nudge')}
+  b.addEventListener('pointerenter',stop);b.addEventListener('focus',stop);
+  b.addEventListener('click',function(){stop();try{localStorage.setItem('utcWheelSeen','1')}catch(e){}});
+})();
+</script>
 </body>
 </html>
