@@ -235,9 +235,10 @@
   // the store list and the map, so every picture on the panel reloaded at once.
   function setImg(i) {
     stopAuto();
-    const a = stores[clampIdx()]; const n = a.photos.length || 1;
+    const a = stores[clampIdx()]; const n = gal(a).length || 1;
     state.img = ((i % n) + n) % n;
-    if (!a.photos.length || !el('galleryMain').querySelector('img')) { render(); return; }
+    // a store with a video redraws the gallery, so the video is put in or taken out cleanly
+    if (!a.photos.length || a.video || !el('galleryMain').querySelector('img')) { render(); return; }
     swapPhoto(a);
   }
   let swapTok = 0;
@@ -265,11 +266,15 @@
     }
   }
 
+  // A STORE'S GALLERY (23 Nov 2026): its video first, if it has one, then its photos. The video
+  // is an object { video } so it can be told apart from a photo's path.
+  function gal(store) { return store.video ? [{ video: store.video }].concat(store.photos) : store.photos; }
   function photoAt(store, i) {
-    if (!store.photos.length) return null;
-    const n = store.photos.length;
-    return store.photos[((i % n) + n) % n];
+    const g = gal(store);
+    if (!g.length) return null;
+    return g[((i % g.length) + g.length) % g.length];
   }
+  const PLAY = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>';
 
   function render() {
     const idx = clampIdx();
@@ -311,7 +316,22 @@
 
     /* ---- gallery main ---- */
     const cur = photoAt(active, state.img);
-    if (cur) {
+    if (cur && cur.video) {
+      // Nothing of the video is fetched until it is played (preload none); the store's first
+      // photo stands in for it. Playing it holds the explorer on this store.
+      el('galleryMain').innerHTML = '<video class="cover" controls playsinline preload="none"'
+        + (active.photos[0] ? ' poster="' + active.photos[0] + '"' : '')
+        + ' aria-label="' + active.name + ' video" style="background:#0d0d0d;object-fit:cover"><source src="' + cur.video + '" type="video/mp4"></video>';
+      const v = el('galleryMain').querySelector('video');
+      // a big play button over the still, so it reads as a video at a glance; gone once it plays
+      const big = document.createElement('button');
+      big.type = 'button'; big.setAttribute('aria-label', 'Play the ' + active.name + ' video');
+      big.style.cssText = 'position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:rgba(13,13,13,.55);backdrop-filter:blur(4px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0 0 0 4px';
+      big.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>';
+      big.onclick = () => v.play();
+      el('galleryMain').appendChild(big);
+      v.addEventListener('play', () => { stopAuto(); v.style.objectFit = 'contain'; big.remove(); });
+    } else if (cur) {
       el('galleryMain').innerHTML = '<img loading="lazy" decoding="async" src="' + cur + '" alt="' + active.name + '" class="cover">';
     } else {
       el('galleryMain').innerHTML = '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#4a4842">' + ICON_STORE + '<span style="font-size:12px;letter-spacing:0.12em;font-weight:700">PHOTOS COMING SOON</span></div>';
@@ -319,18 +339,25 @@
 
     /* ---- gallery thumbs: fixed 5-up tile size; centered when <=5, horizontally scrollable when more ---- */
     const thumbs = el('galleryThumbs');
-    const many = active.photos.length > 5;
+    const items = gal(active);
+    const many = items.length > 5;
     thumbs.style.display = 'flex';
     thumbs.style.justifyContent = many ? 'flex-start' : 'center';
     thumbs.style.overflowX = many ? 'auto' : 'hidden';
     thumbs.style.gap = '10px';
     // each tile keeps the width of one cell in a 5-up row: (strip - 4 gaps) / 5
     const TILE = 'flex:0 0 calc((100% - 40px) / 5)';
-    if (active.photos.length) {
+    if (items.length) {
       thumbs.style.position = 'relative';   // so tile.offsetLeft is measured within the strip -> correct active-thumb centering
-      const activePhoto = ((state.img % active.photos.length) + active.photos.length) % active.photos.length;
-      thumbs.innerHTML = active.photos.map((src, i) =>
-        '<div data-thumb="' + i + '" style="' + TILE + ';aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#161513;border:2px solid ' + (i === activePhoto ? ACCENT : '#2a2825') + ';cursor:pointer;opacity:' + (i === activePhoto ? 1 : 0.55) + ';transition:opacity .2s,border-color .2s"><img src="' + src + '" alt="" class="cover" loading="lazy"></div>'
+      const activePhoto = ((state.img % items.length) + items.length) % items.length;
+      thumbs.innerHTML = items.map((src, i) =>
+        '<div data-thumb="' + i + '"' + (src.video ? ' aria-label="Play the video"' : '') + ' style="' + TILE + ';position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#161513;border:2px solid ' + (i === activePhoto ? ACCENT : '#2a2825') + ';cursor:pointer;opacity:' + (i === activePhoto ? 1 : 0.55) + ';transition:opacity .2s,border-color .2s">'
+        + (src.video
+          // the video's tile: the first photo (if any) under a play button
+          ? (active.photos[0] ? '<img src="' + active.photos[0] + '" alt="" class="cover" loading="lazy">' : '')
+            + '<span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);color:#fff">' + PLAY + '</span>'
+          : '<img src="' + src + '" alt="" class="cover" loading="lazy">')
+        + '</div>'
       ).join('');
       thumbs.querySelectorAll('[data-thumb]').forEach(d => d.onclick = () => setImg(+d.dataset.thumb));
       // keep the active thumb in view when the strip scrolls
